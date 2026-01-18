@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import Breadcrumbs from '../components/Breadcrumbs'
 import './Projects.css'
+import allFolderImage from '../assets/projects/projects_all_folder.svg'
+import uiuxFolderImage from '../assets/projects/projects_uiux_folder.svg'
+import graphicFolderImage from '../assets/projects/projects_graphic_folder.svg'
+import devFolderImage from '../assets/projects/projects_dev_folder.svg'
+import scaffoldLogo from '../assets/main/scaffold_logo.png'
+import montroLogo from '../assets/main/montro_logo.png'
+import planItLogo from '../assets/main/plan-it_logo.png'
 
 function Projects() {
   const [activeTab, setActiveTab] = useState('all')
@@ -11,10 +18,10 @@ function Projects() {
   ]
 
   const folderImages = {
-    'all': '/src/assets/projects/projects_all_folder.svg',
-    'ui/ux': '/src/assets/projects/projects_uiux_folder.svg',
-    'graphic design': '/src/assets/projects/projects_graphic_folder.svg',
-    'development': '/src/assets/projects/projects_dev_folder.svg'
+    'all': allFolderImage,
+    'ui/ux': uiuxFolderImage,
+    'graphic design': graphicFolderImage,
+    'development': devFolderImage
   }
 
   const projects = [
@@ -22,42 +29,42 @@ function Projects() {
       id: 1, 
       name: 'Scaffold', 
       category: 'ui/ux',
-      thumbnail: '/src/assets/main/scaffold_logo.png',
+      thumbnail: scaffoldLogo,
       description: 'All-in-one funding platform for tradespeople that consolidates financial resources with AI support.'
     },
     { 
       id: 2, 
       name: 'Montro', 
       category: 'ui/ux',
-      thumbnail: '/src/assets/main/montro_logo.png',
+      thumbnail: montroLogo,
       description: 'Description for Montro project.'
     },
     { 
       id: 3, 
       name: 'Can Design', 
       category: 'graphic design',
-      thumbnail: '/src/assets/main/scaffold_logo.png',
+      thumbnail: scaffoldLogo,
       description: 'Description for Can Design project.'
     },
     { 
       id: 4, 
       name: 'magazine', 
       category: 'graphic design',
-      thumbnail: '/src/assets/main/scaffold_logo.png',
+      thumbnail: scaffoldLogo,
       description: 'Description for magazine project.'
     },
     { 
       id: 5, 
       name: 'posters', 
       category: 'graphic design',
-      thumbnail: '/src/assets/main/scaffold_logo.png',
+      thumbnail: scaffoldLogo,
       description: 'Description for posters project.'
     },
     { 
       id: 6, 
       name: 'Plan-it', 
       category: 'development',
-      thumbnail: '/src/assets/main/plan-it_logo.png',
+      thumbnail: planItLogo,
       description: 'Description for Plan-it project.'
     }
   ]
