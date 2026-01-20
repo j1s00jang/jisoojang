@@ -80,8 +80,11 @@
   transform: translate(80%, calc(-30% + 8rem)) scale(0.5);
 }
 
-.planit-logo {
-  transform: translate(140%, calc(-30% + 6rem)) scale(0.5);
+.interactive-thumbnail {
+  width: 15%;
+  height: auto;
+  object-fit: contain;
+  transform: translate(110%, calc(-30% + 10rem)) scale(0.5);
 }
 
 .home-content:has(.home-folder-image:hover) .scaffold-logo {
@@ -92,15 +95,15 @@
   transform: translate(-80%, calc(-200% + 3rem)) rotate(30deg) scale(0.7);
 }
 
-.home-content:has(.home-folder-image:hover) .planit-logo {
-  transform: translate(180%, calc(-200% + 3rem)) rotate(20deg) scale(0.7);
+.home-content:has(.home-folder-image:hover) .interactive-thumbnail {
+  transform: translate(150%, calc(-110% + 6rem)) rotate(20deg) scale(0.8);    
 }
 
 .home-folder-image {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  margin-top: 20rem;
+  margin-top: 20rem;  
   position: relative;
 }
 
