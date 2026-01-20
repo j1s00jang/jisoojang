@@ -1,13 +1,11 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import './Projects.css'
 import allFolderImage from '../assets/projects/projects_all_folder.svg'
 import uiuxFolderImage from '../assets/projects/projects_uiux_folder.svg'
 import graphicFolderImage from '../assets/projects/projects_graphic_folder.svg'
-import devFolderImage from '../assets/projects/projects_dev_folder.svg'
-import scaffoldLogo from '../assets/main/scaffold_logo.png'
-import montroLogo from '../assets/main/montro_logo.png'
-import planItLogo from '../assets/main/plan-it_logo.png'
+import { projects } from '../data/projectsData'
 
 function Projects() {
   const [activeTab, setActiveTab] = useState('all')
@@ -20,54 +18,8 @@ function Projects() {
   const folderImages = {
     'all': allFolderImage,
     'ui/ux': uiuxFolderImage,
-    'graphic design': graphicFolderImage,
-    'development': devFolderImage
+    'graphic design': graphicFolderImage
   }
-
-  const projects = [
-    { 
-      id: 1, 
-      name: 'Scaffold', 
-      category: 'ui/ux',
-      thumbnail: scaffoldLogo,
-      description: 'All-in-one funding platform for tradespeople that consolidates financial resources with AI support.'
-    },
-    { 
-      id: 2, 
-      name: 'Montro', 
-      category: 'ui/ux',
-      thumbnail: montroLogo,
-      description: 'Description for Montro project.'
-    },
-    { 
-      id: 3, 
-      name: 'Can Design', 
-      category: 'graphic design',
-      thumbnail: scaffoldLogo,
-      description: 'Description for Can Design project.'
-    },
-    { 
-      id: 4, 
-      name: 'magazine', 
-      category: 'graphic design',
-      thumbnail: scaffoldLogo,
-      description: 'Description for magazine project.'
-    },
-    { 
-      id: 5, 
-      name: 'posters', 
-      category: 'graphic design',
-      thumbnail: scaffoldLogo,
-      description: 'Description for posters project.'
-    },
-    { 
-      id: 6, 
-      name: 'Plan-it', 
-      category: 'development',
-      thumbnail: planItLogo,
-      description: 'Description for Plan-it project.'
-    }
-  ]
 
   const handleTabClick = (tab) => {
     setActiveTab(tab)
@@ -88,8 +40,9 @@ function Projects() {
         <div className="projects-content-all">
           <div className={`projects-grid active-${getActiveClass()}`}>
             {filteredProjects.map(project => (
-              <div 
+              <Link 
                 key={project.id} 
+                to={`/projects/${project.slug}`}
                 className="project-card"
                 data-category={project.category}
               >
@@ -107,10 +60,10 @@ function Projects() {
                   </div>
                 </div>
                 <div className="project-card-divider"></div>
-              </div>
+              </Link>
             ))}
           </div>
-          <div className="projects-folder-container">
+              <div className={`projects-folder-container active-${getActiveClass()}`}> 
             <img 
               src={folderImages[activeTab]} 
               alt={`${activeTab} projects folder`} 
@@ -130,11 +83,6 @@ function Projects() {
               className={`project-tab-clickable project-tab-graphic-click active-${getActiveClass()}`}
               onClick={() => handleTabClick('graphic design')}
               aria-label="Filter by Graphic Design projects"
-            />
-            <button 
-              className={`project-tab-clickable project-tab-dev-click active-${getActiveClass()}`}
-              onClick={() => handleTabClick('development')}
-              aria-label="Filter by Development projects"
             />
           </div>
         </div>

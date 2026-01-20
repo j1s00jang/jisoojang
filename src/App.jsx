@@ -3,6 +3,7 @@ import Header from './components/Header'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 import AboutMe from './pages/AboutMe'
 import './App.css'
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/about-me" element={<AboutMe />} />
         </Routes>
         <ScrollToTop />
