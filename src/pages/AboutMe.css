@@ -55,17 +55,6 @@
   margin-bottom: -2rem;
 }
 
-.name-purple-highlight {
-  position: absolute;
-  top: 3.2rem;
-  left: -0.2rem;
-  width: 105%;
-  height: auto;
-  object-fit: contain;
-  z-index: 0;
-  transform: scaleY(2);
-}
-
 .name-text {
   position: relative;
   font-family: var(--font-family-primary);
@@ -74,7 +63,17 @@
   color: var(--color-primary-black);
   margin: 0;
   text-align: center;
-  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    var(--color-variable-light-purple) 60%,
+    var(--color-variable-light-purple) 85%,
+    transparent 85%
+  );
+  padding: 0 8px;
+  inline-size: fit-content;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .job-title {
@@ -149,17 +148,17 @@
   position: relative;
   z-index: 1;
   display: inline-block;
-}
-
-.ilove-purple-highlight {
-  position: absolute;
-  top: 1.5rem;
-  left: -0.2rem;
-  width: 110%;
-  height: 40%;
-  object-fit: contain;
-  z-index: 0;
-  transform: scaleY(3);
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    var(--color-variable-light-purple) 60%,
+    var(--color-variable-light-purple) 85%,
+    transparent 85%
+  );
+  padding: 0 8px;
+  inline-size: fit-content;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .ilove-body {
@@ -306,18 +305,17 @@
   position: relative;
   z-index: 1;
   display: inline-block;
-  
-}
-
-.skills-purple-highlight {
-  position: absolute;
-  top: 1.8rem;
-  left: -0.4rem;
-  width: 110%;
-  height: 30%;
-  object-fit: contain;
-  z-index: 0;
-  transform: scaleY(1.5);
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    var(--color-variable-light-purple) 60%,
+    var(--color-variable-light-purple) 85%,
+    transparent 85%
+  );
+  padding: 0 8px;
+  inline-size: fit-content;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .skills-body {
@@ -379,6 +377,70 @@
   line-height: 1.5;
 }
 
+/* About Me Contact Section */
+.about-me-contact {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 6rem;
+  align-items: center;
+}
+
+.contact-header {
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+.contact-title {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-family-primary);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-primary-black);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.contact-title-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    var(--color-variable-light-purple) 60%,
+    var(--color-variable-light-purple) 85%,
+    transparent 85%
+  );
+  padding: 0 8px;
+  inline-size: fit-content;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* ========================================
    TABLET STYLES (@media max-width: 1024px)
    ======================================== */
@@ -399,9 +461,6 @@
     height: 250px;
   }
 
-  .name-purple-highlight {
-    top: 3.5rem;
-  }
 .intro-text {
   margin-top: -3rem;
 }
@@ -459,6 +518,19 @@
   .skills-list {
     font-size: 1.2rem;
   }
+
+  /* About Me Contact Section */
+  .contact-content {
+    padding: 0 2rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-buttons {
+    gap: 1.5rem;
+  }
 }
 
 /* ========================================
@@ -491,9 +563,6 @@
     font-size: 3rem;
   }
 
-  .name-purple-highlight {
-    top: 3rem;
-  }
 
   .intro-text {
     font-size: 1.1rem;
@@ -546,87 +615,8 @@
     font-size: 1.2rem;
     line-height: 1.8;
   }
-}
 
-/* About Me Contact Section */
-.about-me-contact {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 6rem;
-  align-items: center;
-}
-
-.contact-header {
-  text-align: center;
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 2rem;
-}
-
-.contact-title {
-  position: relative;
-  display: inline-block;
-  font-family: var(--font-family-primary);
-  font-size: 2.5rem;
-  font-weight: 400;
-  color: var(--color-primary-black);
-  margin: 0;
-  text-transform: lowercase;
-}
-
-.contact-title-text {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-}
-
-.contact-purple-highlight {
-  position: absolute;
-  top: 1.8rem;
-  left: -0.4rem;
-  width: 110%;
-  height: 30%;
-  object-fit: contain;
-  z-index: 0;
-  transform: scaleY(1.5);
-}
-
-.contact-buttons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 1024px) {
-  .contact-content {
-    padding: 0 2rem;
-  }
-
-  .contact-title {
-    font-size: 2.5rem;
-  }
-
-  .contact-buttons {
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
+  /* About Me Contact Section */
   .contact-content {
     padding: 0 1rem;
   }
@@ -634,5 +624,4 @@
   .contact-title {
     font-size: 2rem;
   }
-
 }

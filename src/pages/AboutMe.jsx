@@ -2,7 +2,6 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import '../components/ContactIcon.css'
 import './AboutMe.css'
 import memojiImage from '../assets/about_me/memoji_jisoo.png'
-import purpleHighlight from '../assets/about_me/purple_highlight.png'
 import toastPhoto from '../assets/about_me/toast.jpg'
 import coffeePhoto from '../assets/about_me/coffee.jpg'
 import puddingPhoto from '../assets/about_me/pudding.jpg'
@@ -37,11 +36,6 @@ function AboutMe() {
               />
             </div>
             <div className="name-title">
-              <img 
-                src={purpleHighlight} 
-                alt="" 
-                className="name-purple-highlight"
-              />
               <h1 className="name-text">Jisoo</h1>
             </div>
             <div className="about-me-title">
@@ -60,11 +54,6 @@ function AboutMe() {
           <div className="ilove-content">
             <div className="ilove-header">
               <h2 className="ilove-title">
-                <img 
-                  src={purpleHighlight} 
-                  alt="" 
-                  className="ilove-purple-highlight"
-                />
                 <span className="ilove-title-text">i love</span>
               </h2>
             </div>
@@ -109,11 +98,6 @@ function AboutMe() {
           <div className="skills-content">
             <div className="skills-header">
               <h2 className="skills-title">
-                <img 
-                  src={purpleHighlight} 
-                  alt="" 
-                  className="skills-purple-highlight"
-                />
                 <span className="skills-title-text">i can do</span>
               </h2>
             </div>
@@ -144,11 +128,6 @@ function AboutMe() {
           <div className="contact-content">
             <div className="contact-header">
               <h2 className="contact-title">
-                <img 
-                  src={purpleHighlight} 
-                  alt="" 
-                  className="contact-purple-highlight"
-                />
                 <span className="contact-title-text">get in touch</span>
               </h2>
             </div>
