@@ -116,6 +116,35 @@
     min-height: calc(100vh - 120px);
     padding: 2rem 1.5rem;
   }
+
+  .home_jisoo {
+    transform: translate(-90%, calc(-70% + 7rem));
+  }
+
+  .home_portfolio {
+    transform: translate(-25%, calc(-60% + 10rem));
+  }
+
+  .home-content:has(.home-folder-image:hover) .home_jisoo {
+    transform: translate(-90%, calc(-70% + 7rem));
+  }
+
+  .home-content:has(.home-folder-image:hover) .home_portfolio {
+    transform: translate(-25%, calc(-60% + 10rem));
+  }
+
+  .home-content:has(.home-folder-image:hover) .scaffold-logo {
+    transform: translate(-200%, calc(-200% + 5rem)) scale(1);
+  }
+
+  .home-content:has(.home-folder-image:hover) .montro-logo {
+    transform: translate(-50%, calc(-180% + 8rem)) scale(0.8) rotate(40deg);
+  }
+
+  .home-content:has(.home-folder-image:hover) .interactive-thumbnail {
+    transform: translate(170%, calc(-200% + 10rem)) scale(1) rotate(20deg);
+  }
+  
 }
 
 /* ========================================
@@ -131,6 +160,33 @@
     margin-top: 10rem;
   }
 
+  .home_jisoo {
+    transform: translate(-90%, calc(60% + 7rem));
+  }
 
+  .home_portfolio {
+    transform: translate(-25%, calc(100% + 10rem));
+  }
+
+  .home-content:has(.home-folder-image:hover) .home_jisoo {
+    transform: translate(-90%, calc(60% + 7rem));
+  }
+
+  .home-content:has(.home-folder-image:hover) .home_portfolio {
+    transform: translate(-25%, calc(100% + 10rem));
+  }
+
+  .home-content:has(.home-folder-image:hover) .scaffold-logo {
+    transform: translate(-180%, calc(-150% + 5rem)) scale(0.7);
+  }
+
+  .home-content:has(.home-folder-image:hover) .montro-logo {
+    transform: translate(-80%, calc(-200% + 8rem)) scale(0.5) rotate(40deg);
+  }
+
+  .home-content:has(.home-folder-image:hover) .interactive-thumbnail {
+    transform: translate(170%, calc(-350% + 10rem)) scale(1.3) rotate(20deg);
+  }
+  
 }
 
