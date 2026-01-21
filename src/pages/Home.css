@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.main_content_top {
+.home_content_top {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.main_jisoo {
+.home_jisoo {
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -33,11 +33,11 @@
   z-index: 10;
 }
 
-.home-content:has(.home-folder-image:hover) .main_jisoo {
+.home-content:has(.home-folder-image:hover) .home_jisoo {
   transform: translate(-160%, calc(-600% + 10rem)) rotate(-15deg);
 }
 
-.main_portfolio {
+.home_portfolio {
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -49,11 +49,11 @@
   z-index: 10;
 }
 
-.home-content:has(.home-folder-image:hover) .main_portfolio {
+.home-content:has(.home-folder-image:hover) .home_portfolio {
   transform: translate(20%, calc(-650% + 8rem)) rotate(10deg);
 }
 
-.main_content_bottom {
+.home_content_bottom {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,4 +126,11 @@
     min-height: calc(100vh - 200px);
     padding: 15rem 1.5rem 1.5rem 1.5rem;
   }
+
+  .home-folder-image {
+    margin-top: 10rem;
+  }
+
+
 }
+

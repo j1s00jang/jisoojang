@@ -9,11 +9,11 @@ import folderImage from '../assets/main/folder_image.png'
 function Home() {
   return (
     <div className="home-content">
-      <div className="main_content_top">
-      <img src={jisoosImage} alt="Jisoo's" className="main_jisoo" />
-      <img src={portfolioImage} alt="Portfolio" className="main_portfolio" />
+      <div className="home_content_top">
+      <img src={jisoosImage} alt="Jisoo's" className="home_jisoo" />
+      <img src={portfolioImage} alt="Portfolio" className="home_portfolio" />
       </div>
-      <div className="main_content_bottom">
+      <div className="home_content_bottom">
       <img 
         src={scaffoldLogo} 
         alt="Scaffold Logo" 

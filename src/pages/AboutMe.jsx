@@ -79,9 +79,7 @@ function AboutMe() {
               </div>
               <div className="ilove-right">
                 <p className="ilove-list">
-                  my cat(Toast, 1y), coffee, food, dessert, home baking,
-                  baking, cafe, crochet, hand embroidery,
-                  nature, sky, cloud and all cute designed packages!
+                my cat, Toast (11m) • coffee • baking • desserts • cafés • hiking • beach • active lifestyle • browsing supermarkets • cute packaging
                 </p>
                 <div className="ilove-small-images">
                   <img 
