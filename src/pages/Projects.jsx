@@ -47,8 +47,8 @@ function Projects() {
                 </div>
                 <div className="project-card-text">
                   <h3 className="project-card-title">{project.name}</h3>
-                  <p className="project-card-description">
-                    {project.description}
+                  <p className="project-card-summary">
+                    {project.summary}
                   </p>
                 </div>
               </div>

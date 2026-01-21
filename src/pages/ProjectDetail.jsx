@@ -51,14 +51,52 @@ function ProjectDetail() {
         </div>
         <div className="project-detail-body">
   {/* 👇 Common section all projects have */}
-  <section className="project-detail-section">
-    <h2>Overview</h2>
-    <p>Common section content!</p>
-  </section>
-  <section className="project-detail-section">
-    <h2>User Research</h2>
-    <p>Add contents here</p>
-  </section>
+  {project.overview && (
+    <section className="project-detail-section">
+      <h2>Overview</h2>
+      <p style={{ whiteSpace: 'pre-line' }}>{project.overview}</p>
+      {project.mockupImage && (
+        <div className="project-detail-mockup"> 
+          <img 
+            src={project.mockupImage} 
+            alt={`${project.name} mockup image`} 
+            className="project-detail-mockup-image"
+          />
+        </div>
+      )}
+    </section>
+  )}
+  <section className="project-detail-section opportunity-section">
+    <h2>Opportunity</h2>
+    <p style={{ whiteSpace: 'pre-line' }}>{project.opportunity}</p>
+    </section>
+    <section className="project-detail-section my-role-section">
+      <h2>My Role</h2>
+      <p style={{ whiteSpace: 'pre-line' }}>{project.myRole}</p>
+    </section>
+    <section className="project-detail-section">
+      <h2>User Research</h2>
+      <p style={{ whiteSpace: 'pre-line' }}>{project.userResearch}</p>
+    </section>
+
+  {project.scaffoldSurveyResults && (
+    <section className="project-detail-section">
+      <div className="project-detail-survey-images">
+        <img
+          src={project.scaffoldSurveyResults}
+          alt={`${project.name} survey results page 1`}
+          className="project-detail-survey-image"
+        />
+        {project.scaffoldSurveyResults2 && (
+          <img
+            src={project.scaffoldSurveyResults2}
+            alt={`${project.name} survey results page 2`}
+            className="project-detail-survey-image"
+          />
+        )}
+      </div>
+    </section>
+  )}
 
   {/* 👇 Project-specific content (conditional) */}
   {slug === 'scaffold' ? (
