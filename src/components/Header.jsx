@@ -3,7 +3,6 @@ import './Header.css'
 
 function Header() {
   const location = useLocation()
-  const navigate = useNavigate()
 
   const handleProjectsClick = (e) => {
     if (location.pathname === '/projects') {

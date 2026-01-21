@@ -13,8 +13,8 @@ function ProjectDetail() {
   if (!project) {
     return (
       <div className="project-detail-error">
-        <h1>Project not found</h1>
-        <button onClick={() => navigate('/projects')}>Back to Projects</button>
+        <h1>I'm sorry! The page is under construction.</h1>
+        <button onClick={() => navigate('/projects')}>Back</button>
       </div>
     )
   }
@@ -22,7 +22,6 @@ function ProjectDetail() {
   const breadcrumbItems = [
     { label: 'Home', link: '/' },
     { label: 'Projects', link: '/projects' },
-    // { labe: 'UI/UX', link: '/projects/uiux' }, // add later
     { label: project.name, link: null }
   ]
 
@@ -43,17 +42,28 @@ function ProjectDetail() {
             <p className="project-detail-description">{project.description}</p>
           </div>
         </div>
-        
         <div className="project-detail-body">
-          {slug === 'scaffold' ? (
-            <Scaffold />
-          ) : (
-            <section className="project-detail-section">
-              <h2>Project Overview</h2>
-              <p>Add your project details here...</p>
-            </section>
-          )}
-        </div>
+  {/* 👇 Common section all projects have */}
+  <section className="project-detail-section">
+    <h2>Overview</h2>
+    <p>Common section content!</p>
+  </section>
+  <section className="project-detail-section">
+    <h2>User Research</h2>
+    <p>Add contents here</p>
+  </section>
+
+  {/* 👇 Project-specific content (conditional) */}
+  {slug === 'scaffold' ? (
+    <Scaffold />
+  ) : (
+    <section className="project-detail-section"> 
+    {/* something other project has but scaffold doesn't have. */}
+      <h2>Prototyping & Testing</h2>
+      <p>Add contents here</p>
+    </section>
+  )}
+</div>
       </div>
     </>
   )
