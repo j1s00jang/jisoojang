@@ -28,7 +28,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 0;
+  gap: 1rem;
   justify-content: center;
 }
 
@@ -46,7 +46,6 @@
   color: var(--color-primary-black);
   background-color: transparent;
   z-index: 1;
-  margin-left: 10px;
   align-items: center;
 }
 
@@ -118,7 +117,21 @@
 
 @media (max-width: 768px) {
   .projects-content {
-    padding: 14rem 1.5rem 1.5rem 2rem;
+    padding: 12rem 1.5rem 1.5rem 2rem;
+  }
+
+  .projects-tabs ul {
+    flex-direction: Row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .projects-tabs li {
+    padding: 12px 30px;
+  }
+
+  .projects-tabs li:first-child {
+    padding: 12px 40px;
   }
 }
 

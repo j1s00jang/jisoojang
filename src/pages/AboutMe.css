@@ -484,12 +484,12 @@ line-height: 1.4;
   }
 
   .name-purple-highlight {
-    top: 2rem;
+    top: 3rem;
   }
 
   .intro-text {
-    font-size: 1rem;
-    padding-top: 0rem;
+    font-size: 1.1rem;
+    padding: 0 1.2rem;
   }
 
   /* About Me I Love Section */
@@ -530,11 +530,11 @@ line-height: 1.4;
   }
 
   .skills-section-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .skills-list {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
 }
