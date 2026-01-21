@@ -1,5 +1,4 @@
 .projects-content {
-    max-width: 1400px;
     margin: 0 auto;
     padding: 3rem;
     width: 100%;
@@ -17,173 +16,129 @@
 .projects-folder-container {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.projects-folder-image {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  max-width: 1240px;
   margin: 0 auto;
-  display: block;
-  pointer-events: none;
+  background-color: transparent;
+  min-height: 1800px;
 }
 
-.project-tab-clickable {
-  position: absolute;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 100;
-  padding: 0;
-  pointer-events: auto;
-}
-
-.project-tab-all-click {
-  top: 0;
-  left: 0;
-  width: 26%;
-  height: 4.5%;
-  cursor: pointer;
-}
-
-.project-tab-uiux-click.active-all {
-  top: 1%;
-  left: 26.5%;
-  width: 20%;
-  height: 3.5%;
-  cursor: pointer;
-}
-
-.project-tab-graphic-click.active-all {
-  top: 1%;
-  left: 47%;
-  width: 20%;
-  height: 3.5%;
-}
-
-
-/* ========================================
-   UI/UX Folder Tab Positions
-   ======================================== */
-.project-tab-all-click.active-ui-ux {
-  top: 2%;
-  left: 0;
-  width: 21%;
-  height: 6.5%;
-}
-
-.project-tab-uiux-click.active-ui-ux {
-  top: 0%;
-  left: 21%;
-  width: 30%;
-  height: 8%;
-}
-
-.project-tab-graphic-click.active-ui-ux {
-  top: 2%;
-  left: 51%;
-  width: 21%;
-  height: 6.5%;
-}
-
-
-/* ========================================
-   Graphic Design Folder Tab Positions
-   ======================================== */
-.project-tab-all-click.active-graphic-design {
-    top: 1%;
-    left: 0;
-    width: 19%;
-    height: 3.5%;
-}
-
-.project-tab-uiux-click.active-graphic-design {
-  top: 1%;
-  left: 19%;
-  width: 18%;
-  height: 3.5%;
-}
-
-.project-tab-graphic-click.active-graphic-design {
-    top: 0%;
-    left: 37%;
-    width: 30%;
-    height: 4.5%;
-}
-
-
-.projects-tabs {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  z-index: 10;
-  width: 100%;
-  max-width: 600px;
-  justify-content: flex-start;
-  padding-left: 2rem;
-}
-
-.project-tab {
-  background: transparent;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  font-family: var(--font-family-primary);
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-transform: lowercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 12px 12px 0 0;
-  color: var(--color-primary-black);
+.projects-folder-tabs {
   position: relative;
+  padding-top: 15px;
+  z-index: 10;
+}
+
+.projects-folder-tabs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0;
+  padding-left: 20px;
+}
+
+.projects-folder-tabs li {
+  font-family: var(--font-family-primary);
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  text-align: left;
+  cursor: pointer;
+  padding: 12px 60px;
+  border-radius: 30px 30px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+  color: var(--color-primary-black);
+  background-color: transparent;
   z-index: 1;
-  white-space: nowrap;
+  margin-left: 10px;
 }
 
-.project-tab-all {
-  color: var(--color-primary-black);
+.projects-folder-tabs li:first-child {
+  margin-left: 0;
+  padding: 15px 70px;
 }
 
-.project-tab-all.active {
-  z-index: 5;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-}
-
-.project-tab-uiux {
-  color: var(--color-primary-black);
-  margin-left: -12px;
-}
-
-.project-tab-uiux.active {
-  z-index: 5;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-}
-
-.project-tab-graphic {
-  color: var(--color-primary-white);
-  margin-left: -12px;
-}
-
-.project-tab-graphic.active {
-  z-index: 5;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-}
-
-.project-tab:hover:not(.active) {
+.projects-folder-tabs li:hover {
   opacity: 0.85;
-  transform: translateY(-2px);
 }
-    
+
+/* All tab styles */
+.projects-folder-tabs li.active-all {
+  z-index: 5;
+  font-weight: 500;
+}
+
+/* All tab active */
+.projects-folder-container.active-all .projects-folder-tabs li:first-child {
+  background-color: #F3D489;
+  color: var(--color-primary-black);
+  font-weight: 600;
+}
+
+.projects-folder-container.active-all .projects-folder-tabs li:nth-child(2) {
+  background-color: #C7C8FF;
+  color: var(--color-primary-black, #2E2B28);
+}
+
+.projects-folder-container.active-all .projects-folder-tabs li:nth-child(3) {
+  background-color: #9FA2F0;
+  color: var(--color-primary-white, #FFFFFF);
+}
+
+/* UI/UX tab active */
+.projects-folder-container.active-ui-ux .projects-folder-tabs li:first-child {
+  background-color: #F3D489;
+  color: var(--color-primary-black);
+}
+
+.projects-folder-container.active-ui-ux .projects-folder-tabs li:nth-child(2) {
+  background-color: #C7C8FF;
+  color: var(--color-primary-black, #2E2B28);
+  font-weight: 600;
+}
+
+.projects-folder-container.active-ui-ux .projects-folder-tabs li:nth-child(3) {
+  background-color: #9FA2F0;
+  color: var(--color-primary-white, #FFFFFF);
+}
+
+/* Graphic Design tab active */
+.projects-folder-container.active-graphic-design .projects-folder-tabs li:first-child {
+  background-color: #F3D489;
+  color: var(--color-primary-black);
+}
+
+.projects-folder-container.active-graphic-design .projects-folder-tabs li:nth-child(2) {
+  background-color: #C7C8FF;
+  color: var(--color-primary-black, #2E2B28);
+}
+
+.projects-folder-container.active-graphic-design .projects-folder-tabs li:nth-child(3) {
+  background-color: #9FA2F0;
+  color: var(--color-primary-white, #FFFFFF);
+  font-weight: 600;
+}
+
+.projects-folder-body {
+  width: 100%;
+  min-height: 1800px;
+  background-color: #F3D489;
+  border-radius: 20px 20px 20px 20px;
+  position: relative;
+}
+
+.projects-folder-body.active-all {
+  background-color: #F3D489;
+}
+
+.projects-folder-body.active-ui-ux {
+  background-color: #C7C8FF;
+}
+
+.projects-folder-body.active-graphic-design {
+  background-color: #9FA2F0;
+}
 
 
   @media (max-width: 1024px) {
@@ -216,13 +171,6 @@
   box-sizing: border-box;
 }
 
-.projects-grid.active-ui-ux {
-  top: 15%;
-}
-
-.projects-grid.active-graphic-design {
-  top: 8%;
-}
 
 
 .project-card {
@@ -272,6 +220,7 @@
   height: auto;
   object-fit: contain;
 }
+
 
 .project-card-text {
   flex: 1;

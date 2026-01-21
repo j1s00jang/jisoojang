@@ -2,9 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import './Projects.css'
-import allFolderImage from '../assets/projects/projects_all_folder.svg'
-import uiuxFolderImage from '../assets/projects/projects_uiux_folder.svg'
-import graphicFolderImage from '../assets/projects/projects_graphic_folder.svg'
 import { projects } from '../data/projectsData'
 
 function Projects() {
@@ -14,12 +11,6 @@ function Projects() {
     { label: 'Home', link: '/home' },
     { label: 'Projects', link: '/projects' }
   ]
-
-  const folderImages = {
-    'all': allFolderImage,
-    'ui/ux': uiuxFolderImage,
-    'graphic design': graphicFolderImage
-  }
 
   const handleTabClick = (tab) => {
     setActiveTab(tab)
@@ -63,27 +54,30 @@ function Projects() {
               </Link>
             ))}
           </div>
-              <div className={`projects-folder-container active-${getActiveClass()}`}> 
-            <img 
-              src={folderImages[activeTab]} 
-              alt={`${activeTab} projects folder`} 
-              className="projects-folder-image"
-            />
-            <button 
-              className={`project-tab-clickable project-tab-all-click active-${getActiveClass()}`}
-              onClick={() => handleTabClick('all')}
-              aria-label="Show all projects"
-            />
-            <button 
-              className={`project-tab-clickable project-tab-uiux-click active-${getActiveClass()}`}
-              onClick={() => handleTabClick('ui/ux')}
-              aria-label="Filter by UI/UX projects"
-            />
-            <button 
-              className={`project-tab-clickable project-tab-graphic-click active-${getActiveClass()}`}
-              onClick={() => handleTabClick('graphic design')}
-              aria-label="Filter by Graphic Design projects"
-            />
+          <div className={`projects-folder-container active-${getActiveClass()}`}>
+            <nav className="projects-folder-tabs">
+              <ul>
+                <li 
+                  className={activeTab === 'all' ? 'active' : ''}
+                  onClick={() => handleTabClick('all')}
+                >
+                  all
+                </li>
+                <li 
+                  className={activeTab === 'ui/ux' ? 'active' : ''}
+                  onClick={() => handleTabClick('ui/ux')}
+                >
+                  ui/ux
+                </li>
+                <li 
+                  className={activeTab === 'graphic design' ? 'active' : ''}
+                  onClick={() => handleTabClick('graphic design')}
+                >
+                  graphic design
+                </li>
+              </ul>
+            </nav>
+            <div className={`projects-folder-body active-${getActiveClass()}`}></div>
           </div>
         </div>
       </div>

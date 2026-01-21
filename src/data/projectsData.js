@@ -20,15 +20,15 @@ export const projects = [
     slug: 'montro',
     category: 'ui/ux',
     thumbnail: montroLogo,
-    description: 'Description for Montro project.'
+    description: 'Gamified expense-tracking app that builds spending awareness through goal and reward-based milestones'
   },
   { 
     id: 3, 
-    name: 'Can Design', 
+    name: 'Beverage label design', 
     slug: 'can-design',
     category: 'graphic design',
     thumbnail: canDesignThumbnail,
-    description: 'Description for Can Design project.'
+    description: 'Fruits-infused sparkiling water label design with two variants'
   },
   { 
     id: 4, 
@@ -36,7 +36,7 @@ export const projects = [
     slug: 'magazine',
     category: 'graphic design',
     thumbnail: magazineThumbnail,
-    description: 'Description for magazine project.'
+    description: 'A historical Christmas market travel magazine'
   },
   { 
     id: 5, 
@@ -44,7 +44,7 @@ export const projects = [
     slug: 'posters',
     category: 'graphic design',
     thumbnail: postersThumbnail,
-    description: 'Description for posters project.'
+    description: 'Full cover posters for cats lickable treats'
   },
   { 
     id: 6, 
@@ -52,7 +52,7 @@ export const projects = [
     slug: 'interactive_tutorial',
     category: 'graphic design',
     thumbnail: interactiveThumbnail,
-    description: 'Description for web design project.'
+    description: 'Interactive infomative tutorial for a new cat owner'
   },
 ]
 
