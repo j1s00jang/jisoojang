@@ -4,6 +4,14 @@ import canDesignThumbnail from '../assets/projects/can_design/can_design_thumbna
 import magazineThumbnail from '../assets/projects/magazine/magazine_thumbnail.png'
 import postersThumbnail from '../assets/projects/posters/posters_thumbnail.png'
 import interactiveThumbnail from '../assets/projects/interactive/interactive_thumbnail.png'
+import scaffoldScreen from '../assets/projects/scaffold/scaffold_screen01.png'
+
+// Screen images (using thumbnails as fallback for projects without screen images)
+const montroScreen = montroLogo
+const canDesignScreen = canDesignThumbnail
+const magazineScreen = magazineThumbnail
+const postersScreen = postersThumbnail
+const interactiveScreen = interactiveThumbnail
 
 export const projects = [
   { 
@@ -12,7 +20,10 @@ export const projects = [
     slug: 'scaffold',
     category: 'ui/ux',
     thumbnail: scaffoldLogo,
-    description: 'All-in-one funding platform for tradespeople that consolidates financial resources with AI support'
+    screenImage: scaffoldScreen,
+    summary: 'All-in-one funding platform for tradespeople that consolidates financial resources with AI support',
+    role: 'UI/UX Designer / Graphic Designer',
+    keySkills: 'UI / UX / Layout / Product Design / User Research / Branding / Marketing / Print Design'
   },
   { 
     id: 2, 
@@ -20,7 +31,10 @@ export const projects = [
     slug: 'montro',
     category: 'ui/ux',
     thumbnail: montroLogo,
-    description: 'Gamified expense-tracking app that builds spending awareness through goal and reward-based milestones'
+    screenImage: montroScreen,
+    summary: 'Gamified expense-tracking app that builds spending awareness through goal and reward-based milestones',
+    role: 'UI/UX Designer',
+    keySkills: 'Figma, Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign'
   },
   { 
     id: 3, 
@@ -28,7 +42,9 @@ export const projects = [
     slug: 'can-design',
     category: 'graphic design',
     thumbnail: canDesignThumbnail,
-    description: 'Fruits-infused sparkiling water label design with two variants'
+    screenImage: canDesignScreen,
+    summary: 'Fruits-infused sparkiling water label design with two variants',
+    keySkills: 'Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign'
   },
   { 
     id: 4, 
@@ -36,7 +52,9 @@ export const projects = [
     slug: 'magazine',
     category: 'graphic design',
     thumbnail: magazineThumbnail,
-    description: 'A historical Christmas market travel magazine'
+    screenImage: magazineScreen,
+    summary: 'A historical Christmas market travel magazine',
+    keySkills: 'Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign'
   },
   { 
     id: 5, 
@@ -44,7 +62,9 @@ export const projects = [
     slug: 'posters',
     category: 'graphic design',
     thumbnail: postersThumbnail,
-    description: 'Full cover posters for cats lickable treats'
+    screenImage: postersScreen,
+    summary: 'Full cover posters for cats lickable treats',
+    keySkills: 'Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign'
   },
   { 
     id: 6, 
@@ -52,8 +72,10 @@ export const projects = [
     slug: 'interactive_tutorial',
     category: 'graphic design',
     thumbnail: interactiveThumbnail,
-    description: 'Interactive infomative tutorial for a new cat owner'
-  },
+    screenImage: interactiveScreen,
+    summary: 'Interactive infomative tutorial for a new cat owner',
+    keySkills: 'Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign'
+  }
 ]
 
 export const projectsBySlug = projects.reduce((acc, project) => {

@@ -30,16 +30,23 @@ function ProjectDetail() {
       <Breadcrumbs items={breadcrumbItems} />
       <div className="project-detail-content">
         <div className="project-detail-header">
-          <div className="project-detail-logo">
-            <img 
-              src={project.thumbnail} 
-              alt={`${project.name} logo`} 
-              className="project-detail-thumbnail"
-            />
-          </div>
+          {project.screenImage && (
+            <div className="project-detail-screen">
+              <img 
+                src={project.screenImage} 
+                alt={`${project.name} screen`} 
+                className="project-detail-screen-image"
+              />
+            </div>
+          )}
           <div className="project-detail-info">
             <h1 className="project-detail-title">{project.name}</h1>
-            <p className="project-detail-description">{project.description}</p>
+            <p className="project-detail-summary-title">Summary</p>
+            <p className="project-detail-summary">{project.summary}</p>
+            <p className="project-detail-role-title">Role</p>
+            <p className="project-detail-role">{project.role}</p>
+            <p className="project-detail-keySkills-title">Key Skills</p>
+            <p className="project-detail-keySkills">{project.keySkills}</p>
           </div>
         </div>
         <div className="project-detail-body">

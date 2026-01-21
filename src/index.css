@@ -1,39 +1,9 @@
-/* Sofia Pro Font Face Declarations */
-/* 폰트 파일을 src/assets/fonts/ 폴더에 넣고 아래 경로를 실제 파일명에 맞게 수정하세요 */
-/* 
-@font-face {
-  font-family: 'Sofia Pro';
-  src: url('./assets/fonts/SofiaPro-Regular.woff2') format('woff2'),
-       url('./assets/fonts/SofiaPro-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro';
-  src: url('./assets/fonts/SofiaPro-Medium.woff2') format('woff2'),
-       url('./assets/fonts/SofiaPro-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Sofia Pro';
-  src: url('./assets/fonts/SofiaPro-Bold.woff2') format('woff2'),
-       url('./assets/fonts/SofiaPro-Bold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-
 :root {
   /* Style Guide Colors */
   --color-primary-purple: #8d93d9;
   --color-variable-light-purple: #C7C8FF;
   --color-variable-dark-purple: #8183B5;
+  --color-variable-dark-purple2: #464D9A;
   --color-primary-white: #f9f7f2;
   --color-primary-black: #2e2b28;
   --color-primary-gray: #CDC6BE;
@@ -44,7 +14,6 @@
   --color-shadow-lighter: rgba(0, 0, 0, 0.04);
   
   /* Style Guide Typography */
-  /* Adobe Fonts에서 로드된 폰트 이름은 'sofia-pro' 또는 'Sofia Pro'일 수 있습니다 */
   --font-family-primary: 'sofia-pro', 'Sofia Pro', -apple-system, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

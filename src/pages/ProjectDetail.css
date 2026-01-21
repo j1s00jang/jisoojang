@@ -36,18 +36,23 @@
 .project-detail-header {
   display: flex;
   gap: 3rem;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem auto;
   align-items: flex-start;
+  justify-content: center;
+  max-width: 800px;
+  padding: 0 3rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.project-detail-logo {
-  flex-shrink: 0;
+.project-detail-screen {
+  width: 30%;
 }
 
-.project-detail-thumbnail {
-  width: 200px;
+.project-detail-screen-image {
+  width: 100%;
   height: auto;
-  object-fit:cover;
+  margin-bottom: 2rem;
 }
 
 .project-detail-info {
@@ -59,16 +64,63 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--color-primary-black);
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    var(--color-variable-light-purple) 60%,
+    var(--color-variable-light-purple) 85%,
+    transparent 85%
+  );
+  padding: 0 8px;
+  inline-size: fit-content;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
-.project-detail-category {
-  font-size: 1.25rem;
-  color: var(--color-primary-purple, #6B46C1);
-  margin-bottom: 1.5rem;
-  text-transform: capitalize;
+.project-detail-summary-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-variable-dark-purple2);
+  margin-bottom: 0.2rem;
+  margin-top: 1rem;
+
 }
 
-.project-detail-description {
+.project-detail-summary {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-primary-black);
+  max-width: 600px;
+}
+
+
+.project-detail-role-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-variable-dark-purple2);
+  margin-bottom: 0.2rem;
+  margin-top: 1rem;
+}
+
+.project-detail-role {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-primary-black);
+  max-width: 600px;
+}
+
+.project-detail-keySkills-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-variable-dark-purple2);
+  margin-bottom: 0.2rem;
+  margin-top: 1rem;
+}
+
+.project-detail-keySkills {
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--color-primary-black);
