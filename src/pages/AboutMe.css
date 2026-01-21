@@ -386,7 +386,7 @@
 @media (max-width: 1024px) {
   /* About Me Content */
   .about-me-content {
-    padding: 9rem 1.5rem;
+    padding: 10rem 3rem;
   }
 
   /* About Me Intro Section */
@@ -398,6 +398,13 @@
     width: 250px;
     height: 250px;
   }
+
+  .name-purple-highlight {
+    top: 3.5rem;
+  }
+.intro-text {
+  margin-top: -3rem;
+}
 
   /* About Me I Love Section */
   .ilove-body {
@@ -446,11 +453,11 @@
   }
 
   .skills-section-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .skills-list {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -490,7 +497,8 @@
 
   .intro-text {
     font-size: 1.1rem;
-    padding: 0 1.2rem;
+    padding: 3rem 3rem 1.2rem 3rem;
+    line-height: 1.4;
   }
 
   /* About Me I Love Section */
@@ -535,8 +543,8 @@
   }
 
   .skills-list {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.8;
   }
 }
 
