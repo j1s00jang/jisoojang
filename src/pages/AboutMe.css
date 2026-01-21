@@ -339,6 +339,7 @@
 .soft-skills .skills-section-title {
   flex: 0 0 auto;
   min-width: 8rem;
+  font-weight: 600;
 }
 
 .skills-list-container {
@@ -368,14 +369,14 @@
 
 .skills-list {
   font-family: var(--font-family-primary);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-primary-black);
   line-height: 1.8;
   margin: 0;
   text-transform: lowercase;
   text-align: left;
-line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* ========================================
