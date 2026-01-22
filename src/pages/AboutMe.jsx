@@ -39,14 +39,14 @@ function AboutMe() {
               <h1 className="name-text">Jisoo</h1>
             </div>
             <div className="about-me-title">
-              <p className="job-title">ui/ux designer</p>
+              <p className="job-title">ux/ui designer</p>
               <p className="job-title">product & packaging designer</p>
             </div>
           </div>
           <div className="about-me-intro-right">
             <p className="intro-text">
               <strong>hello</strong>, i am <strong>Jisoo!</strong><br />
-              <strong>a ui/ux designer, product & packaging designer</strong> focused on building <strong>intuitive</strong>, <strong>human-focused</strong> design and <strong>experiences</strong>. With a strong interest in <strong>accessibility</strong> and <strong>inclusive</strong> design, I create products that feel <strong>clear</strong>, <strong>considerate</strong>, <strong>thoughtful</strong>, and <strong>easy</strong> to use for <strong>diverse</strong> audiences.
+              <strong>a ux/ui designer, product & packaging designer</strong> focused on building <strong>intuitive</strong>, <strong>human-focused</strong> design and <strong>experiences</strong>. With a strong interest in <strong>accessibility</strong> and <strong>inclusive</strong> design, I create products that feel <strong>clear</strong>, <strong>considerate</strong>, <strong>thoughtful</strong>, and <strong>easy</strong> to use for <strong>diverse</strong> audiences.
             </p>
           </div>
         </div>
