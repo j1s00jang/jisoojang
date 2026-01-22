@@ -106,7 +106,7 @@ function AboutMe() {
                 <h3 className="skills-section-title">hard skills /</h3>
                 <div className="skills-list-container">
                   <p className="skills-list">
-                    adobe creative cloud (photoshop, illustrator, indesign, after effect), figma, framer, blender(3d), html5, css, javascript, react.js, next.js, node.js, express, expo, wordpress, google analytics, content marketing, seo, web security basics
+                    adobe creative cloud (photoshop, illustrator, indesign, after effects), figma, framer, blender(3d), html5, css, javascript, react.js, next.js, node.js, express, expo, wordpress, google analytics, content marketing, seo, web security basics
                   </p>
                   <p className="skills-list">
                     prototyping, wireframing, design & colour system, responsive ui design, interaction design, usability testing, accessibility (wcag), packaging design, typography
