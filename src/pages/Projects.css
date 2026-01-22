@@ -79,18 +79,18 @@
   color: var(--color-primary-black);
 }
 
-/* UI/UX tab active */
-.projects-container.active-ui-ux .projects-tabs li:first-child {
+/* UX/UI tab active */
+.projects-container.active-ux-ui .projects-tabs li:first-child {
   color: var(--color-primary-black);
 }
 
-.projects-container.active-ui-ux .projects-tabs li:nth-child(2) {
+.projects-container.active-ux-ui .projects-tabs li:nth-child(2) {
   background-color: #c7c8ff;
   color: var(--color-primary-black);
   font-weight: 600;
 }
 
-.projects-container.active-ui-ux .projects-tabs li:nth-child(3) {
+.projects-container.active-ux-ui .projects-tabs li:nth-child(3) {
   color: var(--color-primary-black);
 }
 

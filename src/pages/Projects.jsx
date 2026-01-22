@@ -66,10 +66,10 @@ function Projects() {
                 all
               </li>
               <li
-                className={activeTab === "ui/ux" ? "active" : ""}
-                onClick={() => handleTabClick("ui/ux")}
+                className={activeTab === "ux/ui" ? "active" : ""}
+                onClick={() => handleTabClick("ux/ui")}
               >
-                ui/ux
+                ux/ui
               </li>
               <li
                 className={activeTab === "graphic design" ? "active" : ""}
