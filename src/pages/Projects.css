@@ -163,6 +163,7 @@
     font-family: var(--font-family-primary);
     font-size: 3rem;
     font-weight: 500;
+    line-height: 1;
     color: var(--color-primary-black);
     margin: 0;
     text-transform: lowercase;
@@ -195,7 +196,7 @@
     }
 
     .project-card-title {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
 
     .project-card-description {
@@ -238,7 +239,7 @@
     }
 
     .project-card-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .project-card-description {
