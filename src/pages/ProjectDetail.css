@@ -331,6 +331,7 @@
 
     .project-detail-header {
         grid-template-columns: 1fr;
+        margin-top: 4rem;
     }
 
     .project-detail-screen-image {
@@ -349,6 +350,10 @@
 @media (max-width: 768px) {
     .project-detail-content {
         padding-top: calc(var(--nav-h) + 4rem);
+    }
+
+    .project-detail-header {
+        margin-top: 6rem;
     }
 
     .project-detail-screen-image {
