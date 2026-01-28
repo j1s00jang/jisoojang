@@ -291,19 +291,11 @@
 
 .flavour-carousel-arrow {
     width: 30px;
-    height: 1300px;
-    border-radius: 999px;
+    height: 1100px;
     border: none;
-    background: transparent;
-    color: var(--color-primary-black);
-    font-size: 28px;
-    line-height: 1;
-    display: grid;
-    place-items: center;
+    background: rgb(245, 244, 255);
+    border-radius: 50px;
     cursor: pointer;
-    transition:
-        transform 120ms ease,
-        background 120ms ease;
 }
 
 .flavour-carousel-arrow:hover {
@@ -356,7 +348,7 @@
 
 @media (max-width: 768px) {
     .project-detail-content {
-        padding-top: calc(var(--nav-h) + 8rem);
+        padding-top: calc(var(--nav-h) + 4rem);
     }
 
     .project-detail-screen-image {
