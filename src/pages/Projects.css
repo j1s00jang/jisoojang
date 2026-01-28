@@ -1,6 +1,6 @@
 .projects-content {
     margin: 0 auto;
-    padding: 3rem;
+    padding: 0 0 1rem 0;
     width: 100%;
     width: 100%;
     display: flex;
@@ -48,60 +48,14 @@
     align-items: center;
 }
 
-.projects-tabs li:first-child {
-    margin-left: 0;
-    padding: 15px 70px;
+.projects-tabs li:hover:not(.active) {
+    background-color: var(--color-variable-light-purple);
+    transition: all 0.8s ease;
 }
 
-.projects-tabs li:hover {
-    opacity: 0.85;
-}
-
-/* All tab styles */
-.projects-tabs li.active-all {
-    z-index: 5;
-}
-
-/* All tab active */
-.projects-container.active-all .projects-tabs li:first-child {
-    background-color: #c7c8ff;
-    color: var(--color-primary-black);
-}
-
-.projects-container.active-all .projects-tabs li:nth-child(2) {
-    color: var(--color-primary-black);
-}
-
-.projects-container.active-all .projects-tabs li:nth-child(3) {
-    color: var(--color-primary-black);
-}
-
-/* UX/UI tab active */
-.projects-container.active-ux-ui .projects-tabs li:first-child {
-    color: var(--color-primary-black);
-}
-
-.projects-container.active-ux-ui .projects-tabs li:nth-child(2) {
-    background-color: #c7c8ff;
-    color: var(--color-primary-black);
-}
-
-.projects-container.active-ux-ui .projects-tabs li:nth-child(3) {
-    color: var(--color-primary-black);
-}
-
-/* Graphic Design tab active */
-.projects-container.active-graphic-design .projects-tabs li:first-child {
-    color: var(--color-primary-black);
-}
-
-.projects-container.active-graphic-design .projects-tabs li:nth-child(2) {
-    color: var(--color-primary-black);
-}
-
-.projects-container.active-graphic-design .projects-tabs li:nth-child(3) {
-    background-color: #c7c8ff;
-    color: var(--color-primary-black);
+.projects-tabs li.active {
+    background-color: var(--color-variable-light-purple);
+    transition: all 0.8s ease;
 }
 
 @media (max-width: 1024px) {
