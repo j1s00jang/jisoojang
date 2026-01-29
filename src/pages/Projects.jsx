@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import "./Projects.css";
+import "./ProjectDetail.css";
 import { projects } from "../data/projectsData";
 
 function Projects() {
@@ -18,7 +19,7 @@ function Projects() {
             : projects.filter((project) => project.category === activeTab);
 
     return (
-        <>
+        <div className="project-detail-content">
             <Breadcrumbs items={breadcrumbItems} />
 
             <div className="projects-content">
@@ -65,31 +66,28 @@ function Projects() {
                                 className="project-card"
                                 data-category={project.category}
                             >
-                                <div className="project-card-content">
-                                    <div className="project-card-thumbnail">
-                                        <img
-                                            src={project.thumbnail}
-                                            alt={`${project.name} thumbnail`}
-                                            className="project-thumbnail-image"
-                                            loading="lazy"
-                                        />
-                                    </div>
-
-                                    <div className="project-card-text">
-                                        <h3 className="project-card-title">
-                                            {project.name}
-                                        </h3>
-                                        <p className="project-card-description">
-                                            {project.summary}
-                                        </p>
-                                    </div>
+                                <div className="project-card-image-wrap">
+                                    <img
+                                        src={project.thumbnail}
+                                        alt={`${project.name} thumbnail`}
+                                        className="project-card-image"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div className="project-card-text">
+                                    <h3 className="project-card-title">
+                                        {project.name}
+                                    </h3>
+                                    <p className="project-card-description">
+                                        {project.summary}
+                                    </p>
                                 </div>
                             </Link>
                         ))}
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

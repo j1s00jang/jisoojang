@@ -1,4 +1,4 @@
-import magazineThumbnail from "../../assets/projects/magazine/magazine_thumbnail.png";
+import magazineThumbnail from "../../assets/projects/magazine/magazineThumbnail.png";
 
 // Screen images (using thumbnails as fallback for projects without screen images)
 const magazineScreen = magazineThumbnail;

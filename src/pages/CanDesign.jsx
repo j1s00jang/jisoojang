@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import "./ProjectDetail.css";
+import Footer from "../components/Footer";
 
 function CanDesign({ project }) {
     if (!project) return null;
@@ -193,6 +194,7 @@ function CanDesign({ project }) {
                     </div>
                 </section>
             )}
+            <Footer />
         </>
     );
 }
