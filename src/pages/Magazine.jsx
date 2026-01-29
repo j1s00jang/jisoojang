@@ -1,6 +1,7 @@
 import "./ProjectDetail.css";
 import Footer from "../components/Footer";
 import UpNextBanner from "../components/UpNextBanner";
+import MagazineFlipbook from "../components/MagazineFlipbook";
 
 function Magazine({ project }) {
     if (!project) return null;
@@ -58,14 +59,18 @@ function Magazine({ project }) {
                             />
                         )}
                     </div>
+                    <section className="project-detail-section">
+                        <h2>Magazine Pages</h2>
+                        <MagazineFlipbook />
+                    </section>
+
+                    <UpNextBanner
+                        to="/projects/interactive_tutorial"
+                        title="Interactive Tutorial"
+                    />
+                    <Footer />
                 </section>
             )}
-
-            <UpNextBanner
-                to="/projects/interactive_tutorial"
-                title="Interactive Tutorial"
-            />
-            <Footer />
         </>
     );
 }
