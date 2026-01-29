@@ -1,4 +1,5 @@
 import canDesignThumbnail from "../../assets/projects/can_design/canDesign_card.png";
+import canDesignScreen from "../../assets/projects/can_design/CanDesignThumbnail.png";
 import canDesignMockup from "../../assets/projects/can_design/all_mockup02.png";
 import conceptImage01 from "../../assets/projects/can_design/fizzypop_logo_anatomy.png";
 import conceptImage02 from "../../assets/projects/can_design/fizzypop_logo_concept.png";
@@ -14,8 +15,6 @@ import grapeLabelJpg from "../../assets/projects/can_design/fizzypop_03grape_lab
 import conceptImage03 from "../../assets/projects/can_design/tomato_drawing.png";
 import conceptImage04 from "../../assets/projects/can_design/orange_drawing.png";
 import conceptImage05 from "../../assets/projects/can_design/grape_drawing.png";
-
-const canDesignScreen = canDesignThumbnail;
 
 export const canDesign = {
     id: 3,
