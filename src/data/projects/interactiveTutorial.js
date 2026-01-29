@@ -8,6 +8,10 @@ import interactiveConcept05 from "../../assets/projects/interactive/interactive_
 import interactiveConcept06 from "../../assets/projects/interactive/interactive_concept06.png";
 import interactiveConcept07 from "../../assets/projects/interactive/interactive_concept07.png";
 import interactiveConcept08 from "../../assets/projects/interactive/interactive_concept08.png";
+import interactiveConcept09 from "../../assets/projects/interactive/interactive_bg01.png";
+import interactiveConcept10 from "../../assets/projects/interactive/interactive_bg02.png";
+import interactiveConcept11 from "../../assets/projects/interactive/interactive_bg03.png";
+import interactiveConcept12 from "../../assets/projects/interactive/interactive_bg04.png";
 
 export const interactiveTutorial = {
     id: 5,
@@ -34,5 +38,10 @@ export const interactiveTutorial = {
         "The colour palette was based on the main cat character’s fur to keep the screens feel consistent and visually cohesive. Wavy edges and rounded shapes add a soft, playful feel that pairs well with the typography. To keep the content clear and easy to read, Outfit typography used in situation text." +
         "\n\n" +
         "All background objects were illustrated from real cat items, while the plants reflect research on cat-friendly, cat-safe species.",
-    productMockupImage: null,
+    conceptImage09: interactiveConcept09,
+    conceptImage10: interactiveConcept10,
+    conceptImage11: interactiveConcept11,
+    conceptImage12: interactiveConcept12,
+    conceptParagraph3:
+        "User can return to the previous page to explore other options and explanation. Buttons include hover effects to clearly show when something is clickable and provide immediate feedback.",
 };

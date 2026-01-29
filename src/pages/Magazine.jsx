@@ -42,7 +42,7 @@ function Magazine({ project }) {
 
             {project.productMockupImage && (
                 <section className="project-detail-section">
-                    <h2>Products mock up</h2>
+                    <h2>Product mockups</h2>
                     <div className="project-detail-mockup project-detail-mockup-stack">
                         <img
                             src={project.productMockupImage}

@@ -1,4 +1,7 @@
 import "./ProjectDetail.css";
+import FigmaEmbed from "../components/FigmaEmbed";
+import UpNextBanner from "../components/UpNextBanner";
+import Footer from "../components/Footer";
 
 function InteractiveTutorial({ project }) {
     if (!project) return null;
@@ -68,24 +71,49 @@ function InteractiveTutorial({ project }) {
                             {project.conceptParagraph2}
                         </p>
                     )}
+                    {(project.conceptImage09 ||
+                        project.conceptImage10 ||
+                        project.conceptImage11 ||
+                        project.conceptImage12) && (
+                        <div className="interactive-concept-grid-2x2">
+                            {[9, 10, 11, 12].map((n) => {
+                                const src =
+                                    project[
+                                        `conceptImage${n < 10 ? "0" : ""}${n}`
+                                    ];
+                                if (!src) return null;
+                                return (
+                                    <img
+                                        key={n}
+                                        src={src}
+                                        alt={`${project.name} concept ${n}`}
+                                        loading="lazy"
+                                    />
+                                );
+                            })}
+                        </div>
+                    )}
+                    {project.conceptParagraph3 && (
+                        <p className="project-detail-preline project-detail-concept-p2">
+                            {project.conceptParagraph3}
+                        </p>
+                    )}
                 </section>
             )}
 
             <section className="project-detail-section">
-                <h2>Products mock up</h2>
-                {project.productMockupImage ? (
-                    <div className="project-detail-mockup">
-                        <img
-                            src={project.productMockupImage}
-                            alt={`${project.name} product mockup`}
-                            className="project-detail-mockup-image"
-                            loading="lazy"
-                        />
-                    </div>
-                ) : (
-                    <p className="project-detail-preline">Add mockup image.</p>
-                )}
+                <h2>Try out "Hello, My First Cat!"</h2>
+                <FigmaEmbed
+                    title="Hello, My First Cat Prototype"
+                    src="https://embed.figma.com/proto/eMqTulTEWvaUaudlk26b3F/Design3-CP05-Hello--My-First-Cat-?node-id=112-444&embed-host=share"
+                />
             </section>
+
+            <UpNextBanner
+                to="/projects/posters"
+                title="Advertising Posters"
+            />
+            <Footer />
         </>
     );
 }
