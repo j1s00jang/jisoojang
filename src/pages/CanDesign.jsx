@@ -53,6 +53,35 @@ function CanDesign({ project }) {
                             )}
                         </div>
                     )}
+                    {project.conceptParagraph2 && (
+                        <p className="project-detail-preline project-detail-concept-p2">
+                            {project.conceptParagraph2}
+                        </p>
+                    )}
+                    {project.conceptImage03 && (
+                        <img
+                            src={project.conceptImage03}
+                            alt={`${project.name} concept`}
+                            className="project-detail-concept-image"
+                            loading="lazy"
+                        />
+                    )}
+                    {project.conceptImage04 && (
+                        <img
+                            src={project.conceptImage04}
+                            alt={`${project.name} concept`}
+                            className="project-detail-concept-image"
+                            loading="lazy"
+                        />
+                    )}
+                    {project.conceptImage05 && (
+                        <img
+                            src={project.conceptImage05}
+                            alt={`${project.name} concept`}
+                            className="project-detail-concept-image"
+                            loading="lazy"
+                        />
+                    )}
                 </section>
             )}
 

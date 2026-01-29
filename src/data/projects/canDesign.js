@@ -11,6 +11,9 @@ import canGrape from "../../assets/projects/can_design/grape_mockup.png";
 import tomatoLabelJpg from "../../assets/projects/can_design/fizzypop_01tomato_label.jpg";
 import orangeLabelJpg from "../../assets/projects/can_design/fizzypop_02orange_label.jpg";
 import grapeLabelJpg from "../../assets/projects/can_design/fizzypop_03grape_label.jpg";
+import conceptImage03 from "../../assets/projects/can_design/tomato_drawing.png";
+import conceptImage04 from "../../assets/projects/can_design/orange_drawing.png";
+import conceptImage05 from "../../assets/projects/can_design/grape_drawing.png";
 
 const canDesignScreen = canDesignThumbnail;
 
@@ -22,11 +25,15 @@ export const canDesign = {
     thumbnail: canDesignThumbnail,
     screenImage: canDesignScreen,
     summary:
-        "Contemporary illustrated label design for a fruit-infused sparkling water, created in three flavours.",
+        "A fruit-infused sparkling water packaging design, created in three flavours",
     keySkills: "Packaging Design / Branding / Typography / Information Layout",
     concept: `Fizzypop is a fruit-infused sparkling water made for young adults who want a drink that feels cool, bright, and refreshing without compromising their health goals. Instead of too sweet or heavy post-workout drinks, Fizzypop offers a zero-sugar alternative with real fruit infusion for a clean, uplifting reset.`,
     conceptImage01: conceptImage01,
     conceptImage02: conceptImage02,
+    conceptParagraph2: `Sky-inspired colour shifts were used to echo fizzypop’s flavour palette and suggest a fresh, everyday routine. A nature-led colour range keeps the label lively and clean, pure bold, playful type adds a youthful tone that feels approachable for young adults. The flavour font is lighter and softer to slow the pace of the modern life and reinforce a well-being, healthy lifestyle message.`,
+    conceptImage03: conceptImage03,
+    conceptImage04: conceptImage04,
+    conceptImage05: conceptImage05,
     productMockupImage: canDesignMockup,
     flavours: [
         {

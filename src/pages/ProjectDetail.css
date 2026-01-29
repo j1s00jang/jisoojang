@@ -92,6 +92,18 @@
     white-space: pre-line;
 }
 
+.project-detail-concept-p2 {
+    margin-top: 1.5rem;
+}
+
+.project-detail-concept-image {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 3rem;
+    display: block;
+}
+
 .project-detail-section h2 {
     font-size: clamp(1.6rem, 2.5vw, 2.1rem);
     font-weight: 600;
@@ -368,6 +380,14 @@
 
     .project-detail-logo-concept {
         margin-top: 1rem;
+    }
+
+    .project-detail-concept-image {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 3rem;
+        display: block;
     }
 
     .flavour-carousel {
