@@ -1,4 +1,4 @@
-import canDesignThumbnail from "../../assets/projects/can_design/CanDesignThumbnail.png";
+import canDesignThumbnail from "../../assets/projects/can_design/canDesign_card.png";
 import canDesignMockup from "../../assets/projects/can_design/all_mockup02.png";
 import conceptImage01 from "../../assets/projects/can_design/fizzypop_logo_anatomy.png";
 import conceptImage02 from "../../assets/projects/can_design/fizzypop_logo_concept.png";

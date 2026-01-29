@@ -1,14 +1,14 @@
-import montroLogo from "../../assets/projects/montro/montro_logo.png";
+import montroThumbnail from "../../assets/projects/montro/montro_card.png";
 
 // Screen images (using thumbnails as fallback for projects without screen images)
-const montroScreen = montroLogo;
+const montroScreen = montroThumbnail;
 
 export const montro = {
     id: 2,
     name: "Montro",
     slug: "montro",
     category: "ux/ui",
-    thumbnail: montroLogo,
+    thumbnail: montroThumbnail,
     screenImage: montroScreen,
     summary:
         "Gamified expense-tracking app that builds spending & saving goals and reward milestones",

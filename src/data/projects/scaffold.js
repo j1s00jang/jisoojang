@@ -1,4 +1,4 @@
-import scaffoldLogo from "../../assets/projects/scaffold/scaffold_logo.png";
+import scaffoldThumbnail from "../../assets/projects/scaffold/scaffold_card.png";
 import scaffoldScreen from "../../assets/projects/scaffold/scaffold_screen01.png";
 import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png";
 import scaffoldSurveyResults from "../../assets/projects/scaffold/scaffold_surveyResults01.png";
@@ -9,7 +9,7 @@ export const scaffold = {
     name: "Scaffold",
     slug: "scaffold",
     category: "ux/ui",
-    thumbnail: scaffoldLogo,
+    thumbnail: scaffoldThumbnail,
     screenImage: scaffoldScreen,
     summary:
         "All-in-one funding platform for tradespeople that consolidates grant information with AI support",
