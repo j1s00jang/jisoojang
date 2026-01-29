@@ -23,7 +23,7 @@ export const magazine = {
     conceptImage02: conceptImage02,
     conceptParagraph2:
         "The combination of Moirai One and Borel typography creates a distinctive visual tone for the Christmas market magazine cover. Using the German word Weihnachten (Christmas in German) in the title adds authenticity and sparks curiosity. \n\n" +
-        " Christmas light illustrations appear throughout the magazine to create a consistent, warm, and cozy feel that supports the concept.\n\n",
+        "Christmas light illustrations appear throughout the magazine to create a consistent, warm, and cozy feel that supports the concept.\n\n",
     productMockupImage: magazineMockup01,
     productMockupImage02: magazineMockup02,
 };
