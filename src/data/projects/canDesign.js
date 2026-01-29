@@ -19,6 +19,7 @@ import conceptImage05 from "../../assets/projects/can_design/grape_drawing.png";
 export const canDesign = {
     id: 3,
     name: "Beverage label design",
+    titleLines: ["Beverage label", "design"],
     slug: "can-design",
     category: "graphic design",
     thumbnail: canDesignThumbnail,
