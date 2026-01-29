@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import "./ProjectDetail.css";
 import Footer from "../components/Footer";
+import UpNextBanner from "../components/UpNextBanner";
 
 function CanDesign({ project }) {
     if (!project) return null;
@@ -194,6 +195,10 @@ function CanDesign({ project }) {
                     </div>
                 </section>
             )}
+            <UpNextBanner
+                to="/projects/magazine"
+                title="Magazine & E-book"
+            />
             <Footer />
         </>
     );

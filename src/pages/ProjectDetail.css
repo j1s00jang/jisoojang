@@ -305,14 +305,14 @@
     width: 30px;
     height: 900px;
     border: none;
-    background: rgb(245, 244, 255);
+    background: rgb(205, 205, 205);
     border-radius: 50px;
     cursor: pointer;
 }
 
 .flavour-carousel-arrow:hover {
     transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(154, 154, 154, 0.95);
 }
 
 .flavour-carousel-dots {
