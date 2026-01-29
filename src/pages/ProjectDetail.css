@@ -225,12 +225,14 @@
     opacity: 0.3;
     transform: translateX(-78%) scale(0.92);
     z-index: 2;
+    pointer-events: auto; /* allow clicking side slide */
 }
 
 .flavour-carousel-item.is-next {
     opacity: 0.3;
     transform: translateX(78%) scale(0.92);
     z-index: 2;
+    pointer-events: auto; /* allow clicking side slide */
 }
 
 .flavour-carousel-item.is-hidden {
@@ -305,14 +307,14 @@
     width: 30px;
     height: 900px;
     border: none;
-    background: rgb(205, 205, 205);
+    background: transparent;
     border-radius: 50px;
     cursor: pointer;
 }
 
 .flavour-carousel-arrow:hover {
     transform: translateY(-1px);
-    background: rgba(154, 154, 154, 0.95);
+    background: transparent;
 }
 
 .flavour-carousel-dots {
@@ -406,6 +408,14 @@
         transform: none;
         pointer-events: auto;
         max-width: 520px;
+    }
+
+    .flavour-carousel-arrow {
+        background: var(--color-variable-light-purple);
+    }
+
+    .flavour-carousel-arrow:hover {
+        background: rgb(215, 216, 255);
     }
 
     .flavour-carousel-item.is-prev,

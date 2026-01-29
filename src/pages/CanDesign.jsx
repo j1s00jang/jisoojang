@@ -125,6 +125,11 @@ function CanDesign({ project }) {
                                     className={`flavour-carousel-item ${getPosClass(
                                         idx,
                                     )}`}
+                                    onClick={() => {
+                                        if (idx !== activeIndex) {
+                                            setActiveIndex(idx);
+                                        }
+                                    }}
                                 >
                                     <div className="flavour-carousel-label">
                                         <img
