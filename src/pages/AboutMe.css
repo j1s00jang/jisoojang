@@ -6,7 +6,7 @@
 .about-me-content {
     max-width: 100%;
     margin: 0 auto;
-    padding: 3rem 10rem 3rem 10rem;
+    padding: 3rem 5rem 3rem 5rem;
     width: 100%;
 }
 
@@ -477,16 +477,19 @@
         flex-direction: column;
         gap: 3rem;
         align-items: center;
+        min-width: 0;
     }
 
     .ilove-left {
         display: flex;
         justify-content: center;
         width: 100%;
+        min-width: 0;
     }
 
     .toast-photo {
         width: 15rem;
+        max-width: 100%;
         height: auto;
     }
 
@@ -494,13 +497,18 @@
         flex-direction: column;
         gap: 2rem;
         align-items: center;
+        min-width: 0;
+        width: 100%;
     }
 
     .coffee-photo,
     .baking-photo,
     .packages-photo {
         width: 15rem;
-        height: 15rem;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
     }
 
     /* About Me Skills Section */
@@ -547,7 +555,7 @@
 @media (max-width: 768px) {
     /* About Me Content */
     .about-me-content {
-        padding: 0 1.5rem 1.5rem 1.5rem;
+        padding: 0 0rem 1.5rem 0rem;
     }
 
     /* About Me Intro Section */
@@ -562,7 +570,7 @@
     }
 
     .about-me-photo {
-        width: 200px;
+        width: 150px;
         height: 200px;
     }
 
@@ -588,7 +596,7 @@
     }
 
     .toast-photo {
-        width: 10rem;
+        width: 20rem;
         height: auto;
     }
 
@@ -600,7 +608,7 @@
     .coffee-photo,
     .baking-photo,
     .packages-photo {
-        width: 10rem;
+        width: 20rem;
         height: 10rem;
     }
 

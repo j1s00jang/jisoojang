@@ -5,7 +5,7 @@ const magazineScreen = magazineThumbnail;
 
 export const magazine = {
     id: 4,
-    name: "magazine design & e-book",
+    name: "Magazine design & e-book",
     slug: "magazine",
     category: "graphic design",
     thumbnail: magazineThumbnail,
