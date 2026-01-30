@@ -73,11 +73,11 @@ export default function MagazineFlipbook() {
                     ref={bookRef}
                     className={styles.book}
                     width={520}
-                    height={680}
+                    height={710}
                     size="stretch"
                     minWidth={320}
                     maxWidth={900}
-                    minHeight={420}
+                    minHeight={470}
                     maxHeight={1200}
                     maxShadowOpacity={0.25}
                     showCover={true}
