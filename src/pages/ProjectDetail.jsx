@@ -3,6 +3,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import "./ProjectDetail.css";
 import { projectsBySlug } from "../data/projectsData";
 import Scaffold from "./Scaffold";
+import Montro from "./Montro";
 import CanDesign from "./CanDesign";
 import Magazine from "./Magazine";
 import InteractiveTutorial from "./InteractiveTutorial";
@@ -171,17 +172,8 @@ function ProjectDetail() {
                     )}
 
                     {/* Project-specific content */}
-                    {slug === "scaffold" ? (
-                        <Scaffold project={project} />
-                    ) : (
-                        <section className="project-detail-section">
-                            <h2>Prototyping & Testing</h2>
-                            <p className="project-detail-preline">
-                                Add contents here
-                            </p>
-                        </section>
-                    )}
-
+                    {slug === "scaffold" && <Scaffold project={project} />}
+                    {slug === "montro" && <Montro project={project} />}
                     {slug === "can-design" && <CanDesign project={project} />}
                     {slug === "magazine" && <Magazine project={project} />}
                     {slug === "interactive_tutorial" && (
