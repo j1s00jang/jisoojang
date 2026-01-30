@@ -370,6 +370,178 @@
 }
 
 /* ==========================================================================
+   Posters – poster carousel (churu01/02/03)
+   ========================================================================== */
+
+.poster-carousel {
+    position: relative;
+    max-width: 1100px;
+    margin: -5rem auto -4rem;
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.poster-carousel-viewport {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+    pointer-events: none;
+}
+
+.poster-carousel-viewport .poster-carousel-item {
+    pointer-events: none;
+}
+
+.poster-carousel-viewport .poster-carousel-item.is-active,
+.poster-carousel-viewport .poster-carousel-item.is-prev,
+.poster-carousel-viewport .poster-carousel-item.is-next {
+    pointer-events: auto;
+}
+
+.poster-carousel-item {
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 760px;
+    padding: 0 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(0) scale(0.9);
+    transition:
+        transform 420ms ease,
+        opacity 420ms ease;
+    pointer-events: none;
+    text-align: center;
+}
+
+.poster-carousel-item.is-active {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    z-index: 3;
+    max-width: 640px;
+}
+
+.poster-carousel-item.is-active .poster-carousel-image {
+    max-width: 580px;
+}
+
+.poster-carousel-item.is-active .poster-carousel-image img {
+    max-height: 620px;
+}
+
+.poster-carousel-item.is-prev {
+    opacity: 0.3;
+    transform: translateX(-62%) scale(0.92);
+    z-index: 2;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.poster-carousel-item.is-next {
+    opacity: 0.3;
+    transform: translateX(62%) scale(0.92);
+    z-index: 2;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.poster-carousel-item.is-hidden {
+    opacity: 0;
+    transform: translateX(0) scale(0.9);
+    z-index: 1;
+}
+
+.poster-carousel-image {
+    margin: 0 auto;
+    max-width: 520px;
+}
+
+.poster-carousel-image img {
+    width: 100%;
+    height: auto;
+    max-height: 540px;
+    object-fit: contain;
+}
+
+.poster-carousel-title {
+    margin: 1rem 0 0.25rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-primary-black);
+}
+
+.poster-carousel-item.is-prev .poster-carousel-title,
+.poster-carousel-item.is-next .poster-carousel-title,
+.poster-carousel-item.is-hidden .poster-carousel-title {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.poster-carousel-arrow {
+    width: 30px;
+    height: 900px;
+    border: none;
+    background: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.poster-carousel-arrow:hover {
+    transform: translateY(-1px);
+    background: transparent;
+}
+
+.poster-carousel-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 auto 3rem;
+}
+
+.poster-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: transparent;
+    cursor: pointer;
+}
+
+.poster-carousel-dot.is-active {
+    background: var(--color-variable-dark-purple2);
+    border-color: var(--color-variable-dark-purple2);
+}
+
+.product-mockup-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    margin: 2rem auto;
+    max-width: 100%;
+}
+
+.product-mockup-images img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
    Interactive Tutorial – concept01 solo, 02–05 / 06–08 row, 09–12 2×2 grid
    ========================================================================== */
 
@@ -549,7 +721,79 @@
 }
 
 /* ==========================================================================
-Responsive – Interactive Tutorial
+   Responsive – Posters (poster carousel)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .poster-carousel-item.is-active {
+        max-width: 560px;
+    }
+
+    .poster-carousel-item.is-active .poster-carousel-image {
+        max-width: 520px;
+    }
+
+    .poster-carousel-item.is-active .poster-carousel-image img {
+        max-height: 560px;
+    }
+
+    .poster-carousel-item.is-prev {
+        transform: translateX(-62%) scale(0.92);
+    }
+
+    .poster-carousel-item.is-next {
+        transform: translateX(62%) scale(0.92);
+    }
+}
+
+@media (max-width: 768px) {
+    .poster-carousel {
+        grid-template-columns: 36px 1fr 36px;
+    }
+
+    .poster-carousel-viewport {
+        min-height: 480px;
+        height: auto;
+        overflow: visible;
+    }
+
+    .poster-carousel-item {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        max-width: 560px;
+    }
+
+    .poster-carousel-item.is-active {
+        max-width: 560px;
+    }
+
+    .poster-carousel-item.is-active .poster-carousel-image {
+        max-width: 100%;
+    }
+
+    .poster-carousel-item.is-active .poster-carousel-image img {
+        max-height: 520px;
+    }
+
+    .poster-carousel-arrow {
+        background: var(--color-variable-light-purple);
+    }
+
+    .poster-carousel-arrow:hover {
+        background: rgb(215, 216, 255);
+    }
+
+    .poster-carousel-item.is-prev,
+    .poster-carousel-item.is-next,
+    .poster-carousel-item.is-hidden {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Responsive – Interactive Tutorial
    ========================================================================== */
 
 @media (max-width: 1024px) {
