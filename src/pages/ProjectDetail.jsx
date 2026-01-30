@@ -124,63 +124,62 @@ function ProjectDetail() {
                     {/* ========================================
               Sections for Projects 1 & 2 (Scaffold, Montro)
              ======================================== */}
-                    {(project.id === 1 || project.id === 2) && (
-                        <>
-                            <section className="project-detail-section opportunity-section">
-                                <h2>Opportunity</h2>
-                                <p className="project-detail-preline">
-                                    {project.opportunity}
-                                </p>
-                            </section>
-
-                            <section className="project-detail-section my-role-section">
-                                <h2>My Role</h2>
-                                <p className="project-detail-preline">
-                                    {project.myRole}
-                                </p>
-                            </section>
-
-                            <section className="project-detail-section">
-                                <h2>User Research</h2>
-                                <p className="project-detail-preline">
-                                    {project.userResearch}
-                                </p>
-                            </section>
-
-                            {/* Survey Results (Scaffold only) */}
-                            {project.scaffoldSurveyResults && (
-                                <section className="project-detail-section">
-                                    <div className="project-detail-survey-images">
-                                        <img
-                                            src={project.scaffoldSurveyResults}
-                                            alt={`${project.name} survey results page 1`}
-                                            className="project-detail-survey-image"
-                                        />
-                                        {project.scaffoldSurveyResults2 && (
-                                            <img
-                                                src={
-                                                    project.scaffoldSurveyResults2
-                                                }
-                                                alt={`${project.name} survey results page 2`}
-                                                className="project-detail-survey-image"
-                                            />
-                                        )}
-                                    </div>
-                                </section>
-                            )}
-
-                            {/* Project-specific content */}
-                            {slug === "scaffold" ? (
-                                <Scaffold />
-                            ) : (
-                                <section className="project-detail-section">
-                                    <h2>Prototyping & Testing</h2>
+                    {(project.id === 1 || project.id === 2) &&
+                        project.opportunity && (
+                            <>
+                                <section className="project-detail-section opportunity-section">
+                                    <h2>Opportunity</h2>
                                     <p className="project-detail-preline">
-                                        Add contents here
+                                        {project.opportunity}
                                     </p>
                                 </section>
-                            )}
-                        </>
+
+                                <section className="project-detail-section my-role-section">
+                                    <h2>My Role</h2>
+                                    <p className="project-detail-preline">
+                                        {project.myRole}
+                                    </p>
+                                </section>
+
+                                <section className="project-detail-section">
+                                    <h2>User Research</h2>
+                                    <p className="project-detail-preline">
+                                        {project.userResearch}
+                                    </p>
+                                </section>
+                            </>
+                        )}
+
+                    {/* Survey Results (Scaffold only) */}
+                    {project.scaffoldSurveyResults && (
+                        <section className="project-detail-section">
+                            <div className="project-detail-survey-images">
+                                <img
+                                    src={project.scaffoldSurveyResults}
+                                    alt={`${project.name} survey results page 1`}
+                                    className="project-detail-survey-image"
+                                />
+                                {project.scaffoldSurveyResults2 && (
+                                    <img
+                                        src={project.scaffoldSurveyResults2}
+                                        alt={`${project.name} survey results page 2`}
+                                        className="project-detail-survey-image"
+                                    />
+                                )}
+                            </div>
+                        </section>
+                    )}
+
+                    {/* Project-specific content */}
+                    {slug === "scaffold" ? (
+                        <Scaffold project={project} />
+                    ) : (
+                        <section className="project-detail-section">
+                            <h2>Prototyping & Testing</h2>
+                            <p className="project-detail-preline">
+                                Add contents here
+                            </p>
+                        </section>
                     )}
 
                     {slug === "can-design" && <CanDesign project={project} />}

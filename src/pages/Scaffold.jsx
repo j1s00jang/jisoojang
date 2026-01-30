@@ -1,13 +1,24 @@
-function Scaffold() {
-  return (
-    <section className="project-detail-section">
-      <h2>Idea pitching & Promotional Video</h2>
-      <p>
-        Scaffold team pitched the idea with promotional video. Add contents only for scaffold project has.
-      </p>
-    </section>
-  )
+import ContentSections from "../components/ContentSections";
+import UpNextBanner from "../components/UpNextBanner";
+import Footer from "../components/Footer";
+
+function Scaffold({ project }) {
+    const sections = project?.sections ?? [];
+    if (!Array.isArray(sections) || sections.length === 0) return null;
+    return (
+        <div className="project-detail-sections">
+            <ContentSections
+                sections={sections}
+                projectName={project?.name ?? "Scaffold"}
+            />
+            <UpNextBanner
+                project={project}
+                to="/projects/montro"
+                title="Montro"
+            />
+            <Footer />
+        </div>
+    );
 }
 
-export default Scaffold
-
+export default Scaffold;

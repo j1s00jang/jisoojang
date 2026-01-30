@@ -541,6 +541,12 @@
     object-fit: contain;
 }
 
+/* ContentSections: per-section image styling (use imageWrapperClass in data) */
+.scaffold-idea-pitching-images img {
+    max-width: 640px;
+    border-radius: 8px;
+}
+
 /* ==========================================================================
    Interactive Tutorial – concept01 solo, 02–05 / 06–08 row, 09–12 2×2 grid
    ========================================================================== */
