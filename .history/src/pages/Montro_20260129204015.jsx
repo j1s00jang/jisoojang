@@ -1,0 +1,24 @@
+import ContentSections from "../components/ContentSections";
+import UpNextBanner from "../components/UpNextBanner";
+import Footer from "../components/Footer";
+
+function Montro({ project }) {
+    const sections = project?.sections ?? [];
+    if (!Array.isArray(sections) || sections.length === 0) return null;
+    return (
+        <div className="project-detail-sections">
+            <ContentSections
+                sections={sections}
+                projectName={project?.name ?? "Montro"}
+            />
+            <UpNextBanner
+                project={project}
+                to="/projects/can-design"
+                title="Can Design"
+            />
+            <Footer />
+        </div>
+    );
+}
+
+export default Montro;

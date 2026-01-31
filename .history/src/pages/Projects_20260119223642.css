@@ -1,0 +1,426 @@
+.projects-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem;
+    width: 100%;
+  }
+
+
+.projects-content-all {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.projects-folder-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-folder-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  pointer-events: none;
+}
+
+.project-tab-clickable {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.project-tab-all-click {
+  top: 0;
+  left: 0;
+  width: 26%;
+  height: 2.5%;
+  cursor: pointer;
+}
+
+.project-tab-uiux-click.active-all {
+  top: 0.7%;
+  left: 27%;
+  width: 20%;
+  height: 2%;
+  cursor: pointer;
+}
+
+.project-tab-graphic-click.active-all {
+  top: 0.7%;
+  left: 47%;
+  width: 20%;
+  height: 2%;
+}
+
+.project-tab-dev-click.active-all {
+  top: 0.7%;
+  left: 68%;
+  width: 20%;
+  height: 2%;
+}
+
+/* ========================================
+   UI/UX Folder Tab Positions
+   ======================================== */
+.project-tab-all-click.active-ui-ux {
+  top: 1%;
+  left: 0;
+  width: 21%;
+  height: 4.5%;
+}
+
+.project-tab-uiux-click.active-ui-ux {
+  top: 0%;
+  left: 21%;
+  width: 30%;
+  height: 5.5%;
+}
+
+.project-tab-graphic-click.active-ui-ux {
+  top: 1%;
+  left: 51%;
+  width: 21%;
+  height: 4.5%;
+}
+
+.project-tab-dev-click.active-ui-ux {
+  top: 1%;
+  left: 72%;
+  width: 21%;
+  height: 4.5%;
+}
+
+/* ========================================
+   Graphic Design Folder Tab Positions
+   ======================================== */
+.project-tab-all-click.active-graphic-design {
+    top: 2%;
+    left: 0;
+    width: 21%;
+    height: 5%;
+}
+
+.project-tab-uiux-click.active-graphic-design {
+  top: 1.8%;
+  left: 20%;
+  width: 17%;
+  height: 5.5%;
+}
+
+.project-tab-graphic-click.active-graphic-design {
+    top: 0%;
+    left: 37%;
+    width: 30%;
+    height: 7%;
+}
+
+.project-tab-dev-click.active-graphic-design {
+    top: 1.6%;
+    left: 67%;
+    width: 21%;
+    height: 5.5%;
+}
+
+/* ========================================
+   Development Folder Tab Positions
+   ======================================== */
+.project-tab-all-click.active-development {
+    top: 2%;
+    left: 0;
+    width: 20%;
+    height: 8%;
+}
+
+.project-tab-uiux-click.active-development {
+    top: 1.8%;
+    left: 20%;
+    width: 20%;
+    height: 8%;
+}
+
+.project-tab-graphic-click.active-development {
+    top: 1.8%;
+    left: 40%;
+    width: 22%;
+    height: 8%;
+}
+
+.project-tab-dev-click.active-development {
+    top: 0%;
+    left: 62%;
+    width: 30%;
+    height: 10%;
+}
+
+.projects-tabs {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: 600px;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+.project-tab {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-family-primary);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px 12px 0 0;
+  color: var(--color-primary-black);
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.project-tab-all {
+  color: var(--color-primary-black);
+}
+
+.project-tab-all.active {
+  z-index: 5;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.project-tab-uiux {
+  color: var(--color-primary-black);
+  margin-left: -12px;
+}
+
+.project-tab-uiux.active {
+  z-index: 5;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.project-tab-graphic {
+  color: var(--color-primary-white);
+  margin-left: -12px;
+}
+
+.project-tab-graphic.active {
+  z-index: 5;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.project-tab-dev {
+  color: var(--color-primary-white);
+  margin-left: -12px;
+}
+
+.project-tab-dev.active {
+  z-index: 5;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.project-tab:hover:not(.active) {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+    
+
+
+  @media (max-width: 1024px) {
+    .projects-content {
+      padding: 8rem 1.5rem 2rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-content {
+      padding: 14rem 1.5rem 1.5rem 2rem;
+    }
+  }
+
+/* ========================================
+   Projects Grid
+   ======================================== */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  padding: 0 2rem;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.projects-grid.active-ui-ux {
+  top: 10%;
+}
+
+.projects-grid.active-graphic-design {
+  top: 15%;
+}
+
+.projects-grid.active-development {
+  top: 20%;
+}
+
+.project-card {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px var(--color-shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--color-shadow-light);
+}
+
+.project-card-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-left: 4rem;
+}
+
+.project-card-thumbnail {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 150px;
+  background-color: var(--color-primary-white);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.project-thumbnail-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-card-title {
+  font-family: var(--font-family-primary);
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--color-primary-black);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.project-card-description {
+  font-family: var(--font-family-primary);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-primary-black);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.project-card-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary-black);
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    gap: 1.5rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-card-thumbnail {
+    width: 120px;
+    height: 120px;
+  }
+
+  .project-card-title {
+    font-size: 1.3rem;
+  }
+
+  .project-card-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    gap: 1.5rem;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-card-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .project-card-thumbnail {
+    width: 150px;
+    height: 150px;
+  }
+
+  .project-card-text {
+    text-align: center;
+  }
+
+  .project-card-title {
+    font-size: 1.5rem;
+  }
+
+  .project-card-description {
+    font-size: 0.95rem;
+  }
+}
+  

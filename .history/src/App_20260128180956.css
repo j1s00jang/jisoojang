@@ -1,0 +1,19 @@
+:root {
+    --nav-h: 84px;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --nav-h: 60px;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --nav-h: 11.5rem; /* mobile header: logo + gap + nav 세로 배치 높이 */
+    }
+}
+
+.app {
+    min-height: 100vh;
+    background-color: var(--color-primary-white);
+}

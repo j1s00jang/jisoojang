@@ -1,0 +1,26 @@
+.wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.frame {
+    width: min(1100px, 100%);
+    aspect-ratio: 16 / 10; /* 데스크탑 보기 좋은 비율 */
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* 모바일에서는 세로 비율로 더 넉넉하게 */
+@media (max-width: 768px) {
+    .frame {
+        aspect-ratio: 9 / 16;
+    }
+}

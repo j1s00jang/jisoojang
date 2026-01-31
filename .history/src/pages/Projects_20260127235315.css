@@ -1,0 +1,252 @@
+.projects-content {
+    margin: 0 auto;
+    padding: 0 0 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.projects-container {
+    position: relative;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.projects-tabs {
+    position: relative;
+    padding-top: 15px;
+    z-index: 10;
+}
+
+.projects-tabs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.projects-tabs li {
+    font-family: var(--font-family-primary);
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    cursor: pointer;
+
+    padding: 12px 60px;
+    border-radius: 30px;
+
+    color: var(--color-primary-black);
+    background-color: transparent;
+
+    transition: background-color 0.2s ease;
+}
+
+.projects-tabs li:hover:not(.active) {
+    background-color: var(--color-variable-light-purple);
+}
+
+.projects-tabs li.active {
+    background-color: var(--color-variable-light-purple);
+}
+
+@media (max-width: 1024px) {
+    .projects-content {
+        padding: 8rem 1.5rem 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-content {
+        padding: 12rem 1.5rem 1.5rem 2rem;
+    }
+
+    .projects-tabs ul {
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .projects-tabs li {
+        padding: 12px 30px;
+    }
+
+    .projects-tabs li:first-child {
+        padding: 12px 40px;
+    }
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 2.5rem auto 4rem;
+    padding: 0 clamp(1rem, 4vw, 3rem); /* 양옆 여백 */
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.project-card {
+    background-color: rgb(240, 239, 251);
+    border-radius: 80px;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+
+    padding: clamp(1.25rem, 2vw, 2rem);
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: inherit;
+
+    display: block;
+    /* padding: 2rem;
+    cursor: pointer;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit; */
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px var(--color-shadow-light);
+    background-color: #dfe0ff;
+    border-radius: 80px;
+}
+
+.project-card-content {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 2.5vw, 2.5rem);
+
+    /* ✅ 카드 내부 좌우 여백을 추가로 주고 싶으면 여기 조절 */
+    padding: 0 clamp(4rem, 2vw, 1rem);
+    box-sizing: border-box;
+}
+
+.project-card-thumbnail {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.project-thumbnail-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.project-card-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.project-card-title {
+    font-family: var(--font-family-primary);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-primary-black);
+    margin: 0;
+    text-transform: lowercase;
+}
+
+.project-card-description {
+    font-family: var(--font-family-primary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-primary-black);
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        gap: 1.5rem;
+        padding: 0 1rem;
+        margin: 2rem auto 3rem;
+        max-width: 100%;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+        border-radius: 40px;
+    }
+
+    .project-card-thumbnail {
+        width: 110px;
+        height: 110px;
+    }
+
+    .project-card-title {
+        font-size: 2rem;
+    }
+
+    .project-card-description {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        padding: 0 1rem;
+        margin: 1.5rem auto 2.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-card-content {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-card-thumbnail {
+        width: 140px;
+        height: 140px;
+    }
+
+    .project-card-title {
+        font-size: 1.8rem;
+    }
+
+    .project-card-description {
+        font-size: 1rem;
+    }
+}

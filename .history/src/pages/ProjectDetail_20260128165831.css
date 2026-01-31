@@ -1,0 +1,404 @@
+.project-detail-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 3rem);
+    padding-top: calc(var(--nav-h) + clamp(1rem, 2vw));
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.breadcrumbs {
+    margin-bottom: 3rem;
+}
+
+.project-detail-header {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: clamp(1.5rem, 4vw, 5rem);
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto 4rem auto;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.project-detail-screen {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.project-detail-screen-image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+}
+
+.project-detail-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-detail-title {
+    margin: 0 0 2.2rem;
+    font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: var(--color-primary-black);
+}
+
+.title-highlight {
+    display: inline;
+    padding: 0 8px;
+    background: linear-gradient(
+        to bottom,
+        transparent 62%,
+        var(--color-variable-light-purple) 62%,
+        var(--color-variable-light-purple) 88%,
+        transparent 88%
+    );
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.project-detail-intro-block {
+    margin-top: 1.3rem;
+}
+
+.project-detail-intro-title {
+    margin: 0 0 0.6rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--color-variable-dark-purple2);
+    letter-spacing: -0.01em;
+}
+
+.project-detail-intro-text {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--color-primary-black);
+    max-width: 48ch;
+}
+
+.project-detail-preline {
+    white-space: pre-line;
+}
+
+.project-detail-concept-p2 {
+    margin-top: 1.5rem;
+}
+
+.project-detail-concept-image {
+    width: 50%;
+}
+
+.project-detail-section h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    font-weight: 600;
+    max-width: 1000px;
+    margin: 5rem auto 2rem auto;
+    padding: 0 7px;
+    inline-size: fit-content;
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        var(--color-variable-light-purple) 60%,
+        var(--color-variable-light-purple) 85%,
+        transparent 85%
+    );
+}
+
+.project-detail-section p {
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--color-primary-black);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.project-detail-body img,
+.project-detail-body video,
+.project-detail-body iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-mockup {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 3rem auto;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.project-detail-mockup img {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.project-detail-concept-images {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto;
+    max-width: 400px;
+}
+
+.project-detail-logo-anatomy,
+.project-detail-logo-concept {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-block: 1.5rem;
+}
+
+.project-detail-logo-concept {
+    border-radius: 50px;
+}
+
+.flavour-carousel {
+    position: relative;
+    max-width: 1100px;
+    margin: 2.5rem auto 1.5rem;
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.flavour-carousel-viewport {
+    position: relative;
+    /* Let the page scroll (no inner scroll). We keep only side clipping. */
+    height: auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.flavour-carousel-item {
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 760px;
+    padding: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(0) scale(0.9);
+    transition:
+        transform 420ms ease,
+        opacity 420ms ease;
+    pointer-events: none;
+    text-align: center;
+}
+
+.flavour-carousel-item.is-active {
+    position: relative; /* makes viewport height follow active slide */
+    inset: auto;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    z-index: 3;
+}
+
+.flavour-carousel-item.is-prev {
+    opacity: 0.3;
+    transform: translateX(-78%) scale(0.92);
+    z-index: 2;
+}
+
+.flavour-carousel-item.is-next {
+    opacity: 0.3;
+    transform: translateX(78%) scale(0.92);
+    z-index: 2;
+}
+
+.flavour-carousel-item.is-hidden {
+    opacity: 0;
+    transform: translateX(0) scale(0.9);
+    z-index: 1;
+}
+
+.flavour-carousel-label img {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.flavour-carousel-design {
+    margin: 1.1rem auto 0;
+    max-width: 640px;
+}
+
+.flavour-carousel-design img {
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.flavour-carousel-cans {
+    margin: 1.6rem auto 0.8rem;
+    max-width: 520px;
+}
+
+.flavour-carousel-cans img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.flavour-carousel-title {
+    margin: 1rem 0 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-primary-black);
+}
+
+.flavour-carousel-text {
+    margin: 0 auto;
+    max-width: 70ch;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--color-primary-black);
+}
+
+/* Show description only for centered (active) slide */
+.flavour-carousel-item.is-prev .flavour-carousel-title,
+.flavour-carousel-item.is-prev .flavour-carousel-text,
+.flavour-carousel-item.is-next .flavour-carousel-title,
+.flavour-carousel-item.is-next .flavour-carousel-text,
+.flavour-carousel-item.is-hidden .flavour-carousel-title,
+.flavour-carousel-item.is-hidden .flavour-carousel-text {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.flavour-carousel-arrow {
+    width: 30px;
+    height: 900px;
+    border: none;
+    background: rgb(245, 244, 255);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.flavour-carousel-arrow:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.flavour-carousel-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 0 auto 3rem;
+}
+
+.flavour-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: transparent;
+    cursor: pointer;
+}
+
+.flavour-carousel-dot.is-active {
+    background: var(--color-variable-dark-purple2);
+    border-color: var(--color-variable-dark-purple2);
+}
+
+@media (max-width: 1024px) {
+    .project-detail-content {
+        padding-top: calc(var(--nav-h) + 3rem);
+    }
+
+    .project-detail-header {
+        grid-template-columns: 1fr;
+        margin-top: 4rem;
+    }
+
+    .project-detail-screen-image {
+        max-width: 420px;
+    }
+
+    .project-detail-intro-text {
+        max-width: 60ch;
+    }
+
+    .project-detail-logo-concept {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-detail-content {
+        padding-top: calc(var(--nav-h) + 4rem);
+    }
+
+    .project-detail-header {
+        margin-top: 6rem;
+    }
+
+    .project-detail-screen-image {
+        max-width: 320px;
+    }
+
+    .project-detail-concept-images {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .project-detail-logo-concept {
+        margin-top: 1rem;
+    }
+
+    .flavour-carousel {
+        grid-template-columns: 36px 1fr 36px;
+    }
+
+    .flavour-carousel-viewport {
+        min-height: 480px;
+        height: auto;
+        overflow: visible;
+    }
+
+    .flavour-carousel-item {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        max-width: 520px;
+    }
+
+    .flavour-carousel-item.is-prev,
+    .flavour-carousel-item.is-next,
+    .flavour-carousel-item.is-hidden {
+        display: none;
+    }
+}

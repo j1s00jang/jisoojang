@@ -1,0 +1,136 @@
+/* ========================================
+   DESKTOP STYLES
+   ======================================== */
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+}
+
+.home_content_top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.home_jisoo {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-100%, calc(-80% + 7rem));
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+}
+
+.home-content:has(.home-folder-image:hover) .home_jisoo {
+  transform: translate(-160%, calc(-600% + 10rem)) rotate(-15deg);
+}
+
+.home_portfolio {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-20%, calc(-60% + 10rem));
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+}
+
+.home-content:has(.home-folder-image:hover) .home_portfolio {
+  transform: translate(20%, calc(-650% + 8rem)) rotate(10deg);
+}
+
+.home_content_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.project-logo {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 8;
+}
+
+.scaffold-logo {
+  transform: translate(20%, calc(-30% + 5rem)) scale(0.5);
+}
+
+.montro-logo {
+  transform: translate(80%, calc(-30% + 8rem)) scale(0.5);
+}
+
+.interactive-thumbnail {
+  width: 15%;
+  height: auto;
+  object-fit: contain;
+  transform: translate(110%, calc(-30% + 10rem)) scale(0.5);
+}
+
+.home-content:has(.home-folder-image:hover) .scaffold-logo {
+  transform: translate(-320%, calc(-200% + 5rem)) rotate(-10deg) scale(0.8);
+}
+
+.home-content:has(.home-folder-image:hover) .montro-logo {
+  transform: translate(-80%, calc(-200% + 3rem)) rotate(30deg) scale(0.7);
+}
+
+.home-content:has(.home-folder-image:hover) .interactive-thumbnail {
+  transform: translate(150%, calc(-100% + 6rem)) rotate(20deg) scale(0.8);
+}
+
+.home-folder-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20rem;
+  position: relative;
+  z-index: 9;
+}
+
+/* ========================================
+   TABLET STYLES (@media (max-width: 1024px))
+   ======================================== */
+@media (max-width: 1024px) {
+  .home-content {
+    min-height: calc(100vh - 120px);
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ========================================
+   MOBILE STYLES (@media (max-width: 768px))
+   ======================================== */
+@media (max-width: 768px) {
+  .home-content {
+    min-height: calc(100vh - 200px);
+    padding: 15rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .home-folder-image {
+    margin-top: 10rem;
+  }
+
+
+}
+

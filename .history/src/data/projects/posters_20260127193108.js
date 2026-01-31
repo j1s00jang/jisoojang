@@ -1,0 +1,19 @@
+import postersThumbnail from "../../assets/projects/posters/posters_thumbnail.png";
+// import postersMockup from "../../assets/projects/posters/posters_mockup.png"; // Uncomment when image is added
+
+// Screen images (using thumbnails as fallback for projects without screen images)
+const postersScreen = postersThumbnail;
+
+export const posters = {
+  id: 6,
+  name: "Advertising Posters",
+  slug: "posters",
+  category: "graphic design",
+  thumbnail: postersThumbnail,
+  screenImage: postersScreen,
+  summary: "Full cover posters for cats treats",
+  keySkills:
+    "Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign",
+  concept: "Add concept content here",
+  productMockupImage: null, // Add: import postersMockup and set to postersMockup
+};

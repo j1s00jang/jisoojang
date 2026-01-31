@@ -1,0 +1,73 @@
+import montroThumbnail from "../../assets/projects/montro/montro_card.png";
+import montroLogo from "../../assets/projects/montro/montro_logo.png";
+import montroScreen from "../../assets/projects/montro/montro_screen.png";
+import montroMockup from "../../assets/projects/montro/montro_mockup.png";
+import montroWebsite from "../../assets/projects/montro/montro_website.png";
+import montroUserResearch1 from "../../assets/projects/montro/montro_userResearch01.png";
+import montroUserResearch2 from "../../assets/projects/montro/montro_userResearch02.png";
+
+export const montro = {
+    id: 2,
+    name: "Montro",
+    slug: "montro",
+    category: "ux/ui",
+
+    /* --- Assets --- */
+    thumbnail: montroThumbnail,
+    screenImage: montroScreen,
+    mockupImage: montroMockup,
+
+    /* --- Intro (ProjectDetail header / Overview) --- */
+
+    summary:
+        "Gamified expense-tracking app that builds spending & saving goals and reward milestones",
+    role: "UX/UI Designer",
+    keySkills:
+        "Figma, Adobe Illustrator, Adobe Photoshop, Adobe After Effects, Adobe Premiere Pro, Adobe Lightroom, Adobe XD, Adobe InDesign",
+    overview:
+        "Montro is a gamified expense-tracking application that transforms the mundane task of tracking expenses into an engaging and rewarding experience. The app uses behavioral psychology principles to encourage better spending habits.",
+
+    /* --- ContentSections (template) --- */
+    sections: [
+        {
+            paragraphs: [],
+            images: [montroWebsite],
+            imageLayout: "row",
+        },
+        {
+            heading: "Opportunity",
+            paragraphs: [
+                "Montro began with research on how long-term expense-tracking habits influence spending, particularly when established in the teens and twenties. Survey findings showed that many participants valued tracking but found recording every purchase manually tedious. This gap revealed an opportunity to support younger users with a more effortless, consistent approach.",
+                "\nHowever, expense tracking often follows the pattern of a New Year’s resolution: it starts strong and fades by February. Sustaining the habit requires ongoing motivation, not just good intentions. That need is where Montro began.",
+            ],
+            images: [],
+            imageLayout: "row",
+        },
+        {
+            heading: "My Role",
+            paragraphs: [
+                "Key contribution included leading the visual and interaction design to make expense tracking feel less exhausting and more motivating. A fun, futuristic visual direction with vibrant colours was developed and applied to a cohesive mobile UI system. On the main dashboard, a goal-status indicator was prioritized as the primary focal point and paired with a cheerful quote to reinforce motivation at a glance.",
+                "\nMonthly insights and the expense-entry flow were designed to support reflection and encourage repeat use through a reward system. Generous spacing, clear grouping, and consistent hierarchy prevented the interface from feeling crowded or overwhelming, even when large amounts of numerical data were presented.",
+            ],
+            images: [],
+            imageLayout: "row",
+        },
+        {
+            heading: "User Research",
+            paragraphs: [
+                "Survey results from 10 participants indicated that many people stick to familiar, long-standing tracking habits instead of using an app. Common reasons included low motivation, the added effort of opening an app for each expense, and the perception that manual entry is tedious. In addition, free apps were often seen as discouraging due to intrusive ads and overly complex layouts.",
+            ],
+            images: [montroUserResearch1, montroUserResearch2],
+            imageLayout: "row",
+        },
+        {
+            heading: "Key Features",
+            paragraphs: [
+                "Add content about key features and design decisions.",
+            ],
+            images: [montroLogo],
+            imageLayout: "row",
+            imageWrapperClass: "montro-key-features-images",
+        },
+    ],
+};
