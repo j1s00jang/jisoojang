@@ -38,33 +38,29 @@
     cursor: pointer;
     padding: 12px 60px;
     position: relative;
+    transition: all 0.3s ease;
     color: var(--color-primary-black);
     background-color: transparent;
     z-index: 1;
     align-items: center;
 }
 
-.projects-tabs li::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+.projects-tabs li:hover:not(.active) {
     background: linear-gradient(
         to bottom,
-        transparent 50%,
-        var(--color-variable-light-purple) 50%
+        transparent 55%,
+        var(--color-variable-light-purple) 55%
     );
-    background-size: 80% 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    z-index: -1;
-    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
-.projects-tabs li:hover::before,
-.projects-tabs li.active::before {
-    opacity: 1;
+.projects-tabs li.active {
+    background: linear-gradient(
+        to bottom,
+        transparent 55%,
+        var(--color-variable-light-purple) 55%
+    );
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 1024px) {
