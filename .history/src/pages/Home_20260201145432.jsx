@@ -13,10 +13,9 @@ function Home() {
                     padding: "48px 0",
                 }}
             >
-                {/* <Hero /> */}
-                <SplineEmbed />
                 <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
                     <h1 style={{ margin: "0 0 16px" }}></h1>
+                    <SplineEmbed />
                     <HomeProjects />
                     <AboutMe hideBreadcrumbs />
                 </div>

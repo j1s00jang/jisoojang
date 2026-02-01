@@ -24,7 +24,7 @@ const stickers = [
         style: {
             top: "16%",
             left: "65%",
-            width: "clamp(10%, 18%, 22%)",
+            width: "clamp(120px, 15vw, 220px)",
             transform: "rotate(10deg)",
         },
     },
@@ -34,7 +34,7 @@ const stickers = [
         style: {
             top: "35%",
             left: "40%",
-            width: "clamp(5%, 7%, 10%)",
+            width: "clamp(55px, 6vw, 80px)",
             transform: "rotate(-20deg)",
         },
     },
@@ -44,7 +44,7 @@ const stickers = [
         style: {
             top: "48%",
             left: "39.5%",
-            width: "clamp(5%, 8%, 11%)",
+            width: "clamp(60px, 7vw, 90px)",
             transform: "rotate(15deg)",
         },
     },
@@ -54,7 +54,7 @@ const stickers = [
         style: {
             top: "48%",
             left: "64%",
-            width: "clamp(5%, 7%, 9%)",
+            width: "clamp(50px, 6vw, 70px)",
             transform: "rotate(-20deg)",
         },
     },
@@ -64,7 +64,7 @@ const stickers = [
         style: {
             top: "62%",
             left: "65%",
-            width: "clamp(8%, 12%, 18%)",
+            width: "clamp(90px, 10vw, 170px)",
             transform: "rotate(12deg)",
         },
     },
@@ -89,6 +89,7 @@ function Hero() {
                     position: "relative",
                     width: "100%",
                     aspectRatio: "16 / 7",
+                    maxHeight: "70vh",
                     isolation: "isolate",
                 }}
             >
@@ -98,7 +99,7 @@ function Hero() {
                         top: "17%",
                         left: "50%",
                         transform: "translateX(-50%)",
-                        fontSize: "clamp(12px, 1.8vw, 22px)",
+                        fontSize: "clamp(14px, 1.6vw, 22px)",
                         color: "#222",
                         opacity: 0.85,
                         zIndex: 50,
@@ -124,7 +125,7 @@ function Hero() {
                         alt=""
                         draggable={false}
                         style={{
-                            width: "clamp(28%, 35%, 42%)",
+                            width: "clamp(300px, 32vw, 480px)",
                             height: "auto",
                             display: "block",
                             transform: "translateY(45%)",
@@ -156,7 +157,7 @@ function Hero() {
                     />
                 </div>
 
-                {/* PORT */}
+                {/* PORT (앞) */}
                 <div
                     style={{
                         position: "absolute",
@@ -172,7 +173,7 @@ function Hero() {
                         alt=""
                         draggable={false}
                         style={{
-                            width: "clamp(28%, 35%, 42%)",
+                            width: "clamp(300px, 32vw, 480px)",
                             height: "auto",
                             display: "block",
                             transform: "translateY(0%)",
@@ -180,7 +181,7 @@ function Hero() {
                     />
                 </div>
 
-                {/* Stickers */}
+                {/* 스티커들 (img로 색상 유지) */}
                 {stickers.map(({ id, src, cycleSrcs, style }) => {
                     const isHello = id === "hello";
                     const isHovered = hoveredId === id;
