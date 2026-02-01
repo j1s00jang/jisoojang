@@ -9,7 +9,7 @@ function Home() {
             <section
                 style={{
                     minHeight: "100vh",
-                    background: "transparent",
+                    background: "#FFFFFF",
                     padding: "48px 0",
                 }}
             >

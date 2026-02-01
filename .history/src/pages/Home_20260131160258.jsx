@@ -9,12 +9,11 @@ function Home() {
             <section
                 style={{
                     minHeight: "100vh",
-                    background: "transparent",
+                    background: "#f7f4ef",
                     padding: "48px 0",
                 }}
             >
                 <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
-                    <h1 style={{ margin: "0 0 16px" }}></h1>
                     <SplineEmbed />
                 </div>
             </section>
