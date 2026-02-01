@@ -18,7 +18,7 @@ function Home() {
                     <h1 style={{ margin: "0 0 16px" }}></h1>
                     <SplineEmbed />
                     <HomeProjects />
-                    <AboutMe />
+                    <AboutMe hideBreadcrumbs />
                 </div>
             </section>
         </div>

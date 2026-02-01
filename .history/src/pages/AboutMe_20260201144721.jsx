@@ -35,7 +35,7 @@ import { useLayoutEffect } from "react";
 //   };
 // }, []);
 
-function AboutMe({ hideBreadcrumbs = false }) {
+function AboutMe() {
     const breadcrumbItems = [
         { label: "Home", link: "/home" },
         { label: "About me", link: "/about-me" },
@@ -43,7 +43,7 @@ function AboutMe({ hideBreadcrumbs = false }) {
 
     return (
         <div className="project-detail-content">
-            {!hideBreadcrumbs && <Breadcrumbs items={breadcrumbItems} />}
+            <Breadcrumbs items={breadcrumbItems} />
             <div className="about-me-content">
                 <div className="about-me-intro">
                     <div className="about-me-intro-left">
@@ -66,7 +66,7 @@ function AboutMe({ hideBreadcrumbs = false }) {
                     </div>
                     <div className="about-me-intro-right">
                         <p className="intro-text">
-                            Hello, I am Jisoo!
+                            Hello, i am Jisoo!
                             <br />
                             <br />
                             I am focused on building intuitive, human-focused
