@@ -94,6 +94,7 @@ function AboutMe() {
                                     src={toastPhoto}
                                     alt="My cat Toast"
                                     className="toast-photo"
+                                    data-tooltip="My cat Toast (1 year old)"
                                 />
                             </div>
                             <div className="ilove-right">
@@ -107,16 +108,19 @@ function AboutMe() {
                                         src={coffeePhoto}
                                         alt="Coffee"
                                         className="coffee-photo"
+                                        data-tooltip="My favorite coffee"
                                     />
                                     <img
                                         src={puddingPhoto}
                                         alt="Pudding I made"
                                         className="baking-photo"
+                                        data-tooltip="Homemade pudding"
                                     />
                                     <img
                                         src={tradersJoesPhoto}
                                         alt="Traders Joe's packages"
                                         className="packages-photo"
+                                        data-tooltip="Cute package designs"
                                     />
                                 </div>
                             </div>

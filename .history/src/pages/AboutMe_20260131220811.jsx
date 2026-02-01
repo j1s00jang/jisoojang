@@ -68,15 +68,10 @@ function AboutMe() {
                         <p className="intro-text">
                             hello, i am Jisoo!
                             <br />a ux/ui designer, product & packaging designer
-                            <br />
                             focused on building intuitive, human-focused design
-                            and experiences.
-                            <br />
-                            With a strong interest in accessibility and
-                            inclusive design,
-                            <br />I create products that feel clear,
-                            considerate, thoughtful,
-                            <br />
+                            and experiences. With a strong interest in
+                            accessibility and inclusive design, I create
+                            products that feel clear, considerate, thoughtful,
                             and easy to use for diverse audiences.
                         </p>
                     </div>
@@ -94,29 +89,33 @@ function AboutMe() {
                                     src={toastPhoto}
                                     alt="My cat Toast"
                                     className="toast-photo"
+                                    data-tooltip="My cat Toast (1 year old)"
                                 />
                             </div>
                             <div className="ilove-right">
                                 <p className="ilove-list">
-                                    Toast (my cat) • coffee • baking • desserts
-                                    • cafés • hiking • beach • active lifestyle
-                                    • browsing supermarkets • cute packaging
+                                    Toast(my cat) • coffee • baking • desserts •
+                                    cafés • hiking • beach • active lifestyle •
+                                    browsing supermarkets • cute packaging
                                 </p>
                                 <div className="ilove-small-images">
                                     <img
                                         src={coffeePhoto}
                                         alt="Coffee"
                                         className="coffee-photo"
+                                        data-tooltip="My favorite coffee"
                                     />
                                     <img
                                         src={puddingPhoto}
                                         alt="Pudding I made"
                                         className="baking-photo"
+                                        data-tooltip="Homemade pudding"
                                     />
                                     <img
                                         src={tradersJoesPhoto}
                                         alt="Traders Joe's packages"
                                         className="packages-photo"
+                                        data-tooltip="Cute package designs"
                                     />
                                 </div>
                             </div>

@@ -21,7 +21,7 @@ export const interactiveTutorial = {
   thumbnail: interactiveThumbnail,
   screenImage: interactiveScreen,
   summary:
-    "Hello, My First Cat! is an interactive informational tutorial designed for first-time cat owners!",
+    "Hello, My First Cat! is an interactive informational tutorial designed for first-time cat owners. Users can engage with a cute cat illustration while learning basic cat behaviours.",
   keySkills:
     "UI Design / Content Design / User Flow / Accessibility / Prototyping",
   concept:

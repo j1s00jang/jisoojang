@@ -102,7 +102,7 @@ function InteractiveTutorial({ project }) {
             )}
 
             <section className="project-detail-section">
-                <h2>Tutorial Prototype</h2>
+                <h2>"Hello, My First Cat!"</h2>
                 <FigmaEmbed
                     title="Hello, My First Cat Prototype"
                     src="https://embed.figma.com/proto/eMqTulTEWvaUaudlk26b3F/Design3-CP05-Hello--My-First-Cat-?node-id=112-444&embed-host=share"

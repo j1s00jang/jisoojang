@@ -13,7 +13,8 @@ export const posters = {
   category: "graphic design",
   thumbnail: postersThumbnail,
   screenImage: postersScreen,
-  summary: "The “Churu” poster series showcases three types of cat treats",
+  summary:
+    "The “Churu” poster series showcases three types of cat treats. Each poster focuses on type, flavour, or benefit, making the message quick to scan.",
   keySkills:
     "Information hierarchy / Typography / Layout / Brand styling / Copy-writing",
   concept:
