@@ -13,7 +13,7 @@
 }
 
 .project-detail-container .project-detail-section {
-    margin-bottom: clamp(8rem, 10vw, 10rem);
+    margin-bottom: clamp(4rem, 10vw, 10rem);
 }
 
 .project-detail-container

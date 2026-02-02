@@ -107,7 +107,7 @@
 /* Marketing section: scaffoldMarketing2, scaffoldMarketing3 */
 .project-detail-container .scaffold-marketing-images img {
     max-width: min(400px, 60vw);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .scaffold-idea-pitching-images img {

@@ -8,8 +8,8 @@ import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFea
 import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.png";
 import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mov";
 import scaffoldMarketing1 from "../../assets/projects/scaffold/scaffold_marketing01.png";
-import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.jpg";
-import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.jpg";
+import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.png";
+import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.png";
 import scaffoldKeyLearnings1 from "../../assets/projects/scaffold/scaffold_keyLearnings01.png";
 import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLearnings02.png";
 import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLearnings03.mp4";
@@ -156,8 +156,6 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                     type: "video",
                     src: scaffoldKeyFeatures3,
                     className: "scaffold-key-features-video",
-                    caption:
-                        "Web supplement for the step-by-step application process",
                 },
             ],
             imageLayout: "stack",
@@ -175,7 +173,6 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
         {
             images: [scaffoldMarketing2, scaffoldMarketing3],
             imageLayout: "row",
-            imageWrapperClass: "scaffold-marketing-images",
         },
         {
             paragraphs: [
@@ -184,31 +181,23 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
             ],
         },
         {
-            heading: "Storyboard & Film Production",
+            heading: "Key learnings & reflections",
             paragraphs: [
                 "Scaffold created the storyboard before production began. The story was inspired by a real experience uncovered during research: a skilled tradeswoman facing financial struggle was able to continue her training and daily life after receiving grants. With the support of a passionate team, the concept was brought to life as a cinematic promotional video.",
                 "\nThe video was screened on pitch day to introduce the app concept, and it reinforced the same message the Scaffold product aimed to deliver—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
             ],
-            images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
-            imageLayout: "row",
-        },
-        {
-            heading: "Promotional video",
             images: [
+                scaffoldKeyLearnings1,
+                scaffoldKeyLearnings2,
                 {
                     type: "video",
                     src: scaffoldKeyLearnings3,
                     className: "project-detail-mockup-image",
                 },
+                scaffoldKeyLearnings4,
+                scaffoldKeyLearnings5,
             ],
             imageLayout: "stack",
-            imageWrapperClass: "scaffold-key-learnings-media",
-        },
-        {
-            heading: "Key learnings & reflections",
-            images: [scaffoldKeyLearnings4, scaffoldKeyLearnings5],
-            imageLayout: "row",
-            imageWrapperClass: "scaffold-key-learnings-media",
         },
         {
             paragraphs: [

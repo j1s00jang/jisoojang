@@ -7,7 +7,7 @@ import "../pages/ProjectDetail.css";
  *
  * Data shape per section:
  *   { heading?, paragraphs, images?, imageLayout?: 'row'|'stack', imageWrapperClass?, caption? }
- * - images: array of src (string), { src, alt? } for images, { type: 'video', src, className? } for videos, or { type: 'iframe', src, width?, height?, className?, caption? } for embeds
+ * - images: array of src (string), { src, alt? } for images, { type: 'video', src, className?, caption? } for videos, or { type: 'iframe', src, width?, height?, className?, caption? } for embeds
  * - imageWrapperClass: extra class on the image wrapper for custom CSS (e.g. ProjectDetail.css).
  * - caption: optional caption shown below the images in this section.
  */
@@ -68,7 +68,25 @@ function ContentSections({ sections, projectName = "" }) {
                                             const videoClass =
                                                 item?.className ??
                                                 "project-detail-mockup-image";
-                                            return (
+                                            return item.caption ? (
+                                                <span
+                                                    key={j}
+                                                    className="project-detail-embed-wrap"
+                                                >
+                                                    <video
+                                                        src={src}
+                                                        controls
+                                                        playsInline
+                                                        className={videoClass}
+                                                    >
+                                                        Your browser does not support
+                                                        the video tag.
+                                                    </video>
+                                                    <span className="project-detail-embed-caption">
+                                                        {item.caption}
+                                                    </span>
+                                                </span>
+                                            ) : (
                                                 <video
                                                     key={j}
                                                     src={src}

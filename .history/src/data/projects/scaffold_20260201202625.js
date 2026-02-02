@@ -156,8 +156,6 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                     type: "video",
                     src: scaffoldKeyFeatures3,
                     className: "scaffold-key-features-video",
-                    caption:
-                        "Web supplement for the step-by-step application process",
                 },
             ],
             imageLayout: "stack",
@@ -205,7 +203,6 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
             imageWrapperClass: "scaffold-key-learnings-media",
         },
         {
-            heading: "Key learnings & reflections",
             images: [scaffoldKeyLearnings4, scaffoldKeyLearnings5],
             imageLayout: "row",
             imageWrapperClass: "scaffold-key-learnings-media",

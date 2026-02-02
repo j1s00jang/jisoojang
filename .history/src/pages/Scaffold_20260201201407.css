@@ -74,43 +74,11 @@
     .scaffold-key-features-video {
     flex: 0 0 100%;
     width: 100%;
-    max-width: clamp(800px, 80vw, 1000px);
+    max-width: clamp(450px, 50vw, 600px);
     margin: 0.5rem auto 0;
-    aspect-ratio: 16 / 9;
-}
-
-/* Marketing: reduce gap between marketing1 and marketing2/3 */
-.project-detail-container .project-detail-section[data-section="Marketing"] {
-    margin-bottom: 0;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="Marketing"]
-    .project-detail-mockup {
-    margin-bottom: 0;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="Marketing"]
-    + .project-detail-section {
-    margin-top: 0;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="Marketing"]
-    + .project-detail-section
-    .project-detail-mockup {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-/* Marketing section: scaffoldMarketing2, scaffoldMarketing3 */
-.project-detail-container .scaffold-marketing-images img {
-    max-width: min(400px, 60vw);
-    border-radius: 5px;
 }
 
 .scaffold-idea-pitching-images img {
     max-width: clamp(540px, 65vw, 640px);
-    border-radius: 5px;
+    border-radius: 8px;
 }
