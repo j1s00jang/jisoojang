@@ -118,7 +118,7 @@
 
 .intro-text-body {
     font-family: var(--font-family-primary);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--color-primary-black);
     line-height: 1;
@@ -588,9 +588,9 @@
     }
 
     .intro-text {
-        font-size: 2rem;
+        font-size: 1.1rem;
         padding: 3rem 3rem 1.2rem 3rem;
-        line-height: 1;
+        line-height: 1.4;
     }
 
     .intro-text-body {
