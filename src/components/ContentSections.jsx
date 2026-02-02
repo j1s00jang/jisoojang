@@ -7,7 +7,7 @@ import "../pages/ProjectDetail.css";
  *
  * Data shape per section:
  *   { heading?, sectionId?, paragraphs, images?, imageLayout?: 'row'|'stack', imageWrapperClass?, caption? }
- * - images: array of src (string), { src, alt? } for images, { type: 'video', src, className?, caption? } for videos, or { type: 'iframe', src, width?, height?, className?, caption? } for embeds
+ * - images: array of src (string), { src, alt?, url? } for images, { type: 'video', src, className?, caption? } for videos, or { type: 'iframe', src, width?, height?, className?, caption? } for embeds
  * - imageWrapperClass: extra class on the image wrapper for custom CSS (e.g. ProjectDetail.css).
  * - caption: optional caption shown below the images in this section.
  */
@@ -47,7 +47,13 @@ function ContentSections({ sections, projectName = "" }) {
                             </p>
                         ))}
                         {imgs.length > 0 && (
-                            <div className={sec.caption ? "project-detail-media-with-caption" : undefined}>
+                            <div
+                                className={
+                                    sec.caption
+                                        ? "project-detail-media-with-caption"
+                                        : undefined
+                                }
+                            >
                                 <div className={wrapClass}>
                                     {imgs.map((item, j) => {
                                         const src =
@@ -55,7 +61,8 @@ function ContentSections({ sections, projectName = "" }) {
                                                 ? item
                                                 : item?.src;
                                         const alt =
-                                            typeof item === "object" && item?.alt
+                                            typeof item === "object" &&
+                                            item?.alt
                                                 ? item.alt
                                                 : `${projectName} section ${j + 1}`;
                                         const isVideo =
@@ -80,8 +87,8 @@ function ContentSections({ sections, projectName = "" }) {
                                                         playsInline
                                                         className={videoClass}
                                                     >
-                                                        Your browser does not support
-                                                        the video tag.
+                                                        Your browser does not
+                                                        support the video tag.
                                                     </video>
                                                     <span className="project-detail-embed-caption">
                                                         {item.caption}
@@ -95,8 +102,8 @@ function ContentSections({ sections, projectName = "" }) {
                                                     playsInline
                                                     className={videoClass}
                                                 >
-                                                    Your browser does not support
-                                                    the video tag.
+                                                    Your browser does not
+                                                    support the video tag.
                                                 </video>
                                             );
                                         }
@@ -112,7 +119,9 @@ function ContentSections({ sections, projectName = "" }) {
                                                     <iframe
                                                         src={item.src}
                                                         width={item.width ?? 800}
-                                                        height={item.height ?? 450}
+                                                        height={
+                                                            item.height ?? 450
+                                                        }
                                                         style={{
                                                             border: "1px solid rgba(0, 0, 0, 0.1)",
                                                         }}
@@ -129,14 +138,34 @@ function ContentSections({ sections, projectName = "" }) {
                                             );
                                         }
                                         if (src) {
-                                            return (
+                                            const imgEl = (
                                                 <img
-                                                    key={j}
                                                     src={src}
                                                     alt={alt}
                                                     className="project-detail-mockup-image"
                                                     loading="lazy"
                                                 />
+                                            );
+                                            const linkUrl =
+                                                typeof item === "object" &&
+                                                item?.url;
+                                            return linkUrl ? (
+                                                <a
+                                                    key={j}
+                                                    href={linkUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="project-detail-mockup-link"
+                                                >
+                                                    {imgEl}
+                                                </a>
+                                            ) : (
+                                                <span
+                                                    key={j}
+                                                    className="project-detail-mockup-image-wrap"
+                                                >
+                                                    {imgEl}
+                                                </span>
                                             );
                                         }
                                         return null;

@@ -1,18 +1,18 @@
 import montroThumbnail from "../../assets/projects/montro/montro_card.png";
+// import montroLogo from "../../assets/projects/montro/montro_logo.png";
 import montroScreen from "../../assets/projects/montro/montro_screen.png";
 import montroMockup from "../../assets/projects/montro/montro_mockup.png";
 import montroWebsite from "../../assets/projects/montro/montro_website.png";
 import montroUserResearch1 from "../../assets/projects/montro/montro_userResearch01.png";
 import montroUserResearch2 from "../../assets/projects/montro/montro_userResearch02.png";
 import montroInsights1 from "../../assets/projects/montro/montro_insights01.png";
+import montroHowWeStarted1 from "../../assets/projects/montro/montro_howWeStarted01.png";
+import montroHowWeStarted2 from "../../assets/projects/montro/montro_howWeStarted02.png";
 import montroBrandGuidelines1 from "../../assets/projects/montro/montro_guidelines01.png";
 import montroKeyFeatures1 from "../../assets/projects/montro/montro_keyFeatures01.png";
 import montroKeyFeatures2 from "../../assets/projects/montro/montro_keyFeatures02.png";
 import montroKeyFeatures3 from "../../assets/projects/montro/montro_keyFeatures03.png";
 import montroKeyLearnings1 from "../../assets/projects/montro/montro_keyLearnings01.mp4";
-import montroLivedemoIcon from "../../assets/projects/montro/montro_livedemo_icon.png";
-import montroWireframesIcon from "../../assets/projects/montro/montro_wireframes_icon.png";
-import montroWebIcon from "../../assets/projects/montro/montro_web_icon.png";
 
 export const montro = {
     id: 2,
@@ -20,39 +20,22 @@ export const montro = {
     slug: "montro",
     category: "ux/ui",
 
+    /* --- Assets --- */
     thumbnail: montroThumbnail,
     screenImage: montroScreen,
     mockupImage: montroMockup,
 
+    /* --- Intro (ProjectDetail header / Overview) --- */
+
     summary:
         "Gamified expense-tracking app that builds spending & saving goals and reward milestones",
-    role: "UX/UI Designer / UX Researcher",
+    role: "UX/UI Designer",
     keySkills:
         "UX / UI / Layout / Product Design / User Research / Branding / Marketing",
     overview:
-        "Montro is a gamified expense-tracking application that transforms the mundane task of tracking expenses into an engaging and rewarding experience. The application uses behavioral psychology principles to encourage better spending habits.",
+        "Montro is a gamified expense-tracking application that transforms the mundane task of tracking expenses into an engaging and rewarding experience. The app uses behavioral psychology principles to encourage better spending habits.",
 
-    headerLinks: [
-        {
-            icon: montroLivedemoIcon,
-            label: "live demo",
-            type: "liveDemo",
-            url: "https://frontend-zyfs.onrender.com/login",
-        },
-        {
-            icon: montroWireframesIcon,
-            label: "wireframes",
-            type: "external",
-            url: "https://www.figma.com/design/m941MXTjIgArJgKf7thszG/Design----Proto---Copy-?node-id=1585-12406&t=zEQS4WyG1DHceZwM-1",
-        },
-        {
-            icon: montroWebIcon,
-            label: "marketing web",
-            type: "external",
-            url: "https://montro.framer.website",
-        },
-    ],
-
+    /* --- ContentSections (template) --- */
     sections: [
         {
             paragraphs: [],
@@ -63,7 +46,7 @@ export const montro = {
             heading: "Opportunity",
             paragraphs: [
                 "Montro began with research on how long-term expense-tracking habits influence spending, particularly when established in the teens and twenties. Survey findings showed that many participants valued tracking but found recording every purchase manually tedious. This gap revealed an opportunity to support younger users with a more effortless, consistent approach.",
-                "\nHowever, expense tracking often follows the pattern of a New Year's resolution: it starts strong and fades by February. Sustaining the habit requires ongoing motivation, not just good intentions. That need is where Montro began.",
+                "\nHowever, expense tracking often follows the pattern of a New Year’s resolution: it starts strong and fades by February. Sustaining the habit requires ongoing motivation, not just good intentions. That need is where Montro began.",
             ],
             images: [],
             imageLayout: "row",
@@ -88,30 +71,21 @@ export const montro = {
         {
             heading: "Insights",
             paragraphs: [
-                "Research findings confirmed that building a long-term expense-tracking habit can help reduce unnecessary spending. At the same time, the research showed that sustained behaviour change requires supportive financial-service features that reduce friction and reinforce consistency. These insights became the starting point for shaping Montro's key values and defining what the product needed to deliver.",
+                "Research findings confirmed that building a long-term expense-tracking habit can help reduce unnecessary spending. At the same time, the research showed that sustained behaviour change requires supportive financial-service features that reduce friction and reinforce consistency. These insights became the starting point for shaping Montro’s key values and defining what the product needed to deliver.",
             ],
-            images: [
-                {
-                    type: "iframe",
-                    src: "https://embed.figma.com/design/KPoHMB4oV1rHEHyfsWb9PM/User-Persona?node-id=25-58&embed-host=share",
-                    width: 1000,
-                    height: 650,
-                    className: "montro-insights-figma-embed",
-                    caption: "User personas created by Montro team.",
-                },
-            ],
+            images: [montroInsights1],
             imageLayout: "row",
         },
         {
             heading: "The discovery",
             paragraphs: [
-                "High habit formation potential: ",
+                "High habit formation potential",
                 "\nDespite frustrations, 55.6% have made tracking a regular habit, indicating that with the right features, more users could be nudged into consistent behaviour.",
-                "\nIncentives could be a game-changer:",
+                "\nIncentives could be a game-changer",
                 "\nIncentive-based tracking could significantly boost adoption and consistency. Providing the user with some form of passive reward can help guide them to keep up a habit of tracking core expenses.",
-                "\nSkepticism toward bank syncing:",
+                "\nSkepticism toward bank syncing",
                 "\nSecurity concerns missed cash transactions, and incorrect categorization deters users from relying on bank-integrated solutions.",
-                "\nDesire for smarter tracking:",
+                "\nDesire for smarter tracking",
                 "\nUsers don't just want summaries—they seek detailed insights and patterns across categories to make better financial decisions. Anyone can request numbers- meaningful suggestions to help guide their expense tracking journey make for a better user/app interaction system.",
             ],
         },
@@ -119,27 +93,15 @@ export const montro = {
             heading: "How we started",
             paragraphs: [
                 "Montro developed an information architecture grounded in individual user flows and key features, with the goal of minimizing numerical fatigue that can arise when managing money-related data in an app.",
-                "\n1. Make expense tracking simple and intuitive, not difficult or complex.",
-                "2. Encourage long-term habit formation through rewards tied to goal achievement.",
-                "3. Reduce user fatigue through a streamlined app flow and high-contrast colour choices.",
+                "\n1.Make expense tracking simple and intuitive, not difficult or complex. \n2. Encourage long-term habit formation through rewards tied to goal achievement. \n3.Reduce user fatigue through a streamlined app flow and high-contrast colour choices.",
             ],
-            images: [
-                {
-                    type: "iframe",
-                    src: "https://embed.figma.com/board/xwDzoST1o0eezu4KX5mNIn/User-Flow?node-id=1-144&embed-host=share",
-                    width: 800,
-                    height: 450,
-                    className: "montro-how-we-started-figma-embed",
-                    caption:
-                        "Montro team created a user flow to guide the design process and features list.",
-                },
-            ],
+            images: [montroHowWeStarted1, montroHowWeStarted2],
             imageLayout: "row",
         },
         {
             heading: "Brand Guidelines",
             paragraphs: [
-                "Montro's brand guidelines draw inspiration from Moneta, combining futuristic, high-visibility colour palettes with a fun, energetic tone.",
+                "Montro’s brand guidelines draw inspiration from Moneta, combining futuristic, high-visibility colour palettes with a fun, energetic tone.",
             ],
             images: [montroBrandGuidelines1],
             imageLayout: "row",
@@ -157,7 +119,6 @@ export const montro = {
                 montroKeyFeatures3,
             ],
             imageLayout: "row",
-            imageWrapperClass: "montro-key-features-images",
         },
         {
             heading: "Key learnings & reflections",

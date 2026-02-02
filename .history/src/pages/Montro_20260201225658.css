@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Montro – project-specific styles (matches Scaffold structure)
+   ========================================================================== */
+
+.project-detail-screen-image {
+    max-width: clamp(240px, 30vw, 300px);
+}
+
+.project-detail-mockup .project-detail-mockup-image {
+    max-width: clamp(70%, 70vw, 760px);
+    margin-top: clamp(2rem, 4vw, 4rem);
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.project-detail-container .project-detail-section {
+    margin-bottom: clamp(8rem, 10vw, 10rem);
+}
+
+.project-detail-container
+    .project-detail-section[data-section="User Research"]
+    img {
+    max-width: min(800px, 85%);
+}
+
+/* Insights Figma embed */
+.project-detail-container .montro-insights-figma-embed {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 12;
+    border-radius: 8px;
+}
+
+/* How we started Figma embed */
+.project-detail-container .montro-how-we-started-figma-embed {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+}
+
+.project-detail-container .montro-key-learnings-video {
+    max-width: clamp(700px, 70vw, 1000px);
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+}

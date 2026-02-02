@@ -199,9 +199,10 @@
 .project-detail-mockup-link {
     display: flex;
     justify-content: center;
-    flex: 0 0 auto;
+    flex: 0 auto;
     min-width: 0;
     text-decoration: none;
+    color: inherit;
     cursor: pointer;
 }
 

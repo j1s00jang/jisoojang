@@ -1,6 +1,8 @@
 import ContentSections from "../components/ContentSections";
 import UpNextBanner from "../components/UpNextBanner";
 import Footer from "../components/Footer";
+import "./ProjectDetail.css";
+import "./Montro.css";
 
 function Montro({ project }) {
     const sections = project?.sections ?? [];

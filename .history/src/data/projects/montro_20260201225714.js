@@ -10,9 +10,6 @@ import montroKeyFeatures1 from "../../assets/projects/montro/montro_keyFeatures0
 import montroKeyFeatures2 from "../../assets/projects/montro/montro_keyFeatures02.png";
 import montroKeyFeatures3 from "../../assets/projects/montro/montro_keyFeatures03.png";
 import montroKeyLearnings1 from "../../assets/projects/montro/montro_keyLearnings01.mp4";
-import montroLivedemoIcon from "../../assets/projects/montro/montro_livedemo_icon.png";
-import montroWireframesIcon from "../../assets/projects/montro/montro_wireframes_icon.png";
-import montroWebIcon from "../../assets/projects/montro/montro_web_icon.png";
 
 export const montro = {
     id: 2,
@@ -31,27 +28,6 @@ export const montro = {
         "UX / UI / Layout / Product Design / User Research / Branding / Marketing",
     overview:
         "Montro is a gamified expense-tracking application that transforms the mundane task of tracking expenses into an engaging and rewarding experience. The application uses behavioral psychology principles to encourage better spending habits.",
-
-    headerLinks: [
-        {
-            icon: montroLivedemoIcon,
-            label: "live demo",
-            type: "liveDemo",
-            url: "https://frontend-zyfs.onrender.com/login",
-        },
-        {
-            icon: montroWireframesIcon,
-            label: "wireframes",
-            type: "external",
-            url: "https://www.figma.com/design/m941MXTjIgArJgKf7thszG/Design----Proto---Copy-?node-id=1585-12406&t=zEQS4WyG1DHceZwM-1",
-        },
-        {
-            icon: montroWebIcon,
-            label: "marketing web",
-            type: "external",
-            url: "https://montro.framer.website",
-        },
-    ],
 
     sections: [
         {
@@ -97,7 +73,6 @@ export const montro = {
                     width: 1000,
                     height: 650,
                     className: "montro-insights-figma-embed",
-                    caption: "User personas created by Montro team.",
                 },
             ],
             imageLayout: "row",
@@ -157,7 +132,6 @@ export const montro = {
                 montroKeyFeatures3,
             ],
             imageLayout: "row",
-            imageWrapperClass: "montro-key-features-images",
         },
         {
             heading: "Key learnings & reflections",

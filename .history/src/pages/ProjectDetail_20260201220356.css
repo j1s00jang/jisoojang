@@ -98,11 +98,9 @@
 
 .project-detail-header-links {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    gap: 1.5rem;
     margin-top: 2.5rem;
-    width: 100%;
-    max-width: 320px;
+    flex-wrap: wrap;
 }
 
 .project-detail-header-link {
@@ -110,7 +108,6 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    flex: 1;
     background: none;
     border: none;
     padding: 0;
@@ -194,26 +191,6 @@
     min-width: 0;
     max-width: 100%;
     height: auto;
-}
-
-.project-detail-mockup-link {
-    display: flex;
-    justify-content: center;
-    flex: 0 0 auto;
-    min-width: 0;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.project-detail-mockup-link:hover {
-    opacity: 0.9;
-}
-
-.project-detail-mockup-image-wrap {
-    display: flex;
-    justify-content: center;
-    flex: 0 1 auto;
-    min-width: 0;
 }
 
 .project-detail-embed-wrap {
