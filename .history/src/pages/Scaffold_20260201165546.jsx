@@ -1,24 +1,26 @@
 import ContentSections from "../components/ContentSections";
 import UpNextBanner from "../components/UpNextBanner";
 import Footer from "../components/Footer";
+import "./ProjectDetail.css";
+import "./Scaffold.css";
 
-function Montro({ project }) {
+function Scaffold({ project }) {
     const sections = project?.sections ?? [];
     if (!Array.isArray(sections) || sections.length === 0) return null;
     return (
-        <div className="project-detail-container">
+        <div className="project-detail-sections">
             <ContentSections
                 sections={sections}
-                projectName={project?.name ?? "Montro"}
+                projectName={project?.name ?? "Scaffold"}
             />
             <UpNextBanner
                 project={project}
-                to="/projects/can-design"
-                title="Beverage label design"
+                to="/projects/montro"
+                title="Montro"
             />
             <Footer />
         </div>
     );
 }
 
-export default Montro;
+export default Scaffold;

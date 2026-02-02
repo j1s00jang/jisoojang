@@ -29,14 +29,6 @@
     max-width: min(800px, 85%);
 }
 
-/* Insights Figma embed */
-.scaffold-insights-figma-embed {
-    width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 10;
-    border-radius: 8px;
-}
-
 .scaffold-idea-pitching-images img {
     max-width: clamp(540px, 65vw, 640px);
     border-radius: 8px;

@@ -16,10 +16,11 @@
     margin-bottom: clamp(8rem, 10vw, 10rem);
 }
 
+/* User Research – 이미지 크기 축소, 두 이미지 간격 축소 */
 .project-detail-container
     .project-detail-section[data-section="User Research"]
     .project-detail-mockup-stack {
-    gap: 0rem;
+    gap: -1rem;
 }
 
 .project-detail-container
@@ -27,14 +28,6 @@
     .project-detail-mockup-stack
     img {
     max-width: min(800px, 85%);
-}
-
-/* Insights Figma embed */
-.scaffold-insights-figma-embed {
-    width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 10;
-    border-radius: 8px;
 }
 
 .scaffold-idea-pitching-images img {

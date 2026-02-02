@@ -8,7 +8,7 @@ function Scaffold({ project }) {
     const sections = project?.sections ?? [];
     if (!Array.isArray(sections) || sections.length === 0) return null;
     return (
-        <div className="project-detail-sections">
+        <div className="project-detail-container">
             <ContentSections
                 sections={sections}
                 projectName={project?.name ?? "Scaffold"}

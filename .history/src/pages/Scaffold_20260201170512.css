@@ -12,29 +12,8 @@
     margin-bottom: clamp(2rem, 4vw, 4rem);
 }
 
-.project-detail-container .project-detail-section {
-    margin-bottom: clamp(8rem, 10vw, 10rem);
-}
-
-.project-detail-container
-    .project-detail-section[data-section="User Research"]
-    .project-detail-mockup-stack {
-    gap: 0rem;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="User Research"]
-    .project-detail-mockup-stack
-    img {
-    max-width: min(800px, 85%);
-}
-
-/* Insights Figma embed */
-.scaffold-insights-figma-embed {
-    width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 16 / 10;
-    border-radius: 8px;
+.project-detail-sections {
+    margin-bottom: clamp(6rem, 6vw, 8rem);
 }
 
 .scaffold-idea-pitching-images img {

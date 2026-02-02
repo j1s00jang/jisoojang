@@ -90,6 +90,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                 'A core insight was that grants and financial resources are not simply "extra money." For skilled tradespeople, they provide a financial foundation that helps them sustain and continue their careers. This value informed Scaffold\'s direction as a financial support app designed to make that foundation easier to access and maintain.',
             ],
             images: [scaffoldInsights1],
+            caption: "Core insight",
             imageLayout: "stack",
         },
         {

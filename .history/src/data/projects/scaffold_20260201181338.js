@@ -14,7 +14,6 @@ import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLe
 import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLearnings03.mp4";
 import scaffoldKeyLearnings4 from "../../assets/projects/scaffold/scaffold_keyLearnings04.png";
 import scaffoldKeyLearnings5 from "../../assets/projects/scaffold/scaffold_keyLearnings05.png";
-import scaffoldInsights1 from "../../assets/projects/scaffold/scaffold_insights01.png";
 
 export const scaffold = {
     /* --- Metadata --- */
@@ -89,7 +88,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
             paragraphs: [
                 'A core insight was that grants and financial resources are not simply "extra money." For skilled tradespeople, they provide a financial foundation that helps them sustain and continue their careers. This value informed Scaffold\'s direction as a financial support app designed to make that foundation easier to access and maintain.',
             ],
-            images: [scaffoldInsights1],
+            images: [],
             imageLayout: "stack",
         },
         {
