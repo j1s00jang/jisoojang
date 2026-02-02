@@ -185,8 +185,7 @@ export const scaffold = {
           type: "video",
           src: scaffoldKeyFeatures3,
           className: "scaffold-key-features-video",
-          caption:
-            "Web supplement to reduce repetitive typing and speed up applications",
+          caption: "Streamline grant application process with web supplement",
         },
       ],
       imageLayout: "stack",
@@ -195,9 +194,7 @@ export const scaffold = {
     {
       heading: "Brand guidelines",
       paragraphs: [
-        "Scaffold’s visual identity uses a signature purple to create strong recognition, supported by energetic orange accents to draw attention to key actions and highlights.",
-        "\nTwo typefaces support both personality and readability: Akira is used for titles and labels to create a bold, structured tone, while Montserrat is used for longer text to keep content clear and easy to read—especially on mobile screens.",
-        "\nThe logo is built around the letter “S,” using stacked block shapes that suggest construction and stability. This reinforces the brand idea of building foundations, aligning the look and feel with Scaffold’s purpose: helping users find support and stay on track.",
+        "The iconic purple draws attention, complemented by energetic orange accents. Two typefaces are used across Scaffold’s identity: Akira is applied to titles and labels to create a bold, structured tone, while Montserrat supports readability and usability in longer text. The Scaffold logo is built around the letter “S,” with stacked block forms that suggest construction and stability. This visual concept reinforces the brand idea of “building foundations,” aligning the identity with the purpose and value of Scaffold.",
       ],
       images: [scaffoldBrandGuidelines1],
       imageLayout: "row",
@@ -205,8 +202,8 @@ export const scaffold = {
     {
       heading: "Marketing",
       paragraphs: [
-        "The brochure cover was designed to grab attention with a bold logo and a concise slogan. A subtle grid pattern in the background references scaffolding and reinforces the visual identity. The Z-fold format supports a clear story: it starts with the day-to-day challenges skilled tradespeople face, then moves into how Scaffold helps as a supportive financial resource.",
-        "\nThe business card uses the same colour palette to maintain brand consistency. Soft curved edges create a distinctive, approachable look, helping the card stand out while staying aligned with the overall brand.",
+        "The brochure cover was designed to capture attention with a bold logo and a concise slogan. A subtle grid pattern in the background referenced scaffolding and reinforced the project’s visual identity. The Z-fold format guided viewers through a clear storytelling, starting with the day-to-day struggles skilled tradespeople face and progressing to how Scaffold functions as a supportive financial app.",
+        "\nThe business cards used the same colour scheme to maintain brand consistency, with softly curved cuts that created a distinctive, approachable look and helped the cards stand out.",
       ],
       images: [scaffoldMarketing1],
       imageLayout: "row",
@@ -218,15 +215,15 @@ export const scaffold = {
     },
     {
       paragraphs: [
-        "This work highlighted the real-world differences between RGB and CMYK. Multiple rounds of print testing helped refine the colour palette and improve consistency from screen to print.",
-        "\n It also reinforced the value of strong grid systems in print design—supporting clearer hierarchy, alignment, and spacing across both the brochure and business card layouts.",
+        "This work highlighted the practical differences between RGB and CMYK. Multiple rounds of print testing helped refine the palette and ensured more consistent results from screen to print.",
+        "\nIt also reinforced key principles of print layout and grid systems, supporting clearer hierarchy, alignment, and spacing across the brochure and business card designs.",
       ],
     },
     {
       heading: "Storyboard & Film Production",
       paragraphs: [
-        "The promotional video was planned with a storyboard before production began. The story was inspired by an experience uncovered during research: a skilled tradeswoman was able to continue training and manage daily life after receiving grant support.",
-        "\n The storyboard and script were developed independently, and filming was coordinated and directed on the shoot day with support from the team. The final video was screened on pitch day to introduce the app concept and reinforce Scaffold’s core message—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
+        "Scaffold created the storyboard before production began. The story was inspired by a real experience uncovered during research: a skilled tradeswoman facing financial struggle was able to continue her training and daily life after receiving grants. With the support of a passionate team, the concept was brought to life as a cinematic promotional video.",
+        "\nThe video was screened on pitch day to introduce the app concept, and it reinforced the same message the Scaffold product aimed to deliver—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
       ],
       images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
       imageLayout: "row",
@@ -252,13 +249,8 @@ export const scaffold = {
     },
     {
       paragraphs: [
-        "This project became a strong foundation for growth in UI/UX design—from early research and ideation to a full prototype and live demo. Ongoing feedback and guidance from BCIT instructors also helped strengthen communication and teamwork throughout the process.",
-        "\n What this experience strengthened:",
-        "\n- End-to-end UI/UX skills: building from early research and ideation to a full prototype and live demo.",
-        "- Communication and teamwork: collaborating more clearly through feedback and guidance from BCIT instructors.",
-        "- Storytelling and decisions: presenting on showcase day improved structured thinking and clear communication.",
-        "- Iteration mindset: learned to test, adjust, take feedback, and improve after setbacks.",
-        "\n Overall, Scaffold project was a key milestone, bringing the full story together—from early ideas to a developed product—in front of a large audience. The process created space for experimentation, iteration, and learning through challenges, shaping a more confident and resilient design approach.",
+        "This project became a strong foundation for growth in UI/UX design. It strengthened communication and collaboration across the team, supported by generous guidance from BCIT instructors throughout the process.",
+        "\nPresenting the work to a large audience—sharing how the concept evolved from early ideas to a developed product—was a proud milestone. Most importantly, the project created space for experimentation, iteration, and learning from failures, shaping a more confident and resilient design approach.",
       ],
     },
   ],

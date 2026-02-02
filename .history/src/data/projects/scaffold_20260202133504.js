@@ -252,13 +252,8 @@ export const scaffold = {
     },
     {
       paragraphs: [
-        "This project became a strong foundation for growth in UI/UX design—from early research and ideation to a full prototype and live demo. Ongoing feedback and guidance from BCIT instructors also helped strengthen communication and teamwork throughout the process.",
-        "\n What this experience strengthened:",
-        "\n- End-to-end UI/UX skills: building from early research and ideation to a full prototype and live demo.",
-        "- Communication and teamwork: collaborating more clearly through feedback and guidance from BCIT instructors.",
-        "- Storytelling and decisions: presenting on showcase day improved structured thinking and clear communication.",
-        "- Iteration mindset: learned to test, adjust, take feedback, and improve after setbacks.",
-        "\n Overall, Scaffold project was a key milestone, bringing the full story together—from early ideas to a developed product—in front of a large audience. The process created space for experimentation, iteration, and learning through challenges, shaping a more confident and resilient design approach.",
+        "This project became a strong foundation for growth in UI/UX design—from early research and ideation to a full prototype and live demo. It strengthened communication and teamwork, supported by ongoing feedback and guidance from BCIT instructors throughout the process.",
+        "\n Pitch day was a meaningful milestone: presenting the journey from early ideas to a developed product to a large audience helped clarify the value of clear storytelling and structured decision-making. Most importantly, the project encouraged experimentation and iteration—treating setbacks as signals for improvement and building a more confident, resilient design approach.",
       ],
     },
   ],

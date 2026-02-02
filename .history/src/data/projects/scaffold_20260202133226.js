@@ -225,8 +225,8 @@ export const scaffold = {
     {
       heading: "Storyboard & Film Production",
       paragraphs: [
-        "The promotional video was planned with a storyboard before production began. The story was inspired by an experience uncovered during research: a skilled tradeswoman was able to continue training and manage daily life after receiving grant support.",
-        "\n The storyboard and script were developed independently, and filming was coordinated and directed on the shoot day with support from the team. The final video was screened on pitch day to introduce the app concept and reinforce Scaffold’s core message—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
+        "Scaffold created the storyboard before production began. The story was inspired by a real experience uncovered during research: a skilled tradeswoman facing financial struggle was able to continue her training and daily life after receiving grants. With the support of a passionate team, the concept was brought to life as a cinematic promotional video.",
+        "\nThe video was screened on pitch day to introduce the app concept, and it reinforced the same message the Scaffold product aimed to deliver—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
       ],
       images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
       imageLayout: "row",
@@ -252,13 +252,8 @@ export const scaffold = {
     },
     {
       paragraphs: [
-        "This project became a strong foundation for growth in UI/UX design—from early research and ideation to a full prototype and live demo. Ongoing feedback and guidance from BCIT instructors also helped strengthen communication and teamwork throughout the process.",
-        "\n What this experience strengthened:",
-        "\n- End-to-end UI/UX skills: building from early research and ideation to a full prototype and live demo.",
-        "- Communication and teamwork: collaborating more clearly through feedback and guidance from BCIT instructors.",
-        "- Storytelling and decisions: presenting on showcase day improved structured thinking and clear communication.",
-        "- Iteration mindset: learned to test, adjust, take feedback, and improve after setbacks.",
-        "\n Overall, Scaffold project was a key milestone, bringing the full story together—from early ideas to a developed product—in front of a large audience. The process created space for experimentation, iteration, and learning through challenges, shaping a more confident and resilient design approach.",
+        "This project became a strong foundation for growth in UI/UX design. It strengthened communication and collaboration across the team, supported by generous guidance from BCIT instructors throughout the process.",
+        "\nPresenting the work to a large audience—sharing how the concept evolved from early ideas to a developed product—was a proud milestone. Most importantly, the project created space for experimentation, iteration, and learning from failures, shaping a more confident and resilient design approach.",
       ],
     },
   ],
