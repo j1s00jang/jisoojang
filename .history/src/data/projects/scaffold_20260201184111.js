@@ -174,11 +174,5 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
             ],
             imageLayout: "stack",
         },
-        {
-            paragraphs: [
-                "This project became a strong foundation for growth in UI/UX design. It strengthened communication and collaboration across the team, supported by generous guidance from BCIT instructors throughout the process.",
-                "\nPresenting the work to a large audience—sharing how the concept evolved from early ideas to a developed product—was a proud milestone. Most importantly, the project created space for experimentation, iteration, and learning from failures, shaping a more confident and resilient design approach.",
-            ],
-        },
     ],
 };

@@ -158,8 +158,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
         {
             heading: "Key learnings & reflections",
             paragraphs: [
-                "Scaffold created the storyboard before production began. The story was inspired by a real experience uncovered during research: a skilled tradeswoman facing financial struggle was able to continue her training and daily life after receiving grants. With the support of a passionate team, the concept was brought to life as a cinematic promotional video.",
-                "\nThe video was screened on pitch day to introduce the app concept, and it reinforced the same message the Scaffold product aimed to deliver—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
+                "The project reinforced the importance of user research in shaping product direction and highlighted the challenges of consolidating complex information into a simple, accessible interface.",
             ],
             images: [
                 scaffoldKeyLearnings1,
@@ -172,13 +171,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                 scaffoldKeyLearnings4,
                 scaffoldKeyLearnings5,
             ],
-            imageLayout: "stack",
-        },
-        {
-            paragraphs: [
-                "This project became a strong foundation for growth in UI/UX design. It strengthened communication and collaboration across the team, supported by generous guidance from BCIT instructors throughout the process.",
-                "\nPresenting the work to a large audience—sharing how the concept evolved from early ideas to a developed product—was a proud milestone. Most importantly, the project created space for experimentation, iteration, and learning from failures, shaping a more confident and resilient design approach.",
-            ],
+            imageLayout: "row",
         },
     ],
 };

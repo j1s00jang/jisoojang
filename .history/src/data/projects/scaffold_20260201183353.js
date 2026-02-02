@@ -106,11 +106,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
         {
             heading: "How we started",
             paragraphs: [
-                "Three core questions informed Scaffold’s design strategy:",
-                "\n1. How can the experience work for everyone, everywhere?",
-                "2. Which contexts and constraints should be considered?",
-                "3. How can the application process be simplified while helping users track deadlines?",
-                "\nEarly on, it was important to understand the factors that shape skilled tradespeople’s day-to-day experiences, including their work routines and lifestyle constraints. The team mapped user journeys across key scenarios, then translated those insights into a framework of contexts and situational spectrum to guide feature decisions and layout priorities.",
+                "Scaffold developed an information architecture and key flows to make grant discovery and tracking easier for users.",
             ],
             images: [scaffoldHowWeStarted1],
             imageLayout: "stack",
@@ -118,7 +114,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
         {
             heading: "Brand Guidelines",
             paragraphs: [
-                "The iconic purple draws attention, complemented by energetic orange accents. Two typefaces are used across Scaffold’s identity: Akira is applied to titles and labels to create a bold, structured tone, while Montserrat supports readability and usability in longer text. The Scaffold logo is built around the letter “S,” with stacked block forms that suggest construction and stability. This visual concept reinforces the brand idea of “building foundations,” aligning the identity with the purpose and value of Scaffold.",
+                "Scaffold's visual identity was developed to feel trustworthy and approachable while supporting clear information hierarchy.",
             ],
             images: [scaffoldBrandGuidelines1],
             imageLayout: "row",
@@ -126,8 +122,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
         {
             heading: "Key Features",
             paragraphs: [
-                "Grant information needed to be easy to scan without causing users to miss critical details. A card-based layout surfaced the grant name, deadline, and eligibility at a glance, paired with each organization’s logo for quick recognition. This structure helped users quickly identify eligible grants in British Columbia, Canada, while remaining flexible enough to scale and adapt across different user contexts.",
-                "\nBecause grants are often applied for on external websites, each card included a direct link to the official application page to reduce website-hopping. To streamline repeated form entry, Scaffold introduced a profile built around commonly required personal and education-related questions, allowing information to be copied and reused to minimize repetitive typing and reduce errors. Since essay writing on a phone is inconvenient, a web supplement supported drafting on a larger screen, with AI assistance for generating a first draft from saved profile details and a structured list for managing applied grants.",
+                "Key features were designed to reduce friction in the grant application process and help users track deadlines and eligibility.",
             ],
             images: [
                 scaffoldKeyFeatures1,
@@ -138,28 +133,20 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                     className: "project-detail-mockup-image",
                 },
             ],
-            imageLayout: "row",
+            imageLayout: "stack",
         },
         {
             heading: "Marketing",
             paragraphs: [
-                "The brochure cover was designed to capture attention with a bold logo and a concise slogan. A subtle grid pattern in the background referenced scaffolding and reinforced the project’s visual identity. The Z-fold format guided viewers through a clear storytelling, starting with the day-to-day struggles skilled tradespeople face and progressing to how Scaffold functions as a supportive financial app.",
-                "\nThe business cards used the same colour scheme to maintain brand consistency, with softly curved cuts that created a distinctive, approachable look and helped the cards stand out.",
+                "Marketing materials were designed to communicate Scaffold's value proposition to tradespeople.",
             ],
             images: [scaffoldMarketing1],
             imageLayout: "row",
         },
         {
-            paragraphs: [
-                "This work highlighted the practical differences between RGB and CMYK. Multiple rounds of print testing helped refine the palette and ensured more consistent results from screen to print.",
-                "\nIt also reinforced key principles of print layout and grid systems, supporting clearer hierarchy, alignment, and spacing across the brochure and business card designs.",
-            ],
-        },
-        {
             heading: "Key learnings & reflections",
             paragraphs: [
-                "Scaffold created the storyboard before production began. The story was inspired by a real experience uncovered during research: a skilled tradeswoman facing financial struggle was able to continue her training and daily life after receiving grants. With the support of a passionate team, the concept was brought to life as a cinematic promotional video.",
-                "\nThe video was screened on pitch day to introduce the app concept, and it reinforced the same message the Scaffold product aimed to deliver—financial support can be a foundation that helps skilled tradespeople sustain their careers.",
+                "The project reinforced the importance of user research in shaping product direction and highlighted the challenges of consolidating complex information into a simple, accessible interface.",
             ],
             images: [
                 scaffoldKeyLearnings1,
@@ -172,13 +159,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                 scaffoldKeyLearnings4,
                 scaffoldKeyLearnings5,
             ],
-            imageLayout: "stack",
-        },
-        {
-            paragraphs: [
-                "This project became a strong foundation for growth in UI/UX design. It strengthened communication and collaboration across the team, supported by generous guidance from BCIT instructors throughout the process.",
-                "\nPresenting the work to a large audience—sharing how the concept evolved from early ideas to a developed product—was a proud milestone. Most importantly, the project created space for experimentation, iteration, and learning from failures, shaping a more confident and resilient design approach.",
-            ],
+            imageLayout: "row",
         },
     ],
 };
