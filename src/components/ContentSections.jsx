@@ -6,7 +6,7 @@ import "../pages/ProjectDetail.css";
  * Add/edit content in the project data file only; no JSX changes needed.
  *
  * Data shape per section:
- *   { heading?, paragraphs, images?, imageLayout?: 'row'|'stack', imageWrapperClass?, caption? }
+ *   { heading?, sectionId?, paragraphs, images?, imageLayout?: 'row'|'stack', imageWrapperClass?, caption? }
  * - images: array of src (string), { src, alt? } for images, { type: 'video', src, className?, caption? } for videos, or { type: 'iframe', src, width?, height?, className?, caption? } for embeds
  * - imageWrapperClass: extra class on the image wrapper for custom CSS (e.g. ProjectDetail.css).
  * - caption: optional caption shown below the images in this section.
@@ -33,6 +33,7 @@ function ContentSections({ sections, projectName = "" }) {
                 return (
                     <section
                         key={i}
+                        id={sec.sectionId}
                         className="project-detail-section"
                         data-section={sec.heading || i}
                     >

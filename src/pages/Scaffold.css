@@ -18,18 +18,11 @@
 
 .project-detail-container
     .project-detail-section[data-section="User Research"]
-    .project-detail-mockup-stack {
-    gap: 0rem;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="User Research"]
     .project-detail-mockup-stack
     img {
     max-width: min(800px, 85%);
 }
 
-/* Insights Figma embed */
 .scaffold-insights-figma-embed {
     width: 100%;
     max-width: 1000px;
@@ -37,7 +30,6 @@
     border-radius: 8px;
 }
 
-/* How we started Figma embed */
 .scaffold-how-we-started-figma-embed {
     width: 100%;
     max-width: 1000px;
@@ -45,15 +37,13 @@
     border-radius: 8px;
 }
 
-/* The discovery Figma embed */
 .scaffold-discovery-figma-embed {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     aspect-ratio: 16 / 9;
     border-radius: 8px;
 }
 
-/* Key Features: 2 images in row, video below, smaller images */
 .project-detail-container .scaffold-key-features-media {
     display: flex;
     flex-wrap: wrap;
@@ -74,37 +64,11 @@
     .scaffold-key-features-video {
     flex: 0 0 100%;
     width: 100%;
-    max-width: clamp(800px, 80vw, 1000px);
+    max-width: clamp(700px, 70vw, 1000px);
     margin: 0.5rem auto 0;
     aspect-ratio: 16 / 9;
 }
 
-/* Marketing: reduce gap between marketing1 and marketing2/3 */
-.project-detail-container .project-detail-section[data-section="Marketing"] {
-    margin-bottom: 0;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="Marketing"]
-    .project-detail-mockup {
-    margin-bottom: 0;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="Marketing"]
-    + .project-detail-section {
-    margin-top: 0;
-}
-
-.project-detail-container
-    .project-detail-section[data-section="Marketing"]
-    + .project-detail-section
-    .project-detail-mockup {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-/* Marketing section: scaffoldMarketing2, scaffoldMarketing3 */
 .project-detail-container .scaffold-marketing-images img {
     max-width: min(400px, 60vw);
     border-radius: 5px;

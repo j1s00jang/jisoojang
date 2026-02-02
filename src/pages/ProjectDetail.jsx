@@ -96,6 +96,90 @@ function ProjectDetail() {
                                 {project.keySkills}
                             </p>
                         </div>
+
+                        {project.headerLinks && project.headerLinks.length > 0 && (
+                            <div className="project-detail-header-links">
+                                {project.headerLinks.map((link, idx) => {
+                                    if (link.type === "liveDemo") {
+                                        return (
+                                            <button
+                                                key={idx}
+                                                type="button"
+                                                className="project-detail-header-link"
+                                                onClick={() =>
+                                                    window.open(
+                                                        link.url,
+                                                        "_blank",
+                                                        "width=390,height=844,scrollbars=yes"
+                                                    )
+                                                }
+                                                aria-label={link.label}
+                                                title={link.label}
+                                            >
+                                                <img
+                                                    src={link.icon}
+                                                    alt=""
+                                                    className="project-detail-header-link-icon"
+                                                />
+                                                <span className="project-detail-header-link-label">
+                                                    {link.label}
+                                                </span>
+                                            </button>
+                                        );
+                                    }
+                                    if (link.type === "external") {
+                                        return (
+                                            <a
+                                                key={idx}
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="project-detail-header-link"
+                                                aria-label={link.label}
+                                                title={link.label}
+                                            >
+                                                <img
+                                                    src={link.icon}
+                                                    alt=""
+                                                    className="project-detail-header-link-icon"
+                                                />
+                                                <span className="project-detail-header-link-label">
+                                                    {link.label}
+                                                </span>
+                                            </a>
+                                        );
+                                    }
+                                    if (link.type === "anchor") {
+                                        return (
+                                            <button
+                                                key={idx}
+                                                type="button"
+                                                className="project-detail-header-link"
+                                                onClick={() => {
+                                                    document
+                                                        .getElementById(link.anchorId)
+                                                        ?.scrollIntoView({
+                                                            behavior: "smooth",
+                                                        });
+                                                }}
+                                                aria-label={link.label}
+                                                title={link.label}
+                                            >
+                                                <img
+                                                    src={link.icon}
+                                                    alt=""
+                                                    className="project-detail-header-link-icon"
+                                                />
+                                                <span className="project-detail-header-link-label">
+                                                    {link.label}
+                                                </span>
+                                            </button>
+                                        );
+                                    }
+                                    return null;
+                                })}
+                            </div>
+                        )}
                     </div>
                 </div>
 

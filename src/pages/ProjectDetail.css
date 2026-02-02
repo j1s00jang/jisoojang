@@ -96,6 +96,45 @@
     white-space: pre-line;
 }
 
+.project-detail-header-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.project-detail-header-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: opacity 0.2s ease;
+}
+
+.project-detail-header-link:hover {
+    opacity: 0.8;
+}
+
+.project-detail-header-link-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.project-detail-header-link-label {
+    font-size: 0.9rem;
+    color: var(--color-primary-black);
+}
+
 .project-detail-concept-p2 {
     margin-top: 1.5rem;
 }

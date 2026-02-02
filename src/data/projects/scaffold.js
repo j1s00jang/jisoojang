@@ -16,6 +16,9 @@ import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLe
 import scaffoldKeyLearnings4 from "../../assets/projects/scaffold/scaffold_keyLearnings04.png";
 import scaffoldKeyLearnings5 from "../../assets/projects/scaffold/scaffold_keyLearnings05.png";
 import scaffoldInsights1 from "../../assets/projects/scaffold/scaffold_insights01.png";
+import scaffoldLivedemoIcon from "../../assets/projects/scaffold/scaffold_livedemo_icon.png";
+import scaffoldWireframesIcon from "../../assets/projects/scaffold/scaffold_wireframes_icon.png";
+import scaffoldPromoIcon from "../../assets/projects/scaffold/scaffold_promo_icon.png";
 
 export const scaffold = {
     /* --- Metadata --- */
@@ -38,6 +41,27 @@ export const scaffold = {
     overview: `Skilled tradespeople struggled to keep track of grant deadlines or abandoned their search for grant funding due to the friction of navigating multiple websites.
 
 Scaffold is an all-in-one financial resource app designed to help users manage their financial situations. Ensuring fundamental usability was challenging as disparate features and experiments competed for attention. As the scope expanded, reliability and performance issues increased, requiring careful prioritization and refinement.`,
+
+    headerLinks: [
+        {
+            icon: scaffoldLivedemoIcon,
+            label: "live demo",
+            type: "liveDemo",
+            url: "https://scaffold-ivory.vercel.app/grants?tab=Eligible",
+        },
+        {
+            icon: scaffoldWireframesIcon,
+            label: "wireframes",
+            type: "external",
+            url: "https://www.figma.com/design/GwmCtoUnl6Bwqr3FUsPauU/UI-design--Copy-?node-id=1878-3978&t=2Lx7lSpPUDo2GuJx-1",
+        },
+        {
+            icon: scaffoldPromoIcon,
+            label: "promo video",
+            type: "anchor",
+            anchorId: "promo-video",
+        },
+    ],
 
     /* --- ContentSections (template) --- */
     sections: [
@@ -157,7 +181,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
                     src: scaffoldKeyFeatures3,
                     className: "scaffold-key-features-video",
                     caption:
-                        "Web supplement for the step-by-step application process",
+                        "Streamline grant application process with web supplement",
                 },
             ],
             imageLayout: "stack",
@@ -193,6 +217,7 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
             imageLayout: "row",
         },
         {
+            sectionId: "promo-video",
             heading: "Promotional video",
             images: [
                 {
