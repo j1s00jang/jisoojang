@@ -66,23 +66,21 @@ function AboutMe({ hideBreadcrumbs = false }) {
                     </div>
                     <div className="about-me-intro-right">
                         <p className="intro-text">
-                            <span className="intro-greeting-highlight">
-                                Hello, I'm Jisoo!
-                            </span>
+                            Hello, I am Jisoo!
                             <br />
                             <br />
                             <span className="intro-text-body">
                                 Nature is my favourite colour palette to get
                                 inspired. With my colourful and fun design
                                 style, I love creating intuitive and inclusive
-                                design. I believe in the power of effective
+                                design.
+                                <br />
+                                <br />I believe in the power of effective
                                 storytelling through design. I enjoy designing
-                                unique, eye-catching and playful visuals.
-                                <br />
-                                <br />
-                                Please take a moment to browse my portfolio, and
-                                reach out to me anytime if you have any
-                                inquiries. I’d love to hear from you!
+                                unique, eye-catching and playful visuals. Please
+                                take a moment to browse my portfolio, and reach
+                                out to me anytime if you have any inquiries. I’d
+                                love to hear from you!
                             </span>
                         </p>
                     </div>

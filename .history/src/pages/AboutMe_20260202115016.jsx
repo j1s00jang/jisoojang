@@ -66,9 +66,7 @@ function AboutMe({ hideBreadcrumbs = false }) {
                     </div>
                     <div className="about-me-intro-right">
                         <p className="intro-text">
-                            <span className="intro-greeting-highlight">
-                                Hello, I'm Jisoo!
-                            </span>
+                            Hello, I'm Jisoo!
                             <br />
                             <br />
                             <span className="intro-text-body">
