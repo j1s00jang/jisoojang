@@ -1,4 +1,5 @@
 import "./ProjectDetail.css";
+import "./InteractiveTutorial.css";
 import FigmaEmbed from "../components/FigmaEmbed";
 import UpNextBanner from "../components/UpNextBanner";
 import Footer from "../components/Footer";

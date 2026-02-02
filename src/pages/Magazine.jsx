@@ -1,4 +1,5 @@
 import "./ProjectDetail.css";
+import "./Magazine.css";
 import Footer from "../components/Footer";
 import UpNextBanner from "../components/UpNextBanner";
 import MagazineFlipbook from "../components/MagazineFlipbook";

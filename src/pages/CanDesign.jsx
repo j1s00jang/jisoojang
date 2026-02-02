@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import "./ProjectDetail.css";
+import "./CanDesign.css";
 import Footer from "../components/Footer";
 import UpNextBanner from "../components/UpNextBanner";
 

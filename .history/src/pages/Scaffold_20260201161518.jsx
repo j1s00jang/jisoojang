@@ -2,7 +2,6 @@ import ContentSections from "../components/ContentSections";
 import UpNextBanner from "../components/UpNextBanner";
 import Footer from "../components/Footer";
 import "./ProjectDetail.css";
-import "./Scaffold.css";
 
 function Scaffold({ project }) {
     const sections = project?.sections ?? [];

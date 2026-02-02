@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Scaffold – project-specific styles
+   ========================================================================== */
+
+/* Screen image (header mockup) – override shared ProjectDetail.css */
+.project-detail-screen-image {
+    max-width: clamp(240px, 30vw, 300px);
+}
+
+/* Section images (e.g. imageWrapperClass in scaffold.js) */
+.scaffold-idea-pitching-images img {
+    max-width: 640px;
+    border-radius: 8px;
+}
