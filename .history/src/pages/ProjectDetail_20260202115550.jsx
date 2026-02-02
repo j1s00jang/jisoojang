@@ -35,13 +35,10 @@ function ProjectDetail() {
     return (
         <div
             className={`project-detail-page ${
-                [
-                    "can-design",
-                    "magazine",
-                    "interactive_tutorial",
-                    "posters",
-                ].includes(slug)
-                    ? "project-detail-large-screen"
+                slug === "can-design" ? "project-detail-can-design" : ""
+            } ${
+                slug === "interactive_tutorial"
+                    ? "project-detail-interactive-tutorial"
                     : ""
             }`}
         >
