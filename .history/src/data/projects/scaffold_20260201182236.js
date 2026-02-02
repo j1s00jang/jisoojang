@@ -2,7 +2,7 @@ import scaffoldThumbnail from "../../assets/projects/scaffold/scaffold_card.png"
 import scaffoldScreen from "../../assets/projects/scaffold/scaffold_screen01.png";
 import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png";
 import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.png";
-import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_userResearch02.png";
+import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_UserResearch02.png";
 import scaffoldHowWeStarted1 from "../../assets/projects/scaffold/scaffold_howWeStarted01.png";
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.png";

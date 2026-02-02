@@ -2,7 +2,7 @@ import scaffoldThumbnail from "../../assets/projects/scaffold/scaffold_card.png"
 import scaffoldScreen from "../../assets/projects/scaffold/scaffold_screen01.png";
 import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png";
 import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.png";
-import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_userResearch02.png";
+import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_UserResearch02.png";
 import scaffoldHowWeStarted1 from "../../assets/projects/scaffold/scaffold_howWeStarted01.png";
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.png";
@@ -91,8 +91,6 @@ Scaffold is an all-in-one financial resource app designed to help users manage t
             ],
             images: [scaffoldInsights1],
             imageLayout: "stack",
-            caption:
-                "Employment and Social Development Canada. (2025, January 31). Apprenticeship grants: Evaluation report. Government of Canada. https://www.canada.ca/en/employment-social-development/corporate/reports/evaluations/apprenticeship-grants-impact.html",
         },
         {
             heading: "The discovery",

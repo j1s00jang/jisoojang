@@ -46,7 +46,7 @@ function ContentSections({ sections, projectName = "" }) {
                             </p>
                         ))}
                         {imgs.length > 0 && (
-                            <>
+                            <div className={sec.caption ? "project-detail-media-with-caption" : undefined}>
                                 <div className={wrapClass}>
                                     {imgs.map((item, j) => {
                                         const src =
@@ -124,11 +124,13 @@ function ContentSections({ sections, projectName = "" }) {
                                     })}
                                 </div>
                                 {sec.caption && (
-                                    <span className="project-detail-embed-caption">
-                                        {sec.caption}
-                                    </span>
+                                    <div className="project-detail-caption-wrap">
+                                        <span className="project-detail-embed-caption">
+                                            {sec.caption}
+                                        </span>
+                                    </div>
                                 )}
-                            </>
+                            </div>
                         )}
                     </section>
                 );
