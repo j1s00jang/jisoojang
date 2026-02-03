@@ -36,7 +36,7 @@ const PROJECTS = [
   { id: "posters", slug: "posters", title: "Posters", image: postersImage },
 ];
 
-const CARD_WIDTH = 250;
+const CARD_WIDTH = 280;
 const CARD_GAP = 30;
 const REPEAT_COUNT = 3;
 const SCROLL_SPEED = 0.5;
@@ -44,16 +44,7 @@ const SCROLL_SPEED = 0.5;
 export default function ProjectsSection({ title = "Projects" }) {
   const scrollRef = useRef(null);
   const isScrollingRef = useRef(false);
-  const isPausedRef = useRef(false);
-  const animationFrameId = useRef(null);
-
-  const getCardWidth = () => {
-    if (window.innerWidth > 1400) return 320;
-    if (window.innerWidth > 768) return 280;
-    return 240;
-  };
-
-  const [cardWidth, setCardWidth] = useState(getCardWidth());
+  const isHoveringRef = useRef(false); // 마우스 호버 상태 감지
 
   const repeatedProjects = Array.from(
     { length: REPEAT_COUNT },
@@ -62,84 +53,71 @@ export default function ProjectsSection({ title = "Projects" }) {
   ).flat();
 
   useEffect(() => {
-    const handleResize = () => {
-      setCardWidth(getCardWidth());
-    };
-
-    window.addEventListener("resize", handleResize);
-
     const el = scrollRef.current;
     if (!el) return;
 
-    const singleSetWidth = PROJECTS.length * (cardWidth + CARD_GAP);
+    const singleSetWidth =
+      PROJECTS.length * CARD_WIDTH + PROJECTS.length * CARD_GAP;
     el.scrollLeft = singleSetWidth;
 
     const handleScroll = () => {
       if (isScrollingRef.current) return;
-      const { scrollLeft, scrollWidth, clientWidth } = el;
-      if (scrollLeft <= 10) {
+      const { scrollLeft, scrollWidth } = el;
+
+      if (scrollLeft <= 5) {
         isScrollingRef.current = true;
-        el.scrollLeft += singleSetWidth;
+        el.scrollLeft = scrollLeft + singleSetWidth;
         isScrollingRef.current = false;
-      } else if (scrollLeft >= scrollWidth - clientWidth - 10) {
+      } else if (scrollLeft >= scrollWidth - el.clientWidth - 5) {
         isScrollingRef.current = true;
-        el.scrollLeft -= singleSetWidth;
+        el.scrollLeft = scrollLeft - singleSetWidth;
         isScrollingRef.current = false;
       }
     };
 
+    let animationFrameId;
     const animate = () => {
-      if (!isPausedRef.current && el) {
+      if (!isHoveringRef.current) {
         el.scrollLeft += SCROLL_SPEED;
       }
-      animationFrameId.current = requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    animationFrameId.current = requestAnimationFrame(animate);
+    animate();
+
     el.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       el.removeEventListener("scroll", handleScroll);
-      if (animationFrameId.current)
-        cancelAnimationFrame(animationFrameId.current);
+      cancelAnimationFrame(animationFrameId);
     };
-  }, [cardWidth]);
+  }, []);
 
   return (
     <section
-      style={{
-        background: "var(--color-primary-white)",
-        padding: "64px 0",
-        overflow: "hidden",
-      }}
+      style={{ background: "var(--color-primary-white)", padding: "64px 0" }}
     >
-      <div style={{ width: "min(1400px, 94vw)", margin: "0 auto" }}>
+      <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", marginBottom: "28px" }}>{title}</h2>
 
         <div
           ref={scrollRef}
+          className="home-projects-scroll"
+          // 마우스가 올라가면 멈추고, 나가면 다시 시작
           onMouseEnter={() => {
-            isPausedRef.current = true;
+            isHoveringRef.current = true;
           }}
           onMouseLeave={() => {
-            isPausedRef.current = false;
-          }}
-          onTouchStart={() => {
-            isPausedRef.current = true;
-          }}
-          onTouchEnd={() => {
-            isPausedRef.current = false;
+            isHoveringRef.current = false;
           }}
           style={{
             display: "flex",
             gap: `${CARD_GAP}px`,
             overflowX: "auto",
-            scrollSnapType: "none",
+            scrollSnapType: isHoveringRef.current ? "x mandatory" : "none", // 자동 스크롤 중에는 스냅 끔
             scrollbarWidth: "none",
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
-            padding: "20px 0",
           }}
         >
           {repeatedProjects.map((p) => (
@@ -148,12 +126,12 @@ export default function ProjectsSection({ title = "Projects" }) {
               to={`/projects/${p.slug}`}
               style={{
                 flexShrink: 0,
-                width: cardWidth,
+                width: CARD_WIDTH,
                 borderRadius: "18px",
                 overflow: "hidden",
                 transition: "transform 160ms ease",
-                display: "block",
               }}
+              // 호버 효과는 CSS나 inline-style로 유지
             >
               <div style={{ aspectRatio: "1 / 1" }}>
                 <img
@@ -165,7 +143,50 @@ export default function ProjectsSection({ title = "Projects" }) {
             </Link>
           ))}
         </div>
+        {/* ... 하단 "See all projects" 버튼 생략 */}
       </div>
     </section>
   );
 }
+
+const repeatedProjects = Array.from({ length: REPEAT_COUNT }, (_, repeatIdx) =>
+  PROJECTS.map((p) => ({ ...p, key: `${p.id}-${repeatIdx}` }))
+).flat();
+
+useEffect(() => {
+  const el = scrollRef.current;
+  if (!el) return;
+
+  const setScrollToMiddle = () => {
+    const singleSetWidth =
+      PROJECTS.length * CARD_WIDTH + (PROJECTS.length - 1) * CARD_GAP;
+    el.scrollLeft = singleSetWidth;
+  };
+
+  requestAnimationFrame(setScrollToMiddle);
+
+  const handleScroll = () => {
+    if (isScrollingRef.current) return;
+    const singleSetWidth =
+      PROJECTS.length * CARD_WIDTH + (PROJECTS.length - 1) * CARD_GAP;
+    const totalWidth = singleSetWidth * REPEAT_COUNT;
+    const { scrollLeft } = el;
+
+    if (scrollLeft <= CARD_WIDTH) {
+      isScrollingRef.current = true;
+      el.scrollLeft = scrollLeft + singleSetWidth;
+      requestAnimationFrame(() => {
+        isScrollingRef.current = false;
+      });
+    } else if (scrollLeft >= totalWidth - singleSetWidth - CARD_WIDTH) {
+      isScrollingRef.current = true;
+      el.scrollLeft = scrollLeft - singleSetWidth;
+      requestAnimationFrame(() => {
+        isScrollingRef.current = false;
+      });
+    }
+  };
+
+  el.addEventListener("scroll", handleScroll, { passive: true });
+  return () => el.removeEventListener("scroll", handleScroll);
+}, []);

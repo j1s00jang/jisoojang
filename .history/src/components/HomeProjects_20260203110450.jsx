@@ -36,7 +36,7 @@ const PROJECTS = [
   { id: "posters", slug: "posters", title: "Posters", image: postersImage },
 ];
 
-const CARD_WIDTH = 250;
+const CARD_WIDTH = 280;
 const CARD_GAP = 30;
 const REPEAT_COUNT = 3;
 const SCROLL_SPEED = 0.5;
@@ -44,16 +44,7 @@ const SCROLL_SPEED = 0.5;
 export default function ProjectsSection({ title = "Projects" }) {
   const scrollRef = useRef(null);
   const isScrollingRef = useRef(false);
-  const isPausedRef = useRef(false);
-  const animationFrameId = useRef(null);
-
-  const getCardWidth = () => {
-    if (window.innerWidth > 1400) return 320;
-    if (window.innerWidth > 768) return 280;
-    return 240;
-  };
-
-  const [cardWidth, setCardWidth] = useState(getCardWidth());
+  const [isPaused, setIsPaused] = useState(false);
 
   const repeatedProjects = Array.from(
     { length: REPEAT_COUNT },
@@ -62,84 +53,71 @@ export default function ProjectsSection({ title = "Projects" }) {
   ).flat();
 
   useEffect(() => {
-    const handleResize = () => {
-      setCardWidth(getCardWidth());
-    };
-
-    window.addEventListener("resize", handleResize);
-
     const el = scrollRef.current;
     if (!el) return;
 
-    const singleSetWidth = PROJECTS.length * (cardWidth + CARD_GAP);
+    const singleSetWidth = PROJECTS.length * (CARD_WIDTH + CARD_GAP);
+
     el.scrollLeft = singleSetWidth;
 
     const handleScroll = () => {
       if (isScrollingRef.current) return;
-      const { scrollLeft, scrollWidth, clientWidth } = el;
-      if (scrollLeft <= 10) {
+
+      if (el.scrollLeft <= 10) {
         isScrollingRef.current = true;
         el.scrollLeft += singleSetWidth;
         isScrollingRef.current = false;
-      } else if (scrollLeft >= scrollWidth - clientWidth - 10) {
+      } else if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 10) {
         isScrollingRef.current = true;
         el.scrollLeft -= singleSetWidth;
         isScrollingRef.current = false;
       }
     };
 
+    // 3. 자동 스크롤 애니메이션
+    let animationFrameId;
     const animate = () => {
-      if (!isPausedRef.current && el) {
+      if (!isPaused) {
+        // state인 isPaused를 참조
         el.scrollLeft += SCROLL_SPEED;
       }
-      animationFrameId.current = requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    animationFrameId.current = requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
     el.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       el.removeEventListener("scroll", handleScroll);
-      if (animationFrameId.current)
-        cancelAnimationFrame(animationFrameId.current);
+      cancelAnimationFrame(animationFrameId);
     };
-  }, [cardWidth]);
+  }, [isPaused]); // isPaused가 변할 때 애니메이션 로직 업데이트
 
   return (
     <section
-      style={{
-        background: "var(--color-primary-white)",
-        padding: "64px 0",
-        overflow: "hidden",
-      }}
+      style={{ background: "var(--color-primary-white)", padding: "64px 0" }}
     >
-      <div style={{ width: "min(1400px, 94vw)", margin: "0 auto" }}>
+      <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", marginBottom: "28px" }}>{title}</h2>
 
         <div
           ref={scrollRef}
-          onMouseEnter={() => {
-            isPausedRef.current = true;
-          }}
-          onMouseLeave={() => {
-            isPausedRef.current = false;
-          }}
-          onTouchStart={() => {
-            isPausedRef.current = true;
-          }}
-          onTouchEnd={() => {
-            isPausedRef.current = false;
-          }}
+          className="home-projects-scroll"
+          // 마우스 & 터치 이벤트 통합
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
           style={{
             display: "flex",
             gap: `${CARD_GAP}px`,
             overflowX: "auto",
-            scrollSnapType: "none",
+            // 자동 스크롤과 충돌을 피하기 위해 스냅은 유저 조작 시에만 유연하게 작동하도록 설정
+            scrollSnapType: isPaused ? "x mandatory" : "none",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
-            padding: "20px 0",
+            padding: "10px 0",
           }}
         >
           {repeatedProjects.map((p) => (
@@ -148,9 +126,10 @@ export default function ProjectsSection({ title = "Projects" }) {
               to={`/projects/${p.slug}`}
               style={{
                 flexShrink: 0,
-                width: cardWidth,
+                width: CARD_WIDTH,
                 borderRadius: "18px",
                 overflow: "hidden",
+                scrollSnapAlign: "start",
                 transition: "transform 160ms ease",
                 display: "block",
               }}
@@ -165,6 +144,8 @@ export default function ProjectsSection({ title = "Projects" }) {
             </Link>
           ))}
         </div>
+
+        {/* 하단 버튼 생략하지 말고 넣어주세요 */}
       </div>
     </section>
   );

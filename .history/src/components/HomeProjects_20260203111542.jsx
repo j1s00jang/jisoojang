@@ -47,6 +47,7 @@ export default function ProjectsSection({ title = "Projects" }) {
   const isPausedRef = useRef(false);
   const animationFrameId = useRef(null);
 
+  // 1. 화면 크기에 따른 카드 너비 결정 함수
   const getCardWidth = () => {
     if (window.innerWidth > 1400) return 320;
     if (window.innerWidth > 768) return 280;
@@ -62,6 +63,7 @@ export default function ProjectsSection({ title = "Projects" }) {
   ).flat();
 
   useEffect(() => {
+    // 2. 화면 리사이즈 시 카드 너비 업데이트
     const handleResize = () => {
       setCardWidth(getCardWidth());
     };
@@ -71,6 +73,7 @@ export default function ProjectsSection({ title = "Projects" }) {
     const el = scrollRef.current;
     if (!el) return;
 
+    // 현재 카드 너비 기준 세트 너비 계산
     const singleSetWidth = PROJECTS.length * (cardWidth + CARD_GAP);
     el.scrollLeft = singleSetWidth;
 
@@ -104,7 +107,7 @@ export default function ProjectsSection({ title = "Projects" }) {
       if (animationFrameId.current)
         cancelAnimationFrame(animationFrameId.current);
     };
-  }, [cardWidth]);
+  }, [cardWidth]); // 너비가 바뀔 때마다 스크롤 위치 재계산
 
   return (
     <section
@@ -148,7 +151,7 @@ export default function ProjectsSection({ title = "Projects" }) {
               to={`/projects/${p.slug}`}
               style={{
                 flexShrink: 0,
-                width: cardWidth,
+                width: cardWidth, // 동적으로 변하는 너비 적용
                 borderRadius: "18px",
                 overflow: "hidden",
                 transition: "transform 160ms ease",

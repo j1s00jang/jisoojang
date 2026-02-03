@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import scaffoldImage from "../assets/main/projects/home_scaffold.png";
 import montroImage from "../assets/main/projects/home_montro.png";
@@ -36,7 +36,7 @@ const PROJECTS = [
   { id: "posters", slug: "posters", title: "Posters", image: postersImage },
 ];
 
-const CARD_WIDTH = 250;
+const CARD_WIDTH = 200;
 const CARD_GAP = 30;
 const REPEAT_COUNT = 3;
 const SCROLL_SPEED = 0.5;
@@ -47,14 +47,6 @@ export default function ProjectsSection({ title = "Projects" }) {
   const isPausedRef = useRef(false);
   const animationFrameId = useRef(null);
 
-  const getCardWidth = () => {
-    if (window.innerWidth > 1400) return 320;
-    if (window.innerWidth > 768) return 280;
-    return 240;
-  };
-
-  const [cardWidth, setCardWidth] = useState(getCardWidth());
-
   const repeatedProjects = Array.from(
     { length: REPEAT_COUNT },
     (_, repeatIdx) =>
@@ -62,20 +54,15 @@ export default function ProjectsSection({ title = "Projects" }) {
   ).flat();
 
   useEffect(() => {
-    const handleResize = () => {
-      setCardWidth(getCardWidth());
-    };
-
-    window.addEventListener("resize", handleResize);
-
     const el = scrollRef.current;
     if (!el) return;
 
-    const singleSetWidth = PROJECTS.length * (cardWidth + CARD_GAP);
+    const singleSetWidth = PROJECTS.length * (CARD_WIDTH + CARD_GAP);
     el.scrollLeft = singleSetWidth;
 
     const handleScroll = () => {
       if (isScrollingRef.current) return;
+
       const { scrollLeft, scrollWidth, clientWidth } = el;
       if (scrollLeft <= 10) {
         isScrollingRef.current = true;
@@ -99,47 +86,45 @@ export default function ProjectsSection({ title = "Projects" }) {
     el.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       el.removeEventListener("scroll", handleScroll);
-      if (animationFrameId.current)
+      if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
+      }
     };
-  }, [cardWidth]);
+  }, []);
+
+  // 핸들러: 단순히 애니메이션 정지만 컨트롤
+  const handleMouseEnter = () => {
+    isPausedRef.current = true;
+  };
+  const handleMouseLeave = () => {
+    isPausedRef.current = false;
+  };
 
   return (
     <section
-      style={{
-        background: "var(--color-primary-white)",
-        padding: "64px 0",
-        overflow: "hidden",
-      }}
+      style={{ background: "var(--color-primary-white)", padding: "64px 0" }}
     >
-      <div style={{ width: "min(1400px, 94vw)", margin: "0 auto" }}>
+      <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", marginBottom: "28px" }}>{title}</h2>
 
         <div
           ref={scrollRef}
-          onMouseEnter={() => {
-            isPausedRef.current = true;
-          }}
-          onMouseLeave={() => {
-            isPausedRef.current = false;
-          }}
-          onTouchStart={() => {
-            isPausedRef.current = true;
-          }}
-          onTouchEnd={() => {
-            isPausedRef.current = false;
-          }}
+          className="home-projects-scroll"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleMouseEnter}
+          onTouchEnd={handleMouseLeave}
           style={{
             display: "flex",
             gap: `${CARD_GAP}px`,
             overflowX: "auto",
+            // [해결책] 스냅 기능을 아예 제거하여 튕김 현상 방지
             scrollSnapType: "none",
             scrollbarWidth: "none",
             msOverflowStyle: "none",
             WebkitOverflowScrolling: "touch",
-            padding: "20px 0",
+            padding: "10px 0",
           }}
         >
           {repeatedProjects.map((p) => (
@@ -148,11 +133,13 @@ export default function ProjectsSection({ title = "Projects" }) {
               to={`/projects/${p.slug}`}
               style={{
                 flexShrink: 0,
-                width: cardWidth,
+                width: CARD_WIDTH,
                 borderRadius: "18px",
                 overflow: "hidden",
                 transition: "transform 160ms ease",
                 display: "block",
+                // 호버 시 개별 카드가 살짝 올라가는 효과는 유지
+                transform: "translateZ(0)",
               }}
             >
               <div style={{ aspectRatio: "1 / 1" }}>
