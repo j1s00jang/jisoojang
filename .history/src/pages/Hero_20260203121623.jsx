@@ -461,16 +461,15 @@ function Hero() {
                 rotate: [rotate - 1, rotate + 1, rotate - 1],
               }}
               transition={{
-                duration: 4,
                 repeat: Infinity,
               }}
               whileHover={{
-                scale: 1,
+                scale: 1.05,
                 zIndex: 100,
                 rotate: rotate || 0,
               }}
               whileDrag={{
-                scale: 1,
+                scale: 1.1,
                 rotate: rotate || 0,
                 cursor: "grabbing",
               }}

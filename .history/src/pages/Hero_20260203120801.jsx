@@ -451,12 +451,7 @@ function Hero() {
               key={id}
               drag
               dragMomentum={false}
-              onPointerUp={(e) => {
-                if (id === "contactme") {
-                  window.location.href = "mailto:jisoo.design@icloud.com";
-                }
-              }}
-              initial={{ rotate: rotate || 0, scale: 1 }}
+              initial={{ rotate: rotate || 0 }}
               animate={{
                 rotate: [rotate - 1, rotate + 1, rotate - 1],
               }}
@@ -465,14 +460,15 @@ function Hero() {
                 repeat: Infinity,
               }}
               whileHover={{
-                scale: 1,
+                scale: 1.05,
                 zIndex: 100,
                 rotate: rotate || 0,
               }}
               whileDrag={{
-                scale: 1,
+                scale: 1.1,
                 rotate: rotate || 0,
                 cursor: "grabbing",
+                // boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
               }}
               onMouseEnter={isHello ? handleHelloEnter : () => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -493,26 +489,24 @@ function Hero() {
                     aspectRatio: "580 / 339",
                   }}
                 >
-                  {allSrcs.map((s, i) => {
-                    const isActive = i === activeIndex;
-                    return (
-                      <img
-                        key={`${id}-img-${i}`}
-                        src={s}
-                        alt=""
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                          zIndex: isActive ? 2 : 1,
-                          transition: "opacity 0.15s ease-in-out",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    );
-                  })}
+                  {allSrcs.map((s, i) => (
+                    <img
+                      key={`${id}-img-${i}`}
+                      src={s}
+                      alt=""
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        opacity: isActive ? 1 : 0,
+                        zIndex: isActive ? 2 : 1,
+                        transition: "opacity 0.15s ease-in-out",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  ))}
                 </div>
               ) : (
                 <img

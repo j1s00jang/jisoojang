@@ -470,7 +470,7 @@ function Hero() {
                 rotate: rotate || 0,
               }}
               whileDrag={{
-                scale: 1,
+                scale: 1.1,
                 rotate: rotate || 0,
                 cursor: "grabbing",
               }}

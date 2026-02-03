@@ -434,45 +434,52 @@ function Hero() {
           const isHovered = hoveredId === id;
           const hasCycle = isHello && cycleSrcs?.length;
 
-          const activeIndex =
-            hasCycle && isHovered
-              ? 1 + (helloCycleIndex % cycleSrcs.length)
-              : 0;
-
-          const allSrcs = hasCycle ? [src, ...cycleSrcs] : [src];
-
           const handleHelloEnter = () => {
             setHoveredId(id);
             if (isHello && cycleSrcs) setHelloCycleIndex((i) => i + 1);
           };
+
+          const allSrcs = hasCycle ? [src, ...cycleSrcs] : [src];
+          const activeIndex =
+            hasCycle && isHovered
+              ? 1 + (helloCycleIndex % cycleSrcs.length)
+              : 0;
 
           return (
             <motion.div
               key={id}
               drag
               dragMomentum={false}
-              onPointerUp={(e) => {
-                if (id === "contactme") {
-                  window.location.href = "mailto:jisoo.design@icloud.com";
-                }
-              }}
-              initial={{ rotate: rotate || 0, scale: 1 }}
+              initial={{ rotate: rotate || 0 }}
               animate={{
+                // 원래 각도에서 -2도 ~ +2도 사이를 왔다갔다 함
                 rotate: [rotate - 1, rotate + 1, rotate - 1],
               }}
               transition={{
-                duration: 4,
-                repeat: Infinity,
+                // 스티커마다 조금씩 다른 속도를 주어 자연스럽게 (id 길이에 따라 차등)
+                duration: id.length % 2 === 0 ? 2.5 : 3,
+                repeat: Infinity, // 무한 반복
+                ease: "easeInOut",
               }}
-              whileHover={{
-                scale: 1,
-                zIndex: 100,
-                rotate: rotate || 0,
-              }}
+              whileHover={
+                id === "hello"
+                  ? {
+                      scale: 1.1,
+                      zIndex: 100,
+                      rotate: [rotate, rotate - 2, rotate + 2, rotate], // 미세하게 흔들림
+                      transition: { duration: 0.3, repeat: Infinity }, // 계속 흔들리게
+                    }
+                  : {
+                      scale: 1.05,
+                      zIndex: 100,
+                      rotate: rotate || 0,
+                    }
+              }
               whileDrag={{
-                scale: 1,
+                scale: 1.1,
                 rotate: rotate || 0,
                 cursor: "grabbing",
+                // boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
               }}
               onMouseEnter={isHello ? handleHelloEnter : () => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -493,26 +500,23 @@ function Hero() {
                     aspectRatio: "580 / 339",
                   }}
                 >
-                  {allSrcs.map((s, i) => {
-                    const isActive = i === activeIndex;
-                    return (
-                      <img
-                        key={`${id}-img-${i}`}
-                        src={s}
-                        alt=""
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                          zIndex: isActive ? 2 : 1,
-                          transition: "opacity 0.15s ease-in-out",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    );
-                  })}
+                  {allSrcs.map((s, i) => (
+                    <img
+                      key={i}
+                      src={s}
+                      alt=""
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        opacity: i === activeIndex ? 1 : 0,
+                        transition: "opacity 0.2s ease",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  ))}
                 </div>
               ) : (
                 <img

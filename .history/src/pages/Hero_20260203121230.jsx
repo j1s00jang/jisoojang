@@ -456,7 +456,7 @@ function Hero() {
                   window.location.href = "mailto:jisoo.design@icloud.com";
                 }
               }}
-              initial={{ rotate: rotate || 0, scale: 1 }}
+              initial={{ rotate: rotate || 0 }}
               animate={{
                 rotate: [rotate - 1, rotate + 1, rotate - 1],
               }}
@@ -465,14 +465,15 @@ function Hero() {
                 repeat: Infinity,
               }}
               whileHover={{
-                scale: 1,
+                scale: 1.05,
                 zIndex: 100,
                 rotate: rotate || 0,
               }}
               whileDrag={{
-                scale: 1,
+                scale: 1.1,
                 rotate: rotate || 0,
                 cursor: "grabbing",
+                // boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
               }}
               onMouseEnter={isHello ? handleHelloEnter : () => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}

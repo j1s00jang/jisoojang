@@ -288,52 +288,52 @@ const stickers = [
   {
     id: "hello",
     src: HelloSticker,
-    rotate: 10,
     cycleSrcs: [HelloStickerUXUI, HelloStickerProduct, HelloStickerPackaging],
     style: {
       top: "16%",
       left: "65%",
       width: "clamp(10%, 18%, 22%)",
+      transform: "rotate(10deg)",
     },
   },
   {
     id: "vancouver",
     src: VancouverSticker,
-    rotate: -20,
     style: {
       top: "35%",
       left: "40%",
       width: "clamp(5%, 7%, 10%)",
+      transform: "rotate(-20deg)",
     },
   },
   {
     id: "iamjisoo",
     src: IamJisooSticker,
-    rotate: 15,
     style: {
       top: "48%",
       left: "39.5%",
       width: "clamp(5%, 8%, 11%)",
+      transform: "rotate(15deg)",
     },
   },
   {
     id: "fruits",
     src: FruitsSticker,
-    rotate: -20,
     style: {
       top: "48%",
       left: "64%",
       width: "clamp(5%, 7%, 9%)",
+      transform: "rotate(-20deg)",
     },
   },
   {
     id: "contactme",
     src: ContactMeSticker,
-    rotate: 12,
     style: {
       top: "62%",
       left: "65%",
       width: "clamp(8%, 12%, 18%)",
+      transform: "rotate(12deg)",
     },
   },
 ];
@@ -350,7 +350,7 @@ function Hero() {
         display: "grid",
         placeItems: "center",
         overflow: "hidden",
-        touchAction: "none",
+        touchAction: "none", // 드래그 시 모바일 스크롤 방지
       }}
     >
       <div
@@ -361,6 +361,7 @@ function Hero() {
           isolation: "isolate",
         }}
       >
+        {/* 텍스트와 배경 요소들은 기존과 동일 (생략 가능하므로 핵심 구조만 유지) */}
         <div
           style={{
             position: "absolute",
@@ -429,50 +430,33 @@ function Hero() {
           />
         </div>
 
-        {stickers.map(({ id, src, cycleSrcs, style, rotate }) => {
+        {/* Stickers - Framer Motion 적용 */}
+        {stickers.map(({ id, src, cycleSrcs, style }) => {
           const isHello = id === "hello";
           const isHovered = hoveredId === id;
           const hasCycle = isHello && cycleSrcs?.length;
-
-          const activeIndex =
-            hasCycle && isHovered
-              ? 1 + (helloCycleIndex % cycleSrcs.length)
-              : 0;
-
-          const allSrcs = hasCycle ? [src, ...cycleSrcs] : [src];
 
           const handleHelloEnter = () => {
             setHoveredId(id);
             if (isHello && cycleSrcs) setHelloCycleIndex((i) => i + 1);
           };
 
+          const allSrcs = hasCycle ? [src, ...cycleSrcs] : [src];
+          const activeIndex =
+            hasCycle && isHovered
+              ? 1 + (helloCycleIndex % cycleSrcs.length)
+              : 0;
+
           return (
             <motion.div
               key={id}
               drag
               dragMomentum={false}
-              onPointerUp={(e) => {
-                if (id === "contactme") {
-                  window.location.href = "mailto:jisoo.design@icloud.com";
-                }
-              }}
-              initial={{ rotate: rotate || 0, scale: 1 }}
-              animate={{
-                rotate: [rotate - 1, rotate + 1, rotate - 1],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-              }}
-              whileHover={{
-                scale: 1,
-                zIndex: 100,
-                rotate: rotate || 0,
-              }}
+              whileHover={{ scale: 1.05, zIndex: 100, rotate: 0 }}
               whileDrag={{
-                scale: 1,
-                rotate: rotate || 0,
+                scale: 1.1,
                 cursor: "grabbing",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
               }}
               onMouseEnter={isHello ? handleHelloEnter : () => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}
@@ -493,26 +477,23 @@ function Hero() {
                     aspectRatio: "580 / 339",
                   }}
                 >
-                  {allSrcs.map((s, i) => {
-                    const isActive = i === activeIndex;
-                    return (
-                      <img
-                        key={`${id}-img-${i}`}
-                        src={s}
-                        alt=""
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                          zIndex: isActive ? 2 : 1,
-                          transition: "opacity 0.15s ease-in-out",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    );
-                  })}
+                  {allSrcs.map((s, i) => (
+                    <img
+                      key={i}
+                      src={s}
+                      alt=""
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        opacity: i === activeIndex ? 1 : 0,
+                        transition: "opacity 0.2s ease",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  ))}
                 </div>
               ) : (
                 <img
