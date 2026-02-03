@@ -6,7 +6,7 @@ import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_userR
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.png";
 import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.png";
-import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mov";
+import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mp4";
 import scaffoldMarketing1 from "../../assets/projects/scaffold/scaffold_marketing01.png";
 import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.jpg";
 import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.jpg";
@@ -37,7 +37,7 @@ export const scaffold = {
   role: "UX/UI Designer / Graphic Designer",
   keySkills:
     "UX / UI / Layout / Product Design / User Research / Branding / Marketing / Print Design",
-  overview: `Skilled tradespeople often missed grant deadlines or gave up looking for funding because the process was spread across multiple websites. **Scaffold** is an all-in-one financial resource app designed to help users find relevant grants, track deadlines, and stay organized in one place. \nAs the project scope expanded, multiple features competed for attention, making it challenging to maintain a clear and usable core experience. Reliability and performance also became more important over time, requiring careful prioritization and ongoing refinement.`,
+  overview: `Skilled tradespeople often missed grant deadlines or gave up looking for funding because the process was spread across multiple websites. **Scaffold** is an all-in-one financial resource app designed to help users find relevant grants, track deadlines, and stay organized in one place.`,
   headerLinks: [
     {
       icon: scaffoldLivedemoIcon,
@@ -77,7 +77,7 @@ export const scaffold = {
       imageLayout: "row",
     },
     {
-      heading: "My Role",
+      heading: "My role",
       paragraphs: [
         `Owned across dashboard UX, UI consistency, marketing print materials, and video storytelling:`,
         `&nbsp;`,
@@ -90,12 +90,12 @@ export const scaffold = {
       imageLayout: "row",
     },
     {
-      heading: "User Research",
+      heading: "User research",
       paragraphs: [
         `Early exploratory research was conducted through a construction site visit and outreach through referrals and personal networks. The findings helped clarify the project direction and supported a mid-project shift in focus.`,
         `&nbsp;`,
-        `\n**A clear pain point emerged:**`,
-        `\nGrant information is spread across multiple websites, making it difficult to find reliable details and stay on top of deadlines. The survey results below highlight the most common challenges and needs shared during early research.`,
+        `**A clear pain point emerged:**`,
+        `Grant information is spread across multiple websites, making it difficult to find reliable details and stay on top of deadlines. The survey results below highlight the most common challenges and needs shared during early research.`,
       ],
       images: [scaffoldUserResearch1, scaffoldUserResearch2],
       imageLayout: "stack",
@@ -236,7 +236,7 @@ export const scaffold = {
       ],
     },
     {
-      heading: "Storyboard & Film Production",
+      heading: "Storyboard & Film production",
       paragraphs: [
         `The promotional video was planned with a storyboard before production began. The story was inspired by an experience uncovered during research: a skilled tradeswoman was able to continue training and manage daily life after receiving grant support.`,
         `&nbsp;`,

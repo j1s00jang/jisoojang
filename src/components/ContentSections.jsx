@@ -105,6 +105,7 @@ function ContentSections({ sections, projectName = "" }) {
                             controls
                             playsInline
                             className={videoClass}
+                            preload="none"
                           >
                             Your browser does not support the video tag.
                           </video>
@@ -119,6 +120,7 @@ function ContentSections({ sections, projectName = "" }) {
                           controls
                           playsInline
                           className={videoClass}
+                          preload="none"
                         >
                           Your browser does not support the video tag.
                         </video>
