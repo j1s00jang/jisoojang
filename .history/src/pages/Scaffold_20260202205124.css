@@ -69,8 +69,7 @@
   aspect-ratio: 16 / 9;
 }
 
-.project-detail-container .scaffold-marketing-images img {
-  flex: 0 1 auto;
+.scaffold-marketing-images img {
   width: auto;
   max-width: min(400px, 45vw);
   height: auto;

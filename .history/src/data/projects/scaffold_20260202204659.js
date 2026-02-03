@@ -263,7 +263,7 @@ export const scaffold = {
         },
       ],
       imageLayout: "stack",
-      imageWrapperClass: "scaffold-key-features-media",
+      imageWrapperClass: "scaffold-promo-video",
     },
     {
       heading: "Key learnings & reflections",

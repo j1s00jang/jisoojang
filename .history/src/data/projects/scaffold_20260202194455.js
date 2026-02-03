@@ -11,8 +11,7 @@ import scaffoldMarketing1 from "../../assets/projects/scaffold/scaffold_marketin
 import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.jpg";
 import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.jpg";
 import scaffoldKeyLearnings1 from "../../assets/projects/scaffold/scaffold_keyLearnings01.png";
-import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLearnings02.jpg";
-import scaffoldStoryboard from "../../assets/projects/scaffold/scaffold_storyboard.png";
+import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLearnings02.png";
 import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLearnings03.mp4";
 import scaffoldKeyLearnings4 from "../../assets/projects/scaffold/scaffold_keyLearnings04.png";
 import scaffoldKeyLearnings5 from "../../assets/projects/scaffold/scaffold_keyLearnings05.png";
@@ -245,12 +244,6 @@ export const scaffold = {
       ],
       images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
       imageLayout: "row",
-      imageWrapperClass: "scaffold-key-learnings-media",
-    },
-    {
-      images: [scaffoldStoryboard],
-      imageLayout: "row",
-      imageWrapperClass: "scaffold-storyboard-media",
     },
     {
       sectionId: "promo-video",
@@ -259,11 +252,11 @@ export const scaffold = {
         {
           type: "video",
           src: scaffoldKeyLearnings3,
-          className: "scaffold-key-features-video",
+          className: "scaffold-key-learnings-video",
         },
       ],
       imageLayout: "stack",
-      imageWrapperClass: "scaffold-key-features-media",
+      imageWrapperClass: "scaffold-key-learnings-media",
     },
     {
       heading: "Key learnings & reflections",

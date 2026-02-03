@@ -12,7 +12,7 @@ import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketin
 import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.jpg";
 import scaffoldKeyLearnings1 from "../../assets/projects/scaffold/scaffold_keyLearnings01.png";
 import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLearnings02.jpg";
-import scaffoldStoryboard from "../../assets/projects/scaffold/scaffold_storyboard.png";
+import scaffoldKeyStoryboard from "../../assets/projects/scaffold/scaffold_storyboard.png";
 import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLearnings03.mp4";
 import scaffoldKeyLearnings4 from "../../assets/projects/scaffold/scaffold_keyLearnings04.png";
 import scaffoldKeyLearnings5 from "../../assets/projects/scaffold/scaffold_keyLearnings05.png";
@@ -243,14 +243,12 @@ export const scaffold = {
         `&nbsp;`,
         `The storyboard and script were developed independently, and filming was coordinated and directed on the shoot day with support from the team. The final video was screened on pitch day to introduce the app concept and reinforce Scaffold’s core message—financial support can be a foundation that helps skilled tradespeople sustain their careers.`,
       ],
-      images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
+      images: [
+        scaffoldKeyLearnings1,
+        scaffoldKeyLearnings2,
+        scaffoldStoryboard,
+      ],
       imageLayout: "row",
-      imageWrapperClass: "scaffold-key-learnings-media",
-    },
-    {
-      images: [scaffoldStoryboard],
-      imageLayout: "row",
-      imageWrapperClass: "scaffold-storyboard-media",
     },
     {
       sectionId: "promo-video",

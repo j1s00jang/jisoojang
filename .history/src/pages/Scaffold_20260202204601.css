@@ -69,13 +69,6 @@
   aspect-ratio: 16 / 9;
 }
 
-.project-detail-container .scaffold-marketing-images img {
-  flex: 0 1 auto;
-  width: auto;
-  max-width: min(400px, 45vw);
-  height: auto;
-}
-
 .project-detail-container .scaffold-key-learnings-media {
   display: flex;
   flex-wrap: wrap;
@@ -83,9 +76,13 @@
   justify-content: center;
   align-items: flex-start;
 }
-.project-detail-container .scaffold-key-learnings-media img {
-  flex: 0 1 auto;
-  width: auto;
-  max-width: min(400px, 45vw);
-  height: auto;
+
+.project-detail-container .scaffold-marketing-images img {
+  max-width: min(400px, 60vw);
+  border-radius: 5px;
+}
+
+.scaffold-idea-pitching-images img {
+  max-width: clamp(540px, 65vw, 640px);
+  border-radius: 5px;
 }

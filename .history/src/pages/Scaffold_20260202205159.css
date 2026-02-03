@@ -69,13 +69,6 @@
   aspect-ratio: 16 / 9;
 }
 
-.project-detail-container .scaffold-marketing-images img {
-  flex: 0 1 auto;
-  width: auto;
-  max-width: min(400px, 45vw);
-  height: auto;
-}
-
 .project-detail-container .scaffold-key-learnings-media {
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +76,10 @@
   justify-content: center;
   align-items: flex-start;
 }
-.project-detail-container .scaffold-key-learnings-media img {
+.project-detail-container
+  .scaffold-key-learnings-media
+  .scaffold-marketing-images
+  img {
   flex: 0 1 auto;
   width: auto;
   max-width: min(400px, 45vw);

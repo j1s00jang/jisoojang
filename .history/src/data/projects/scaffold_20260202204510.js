@@ -243,14 +243,13 @@ export const scaffold = {
         `&nbsp;`,
         `The storyboard and script were developed independently, and filming was coordinated and directed on the shoot day with support from the team. The final video was screened on pitch day to introduce the app concept and reinforce Scaffold’s core message—financial support can be a foundation that helps skilled tradespeople sustain their careers.`,
       ],
-      images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
+      images: [
+        scaffoldKeyLearnings1,
+        scaffoldKeyLearnings2,
+        scaffoldStoryboard,
+      ],
       imageLayout: "row",
       imageWrapperClass: "scaffold-key-learnings-media",
-    },
-    {
-      images: [scaffoldStoryboard],
-      imageLayout: "row",
-      imageWrapperClass: "scaffold-storyboard-media",
     },
     {
       sectionId: "promo-video",

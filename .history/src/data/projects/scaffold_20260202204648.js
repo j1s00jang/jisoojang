@@ -259,7 +259,7 @@ export const scaffold = {
         {
           type: "video",
           src: scaffoldKeyLearnings3,
-          className: "scaffold-key-features-video",
+          className: "scaffold-promo-video",
         },
       ],
       imageLayout: "stack",
