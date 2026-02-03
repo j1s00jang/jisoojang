@@ -74,7 +74,6 @@
   width: auto;
   max-width: min(400px, 45vw);
   height: auto;
-  border-radius: 15px;
 }
 
 .project-detail-container .scaffold-key-learnings-media {
@@ -89,5 +88,5 @@
   width: auto;
   max-width: min(400px, 45vw);
   height: auto;
-  border-radius: 15px;
+  border-radius: 8px;
 }
