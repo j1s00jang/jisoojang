@@ -435,8 +435,8 @@ function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
+              duration: 3,
+              delay: 0.7,
               ease: "easeInOut",
             }}
             style={{

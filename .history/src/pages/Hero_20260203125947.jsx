@@ -402,13 +402,15 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         >
           <img
             src={FolioUrl}
+            alt=""
             style={{
-              width: isMobile ? "80%" : "35%",
-              transform: "translateY(40%)",
+              width: "clamp(28%, 35%, 42%)",
+              transform: "translateY(45%)",
             }}
           />
         </div>
@@ -435,8 +437,8 @@ function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
+              duration: 3,
+              delay: 1,
               ease: "easeInOut",
             }}
             style={{
@@ -454,11 +456,13 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 30,
+            pointerEvents: "none",
           }}
         >
           <img
             src={PortUrl}
-            style={{ width: isMobile ? "80%" : "35%" }}
+            alt=""
+            style={{ width: "clamp(28%, 35%, 42%)" }}
           />
         </div>
 

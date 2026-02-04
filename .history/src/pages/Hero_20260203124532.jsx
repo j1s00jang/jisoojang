@@ -269,7 +269,7 @@
 
 // export default Hero;
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion"; // framer-motion 추가
 import PortUrl from "../assets/main/hero/port.svg";
 import FolioUrl from "../assets/main/hero/folio.svg";
@@ -293,7 +293,7 @@ const stickers = [
     style: {
       top: "16%",
       left: "65%",
-      width: "clamp(6%, 12%, 14%)",
+      width: "clamp(10%, 18%, 22%)",
     },
   },
   {
@@ -333,26 +333,14 @@ const stickers = [
     style: {
       top: "62%",
       left: "65%",
-      width: "clamp(3%, 8%, 10%)",
+      width: "clamp(8%, 12%, 18%)",
     },
   },
 ];
 
 function Hero() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [hoveredId, setHoveredId] = useState(null);
   const [helloCycleIndex, setHelloCycleIndex] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <section
@@ -369,30 +357,24 @@ function Hero() {
         style={{
           position: "relative",
           width: "100%",
-          aspectRatio: isMobile ? "1 / 1" : "16 / 7",
-          transition: "aspect-ratio 0.3s ease",
+          aspectRatio: "16 / 7",
           isolation: "isolate",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: isMobile ? "10%" : "18%",
+            top: "17%",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: isMobile
-              ? "clamp(14px, 4vw, 18px)"
-              : "clamp(10px, 1.4vw, 18px)",
+            fontSize: "clamp(12px, 1.8vw, 22px)",
             color: "#222",
-            textAlign: "center",
             opacity: 0.85,
             zIndex: 50,
-            lineHeight: 2,
             whiteSpace: "nowrap",
           }}
         >
-          {" "}
-          Welcome to <b>Jisoo</b>’s
+          welcome to <b>Jisoo</b>’s
         </div>
 
         <div
@@ -402,13 +384,15 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         >
           <img
             src={FolioUrl}
+            alt=""
             style={{
-              width: isMobile ? "80%" : "35%",
-              transform: "translateY(40%)",
+              width: "clamp(28%, 35%, 42%)",
+              transform: "translateY(45%)",
             }}
           />
         </div>
@@ -435,8 +419,8 @@ function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
+              duration: 3,
+              delay: 1,
               ease: "easeInOut",
             }}
             style={{
@@ -454,11 +438,13 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 30,
+            pointerEvents: "none",
           }}
         >
           <img
             src={PortUrl}
-            style={{ width: isMobile ? "80%" : "35%" }}
+            alt=""
+            style={{ width: "clamp(28%, 35%, 42%)" }}
           />
         </div>
 

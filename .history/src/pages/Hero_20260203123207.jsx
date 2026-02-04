@@ -269,7 +269,7 @@
 
 // export default Hero;
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion"; // framer-motion 추가
 import PortUrl from "../assets/main/hero/port.svg";
 import FolioUrl from "../assets/main/hero/folio.svg";
@@ -293,7 +293,7 @@ const stickers = [
     style: {
       top: "16%",
       left: "65%",
-      width: "clamp(6%, 12%, 14%)",
+      width: "clamp(10%, 18%, 22%)",
     },
   },
   {
@@ -333,26 +333,14 @@ const stickers = [
     style: {
       top: "62%",
       left: "65%",
-      width: "clamp(3%, 8%, 10%)",
+      width: "clamp(8%, 12%, 18%)",
     },
   },
 ];
 
 function Hero() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [hoveredId, setHoveredId] = useState(null);
   const [helloCycleIndex, setHelloCycleIndex] = useState(0);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <section
@@ -369,30 +357,24 @@ function Hero() {
         style={{
           position: "relative",
           width: "100%",
-          aspectRatio: isMobile ? "1 / 1" : "16 / 7",
-          transition: "aspect-ratio 0.3s ease",
+          aspectRatio: "16 / 7",
           isolation: "isolate",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: isMobile ? "10%" : "18%",
+            top: "17%",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: isMobile
-              ? "clamp(14px, 4vw, 18px)"
-              : "clamp(10px, 1.4vw, 18px)",
+            fontSize: "clamp(12px, 1.8vw, 22px)",
             color: "#222",
-            textAlign: "center",
             opacity: 0.85,
             zIndex: 50,
-            lineHeight: 2,
             whiteSpace: "nowrap",
           }}
         >
-          {" "}
-          Welcome to <b>Jisoo</b>’s
+          welcome to <em>Jisoo</em>’s
         </div>
 
         <div
@@ -402,13 +384,15 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         >
           <img
             src={FolioUrl}
+            alt=""
             style={{
-              width: isMobile ? "80%" : "35%",
-              transform: "translateY(40%)",
+              width: "clamp(28%, 35%, 42%)",
+              transform: "translateY(45%)",
             }}
           />
         </div>
@@ -427,17 +411,17 @@ function Hero() {
             alt=""
             draggable={false}
             initial={{
-              clipPath: "inset(0 100% 0 0)",
+              clipPath: "inset(0 100% 0 0)", // 처음에 오른쪽 100%를 가림 (보이지 않음)
               opacity: 0,
             }}
             animate={{
-              clipPath: "inset(0 0% 0 0)",
+              clipPath: "inset(0 0% 0 0)", // 가려진 부분을 0%로 만듦 (왼쪽에서 오른쪽으로 나타남)
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
-              ease: "easeInOut",
+              duration: 3, // 긋는 속도 (1.5초)
+              delay: 1, // 페이지 로드 후 0.5초 뒤 시작
+              ease: "easeInOut", // 시작과 끝을 부드럽게
             }}
             style={{
               width: "120%",
@@ -454,11 +438,13 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 30,
+            pointerEvents: "none",
           }}
         >
           <img
             src={PortUrl}
-            style={{ width: isMobile ? "80%" : "35%" }}
+            alt=""
+            style={{ width: "clamp(28%, 35%, 42%)" }}
           />
         </div>
 

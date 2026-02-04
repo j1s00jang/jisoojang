@@ -369,20 +369,17 @@ function Hero() {
         style={{
           position: "relative",
           width: "100%",
-          aspectRatio: isMobile ? "1 / 1" : "16 / 7",
-          transition: "aspect-ratio 0.3s ease",
+          aspectRatio: "16 / 7",
           isolation: "isolate",
         }}
       >
         <div
           style={{
             position: "absolute",
-            top: isMobile ? "10%" : "18%",
+            top: "18%",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: isMobile
-              ? "clamp(14px, 4vw, 18px)"
-              : "clamp(10px, 1.4vw, 18px)",
+            fontSize: "clamp(10px, 1.4vw, 18px)",
             color: "#222",
             textAlign: "center",
             opacity: 0.85,
@@ -402,13 +399,15 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         >
           <img
             src={FolioUrl}
+            alt=""
             style={{
-              width: isMobile ? "80%" : "35%",
-              transform: "translateY(40%)",
+              width: "clamp(28%, 35%, 42%)",
+              transform: "translateY(45%)",
             }}
           />
         </div>
@@ -435,8 +434,8 @@ function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
+              duration: 3,
+              delay: 1,
               ease: "easeInOut",
             }}
             style={{
@@ -454,11 +453,13 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 30,
+            pointerEvents: "none",
           }}
         >
           <img
             src={PortUrl}
-            style={{ width: isMobile ? "80%" : "35%" }}
+            alt=""
+            style={{ width: "clamp(28%, 35%, 42%)" }}
           />
         </div>
 

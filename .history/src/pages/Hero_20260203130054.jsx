@@ -435,8 +435,8 @@ function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
+              duration: 3,
+              delay: 1,
               ease: "easeInOut",
             }}
             style={{
@@ -454,11 +454,13 @@ function Hero() {
             display: "grid",
             placeItems: "center",
             zIndex: 30,
+            pointerEvents: "none",
           }}
         >
           <img
             src={PortUrl}
-            style={{ width: isMobile ? "80%" : "35%" }}
+            alt=""
+            style={{ width: "clamp(28%, 35%, 42%)" }}
           />
         </div>
 

@@ -435,8 +435,8 @@ function Hero() {
               opacity: 1,
             }}
             transition={{
-              duration: 2,
-              delay: 0.5,
+              duration: 3,
+              delay: 1,
               ease: "easeInOut",
             }}
             style={{
@@ -461,6 +461,18 @@ function Hero() {
             style={{ width: isMobile ? "80%" : "35%" }}
           />
         </div>
+
+        {stickers.map((sticker) => {
+          // 모바일용 위치/크기 조절 로직
+          const mobileStyle = {
+            hello: { top: "15%", left: "10%", width: "40%" },
+            vancouver: { top: "70%", left: "5%", width: "20%" },
+            iamjisoo: { top: "75%", left: "30%", width: "25%" },
+            fruits: { top: "65%", left: "70%", width: "20%" },
+            contactme: { top: "80%", left: "60%", width: "30%" },
+          };
+
+          const finalStyle = isMobile ? { ...sticker.style, ...mobileStyle[sticker.id] } : sticker.style;
 
         {stickers.map(({ id, src, cycleSrcs, style, rotate }) => {
           const isHello = id === "hello";
@@ -561,7 +573,9 @@ function Hero() {
             </motion.div>
           );
         })}
+        </div>
       </div>
+
     </section>
   );
 }
