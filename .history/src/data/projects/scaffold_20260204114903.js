@@ -102,19 +102,6 @@ export const scaffold = {
       imageLayout: "stack",
     },
     {
-      images: [
-        {
-          type: "iframe",
-          src: "https://embed.figma.com/board/h0fL114MqoYIkco8U5CMx2/Research-and-Ideation?node-id=0-1&embed-host=share",
-          width: 1000,
-          height: 550,
-          className: "scaffold-insights-figma-embed",
-          caption: "Primary and secondary research on Figma",
-        },
-      ],
-      imageLayout: "row",
-    },
-    {
       heading: "Findings & Direction",
       paragraphs: [
         `Early research showed that grant access wasn’t only blocked by eligibility. Even when people believed they qualified, many dropped off because information was hard to find and the process required multiple steps, documents, and repeated effort.`,
@@ -125,14 +112,14 @@ export const scaffold = {
         `- The process felt long and demanding, especially when time and attention were limited.`,
         `- Checking grant updates across many websites was not realistic in day-to-day life.`,
         `&nbsp;`,
-        `Based on the findings, key features were developed with a clear user flow to address the patterns.`,
+        `Based on the findings, the Scaffold team developed key features with a clear user flow to address the patterns.`,
       ],
       images: [
         {
           type: "iframe",
           src: "https://embed.figma.com/board/Hd9SkllzfNwA02Vx50dng7/Scaffold-Ideation-User-Flow--Copy-?node-id=67-69&embed-host=share",
           width: 1000,
-          height: 550,
+          height: 450,
           className: "scaffold-how-we-started-figma-embed",
           caption: "User flow diagram & Key features ideation on Figma",
         },
@@ -147,8 +134,6 @@ export const scaffold = {
         `**2. Clear guidance:** Make requirements and next steps easy to follow`,
         `**3. Mobile-first clarity:** Help users scan key details quickly on a small screen`,
         `**4. Deadline support:** Make important dates hard to miss`,
-        `&nbsp;`,
-        `To merge into a cohesive design strategy, user personas were created to represent key audience segments and guide feature decisions.`,
       ],
     },
     {
@@ -175,6 +160,19 @@ export const scaffold = {
       ],
       images: [],
       imageLayout: "stack",
+    },
+    {
+      images: [
+        {
+          type: "iframe",
+          src: "https://embed.figma.com/board/h0fL114MqoYIkco8U5CMx2/Research-and-Ideation?node-id=0-1&embed-host=share",
+          width: 1000,
+          height: 550,
+          className: "scaffold-insights-figma-embed",
+          caption: "Primary and secondary research on Figma",
+        },
+      ],
+      imageLayout: "row",
     },
     {
       heading: "Key features",

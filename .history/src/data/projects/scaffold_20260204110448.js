@@ -80,12 +80,12 @@ export const scaffold = {
     {
       heading: "My role",
       paragraphs: [
-        `Owned dashboard UX, UI consistency, marketing print materials, and video storytelling:`,
+        `Owned across dashboard UX, UI consistency, marketing print materials, and video storytelling:`,
         `&nbsp;`,
         `- Designed the main dashboard wireframe and core card layout, which became the baseline for the team’s UI/UX work.`,
         `- Defined the UI spacing system across screens, including typography rules, line spacing, component spacing, and alignment.`,
-        `- Owned designing the visual identity and layout of the brochure and business card.`,
-        `- Created the storyboard and script for the promotional video and directed the shoot day.`,
+        `- Owned the print-tested marketing materials, including the brochure and business card.`,
+        `- Created the storyboard and script for the promotional video, and directed the shoot day.`,
       ],
       images: [],
       imageLayout: "row",
@@ -102,39 +102,23 @@ export const scaffold = {
       imageLayout: "stack",
     },
     {
-      images: [
-        {
-          type: "iframe",
-          src: "https://embed.figma.com/board/h0fL114MqoYIkco8U5CMx2/Research-and-Ideation?node-id=0-1&embed-host=share",
-          width: 1000,
-          height: 550,
-          className: "scaffold-insights-figma-embed",
-          caption: "Primary and secondary research on Figma",
-        },
-      ],
-      imageLayout: "row",
-    },
-    {
       heading: "Findings & Direction",
       paragraphs: [
-        `Early research showed that grant access wasn’t only blocked by eligibility. Even when people believed they qualified, many dropped off because information was hard to find and the process required multiple steps, documents, and repeated effort.`,
+        `Early research showed that grant access wasn’t only blocked by eligibility. Even when people believed they qualified, many still dropped off because information was hard to find and the process required multiple steps, documents, and repeated effort.`,
         `&nbsp;`,
         `**Several patterns appeared consistently:**`,
         `- Grant information was often outdated, with some programs no longer available and others already past their deadlines.`,
         `- Eligibility and requirements felt unclear, leading to hesitation and drop-off.`,
         `- The process felt long and demanding, especially when time and attention were limited.`,
         `- Checking grant updates across many websites was not realistic in day-to-day life.`,
-        `&nbsp;`,
-        `Based on the findings, key features were developed with a clear user flow to address the patterns.`,
       ],
       images: [
         {
           type: "iframe",
           src: "https://embed.figma.com/board/Hd9SkllzfNwA02Vx50dng7/Scaffold-Ideation-User-Flow--Copy-?node-id=67-69&embed-host=share",
           width: 1000,
-          height: 550,
+          height: 450,
           className: "scaffold-how-we-started-figma-embed",
-          caption: "User flow diagram & Key features ideation on Figma",
         },
       ],
     },
@@ -147,8 +131,6 @@ export const scaffold = {
         `**2. Clear guidance:** Make requirements and next steps easy to follow`,
         `**3. Mobile-first clarity:** Help users scan key details quickly on a small screen`,
         `**4. Deadline support:** Make important dates hard to miss`,
-        `&nbsp;`,
-        `To merge into a cohesive design strategy, user personas were created to represent key audience segments and guide feature decisions.`,
       ],
     },
     {
@@ -175,6 +157,19 @@ export const scaffold = {
       ],
       images: [],
       imageLayout: "stack",
+    },
+    {
+      images: [
+        {
+          type: "iframe",
+          src: "https://embed.figma.com/board/h0fL114MqoYIkco8U5CMx2/Research-and-Ideation?node-id=0-1&embed-host=share",
+          width: 1000,
+          height: 550,
+          className: "scaffold-insights-figma-embed",
+          caption: "Primary and secondary research on Figma",
+        },
+      ],
+      imageLayout: "row",
     },
     {
       heading: "Key features",

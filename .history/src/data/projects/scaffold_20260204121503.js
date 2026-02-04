@@ -102,19 +102,6 @@ export const scaffold = {
       imageLayout: "stack",
     },
     {
-      images: [
-        {
-          type: "iframe",
-          src: "https://embed.figma.com/board/h0fL114MqoYIkco8U5CMx2/Research-and-Ideation?node-id=0-1&embed-host=share",
-          width: 1000,
-          height: 550,
-          className: "scaffold-insights-figma-embed",
-          caption: "Primary and secondary research on Figma",
-        },
-      ],
-      imageLayout: "row",
-    },
-    {
       heading: "Findings & Direction",
       paragraphs: [
         `Early research showed that grant access wasn’t only blocked by eligibility. Even when people believed they qualified, many dropped off because information was hard to find and the process required multiple steps, documents, and repeated effort.`,
@@ -125,7 +112,7 @@ export const scaffold = {
         `- The process felt long and demanding, especially when time and attention were limited.`,
         `- Checking grant updates across many websites was not realistic in day-to-day life.`,
         `&nbsp;`,
-        `Based on the findings, key features were developed with a clear user flow to address the patterns.`,
+        `Based on the findings, Scaffold team developed key features with a clear user flow to address the patterns.`,
       ],
       images: [
         {
@@ -175,6 +162,19 @@ export const scaffold = {
       ],
       images: [],
       imageLayout: "stack",
+    },
+    {
+      images: [
+        {
+          type: "iframe",
+          src: "https://embed.figma.com/board/h0fL114MqoYIkco8U5CMx2/Research-and-Ideation?node-id=0-1&embed-host=share",
+          width: 1000,
+          height: 550,
+          className: "scaffold-insights-figma-embed",
+          caption: "Primary and secondary research on Figma",
+        },
+      ],
+      imageLayout: "row",
     },
     {
       heading: "Key features",
