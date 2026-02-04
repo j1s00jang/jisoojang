@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimationControls } from "framer-motion";
 
 import scaffoldImage from "../assets/main/projects/home_scaffold.png";
 import montroImage from "../assets/main/projects/home_montro.png";
@@ -39,6 +40,8 @@ const PROJECTS = [
 
 export default function ProjectsSection({ title = "Projects" }) {
   const [cardWidth, setCardWidth] = useState(getCardWidth());
+  // [추가] 애니메이션 재생 상태를 관리하는 State
+  const [isPaused, setIsPaused] = useState(false);
 
   function getCardWidth() {
     if (window.innerWidth > 1400) return 320;
@@ -52,19 +55,20 @@ export default function ProjectsSection({ title = "Projects" }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const infiniteProjects = [...PROJECTS, ...PROJECTS];
+  const infiniteProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS];
   const CARD_GAP = 30;
   const totalWidth = PROJECTS.length * (cardWidth + CARD_GAP);
 
   return (
     <section
       style={{
-        background: "transparent",
+        background: "#fff",
         padding: "80px 0",
         overflow: "hidden",
         width: "100%",
       }}
     >
+      {/* 제목 중앙 정렬 */}
       <div
         style={{
           display: "flex",
@@ -83,96 +87,75 @@ export default function ProjectsSection({ title = "Projects" }) {
         </h2>
       </div>
 
-      <div className="scroll-container">
-        <div
-          className="scroll-track"
-          style={{ animationDuration: "35s" }}
+      {/* 가로 스크롤 컨테이너 */}
+      <div
+        style={{
+          width: "100vw",
+          overflowX: "auto",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          position: "relative",
+        }}
+        className="no-scrollbar"
+      >
+        <motion.div
+          style={{
+            display: "flex",
+            gap: `${CARD_GAP}px`,
+            width: "max-content",
+            padding: "0 20px",
+          }}
+          // [핵심] animate를 배열이 아닌 객체로 넣어 상태에 따라 제어합니다.
+          animate={{
+            x: isPaused ? undefined : [0, -totalWidth],
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 25,
+              ease: "linear",
+            },
+          }}
+          // [해결] 마우스가 들어오고 나갈 때 State를 변경합니다.
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           {infiniteProjects.map((p, index) => (
             <Link
               key={`${p.id}-${index}`}
               to={`/projects/${p.slug}`}
-              className="project-card"
+              style={{
+                flexShrink: 0,
+                width: cardWidth,
+                borderRadius: "24px",
+                overflow: "hidden",
+                display: "block",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+                transition: "transform 0.3s ease",
+              }}
+              // 개별 카드 호버 시 살짝 올라가는 효과
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "translateY(-10px)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "translateY(0)")
+              }
             >
-              <div className="image-wrapper">
+              <div style={{ aspectRatio: "1 / 1", overflow: "hidden" }}>
                 <img
                   src={p.image}
                   alt={p.title}
-                  draggable="false"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </div>
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <style>{`
-        .scroll-container {
-          width: 100vw;
-          overflow-x: auto;
-          position: relative;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-        .scroll-container::-webkit-scrollbar { display: none; }
-
-        .scroll-track {
-          display: flex;
-          gap: ${CARD_GAP}px;
-          width: max-content;
-          padding: 40px 20px; /* 위아래 패딩을 넉넉히 주어 잘림 방지 */
-          animation: marquee linear infinite;
-        }
-
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-${totalWidth}px); }
-        }
-
-        .scroll-track:hover {
-          animation-play-state: paused !important;
-        }
-
-        .project-card {
-          flex-shrink: 0;
-          width: ${cardWidth}px;
-          display: block;
-          
-          text-decoration: none !important;
-          background-color: transparent !important;
-          background: transparent !important;
-          border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
-          -webkit-tap-highlight-color: transparent !important;
-          
-          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-        }
-
-        .project-card:hover, .project-card:focus, .project-card:active {
-          background-color: transparent !important;
-          background: transparent !important;
-          outline: none !important;
-          transform: translateY(-15px);
-        }
-
-        .image-wrapper {
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          overflow: hidden;
-          border-radius: 24px;
-          background-color: transparent;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-          transition: box-shadow 0.4s ease;
-          pointer-events: none;
-        }
-
-        .image-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
       `}</style>
     </section>
   );

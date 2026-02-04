@@ -83,16 +83,38 @@ export default function ProjectsSection({ title = "Projects" }) {
         </h2>
       </div>
 
-      <div className="scroll-container">
+      <div
+        className="scroll-container"
+        style={{
+          width: "100vw",
+          overflowX: "auto",
+          position: "relative",
+          scrollbarWidth: "none",
+        }}
+      >
         <div
           className="scroll-track"
-          style={{ animationDuration: "35s" }}
+          style={{
+            display: "flex",
+            gap: `${CARD_GAP}px`,
+            width: "max-content",
+            padding: "0 20px",
+            animation: `marquee 35s linear infinite`,
+          }}
         >
           {infiniteProjects.map((p, index) => (
             <Link
               key={`${p.id}-${index}`}
               to={`/projects/${p.slug}`}
               className="project-card"
+              style={{
+                flexShrink: 0,
+                width: cardWidth,
+                borderRadius: "24px",
+                overflow: "hidden",
+                display: "block",
+                transition: "transform 0.3s ease",
+              }}
             >
               <div className="image-wrapper">
                 <img
@@ -107,7 +129,7 @@ export default function ProjectsSection({ title = "Projects" }) {
       </div>
 
       <style>{`
-        .scroll-container {
+  .scroll-container {
           width: 100vw;
           overflow-x: auto;
           position: relative;
@@ -120,7 +142,7 @@ export default function ProjectsSection({ title = "Projects" }) {
           display: flex;
           gap: ${CARD_GAP}px;
           width: max-content;
-          padding: 40px 20px; /* 위아래 패딩을 넉넉히 주어 잘림 방지 */
+          padding: 20px;
           animation: marquee linear infinite;
         }
 
@@ -133,38 +155,35 @@ export default function ProjectsSection({ title = "Projects" }) {
           animation-play-state: paused !important;
         }
 
+        /* [네모칸 박멸 스타일] */
         .project-card {
           flex-shrink: 0;
           width: ${cardWidth}px;
           display: block;
-          
-          text-decoration: none !important;
+          text-decoration: none;
           background-color: transparent !important;
-          background: transparent !important;
+          outline: none !important;
           border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
-          -webkit-tap-highlight-color: transparent !important;
-          
-          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-        }
-
-        .project-card:hover, .project-card:focus, .project-card:active {
-          background-color: transparent !important;
-          background: transparent !important;
-          outline: none !important;
-          transform: translateY(-15px);
+          -webkit-tap-highlight-color: transparent;
+          transition: transform 0.3s ease-in-out !important;
         }
 
         .image-wrapper {
           width: 100%;
           aspect-ratio: 1 / 1;
           overflow: hidden;
-          border-radius: 24px;
-          background-color: transparent;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-          transition: box-shadow 0.4s ease;
-          pointer-events: none;
+          border-radius: 24px; /* 여기서 한 번 더 깎아줌 */
+          background-color: transparent !important;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 그림자를 여기에 부여 */
+          transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+          transform: translateY(-12px); /* 부드럽게 상승 */
+        }
+
+        .project-card:hover .image-wrapper {
+          box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* 호버 시 그림자만 강화 */
         }
 
         .image-wrapper img {
@@ -172,6 +191,12 @@ export default function ProjectsSection({ title = "Projects" }) {
           height: 100%;
           object-fit: cover;
           display: block;
+        }
+
+        /* <a> 태그 호버 시 브라우저가 입히는 모든 잔상 강제 제거 */
+        a:hover, a:focus, a:active {
+          background: none !important;
+          background-color: transparent !important;
         }
       `}</style>
     </section>

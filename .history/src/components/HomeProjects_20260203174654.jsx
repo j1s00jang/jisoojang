@@ -83,21 +83,43 @@ export default function ProjectsSection({ title = "Projects" }) {
         </h2>
       </div>
 
-      <div className="scroll-container">
+      <div
+        className="scroll-container"
+        style={{
+          width: "100vw",
+          overflowX: "auto",
+          position: "relative",
+          scrollbarWidth: "none",
+        }}
+      >
         <div
           className="scroll-track"
-          style={{ animationDuration: "35s" }}
+          style={{
+            display: "flex",
+            gap: `${CARD_GAP}px`,
+            width: "max-content",
+            padding: "0 20px",
+            animation: `marquee 35s linear infinite`,
+          }}
         >
           {infiniteProjects.map((p, index) => (
             <Link
               key={`${p.id}-${index}`}
               to={`/projects/${p.slug}`}
               className="project-card"
+              style={{
+                flexShrink: 0,
+                width: cardWidth,
+                overflow: "hidden",
+                display: "block",
+                transition: "transform 0.3s ease",
+              }}
             >
-              <div className="image-wrapper">
+              <div style={{ aspectRatio: "1 / 1", overflow: "hidden" }}>
                 <img
                   src={p.image}
                   alt={p.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   draggable="false"
                 />
               </div>
@@ -107,73 +129,53 @@ export default function ProjectsSection({ title = "Projects" }) {
       </div>
 
       <style>{`
-        .scroll-container {
-          width: 100vw;
-          overflow-x: auto;
-          position: relative;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-        .scroll-container::-webkit-scrollbar { display: none; }
+  /* 1. 스크롤바 완전 제거 */
+  .scroll-container::-webkit-scrollbar { display: none; }
+  .scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+  
+  /* 2. 무한 루프 애니메이션 */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-${totalWidth}px); }
+  }
 
-        .scroll-track {
-          display: flex;
-          gap: ${CARD_GAP}px;
-          width: max-content;
-          padding: 40px 20px; /* 위아래 패딩을 넉넉히 주어 잘림 방지 */
-          animation: marquee linear infinite;
-        }
+  .scroll-track:hover {
+    animation-play-state: paused !important;
+  }
 
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-${totalWidth}px); }
-        }
+  /* 3. 문제의 네모칸 제거 핵심 스타일 */
+  .project-card {
+    background-color: transparent !important; /* 배경색 절대 금지 */
+    background: none !important;              /* 배경 이미지/그라디언트 금지 */
+    -webkit-tap-highlight-color: transparent; /* 모바일 터치 시 푸른 칸 제거 */
+    outline: none !important;                 /* 포커스 시 점선 제거 */
+    border: none !important;                  /* 혹시 모를 테두리 제거 */
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease !important;
+  }
 
-        .scroll-track:hover {
-          animation-play-state: paused !important;
-        }
+  /* 4. 호버 시 상태 강제 고정 */
+  .project-card:hover, 
+  .project-card:active, 
+  .project-card:focus {
+    background-color: transparent !important;
+    background: none !important;
+    outline: none !important;
+    transform: translateY(-10px);
+  }
 
-        .project-card {
-          flex-shrink: 0;
-          width: ${cardWidth}px;
-          display: block;
-          
-          text-decoration: none !important;
-          background-color: transparent !important;
-          background: transparent !important;
-          border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
-          -webkit-tap-highlight-color: transparent !important;
-          
-          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-        }
-
-        .project-card:hover, .project-card:focus, .project-card:active {
-          background-color: transparent !important;
-          background: transparent !important;
-          outline: none !important;
-          transform: translateY(-15px);
-        }
-
-        .image-wrapper {
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          overflow: hidden;
-          border-radius: 24px;
-          background-color: transparent;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-          transition: box-shadow 0.4s ease;
-          pointer-events: none;
-        }
-
-        .image-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-      `}</style>
+  /* 5. 이미지 둥근 모서리 보정 */
+  .project-card img {
+    border-radius: 24px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지가 살짝 튀어나와 보이는 현상 방지 */
+    backface-visibility: hidden; 
+  }
+`}</style>
     </section>
   );
 }

@@ -133,22 +133,25 @@ export default function ProjectsSection({ title = "Projects" }) {
           animation-play-state: paused !important;
         }
 
+        /* [범인 박멸 핵심 스타일] */
         .project-card {
           flex-shrink: 0;
           width: ${cardWidth}px;
           display: block;
           
+          /* 링크 태그가 가질 수 있는 모든 시각적 요소 제거 */
           text-decoration: none !important;
           background-color: transparent !important;
           background: transparent !important;
           border: none !important;
           outline: none !important;
-          box-shadow: none !important;
+          box-shadow: none !important; /* 여기서 그림자를 주면 안됨 */
           -webkit-tap-highlight-color: transparent !important;
           
           transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
         }
 
+        /* <a> 태그 호버 시 브라우저가 강제로 입히는 효과 차단 */
         .project-card:hover, .project-card:focus, .project-card:active {
           background-color: transparent !important;
           background: transparent !important;
@@ -161,10 +164,11 @@ export default function ProjectsSection({ title = "Projects" }) {
           aspect-ratio: 1 / 1;
           overflow: hidden;
           border-radius: 24px;
-          background-color: transparent;
+          /* 실제 그림자는 '이미지'를 감싼 이 박스에만 존재해야 합니다 */
+          background-color: transparent; /* 이미지가 투명할 경우를 대비 */
           box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
           transition: box-shadow 0.4s ease;
-          pointer-events: none;
+          pointer-events: none; /* 클릭 이벤트가 뚫고 Link로 가게 함 */
         }
 
         .image-wrapper img {

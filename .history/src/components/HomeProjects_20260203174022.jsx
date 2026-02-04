@@ -83,21 +83,44 @@ export default function ProjectsSection({ title = "Projects" }) {
         </h2>
       </div>
 
-      <div className="scroll-container">
+      <div
+        className="scroll-container"
+        style={{
+          width: "100vw",
+          overflowX: "auto",
+          position: "relative",
+          scrollbarWidth: "none",
+        }}
+      >
         <div
           className="scroll-track"
-          style={{ animationDuration: "35s" }}
+          style={{
+            display: "flex",
+            gap: `${CARD_GAP}px`,
+            width: "max-content",
+            padding: "0 20px",
+            animation: `marquee 35s linear infinite`,
+          }}
         >
           {infiniteProjects.map((p, index) => (
             <Link
               key={`${p.id}-${index}`}
               to={`/projects/${p.slug}`}
               className="project-card"
+              style={{
+                flexShrink: 0,
+                width: cardWidth,
+                borderRadius: "24px",
+                overflow: "hidden",
+                display: "block",
+                transition: "transform 0.3s ease",
+              }}
             >
-              <div className="image-wrapper">
+              <div style={{ aspectRatio: "1 / 1", overflow: "hidden" }}>
                 <img
                   src={p.image}
                   alt={p.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   draggable="false"
                 />
               </div>
@@ -107,23 +130,10 @@ export default function ProjectsSection({ title = "Projects" }) {
       </div>
 
       <style>{`
-        .scroll-container {
-          width: 100vw;
-          overflow-x: auto;
-          position: relative;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
+        /* 1. 스크롤바 숨기기 */
         .scroll-container::-webkit-scrollbar { display: none; }
-
-        .scroll-track {
-          display: flex;
-          gap: ${CARD_GAP}px;
-          width: max-content;
-          padding: 40px 20px; /* 위아래 패딩을 넉넉히 주어 잘림 방지 */
-          animation: marquee linear infinite;
-        }
-
+        
+        /* 2. 무한 루프 애니메이션 */
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-${totalWidth}px); }
@@ -133,44 +143,26 @@ export default function ProjectsSection({ title = "Projects" }) {
           animation-play-state: paused !important;
         }
 
+        /* 3. 카드 네모칸 및 하이라이트 제거 */
         .project-card {
-          flex-shrink: 0;
-          width: ${cardWidth}px;
-          display: block;
-          
-          text-decoration: none !important;
-          background-color: transparent !important;
+          /* 배경색과 테두리가 보이지 않도록 강제 설정 */
           background: transparent !important;
-          border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
-          -webkit-tap-highlight-color: transparent !important;
-          
-          transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+          -webkit-tap-highlight-color: transparent; /* 모바일 하이라이트 제거 */
+          outline: none;
+          text-decoration: none;
+          /* 그림자를 넣고 싶다면 카드 자체에 넣어줘야 자연스럽습니다 */
+          transition: transform 0.3s ease, box-shadow 0.3s ease !important;
         }
 
-        .project-card:hover, .project-card:focus, .project-card:active {
-          background-color: transparent !important;
+        .project-card:hover {
+          transform: translateY(-10px);
+          /* 위로 올라갈 때 그림자도 같이 진해져야 공중에 뜬 느낌이 납니다 */
           background: transparent !important;
-          outline: none !important;
-          transform: translateY(-15px);
         }
 
-        .image-wrapper {
-          width: 100%;
-          aspect-ratio: 1 / 1;
-          overflow: hidden;
+        /* 4. 이미지 둥근 모서리 보정 */
+        .project-card img {
           border-radius: 24px;
-          background-color: transparent;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-          transition: box-shadow 0.4s ease;
-          pointer-events: none;
-        }
-
-        .image-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
           display: block;
         }
       `}</style>
