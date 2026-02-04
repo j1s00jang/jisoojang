@@ -86,8 +86,9 @@ export default function ProjectsSection({ title = "Projects" }) {
             style={{
               display: "flex",
               gap: `${CARD_GAP}px`,
-              width: "max-content",
+              width: "max-content", // 내용물만큼 너비 확보
             }}
+            // 애니메이션 핵심: x축을 -totalWidth만큼 무한히 반복 이동
             animate={{
               x: [0, -totalWidth],
             }}
@@ -95,7 +96,7 @@ export default function ProjectsSection({ title = "Projects" }) {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 35,
+                duration: 25, // 숫자가 작을수록 빠름
                 ease: "linear",
               },
             }}

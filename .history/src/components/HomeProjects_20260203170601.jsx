@@ -64,11 +64,7 @@ export default function ProjectsSection({ title = "Projects" }) {
 
   return (
     <section
-      style={{
-        background: "#transparent",
-        padding: "64px 0",
-        overflow: "hidden",
-      }}
+      style={{ background: "#fff", padding: "64px 0", overflow: "hidden" }}
     >
       <div style={{ width: "min(1400px, 94vw)", margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", marginBottom: "28px" }}>{title}</h2>
@@ -86,8 +82,9 @@ export default function ProjectsSection({ title = "Projects" }) {
             style={{
               display: "flex",
               gap: `${CARD_GAP}px`,
-              width: "max-content",
+              width: "max-content", // 내용물만큼 너비 확보
             }}
+            // 애니메이션 핵심: x축을 -totalWidth만큼 무한히 반복 이동
             animate={{
               x: [0, -totalWidth],
             }}
@@ -95,7 +92,7 @@ export default function ProjectsSection({ title = "Projects" }) {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 35,
+                duration: 25, // 숫자가 작을수록 빠름
                 ease: "linear",
               },
             }}
