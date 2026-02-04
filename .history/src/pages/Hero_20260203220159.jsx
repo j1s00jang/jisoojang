@@ -112,7 +112,7 @@ function Hero() {
             transform: "translateX(-50%)",
             fontSize: isMobile
               ? "clamp(14px, 4vw, 18px)"
-              : "clamp(10px, 1.4vw, 18px)",
+              : "clamp(14px, 1.4vw, 20px)",
             color: "#2E2B28",
             textAlign: "center",
             opacity: 0.85,

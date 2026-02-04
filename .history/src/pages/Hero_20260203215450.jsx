@@ -113,7 +113,7 @@ function Hero() {
             fontSize: isMobile
               ? "clamp(14px, 4vw, 18px)"
               : "clamp(10px, 1.4vw, 18px)",
-            color: "#2E2B28",
+            color: "#222",
             textAlign: "center",
             opacity: 0.85,
             zIndex: 50,
@@ -138,13 +138,14 @@ function Hero() {
             textAlign: "center",
             zIndex: 50,
             whiteSpace: "nowrap",
+            fontStyle: "italic",
           }}
         >
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            ✨ Try moving my stickers! ✨
+            ✨ Play with my stickers! ✨
           </motion.span>
         </div>
 
@@ -326,14 +327,13 @@ function Hero() {
           );
         })}
       </div>
-      {/* arrow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
         style={{
           position: "absolute",
-          bottom: "30px",
+          bottom: "40px",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",
@@ -341,26 +341,13 @@ function Hero() {
           alignItems: "center",
           zIndex: 60,
           pointerEvents: "none",
-          gap: "10px",
         }}
       >
-        <span
-          style={{
-            fontSize: "10px",
-            letterSpacing: "0.25em",
-            color: "#2E2B28",
-            fontWeight: "700",
-            textTransform: "uppercase",
-            opacity: 0.8,
-          }}
-        >
-          Scroll
-        </span>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "2px",
+            gap: "2px", // 화살표 사이 간격을 조금 더 좁게 조정
           }}
         >
           {[0, 1].map((i) => (
@@ -381,8 +368,8 @@ function Hero() {
               style={{
                 width: "10px",
                 height: "10px",
-                borderRight: "2px solid #2E2B28",
-                borderBottom: "2px solid #2E2B28",
+                borderRight: "2px solid #7b61ff",
+                borderBottom: "2px solid #7b61ff",
               }}
             />
           ))}

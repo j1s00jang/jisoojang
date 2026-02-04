@@ -113,7 +113,7 @@ function Hero() {
             fontSize: isMobile
               ? "clamp(14px, 4vw, 18px)"
               : "clamp(10px, 1.4vw, 18px)",
-            color: "#2E2B28",
+            color: "#222",
             textAlign: "center",
             opacity: 0.85,
             zIndex: 50,
@@ -138,13 +138,14 @@ function Hero() {
             textAlign: "center",
             zIndex: 50,
             whiteSpace: "nowrap",
+            fontStyle: "italic",
           }}
         >
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            ✨ Try moving my stickers! ✨
+            ✨ Play with my stickers! ✨
           </motion.span>
         </div>
 
@@ -325,69 +326,61 @@ function Hero() {
             </motion.div>
           );
         })}
-      </div>
-      {/* arrow */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        style={{
-          position: "absolute",
-          bottom: "30px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          zIndex: 60,
-          pointerEvents: "none",
-          gap: "10px",
-        }}
-      >
-        <span
+        {/* 3. 화살표형 스크롤 유도 섹션 */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 1 }}
           style={{
-            fontSize: "10px",
-            letterSpacing: "0.25em",
-            color: "#2E2B28",
-            fontWeight: "700",
-            textTransform: "uppercase",
-            opacity: 0.8,
-          }}
-        >
-          Scroll
-        </span>
-        <div
-          style={{
+            position: "absolute",
+            bottom: "40px",
+            left: "50%",
+            transform: "translateX(-50%)",
             display: "flex",
             flexDirection: "column",
-            gap: "2px",
+            alignItems: "center",
+            zIndex: 60,
+            pointerEvents: "none",
           }}
         >
-          {[0, 1].map((i) => (
-            <motion.div
-              key={i}
-              initial={{ rotate: 45, opacity: 0 }}
-              animate={{
-                opacity: [0.2, 1, 0.2],
-                y: [0, 5, 0],
-                rotate: 45,
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: i * 0.2,
-                ease: "easeInOut",
-              }}
+          {/* 전체가 위아래로 둥둥 떠다니는 애니메이션 */}
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {/* 선 (두께를 1.5px로 살짝 키움) */}
+            <div
               style={{
-                width: "10px",
-                height: "10px",
-                borderRight: "2px solid #2E2B28",
-                borderBottom: "2px solid #2E2B28",
+                width: "2px",
+                height: "35px",
+                background: "linear-gradient(to bottom, transparent, #7b61ff)",
+                borderRadius: "2px",
               }}
             />
-          ))}
-        </div>
-      </motion.div>
+
+            {/* 화살표 머리 (삼각형) */}
+            <div
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: "5px solid transparent",
+                borderRight: "5px solid transparent",
+                borderTop: "8px solidrgb(57, 56, 63)", // 선의 끝색상과 맞춤
+                marginTop: "-1px", // 선과 화살표 사이 틈 제거
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

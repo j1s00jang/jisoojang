@@ -113,7 +113,7 @@ function Hero() {
             fontSize: isMobile
               ? "clamp(14px, 4vw, 18px)"
               : "clamp(10px, 1.4vw, 18px)",
-            color: "#2E2B28",
+            color: "#222",
             textAlign: "center",
             opacity: 0.85,
             zIndex: 50,
@@ -138,13 +138,14 @@ function Hero() {
             textAlign: "center",
             zIndex: 50,
             whiteSpace: "nowrap",
+            fontStyle: "italic",
           }}
         >
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            ✨ Try moving my stickers! ✨
+            ✨ Play with my stickers! ✨
           </motion.span>
         </div>
 
@@ -325,69 +326,54 @@ function Hero() {
             </motion.div>
           );
         })}
-      </div>
-      {/* arrow */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        style={{
-          position: "absolute",
-          bottom: "30px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          zIndex: 60,
-          pointerEvents: "none",
-          gap: "10px",
-        }}
-      >
-        <span
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 1 }}
           style={{
-            fontSize: "10px",
-            letterSpacing: "0.25em",
-            color: "#2E2B28",
-            fontWeight: "700",
-            textTransform: "uppercase",
-            opacity: 0.8,
-          }}
-        >
-          Scroll
-        </span>
-        <div
-          style={{
+            position: "absolute",
+            bottom: "40px",
+            left: "50%",
+            transform: "translateX(-50%)",
             display: "flex",
             flexDirection: "column",
-            gap: "2px",
+            alignItems: "center",
+            zIndex: 60,
+            pointerEvents: "none",
           }}
         >
-          {[0, 1].map((i) => (
-            <motion.div
-              key={i}
-              initial={{ rotate: 45, opacity: 0 }}
-              animate={{
-                opacity: [0.2, 1, 0.2],
-                y: [0, 5, 0],
-                rotate: 45,
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: i * 0.2,
-                ease: "easeInOut",
-              }}
-              style={{
-                width: "10px",
-                height: "10px",
-                borderRight: "2px solid #2E2B28",
-                borderBottom: "2px solid #2E2B28",
-              }}
-            />
-          ))}
-        </div>
-      </motion.div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+            }}
+          >
+            {[0, 1].map((i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  opacity: [0.2, 1, 0.2],
+                  y: [0, 5, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                  ease: "easeInOut",
+                }}
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  borderRight: "2px solid #7b61ff",
+                  borderBottom: "2px solid #7b61ff",
+                  transform: "rotate(45deg)", // v 모양을 만듦
+                }}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

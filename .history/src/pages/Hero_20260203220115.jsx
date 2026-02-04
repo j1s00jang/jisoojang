@@ -111,7 +111,7 @@ function Hero() {
             left: "50%",
             transform: "translateX(-50%)",
             fontSize: isMobile
-              ? "clamp(14px, 4vw, 18px)"
+              ? "clamp(18px, 4vw, 18px)"
               : "clamp(10px, 1.4vw, 18px)",
             color: "#2E2B28",
             textAlign: "center",

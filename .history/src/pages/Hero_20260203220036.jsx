@@ -113,7 +113,7 @@ function Hero() {
             fontSize: isMobile
               ? "clamp(14px, 4vw, 18px)"
               : "clamp(10px, 1.4vw, 18px)",
-            color: "#2E2B28",
+            color: "#222",
             textAlign: "center",
             opacity: 0.85,
             zIndex: 50,

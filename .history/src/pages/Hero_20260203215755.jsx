@@ -113,7 +113,7 @@ function Hero() {
             fontSize: isMobile
               ? "clamp(14px, 4vw, 18px)"
               : "clamp(10px, 1.4vw, 18px)",
-            color: "#2E2B28",
+            color: "#222",
             textAlign: "center",
             opacity: 0.85,
             zIndex: 50,
@@ -138,13 +138,14 @@ function Hero() {
             textAlign: "center",
             zIndex: 50,
             whiteSpace: "nowrap",
+            fontStyle: "italic",
           }}
         >
           <motion.span
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            ✨ Try moving my stickers! ✨
+            ✨ Play with my stickers! ✨
           </motion.span>
         </div>
 
@@ -360,7 +361,7 @@ function Hero() {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "2px",
+            gap: "2px", // 화살표 사이 간격을 조금 더 좁게 조정
           }}
         >
           {[0, 1].map((i) => (
