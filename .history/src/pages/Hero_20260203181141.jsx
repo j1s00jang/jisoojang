@@ -1,3 +1,274 @@
+// import { useState } from "react";
+// import PortUrl from "../assets/main/hero/port.svg";
+// import FolioUrl from "../assets/main/hero/folio.svg";
+// import RibbonUrl from "../assets/main/hero/ribbon.svg";
+
+// import HelloSticker from "../assets/main/hero/iam_empty.svg";
+// import HelloStickerUXUI from "../assets/main/hero/iam_UXUI.svg";
+// import HelloStickerProduct from "../assets/main/hero/iam_Product.svg";
+// import HelloStickerPackaging from "../assets/main/hero/iam_Packaging.svg";
+// import VancouverSticker from "../assets/main/hero/sticker_vancouver.svg";
+// import IamJisooSticker from "../assets/main/hero/sticker_iamjisoo.svg";
+// import FruitsSticker from "../assets/main/hero/sticker_fruits.svg";
+// import ContactMeSticker from "../assets/main/hero/sticker_contact_me.svg";
+
+// const stickers = [
+//   {
+//     id: "hello",
+//     src: HelloSticker,
+//     cycleSrcs: [HelloStickerUXUI, HelloStickerProduct, HelloStickerPackaging],
+//     style: {
+//       top: "16%",
+//       left: "65%",
+//       width: "clamp(10%, 18%, 22%)",
+//       transform: "rotate(10deg)",
+//     },
+//   },
+//   {
+//     id: "vancouver",
+//     src: VancouverSticker,
+//     style: {
+//       top: "35%",
+//       left: "40%",
+//       width: "clamp(5%, 7%, 10%)",
+//       transform: "rotate(-20deg)",
+//     },
+//   },
+//   {
+//     id: "iamjisoo",
+//     src: IamJisooSticker,
+//     style: {
+//       top: "48%",
+//       left: "39.5%",
+//       width: "clamp(5%, 8%, 11%)",
+//       transform: "rotate(15deg)",
+//     },
+//   },
+//   {
+//     id: "fruits",
+//     src: FruitsSticker,
+//     style: {
+//       top: "48%",
+//       left: "64%",
+//       width: "clamp(5%, 7%, 9%)",
+//       transform: "rotate(-20deg)",
+//     },
+//   },
+//   {
+//     id: "contactme",
+//     src: ContactMeSticker,
+//     style: {
+//       top: "62%",
+//       left: "65%",
+//       width: "clamp(8%, 12%, 18%)",
+//       transform: "rotate(12deg)",
+//     },
+//   },
+// ];
+
+// function Hero() {
+//   const [hoveredId, setHoveredId] = useState(null);
+//   const [helloCycleIndex, setHelloCycleIndex] = useState(0);
+
+//   return (
+//     <section
+//       style={{
+//         minHeight: "100vh",
+//         background: "#f7f4ef",
+//         display: "grid",
+//         placeItems: "center",
+//         overflow: "hidden",
+//       }}
+//     >
+//       <div
+//         style={{
+//           position: "relative",
+//           width: "100%",
+//           aspectRatio: "16 / 7",
+//           isolation: "isolate",
+//         }}
+//       >
+//         <div
+//           style={{
+//             position: "absolute",
+//             top: "17%",
+//             left: "50%",
+//             transform: "translateX(-50%)",
+//             fontSize: "clamp(12px, 1.8vw, 22px)",
+//             color: "#222",
+//             opacity: 0.85,
+//             zIndex: 50,
+//             whiteSpace: "nowrap",
+//           }}
+//         >
+//           welcome to <em>Jisoo</em>’s
+//         </div>
+
+//         {/* FOLIO */}
+//         <div
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             display: "grid",
+//             placeItems: "center",
+//             zIndex: 10,
+//             pointerEvents: "none",
+//           }}
+//         >
+//           <img
+//             src={FolioUrl}
+//             alt=""
+//             draggable={false}
+//             style={{
+//               width: "clamp(28%, 35%, 42%)",
+//               height: "auto",
+//               display: "block",
+//               transform: "translateY(45%)",
+//             }}
+//           />
+//         </div>
+
+//         {/* Purple ribbon */}
+//         <div
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             display: "grid",
+//             placeItems: "center",
+//             zIndex: 20,
+//             pointerEvents: "none",
+//           }}
+//         >
+//           <img
+//             src={RibbonUrl}
+//             alt=""
+//             draggable={false}
+//             style={{
+//               width: "120%",
+//               height: "auto",
+//               display: "block",
+//               transform: "translateY(-10%)",
+//             }}
+//           />
+//         </div>
+
+//         {/* PORT */}
+//         <div
+//           style={{
+//             position: "absolute",
+//             inset: 0,
+//             display: "grid",
+//             placeItems: "center",
+//             zIndex: 30,
+//             pointerEvents: "none",
+//           }}
+//         >
+//           <img
+//             src={PortUrl}
+//             alt=""
+//             draggable={false}
+//             style={{
+//               width: "clamp(28%, 35%, 42%)",
+//               height: "auto",
+//               display: "block",
+//               transform: "translateY(0%)",
+//             }}
+//           />
+//         </div>
+
+//         {/* Stickers */}
+//         {stickers.map(({ id, src, cycleSrcs, style }) => {
+//           const isHello = id === "hello";
+//           const isHovered = hoveredId === id;
+//           const hasCycle = isHello && cycleSrcs?.length;
+
+//           const handleHelloEnter = () => {
+//             setHoveredId(id);
+//             if (isHello && cycleSrcs) {
+//               setHelloCycleIndex((i) => i + 1);
+//             }
+//           };
+
+//           const displaySrc =
+//             hasCycle && isHovered
+//               ? cycleSrcs[helloCycleIndex % cycleSrcs.length]
+//               : src;
+
+//           const allSrcs = hasCycle ? [src, ...cycleSrcs] : [src];
+//           const activeIndex =
+//             hasCycle && isHovered
+//               ? 1 + (helloCycleIndex % cycleSrcs.length)
+//               : 0;
+
+//           return (
+//             <div
+//               key={id}
+//               onMouseEnter={isHello ? handleHelloEnter : () => setHoveredId(id)}
+//               onMouseLeave={() => setHoveredId(null)}
+//               style={{
+//                 position: "absolute",
+//                 zIndex: 40,
+//                 ...style,
+//                 transformOrigin: "center",
+//                 opacity: 1,
+//                 mixBlendMode: "normal",
+//                 isolation: "isolate",
+//                 filter:
+//                   "drop-shadow(2px 2px 4px rgba(0,0,0,0.12)) drop-shadow(0 1px 2px rgba(0,0,0,0.08))",
+//                 cursor: hasCycle ? "pointer" : "default",
+//               }}
+//             >
+//               {hasCycle ? (
+//                 <div
+//                   style={{
+//                     position: "relative",
+//                     width: "100%",
+//                     aspectRatio: "580 / 339",
+//                   }}
+//                 >
+//                   {allSrcs.map((s, i) => (
+//                     <img
+//                       key={i}
+//                       src={s}
+//                       alt=""
+//                       draggable={false}
+//                       loading="lazy"
+//                       style={{
+//                         position: "absolute",
+//                         inset: 0,
+//                         width: "100%",
+//                         height: "100%",
+//                         objectFit: "contain",
+//                         opacity: i === activeIndex ? 1 : 0,
+//                         transition: "ease",
+//                         pointerEvents: "none",
+//                       }}
+//                     />
+//                   ))}
+//                 </div>
+//               ) : (
+//                 <img
+//                   src={displaySrc}
+//                   alt=""
+//                   draggable={false}
+//                   style={{
+//                     width: "100%",
+//                     height: "auto",
+//                     display: "block",
+//                   }}
+//                   loading="lazy"
+//                 />
+//               )}
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default Hero;
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -127,13 +398,15 @@ function Hero() {
         <div
           style={{
             position: "absolute",
+            // Folio 이미지가 translateY(40%) 정도에 있으므로 그보다 아래인 75~80% 지점에 배치
             top: isMobile ? "85%" : "78%",
             left: "50%",
             transform: "translateX(-50%)",
+            // Welcome 문구보다 작게 설정 (0.8배 사이즈)
             fontSize: isMobile
               ? "clamp(10px, 3vw, 14px)"
               : "clamp(9px, 1.1vw, 15px)",
-            color: "#7b61ff",
+            color: "#7b61ff", // 리본 색상과 맞춰서 포인트
             fontWeight: "500",
             textAlign: "center",
             zIndex: 50,
@@ -145,7 +418,7 @@ function Hero() {
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            ✨ Play with my stickers! ✨
+            ✨ Play with my stickers!
           </motion.span>
         </div>
 
@@ -181,19 +454,22 @@ function Hero() {
             alt=""
             draggable={false}
             initial={{
-              clipPath: "inset(0 100% 0 0)",
+              clipPath: "inset(0 100% 0 0)", // 처음에 오른쪽에서 왼쪽으로 가려짐
               opacity: 0,
-              y: "-10%",
+              y: "-10%", // 기본 위치
             }}
             animate={{
-              clipPath: "inset(0 0% 0 0)",
+              clipPath: "inset(0 0% 0 0)", // 슥 그려짐
               opacity: 1,
+              // 드로잉 완료 후 둥둥 떠다니는 효과 추가
               y: ["-10%", "-9%", "-10%"],
               rotate: [-0.5, 0.5, -0.5],
             }}
             transition={{
+              // clipPath와 opacity(등장)는 딱 한 번만 실행
               clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
               opacity: { duration: 1, delay: 0.3 },
+              // y축과 rotate(둥둥)는 무한 반복
               y: {
                 duration: 4,
                 repeat: Infinity,
