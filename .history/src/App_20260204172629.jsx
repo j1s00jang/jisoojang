@@ -23,8 +23,6 @@ function App() {
       smoothWheel: true,
     });
 
-    window.lenis = lenis;
-
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {

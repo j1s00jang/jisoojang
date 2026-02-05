@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import React, { useState, useMemo, useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useState, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -24,18 +23,6 @@ function ProjectDetail() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const project = projectsBySlug[slug];
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const scrollTimer = setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-      if (ScrollTrigger) {
-        ScrollTrigger.refresh();
-      }
-    }, 50);
-    return () => clearTimeout(scrollTimer);
-  }, [slug]);
 
   const promoVideoSrc = useMemo(() => {
     if (slug !== "scaffold" || !project?.sections) return null;

@@ -15,15 +15,15 @@ const RouteScrollToTop = () => {
       window.lenis.stop();
       window.lenis.scrollTo(0, { immediate: true });
     }
+
     window.scrollTo(0, 0);
 
     const timer = setTimeout(() => {
-      window.scrollTo(0, 0);
-      if (window.lenis) {
-        window.lenis.start();
-        window.lenis.resize();
-      }
-    }, 150);
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
+    }, 10);
 
     return () => clearTimeout(timer);
   }, [pathname]);

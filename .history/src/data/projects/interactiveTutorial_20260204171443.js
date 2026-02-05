@@ -12,7 +12,6 @@ import interactiveConcept09 from "../../assets/projects/interactive/interactive_
 import interactiveConcept10 from "../../assets/projects/interactive/interactive_bg02.png";
 import interactiveConcept11 from "../../assets/projects/interactive/interactive_bg03.png";
 import interactiveConcept12 from "../../assets/projects/interactive/interactive_bg04.png";
-import interactive_icon from "../../assets/projects/scaffold/scaffold_wireframes_icon.png";
 
 export const interactiveTutorial = {
   id: 5,

@@ -20,8 +20,8 @@ const RouteScrollToTop = () => {
     const timer = setTimeout(() => {
       window.scrollTo(0, 0);
       if (window.lenis) {
-        window.lenis.start();
-        window.lenis.resize();
+        window.lenis.start(); // 엔진 재개
+        window.lenis.resize(); // 높이 재계산
       }
     }, 150);
 

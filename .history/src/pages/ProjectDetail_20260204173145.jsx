@@ -25,18 +25,6 @@ function ProjectDetail() {
 
   const project = projectsBySlug[slug];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const scrollTimer = setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-      if (ScrollTrigger) {
-        ScrollTrigger.refresh();
-      }
-    }, 50);
-    return () => clearTimeout(scrollTimer);
-  }, [slug]);
-
   const promoVideoSrc = useMemo(() => {
     if (slug !== "scaffold" || !project?.sections) return null;
     return project.sections.find((sec) => sec.sectionId === "promo-video")
