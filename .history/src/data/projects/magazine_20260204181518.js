@@ -4,7 +4,7 @@ import conceptImage01 from "../../assets/projects/magazine/magazine_concept01.pn
 import conceptImage02 from "../../assets/projects/magazine/magazine_concept02.png";
 import magazineMockup01 from "../../assets/projects/magazine/magazine_mockup01.png";
 import magazineMockup02 from "../../assets/projects/magazine/magazine_mockup02.png";
-import ViewMockup from "../../assets/projects/scaffold/scaffold_promo_icon.png";
+import ViewMockup from "../../assets/projects/can_design/canDesign_icon.png";
 
 export const magazine = {
   id: 4,
