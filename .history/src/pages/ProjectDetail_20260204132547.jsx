@@ -1,39 +1,27 @@
 import { useParams, useNavigate } from "react-router-dom";
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react"; // useState 추가
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import Breadcrumbs from "../components/Breadcrumbs";
 import "./ProjectDetail.css";
 import { projectsBySlug } from "../data/projectsData";
-
 import Scaffold from "./Scaffold";
+import { scaffold } from "../data/projects/scaffold";
 import Montro from "./Montro";
 import CanDesign from "./CanDesign";
 import Magazine from "./Magazine";
 import InteractiveTutorial from "./InteractiveTutorial";
 import Posters from "./Posters";
-import MagazineFlipbook from "../components/MagazineFlipbook";
 
 function ProjectDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // 비디오 모달 상태 추가
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const project = projectsBySlug[slug];
-
-  const promoVideoSrc = useMemo(() => {
-    if (slug !== "scaffold" || !project?.sections) return null;
-    return project.sections.find((sec) => sec.sectionId === "promo-video")
-      ?.images?.[0]?.src;
-  }, [slug, project]);
-
-  const carouselImages = useMemo(() => {
-    if (slug !== "can-design" || !project?.flavours) return [];
-    return project.flavours.map((f) => f.labelImage).filter(Boolean);
-  }, [slug, project]);
 
   // Reusable Markdown renderer
   const MD = ({ children, className = "project-detail-preline" }) => (
@@ -58,6 +46,11 @@ function ProjectDetail() {
     );
   }
 
+  // Scaffold 프로젝트의 경우 데이터에서 비디오 소스 가져오기
+  const promoVideoSrc = scaffold.sections.find(
+    (section) => section.sectionId === "promo-video"
+  )?.images[0]?.src;
+
   const breadcrumbItems = [
     { label: "Home", link: "/" },
     { label: "Projects", link: "/projects" },
@@ -65,20 +58,6 @@ function ProjectDetail() {
   ];
 
   const titleLines = project.titleLines;
-
-  const nextSlide = (e) => {
-    e.stopPropagation();
-    setCurrentSlide((prev) =>
-      prev === carouselImages.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = (e) => {
-    e.stopPropagation();
-    setCurrentSlide((prev) =>
-      prev === 0 ? carouselImages.length - 1 : prev - 1
-    );
-  };
 
   return (
     <div
@@ -140,29 +119,24 @@ function ProjectDetail() {
               </p>
             </div>
 
-            {project.headerLinks && (
+            {project.headerLinks && project.headerLinks.length > 0 && (
               <div className="project-detail-header-links">
                 {project.headerLinks.map((link, idx) => {
-                  if (link.type === "anchor") {
+                  if (link.type === "liveDemo") {
                     return (
                       <button
                         key={idx}
                         type="button"
                         className="project-detail-header-link"
-                        onClick={() => {
-                          if (
-                            link.anchorId === "promo-video" ||
-                            link.anchorId === "design-carousel" ||
-                            link.anchorId === "magazine-flipbook"
-                          ) {
-                            setIsModalOpen(true);
-                            setCurrentSlide(0);
-                          } else {
-                            document
-                              .getElementById(link.anchorId)
-                              ?.scrollIntoView({ behavior: "smooth" });
-                          }
-                        }}
+                        onClick={() =>
+                          window.open(
+                            link.url,
+                            "_blank",
+                            "width=390,height=844,scrollbars=yes"
+                          )
+                        }
+                        aria-label={link.label}
+                        title={link.label}
                       >
                         <img
                           src={link.icon}
@@ -176,95 +150,89 @@ function ProjectDetail() {
                     );
                   }
 
-                  return (
-                    <button
-                      key={idx}
-                      className="project-detail-header-link"
-                      onClick={() =>
-                        window.open(
-                          link.url,
-                          "_blank",
-                          link.type === "liveDemo"
-                            ? "width=390,height=844"
-                            : undefined
-                        )
-                      }
-                    >
-                      <img
-                        src={link.icon}
-                        alt=""
-                        className="project-detail-header-link-icon"
-                      />
-                      <span className="project-detail-header-link-label">
-                        {link.label}
-                      </span>
-                    </button>
-                  );
+                  if (link.type === "external") {
+                    return (
+                      <a
+                        key={idx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-detail-header-link"
+                        aria-label={link.label}
+                        title={link.label}
+                      >
+                        <img
+                          src={link.icon}
+                          alt=""
+                          className="project-detail-header-link-icon"
+                        />
+                        <span className="project-detail-header-link-label">
+                          {link.label}
+                        </span>
+                      </a>
+                    );
+                  }
+
+                  if (link.type === "anchor") {
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        className="project-detail-header-link"
+                        onClick={() => {
+                          // promo-video인 경우 오버레이 열기
+                          if (link.anchorId === "promo-video") {
+                            setIsVideoOpen(true);
+                          } else {
+                            document
+                              .getElementById(link.anchorId)
+                              ?.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }}
+                        aria-label={link.label}
+                        title={link.label}
+                      >
+                        <img
+                          src={link.icon}
+                          alt=""
+                          className="project-detail-header-link-icon"
+                        />
+                        <span className="project-detail-header-link-label">
+                          {link.label}
+                        </span>
+                      </button>
+                    );
+                  }
+                  return null;
                 })}
               </div>
             )}
           </div>
         </div>
 
-        {isModalOpen && (
+        {/* 비디오 오버레이 모달 */}
+        {isVideoOpen && promoVideoSrc && (
           <div
             className="video-overlay"
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => setIsVideoOpen(false)}
           >
             <div
-              className={`video-modal-container ${
-                slug === "magazine" ? "modal-large" : ""
-              }`}
+              className="video-modal-container"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 className="video-close-btn"
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => setIsVideoOpen(false)}
+                aria-label="Close video"
               >
                 &times;
               </button>
-
-              {/* Scaffold header link video */}
-              {slug === "scaffold" && promoVideoSrc && (
-                <video
-                  src={promoVideoSrc}
-                  controls
-                  autoPlay
-                  className="overlay-video-player"
-                />
-              )}
-
-              {/* Can Design header link carousel */}
-              {slug === "can-design" && carouselImages.length > 0 && (
-                <div className="carousel-wrapper">
-                  <img
-                    src={carouselImages[currentSlide]}
-                    alt="Design Label"
-                    className="overlay-image-player"
-                  />
-                  <button
-                    className="carousel-nav-btn prev"
-                    onClick={prevSlide}
-                  >
-                    &#10094;
-                  </button>
-                  <button
-                    className="carousel-nav-btn next"
-                    onClick={nextSlide}
-                  >
-                    &#10095;
-                  </button>
-                  <div className="carousel-indicator">
-                    {currentSlide + 1} / {carouselImages.length}
-                  </div>
-                </div>
-              )}
-              {/* Magazine header link flipbook */}
-              {slug === "magazine" && (
-                <div className="flipbook-modal-wrapper">
-                  <MagazineFlipbook />
-                </div>
-              )}
+              <video
+                src={promoVideoSrc}
+                controls
+                autoPlay
+                className="overlay-video-player"
+              />
             </div>
           </div>
         )}
@@ -278,7 +246,7 @@ function ProjectDetail() {
                 <div className="project-detail-mockup">
                   <img
                     src={project.mockupImage}
-                    alt="mockup"
+                    alt={`${project.name} mockup image`}
                     className="project-detail-mockup-image"
                   />
                 </div>
@@ -301,6 +269,25 @@ function ProjectDetail() {
                 <MD>{project.userResearch}</MD>
               </section>
             </>
+          )}
+
+          {project.scaffoldSurveyResults && (
+            <section className="project-detail-section">
+              <div className="project-detail-survey-images">
+                <img
+                  src={project.scaffoldSurveyResults}
+                  alt="survey results 1"
+                  className="project-detail-survey-image"
+                />
+                {project.scaffoldSurveyResults2 && (
+                  <img
+                    src={project.scaffoldSurveyResults2}
+                    alt="survey results 2"
+                    className="project-detail-survey-image"
+                  />
+                )}
+              </div>
+            </section>
           )}
 
           {slug === "scaffold" && <Scaffold project={project} />}

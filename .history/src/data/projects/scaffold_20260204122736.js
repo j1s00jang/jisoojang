@@ -217,7 +217,7 @@ export const scaffold = {
         `&nbsp;`,
         `Two typefaces support both personality and readability: Akira is used for titles and labels to create a bold, structured tone, while Montserrat is used for longer text to keep content clear and easy to read—especially on mobile screens.`,
         `&nbsp;`,
-        `The logo is built around the letter “S,” using stacked block shapes that reinforce the brand idea of building foundations, aligning the look and feel with Scaffold’s purpose: helping users find support and stay on track.`,
+        `The logo is built around the letter “S,” using stacked block shapes that suggest construction and stability. This reinforces the brand idea of building foundations, aligning the look and feel with Scaffold’s purpose: helping users find support and stay on track.`,
       ],
       images: [scaffoldBrandGuidelines1],
       imageLayout: "row",

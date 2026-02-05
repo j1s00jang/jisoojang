@@ -43,5 +43,5 @@ export const interactiveTutorial = {
   conceptImage11: interactiveConcept11,
   conceptImage12: interactiveConcept12,
   conceptParagraph3:
-    "The player can return to the previous page to explore other options and explanations. Buttons include hover effects to clearly show when something is clickable and provide immediate feedback.",
+    "User can return to the previous page to explore other options and explanation. Buttons include hover effects to clearly show when something is clickable and provide immediate feedback.",
 };

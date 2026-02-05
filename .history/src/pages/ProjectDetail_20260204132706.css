@@ -115,24 +115,27 @@
 .project-detail-header-links {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 2.5rem;
   width: 100%;
   max-width: 320px;
 }
 
 .project-detail-header-link {
-  font: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
+  gap: 0.5rem;
+  flex: 1;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
 }
 
 .project-detail-header-link:hover {
@@ -335,96 +338,50 @@
   }
 }
 
-/* scaffold promo video overlay modal style */
+/* 비디오 오버레이 스타일 */
 .video-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.8); /* 배경 어둡게 */
+  backdrop-filter: blur(10px); /* 블러 효과 */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
-  padding: 60px;
+  z-index: 2000; /* 최상단 배치 */
+  padding: 20px;
 }
 
 .video-modal-container {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1000px; /* 비디오 최대 너비 */
   background: #000;
-  border-radius: 8px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .overlay-video-player {
   width: 100%;
   display: block;
-  border-radius: 8px;
 }
 
 .video-close-btn {
   position: absolute;
-  top: -45px;
-  right: -45px;
-  background: none;
+  top: 30px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   line-height: 1;
   cursor: pointer;
   z-index: 2100;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.2s ease;
-  opacity: 0.8;
-}
-
-.video-close-btn:hover {
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-@media (max-width: 1100px) {
-  .video-close-btn {
-    top: -50px;
-    right: 0px;
-  }
-}
-
-/* can design header link - view mockups modal */
-.carousel-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-}
-
-.overlay-image-player {
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-  display: block;
-}
-
-.carousel-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  cursor: pointer;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -432,69 +389,6 @@
   transition: background 0.2s;
 }
 
-.carousel-nav-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.carousel-nav-btn.prev {
-  left: 20px;
-}
-.carousel-nav-btn.next {
-  right: 20px;
-}
-
-.carousel-indicator {
-  position: absolute;
-  bottom: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-/* modal background */
-.video-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(116, 116, 116, 0.85);
-  backdrop-filter: blur(15px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  padding: 40px;
-}
-
-/* magazine header link flipbook css */
-.video-modal-container.modal-large {
-  max-width: 95vw;
-  width: 100%;
-  background: transparent;
-  box-shadow: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-}
-
-.flipbook-modal-wrapper {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flipbook-modal-wrapper > div {
-  margin: 0 auto !important;
-  max-height: 100% !important;
-  max-width: 100% !important;
-}
-
-.video-modal-container.modal-large .video-close-btn {
-  top: -40px;
-  right: 0;
+.video-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }

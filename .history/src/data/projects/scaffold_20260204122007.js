@@ -183,18 +183,15 @@ export const scaffold = {
         `&nbsp;`,
         `- **Scan-friendly grant cards** : A card-based layout highlights the grant name, deadline, and eligibility at a glance. Each card also includes the organization’s logo to support quick recognition. This structure helps users quickly identify eligible grants in British Columbia, Canada, while staying flexible enough to scale across different needs and contexts.`,
       ],
-    },
-    {
-      paragraphs: [
-        `- **Direct path to official applications** : Because most grants are completed on external sites, each grant card includes a direct link to the official application page. This reduces unnecessary searching and cuts down on repeated website-hopping.`,
-      ],
       images: [scaffoldKeyFeatures1, scaffoldKeyFeatures2],
       imageLayout: "row",
       imageWrapperClass: "scaffold-key-features-media",
     },
     {
       paragraphs: [
-        `- **Profile + web supplement to reduce repeated work** : Many grant applications ask for the same information. By creating a profile based on commonly required personal and educational questions, the details can be copied and reused to reduce repetitive typing and prevent small errors. Since essay writing on a phone is inconvenient, a web supplement supports drafting on a larger screen, including AI-assisted first-draft support using saved profile details.`,
+        `- **Direct path to official applications** : Because most grants are completed on external sites, each grant card includes a direct link to the official application page. This reduces unnecessary searching and cuts down on repeated website-hopping.`,
+        `&nbsp;`,
+        `- **Profile + web supplement to reduce repeated work** : Many grant applications ask for the same information. Scaffold uses a saved profile based on commonly required personal and education questions, so details can be copied and reused to reduce repetitive typing and prevent small errors. Since essay writing on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also includes AI-assisted first-draft support using saved profile details, plus a simple list for tracking applied grants and deadlines.`,
       ],
     },
     {
@@ -213,11 +210,11 @@ export const scaffold = {
     {
       heading: "Brand guidelines",
       paragraphs: [
-        `The visual identity utilizes a signature purple to create strong recognition, complemented by energetic orange accents that draw attention to key actions and highlights.`,
+        `Scaffold’s visual identity uses a signature purple to create strong recognition, supported by energetic orange accents to draw attention to key actions and highlights.`,
         `&nbsp;`,
         `Two typefaces support both personality and readability: Akira is used for titles and labels to create a bold, structured tone, while Montserrat is used for longer text to keep content clear and easy to read—especially on mobile screens.`,
         `&nbsp;`,
-        `The logo is built around the letter “S,” using stacked block shapes that reinforce the brand idea of building foundations, aligning the look and feel with Scaffold’s purpose: helping users find support and stay on track.`,
+        `The logo is built around the letter “S,” using stacked block shapes that suggest construction and stability. This reinforces the brand idea of building foundations, aligning the look and feel with Scaffold’s purpose: helping users find support and stay on track.`,
       ],
       images: [scaffoldBrandGuidelines1],
       imageLayout: "row",

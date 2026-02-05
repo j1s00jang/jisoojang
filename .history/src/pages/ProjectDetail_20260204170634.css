@@ -452,49 +452,52 @@
   border-radius: 20px;
   font-size: 14px;
 }
-/* modal background */
+/* 모달 배경 (기존 유지 및 블러 강화) */
 .video-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(116, 116, 116, 0.85);
+  background-color: rgba(162, 162, 162, 0.85);
   backdrop-filter: blur(15px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
-  padding: 40px;
+  padding: 40px; /* 화면 가장자리 여유 공간 */
 }
 
-/* magazine header link flipbook css */
+/* 매거진 전용: 컨테이너를 가로로 넓게 설정 */
 .video-modal-container.modal-large {
-  max-width: 95vw;
+  max-width: 95vw; /* 화면 너비의 95%까지 확장 */
   width: 100%;
-  background: transparent;
-  box-shadow: none;
+  background: transparent; /* 배경을 투명하게 해서 플립북만 돋보이게 */
+  box-shadow: none; /* 그림자 제거 */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible;
+  overflow: visible; /* 닫기 버튼이 잘리지 않도록 함 */
 }
 
+/* 플립북을 감싸는 내부 래퍼 */
 .flipbook-modal-wrapper {
   width: 100%;
-  height: 80vh;
+  height: 80vh; /* 화면 높이의 80%로 고정 (짤림 방지) */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* 플립북 라이브러리가 생성하는 내부 div 강제 조정 */
 .flipbook-modal-wrapper > div {
-  margin: 0 auto !important;
+  margin: 0 auto !important; /* 가로 중앙 정렬 */
   max-height: 100% !important;
   max-width: 100% !important;
 }
 
+/* 닫기 버튼 위치 조정 */
 .video-modal-container.modal-large .video-close-btn {
   top: -40px;
-  right: 0;
+  right: 0; /* 매거진 오른쪽 끝에 맞춤 */
 }

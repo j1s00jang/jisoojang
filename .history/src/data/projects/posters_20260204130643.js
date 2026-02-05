@@ -18,7 +18,7 @@ export const posters = {
   keySkills:
     "Information hierarchy / Typography / Layout / Brand styling / Copy-writing",
   concept:
-    "The “Churu” poster series features three cat treats with cat photos and clear product highlights. Each poster uses a main colour drawn from the product packaging to keep the design consistent with the mood. Soft, delicate colours and graphics emphasize the treats and create a warm, inviting poster.",
+    "The “Churu” poster series features three cat treats with joyful cat photos and clear product highlights. Each poster uses a main colour drawn from the product packaging to keep the design consistent mood. Soft, delicate colours and graphic emphasize the treats and the cats’ happy expressions, creating a warm, happiness for cats and their owners.",
   posters: [
     { id: "hairball", title: "Hairball Control", image: churu01Hairball },
     { id: "bites", title: "Bites", image: churu02Bites },

@@ -268,6 +268,7 @@ export const scaffold = {
           type: "video",
           src: scaffoldKeyLearnings3,
           className: "scaffold-key-features-video",
+          anchorId: "promo-video",
         },
       ],
       imageLayout: "stack",

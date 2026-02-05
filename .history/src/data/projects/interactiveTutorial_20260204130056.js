@@ -35,7 +35,7 @@ export const interactiveTutorial = {
   conceptImage07: interactiveConcept07,
   conceptImage08: interactiveConcept08,
   conceptParagraph2:
-    "The colour palette was built based on the cat's illustration fur colours to keep the screens' feel consistent and visually cohesive. Wavy edges and rounded shapes add a soft, playful feel that pairs well with the typography. To keep the content clear and easy to read, sans-serif typography is used in situation text." +
+    "The colour palette was based on the main cat character’s fur to keep the screens feel consistent and visually cohesive. Wavy edges and rounded shapes add a soft, playful feel that pairs well with the typography. To keep the content clear and easy to read, Outfit typography used in situation text." +
     "\n\n" +
     "All background objects were illustrated from real cat items, while the plants reflect research on cat-friendly, cat-safe species.",
   conceptImage09: interactiveConcept09,
@@ -43,5 +43,5 @@ export const interactiveTutorial = {
   conceptImage11: interactiveConcept11,
   conceptImage12: interactiveConcept12,
   conceptParagraph3:
-    "The player can return to the previous page to explore other options and explanations. Buttons include hover effects to clearly show when something is clickable and provide immediate feedback.",
+    "User can return to the previous page to explore other options and explanation. Buttons include hover effects to clearly show when something is clickable and provide immediate feedback.",
 };

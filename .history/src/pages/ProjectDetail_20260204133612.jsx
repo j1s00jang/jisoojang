@@ -1,39 +1,29 @@
 import { useParams, useNavigate } from "react-router-dom";
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import Breadcrumbs from "../components/Breadcrumbs";
 import "./ProjectDetail.css";
 import { projectsBySlug } from "../data/projectsData";
-
 import Scaffold from "./Scaffold";
+import { scaffold } from "../data/projects/scaffold";
+import { canDesign } from "../data/projects/canDesign"; // 추가
 import Montro from "./Montro";
 import CanDesign from "./CanDesign";
 import Magazine from "./Magazine";
 import InteractiveTutorial from "./InteractiveTutorial";
 import Posters from "./Posters";
-import MagazineFlipbook from "../components/MagazineFlipbook";
 
 function ProjectDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
 
+  // 모달 통합 상태 관리
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const project = projectsBySlug[slug];
-
-  const promoVideoSrc = useMemo(() => {
-    if (slug !== "scaffold" || !project?.sections) return null;
-    return project.sections.find((sec) => sec.sectionId === "promo-video")
-      ?.images?.[0]?.src;
-  }, [slug, project]);
-
-  const carouselImages = useMemo(() => {
-    if (slug !== "can-design" || !project?.flavours) return [];
-    return project.flavours.map((f) => f.labelImage).filter(Boolean);
-  }, [slug, project]);
 
   // Reusable Markdown renderer
   const MD = ({ children, className = "project-detail-preline" }) => (
@@ -58,6 +48,14 @@ function ProjectDetail() {
     );
   }
 
+  // 데이터 추출
+  const promoVideoSrc = scaffold.sections.find(
+    (section) => section.sectionId === "promo-video"
+  )?.images[0]?.src;
+
+  // Can Design의 경우 캐러셀 이미지 배열 생성
+  const carouselImages = canDesign.flavours?.map((f) => f.labelImage) || [];
+
   const breadcrumbItems = [
     { label: "Home", link: "/" },
     { label: "Projects", link: "/projects" },
@@ -66,6 +64,7 @@ function ProjectDetail() {
 
   const titleLines = project.titleLines;
 
+  // 캐러셀 네비게이션 함수
   const nextSlide = (e) => {
     e.stopPropagation();
     setCurrentSlide((prev) =>
@@ -140,9 +139,10 @@ function ProjectDetail() {
               </p>
             </div>
 
-            {project.headerLinks && (
+            {project.headerLinks && project.headerLinks.length > 0 && (
               <div className="project-detail-header-links">
                 {project.headerLinks.map((link, idx) => {
+                  // 공통 핸들러: anchor 타입 처리
                   if (link.type === "anchor") {
                     return (
                       <button
@@ -150,19 +150,21 @@ function ProjectDetail() {
                         type="button"
                         className="project-detail-header-link"
                         onClick={() => {
+                          // promo-video 또는 design-carousel인 경우 오버레이 열기
                           if (
                             link.anchorId === "promo-video" ||
-                            link.anchorId === "design-carousel" ||
-                            link.anchorId === "magazine-flipbook"
+                            link.anchorId === "design-carousel"
                           ) {
                             setIsModalOpen(true);
-                            setCurrentSlide(0);
+                            setCurrentSlide(0); // 열 때 첫 번째 이미지로 초기화
                           } else {
                             document
                               .getElementById(link.anchorId)
                               ?.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
+                        aria-label={link.label}
+                        title={link.label}
                       >
                         <img
                           src={link.icon}
@@ -176,18 +178,20 @@ function ProjectDetail() {
                     );
                   }
 
+                  // liveDemo, external 타입은 기존 코드 유지
+                  const isExternal = link.type === "external";
                   return (
                     <button
                       key={idx}
                       className="project-detail-header-link"
                       onClick={() =>
-                        window.open(
-                          link.url,
-                          "_blank",
-                          link.type === "liveDemo"
-                            ? "width=390,height=844"
-                            : undefined
-                        )
+                        isExternal
+                          ? window.open(link.url, "_blank")
+                          : window.open(
+                              link.url,
+                              "_blank",
+                              "width=390,height=844"
+                            )
                       }
                     >
                       <img
@@ -206,25 +210,25 @@ function ProjectDetail() {
           </div>
         </div>
 
+        {/* 통합 오버레이 모달 (비디오 & 이미지 캐러셀) */}
         {isModalOpen && (
           <div
             className="video-overlay"
             onClick={() => setIsModalOpen(false)}
           >
             <div
-              className={`video-modal-container ${
-                slug === "magazine" ? "modal-large" : ""
-              }`}
+              className="video-modal-container"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 className="video-close-btn"
                 onClick={() => setIsModalOpen(false)}
+                aria-label="Close"
               >
                 &times;
               </button>
 
-              {/* Scaffold header link video */}
+              {/* Scaffold일 때: 비디오 재생 */}
               {slug === "scaffold" && promoVideoSrc && (
                 <video
                   src={promoVideoSrc}
@@ -234,7 +238,7 @@ function ProjectDetail() {
                 />
               )}
 
-              {/* Can Design header link carousel */}
+              {/* Can Design일 때: 이미지 캐러셀 */}
               {slug === "can-design" && carouselImages.length > 0 && (
                 <div className="carousel-wrapper">
                   <img
@@ -242,6 +246,7 @@ function ProjectDetail() {
                     alt="Design Label"
                     className="overlay-image-player"
                   />
+
                   <button
                     className="carousel-nav-btn prev"
                     onClick={prevSlide}
@@ -254,15 +259,10 @@ function ProjectDetail() {
                   >
                     &#10095;
                   </button>
+
                   <div className="carousel-indicator">
                     {currentSlide + 1} / {carouselImages.length}
                   </div>
-                </div>
-              )}
-              {/* Magazine header link flipbook */}
-              {slug === "magazine" && (
-                <div className="flipbook-modal-wrapper">
-                  <MagazineFlipbook />
                 </div>
               )}
             </div>
@@ -270,6 +270,7 @@ function ProjectDetail() {
         )}
 
         <div className="project-detail-body">
+          {/* ... 기존 본문 섹션들 (Overview, Opportunity 등 동일) */}
           {project.overview && (
             <section className="project-detail-section">
               <h2>Overview</h2>
@@ -286,6 +287,7 @@ function ProjectDetail() {
             </section>
           )}
 
+          {/* ... 생략 (기존과 동일한 섹션 렌더링 코드들) */}
           {(project.id === 1 || project.id === 2) && project.opportunity && (
             <>
               <section className="project-detail-section opportunity-section">

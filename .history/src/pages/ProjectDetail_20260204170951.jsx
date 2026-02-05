@@ -7,6 +7,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import "./ProjectDetail.css";
 import { projectsBySlug } from "../data/projectsData";
 
+// 개별 컴포넌트들
 import Scaffold from "./Scaffold";
 import Montro from "./Montro";
 import CanDesign from "./CanDesign";
@@ -22,14 +23,17 @@ function ProjectDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // 1. 현재 프로젝트 데이터 가져오기
   const project = projectsBySlug[slug];
 
+  // 2. 비디오 소스 안전하게 추출 (Scaffold 전용)
   const promoVideoSrc = useMemo(() => {
     if (slug !== "scaffold" || !project?.sections) return null;
     return project.sections.find((sec) => sec.sectionId === "promo-video")
       ?.images?.[0]?.src;
   }, [slug, project]);
 
+  // 3. 캐러셀 이미지 안전하게 추출 (Can Design 전용)
   const carouselImages = useMemo(() => {
     if (slug !== "can-design" || !project?.flavours) return [];
     return project.flavours.map((f) => f.labelImage).filter(Boolean);
@@ -49,6 +53,7 @@ function ProjectDetail() {
     </ReactMarkdown>
   );
 
+  // 프로젝트 데이터가 없으면 에러 화면 반환
   if (!project) {
     return (
       <div className="project-detail-error">
@@ -66,6 +71,7 @@ function ProjectDetail() {
 
   const titleLines = project.titleLines;
 
+  // 캐러셀 네비게이션
   const nextSlide = (e) => {
     e.stopPropagation();
     setCurrentSlide((prev) =>
@@ -286,6 +292,7 @@ function ProjectDetail() {
             </section>
           )}
 
+          {/* 공통 섹션 (Scaffold, Montro) */}
           {(project.id === 1 || project.id === 2) && project.opportunity && (
             <>
               <section className="project-detail-section opportunity-section">
@@ -303,6 +310,7 @@ function ProjectDetail() {
             </>
           )}
 
+          {/* 프로젝트별 상세 컴포넌트 */}
           {slug === "scaffold" && <Scaffold project={project} />}
           {slug === "montro" && <Montro project={project} />}
           {slug === "can-design" && <CanDesign project={project} />}
