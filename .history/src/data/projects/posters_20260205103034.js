@@ -5,6 +5,7 @@ import churu02Bites from "../../assets/projects/posters/churu02_bites.png";
 import churu03Popnserve from "../../assets/projects/posters/churu03_popnserve.png";
 import postersMockup01 from "../../assets/projects/posters/posters_mockup01.png";
 import postersMockup02 from "../../assets/projects/posters/posters_mockup02.png";
+import { head } from "framer-motion/client";
 import postersIcon from "../../assets/projects/scaffold/scaffold_promo_icon.png";
 
 export const posters = {

@@ -50,18 +50,13 @@ function ProjectDetail() {
 
   const posterImages = useMemo(() => {
     if (slug !== "posters" || !project) return [];
+
     if (project.posters && Array.isArray(project.posters)) {
       return project.posters.map((p) => p.image);
     }
+
     return [];
   }, [slug, project]);
-
-  /* --- [추가] totalSlides 변수 정의 --- */
-  const totalSlides = useMemo(() => {
-    if (slug === "can-design") return carouselImages.length;
-    if (slug === "posters") return posterImages.length;
-    return 0;
-  }, [slug, carouselImages, posterImages]);
 
   // Reusable Markdown renderer
   const MD = ({ children, className = "project-detail-preline" }) => (
@@ -183,12 +178,9 @@ function ProjectDetail() {
                             setIsModalOpen(true);
                             setCurrentSlide(0);
                           } else {
-                            const element = document.getElementById(
-                              link.anchorId
-                            );
-                            if (element) {
-                              element.scrollIntoView({ behavior: "smooth" });
-                            }
+                            document
+                              .getElementById(link.anchorId)
+                              ?.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
                       >
@@ -241,7 +233,7 @@ function ProjectDetail() {
           >
             <div
               className={`video-modal-container ${
-                ["magazine", "posters"].includes(slug) ? "modal-large" : ""
+                slug === "magazine" ? "modal-large" : ""
               }`}
               onClick={(e) => e.stopPropagation()}
             >
@@ -265,7 +257,8 @@ function ProjectDetail() {
               {/* Can Design & Posters header link carousel */}
               {(slug === "can-design" || slug === "posters") && (
                 <div className="carousel-wrapper">
-                  {totalSlides > 0 ? (
+                  {(slug === "can-design" ? carouselImages : posterImages)
+                    .length > 0 ? (
                     <>
                       <img
                         src={
@@ -277,6 +270,7 @@ function ProjectDetail() {
                         className="overlay-image-player"
                       />
 
+                      {/* 첫 번째 슬라이드가 아닐 때만 '이전' 버튼 표시 */}
                       {currentSlide > 0 && (
                         <button
                           className="carousel-nav-btn prev"
@@ -286,6 +280,7 @@ function ProjectDetail() {
                         </button>
                       )}
 
+                      {/* 마지막 슬라이드가 아닐 때만 '다음' 버튼 표시 */}
                       {currentSlide < totalSlides - 1 && (
                         <button
                           className="carousel-nav-btn next"

@@ -50,18 +50,23 @@ function ProjectDetail() {
 
   const posterImages = useMemo(() => {
     if (slug !== "posters" || !project) return [];
-    if (project.posters && Array.isArray(project.posters)) {
-      return project.posters.map((p) => p.image);
+
+    // 1. 만약 project.images가 직접 있다면 (단순 구조일 경우)
+    if (project.images) return project.images.map((img) => img.src || img);
+
+    // 2. sections 배열 안에 들어있는 경우 (현재 구조)
+    if (project.sections) {
+      const posterSection = project.sections.find(
+        (sec) => sec.sectionId === "posters-carousel" || sec.title === "Posters"
+      );
+
+      if (posterSection && posterSection.images) {
+        return posterSection.images.map((img) => img.src || img);
+      }
     }
+
     return [];
   }, [slug, project]);
-
-  /* --- [추가] totalSlides 변수 정의 --- */
-  const totalSlides = useMemo(() => {
-    if (slug === "can-design") return carouselImages.length;
-    if (slug === "posters") return posterImages.length;
-    return 0;
-  }, [slug, carouselImages, posterImages]);
 
   // Reusable Markdown renderer
   const MD = ({ children, className = "project-detail-preline" }) => (
@@ -96,12 +101,16 @@ function ProjectDetail() {
 
   const nextSlide = (e) => {
     e.stopPropagation();
-    setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
+    setCurrentSlide((prev) =>
+      prev === carouselImages.length - 1 ? 0 : prev + 1
+    );
   };
 
   const prevSlide = (e) => {
     e.stopPropagation();
-    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
+    setCurrentSlide((prev) =>
+      prev === 0 ? carouselImages.length - 1 : prev - 1
+    );
   };
 
   return (
@@ -183,12 +192,9 @@ function ProjectDetail() {
                             setIsModalOpen(true);
                             setCurrentSlide(0);
                           } else {
-                            const element = document.getElementById(
-                              link.anchorId
-                            );
-                            if (element) {
-                              element.scrollIntoView({ behavior: "smooth" });
-                            }
+                            document
+                              .getElementById(link.anchorId)
+                              ?.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
                       >
@@ -241,7 +247,7 @@ function ProjectDetail() {
           >
             <div
               className={`video-modal-container ${
-                ["magazine", "posters"].includes(slug) ? "modal-large" : ""
+                slug === "magazine" ? "modal-large" : ""
               }`}
               onClick={(e) => e.stopPropagation()}
             >
@@ -262,46 +268,62 @@ function ProjectDetail() {
                 />
               )}
 
-              {/* Can Design & Posters header link carousel */}
+              {/* Can Design header link carousel */}
+              {/* {slug === "can-design" && carouselImages.length > 0 && (
+                <div className="carousel-wrapper">
+                  <img
+                    src={carouselImages[currentSlide]}
+                    alt="Design Label"
+                    className="overlay-image-player"
+                  />
+                  <button
+                    className="carousel-nav-btn prev"
+                    onClick={prevSlide}
+                  >
+                    &#10094;
+                  </button>
+                  <button
+                    className="carousel-nav-btn next"
+                    onClick={nextSlide}
+                  >
+                    &#10095;
+                  </button>
+                  <div className="carousel-indicator">
+                    {currentSlide + 1} / {carouselImages.length}
+                  </div>
+                </div>
+              )} */}
               {(slug === "can-design" || slug === "posters") && (
                 <div className="carousel-wrapper">
-                  {totalSlides > 0 ? (
-                    <>
-                      <img
-                        src={
-                          slug === "can-design"
-                            ? carouselImages[currentSlide]
-                            : posterImages[currentSlide]
-                        }
-                        alt="Slide"
-                        className="overlay-image-player"
-                      />
-
-                      {currentSlide > 0 && (
-                        <button
-                          className="carousel-nav-btn prev"
-                          onClick={prevSlide}
-                        >
-                          &#10094;
-                        </button>
-                      )}
-
-                      {currentSlide < totalSlides - 1 && (
-                        <button
-                          className="carousel-nav-btn next"
-                          onClick={nextSlide}
-                        >
-                          &#10095;
-                        </button>
-                      )}
-
-                      <div className="carousel-indicator">
-                        {currentSlide + 1} / {totalSlides}
-                      </div>
-                    </>
-                  ) : (
-                    <div style={{ color: "white" }}>Loading images...</div>
-                  )}
+                  <img
+                    // slug에 따라 적절한 이미지 배열에서 현재 슬라이드 이미지를 가져옴
+                    src={
+                      slug === "can-design"
+                        ? carouselImages[currentSlide]
+                        : posterImages[currentSlide]
+                    }
+                    alt="Project Slide"
+                    className="overlay-image-player"
+                  />
+                  <button
+                    className="carousel-nav-btn prev"
+                    onClick={prevSlide}
+                  >
+                    &#10094;
+                  </button>
+                  <button
+                    className="carousel-nav-btn next"
+                    onClick={nextSlide}
+                  >
+                    &#10095;
+                  </button>
+                  <div className="carousel-indicator">
+                    {/* 전체 개수 표시 로직 */}
+                    {currentSlide + 1} /{" "}
+                    {slug === "can-design"
+                      ? carouselImages.length
+                      : posterImages.length}
+                  </div>
                 </div>
               )}
               {/* Magazine header link flipbook */}
