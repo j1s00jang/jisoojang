@@ -177,58 +177,44 @@ function Hero() {
             pointerEvents: "none",
           }}
         >
-          <div style={{ position: "relative", width: "120%" }}>
-            <motion.img
-              src={RibbonUrl}
-              alt=""
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{
-                opacity: [0, 0.7, 0],
-                scale: [1, 1.08, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                delay: 2.3,
-                ease: "easeInOut",
-              }}
-              style={{
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                filter:
-                  "brightness(0.95) sepia(1) hue-rotate(200deg) saturate(10) blur(25px)",
-                zIndex: -1,
-                mixBlendMode: "screen",
-              }}
-            />
-            <motion.img
-              src={RibbonUrl}
-              alt=""
-              draggable={false}
-              initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0, y: "-10%" }}
-              animate={{
-                clipPath: "inset(0 0% 0 0)",
-                opacity: 1,
-                y: ["-10%", "-9%", "-10%"],
-                rotate: [-0.5, 0.5, -0.5],
-              }}
-              transition={{
-                clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
-                opacity: { duration: 1, delay: 0.3 },
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-              }}
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "auto",
-                display: "block",
-                marginTop: "-5px",
-              }}
-            />
-          </div>
+          <motion.img
+            src={RibbonUrl}
+            alt=""
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0, y: "-10%" }}
+            animate={{
+              clipPath: "inset(0 0% 0 0)",
+              opacity: 1,
+              y: ["-10%", "-9%", "-10%"],
+              rotate: [-0.5, 0.5, -0.5],
+            }}
+            transition={{
+              clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
+              opacity: { duration: 1, delay: 0.3 },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            style={{ position: "relative", width: "120%" }}
+          />
+
+          <motion.img
+            src={RibbonUrl}
+            alt=""
+            draggable={false}
+            initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0, y: "-10%" }}
+            animate={{
+              clipPath: "inset(0 0% 0 0)",
+              opacity: 1,
+              y: ["-10%", "-9%", "-10%"],
+              rotate: [-0.5, 0.5, -0.5],
+            }}
+            transition={{
+              clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
+              opacity: { duration: 1, delay: 0.3 },
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+              rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+            }}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
         </div>
 
         {/* Port Image */}

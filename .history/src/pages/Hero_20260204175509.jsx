@@ -178,13 +178,14 @@ function Hero() {
           }}
         >
           <div style={{ position: "relative", width: "120%" }}>
+            {/* 1. 후광(Glow) 레이어 */}
             <motion.img
               src={RibbonUrl}
               alt=""
               initial={{ opacity: 0, scale: 1 }}
               animate={{
                 opacity: [0, 0.7, 0],
-                scale: [1, 1.08, 1],
+                scale: [1, 1.05, 1],
               }}
               transition={{
                 duration: 3,
@@ -197,12 +198,11 @@ function Hero() {
                 position: "absolute",
                 top: 0,
                 left: 0,
-                filter:
-                  "brightness(0.95) sepia(1) hue-rotate(200deg) saturate(10) blur(25px)",
+                filter: "brightness(0) invert(1) blur(20px)",
                 zIndex: -1,
-                mixBlendMode: "screen",
               }}
             />
+            {/* 2. 실제 리본 레이어 */}
             <motion.img
               src={RibbonUrl}
               alt=""
@@ -220,13 +220,7 @@ function Hero() {
                 y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                 rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
               }}
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "auto",
-                display: "block",
-                marginTop: "-5px",
-              }}
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
         </div>

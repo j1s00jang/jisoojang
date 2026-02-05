@@ -183,7 +183,7 @@ function Hero() {
               alt=""
               initial={{ opacity: 0, scale: 1 }}
               animate={{
-                opacity: [0, 0.7, 0],
+                opacity: [0, 0.9, 0],
                 scale: [1, 1.08, 1],
               }}
               transition={{
@@ -198,7 +198,7 @@ function Hero() {
                 top: 0,
                 left: 0,
                 filter:
-                  "brightness(0.95) sepia(1) hue-rotate(200deg) saturate(10) blur(25px)",
+                  "brightness(0.8) sepia(1) hue-rotate(230deg) saturate(10) blur(15px)",
                 zIndex: -1,
                 mixBlendMode: "screen",
               }}
@@ -220,13 +220,7 @@ function Hero() {
                 y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                 rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
               }}
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "auto",
-                display: "block",
-                marginTop: "-5px",
-              }}
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
         </div>

@@ -220,13 +220,7 @@ function Hero() {
                 y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                 rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
               }}
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "auto",
-                display: "block",
-                marginTop: "-5px",
-              }}
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
         </div>

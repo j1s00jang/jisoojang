@@ -77,8 +77,11 @@ function Hero() {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -101,7 +104,6 @@ function Hero() {
           isolation: "isolate",
         }}
       >
-        {/* Header Text */}
         <div
           style={{
             position: "absolute",
@@ -118,10 +120,10 @@ function Hero() {
             whiteSpace: "nowrap",
           }}
         >
+          {" "}
           Welcome to <b>Jisoo</b>’s
         </div>
 
-        {/* Sticker Interaction Text */}
         <div
           style={{
             position: "absolute",
@@ -146,7 +148,6 @@ function Hero() {
           </motion.span>
         </div>
 
-        {/* Folio Image */}
         <div
           style={{
             position: "absolute",
@@ -162,11 +163,8 @@ function Hero() {
               width: isMobile ? "80%" : "35%",
               transform: "translateY(40%)",
             }}
-            alt="folio"
           />
         </div>
-
-        {/* --- Ribbon Layer (Glow + Ribbon) --- */}
         <div
           style={{
             position: "absolute",
@@ -177,61 +175,55 @@ function Hero() {
             pointerEvents: "none",
           }}
         >
-          <div style={{ position: "relative", width: "120%" }}>
-            <motion.img
-              src={RibbonUrl}
-              alt=""
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{
-                opacity: [0, 0.7, 0],
-                scale: [1, 1.08, 1],
-              }}
-              transition={{
+          <motion.img
+            src={RibbonUrl}
+            alt=""
+            draggable={false}
+            initial={{
+              clipPath: "inset(0 100% 0 0)",
+              opacity: 0,
+              y: "-10%",
+              filter: "drop-shadow(0px 0px 0px rgba(255,255,255,0))", // 초기 상태: 빛 없음
+            }}
+            animate={{
+              clipPath: "inset(0 0% 0 0)",
+              opacity: 1,
+              y: ["-10%", "-9%", "-10%"],
+              rotate: [-0.5, 0.5, -0.5],
+              // 나타난 후 은은하게 빛나는 효과 추가
+              filter: [
+                "drop-shadow(0px 0px 4px rgba(255,255,255,0))",
+                "drop-shadow(0px 0px 12px rgba(255,255,255,4))", // 빛나는 지점
+                "drop-shadow(0px 0px 4px rgba(255,255,255,0))",
+              ],
+            }}
+            transition={{
+              clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
+              opacity: { duration: 1, delay: 0.3 },
+              y: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+              rotate: {
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+              filter: {
                 duration: 3,
                 repeat: Infinity,
-                delay: 2.3,
+                delay: 2.3, // clipPath 애니메이션이 끝나는 시점에 시작 (0.3 delay + 2 duration)
                 ease: "easeInOut",
-              }}
-              style={{
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                filter:
-                  "brightness(0.95) sepia(1) hue-rotate(200deg) saturate(10) blur(25px)",
-                zIndex: -1,
-                mixBlendMode: "screen",
-              }}
-            />
-            <motion.img
-              src={RibbonUrl}
-              alt=""
-              draggable={false}
-              initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0, y: "-10%" }}
-              animate={{
-                clipPath: "inset(0 0% 0 0)",
-                opacity: 1,
-                y: ["-10%", "-9%", "-10%"],
-                rotate: [-0.5, 0.5, -0.5],
-              }}
-              transition={{
-                clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
-                opacity: { duration: 1, delay: 0.3 },
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-              }}
-              style={{
-                position: "relative",
-                width: "100%",
-                height: "auto",
-                display: "block",
-                marginTop: "-5px",
-              }}
-            />
-          </div>
+              },
+            }}
+            style={{
+              width: "120%",
+              height: "auto",
+              display: "block",
+            }}
+          />
         </div>
-
-        {/* Port Image */}
         <div
           style={{
             position: "absolute",
@@ -244,19 +236,19 @@ function Hero() {
           <img
             src={PortUrl}
             style={{ width: isMobile ? "80%" : "35%" }}
-            alt="port"
           />
         </div>
 
-        {/* Stickers */}
         {stickers.map(({ id, src, cycleSrcs, style, rotate }) => {
           const isHello = id === "hello";
           const isHovered = hoveredId === id;
           const hasCycle = isHello && cycleSrcs?.length;
+
           const activeIndex =
             hasCycle && isHovered
               ? 1 + (helloCycleIndex % cycleSrcs.length)
               : 0;
+
           const allSrcs = hasCycle ? [src, ...cycleSrcs] : [src];
 
           const handleHelloEnter = () => {
@@ -269,15 +261,29 @@ function Hero() {
               key={id}
               drag
               dragMomentum={false}
-              onPointerUp={() => {
-                if (id === "contactme")
+              onPointerUp={(e) => {
+                if (id === "contactme") {
                   window.location.href = "mailto:jisoo.design@icloud.com";
+                }
               }}
               initial={{ rotate: rotate || 0, scale: 1 }}
-              animate={{ rotate: [rotate - 1, rotate + 1, rotate - 1] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              whileHover={{ scale: 1, zIndex: 100, rotate: rotate || 0 }}
-              whileDrag={{ scale: 1, rotate: rotate || 0, cursor: "grabbing" }}
+              animate={{
+                rotate: [rotate - 1, rotate + 1, rotate - 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+              whileHover={{
+                scale: 1,
+                zIndex: 100,
+                rotate: rotate || 0,
+              }}
+              whileDrag={{
+                scale: 1,
+                rotate: rotate || 0,
+                cursor: "grabbing",
+              }}
               onMouseEnter={isHello ? handleHelloEnter : () => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}
               style={{
@@ -297,24 +303,26 @@ function Hero() {
                     aspectRatio: "580 / 339",
                   }}
                 >
-                  {allSrcs.map((s, i) => (
-                    <img
-                      key={`${id}-img-${i}`}
-                      src={s}
-                      alt=""
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        zIndex: i === activeIndex ? 2 : 1,
-                        transition: "opacity 0.15s ease-in-out",
-                        pointerEvents: "none",
-                        opacity: i === activeIndex ? 1 : 0,
-                      }}
-                    />
-                  ))}
+                  {allSrcs.map((s, i) => {
+                    const isActive = i === activeIndex;
+                    return (
+                      <img
+                        key={`${id}-img-${i}`}
+                        src={s}
+                        alt=""
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                          zIndex: isActive ? 2 : 1,
+                          transition: "opacity 0.15s ease-in-out",
+                          pointerEvents: "none",
+                        }}
+                      />
+                    );
+                  })}
                 </div>
               ) : (
                 <img
@@ -331,8 +339,7 @@ function Hero() {
           );
         })}
       </div>
-
-      {/* Scroll Arrow */}
+      {/* arrow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -362,12 +369,22 @@ function Hero() {
         >
           Scroll
         </span>
-        <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "2px",
+          }}
+        >
           {[0, 1].map((i) => (
             <motion.div
               key={i}
               initial={{ rotate: 45, opacity: 0 }}
-              animate={{ opacity: [0.2, 1, 0.2], y: [0, 5, 0], rotate: 45 }}
+              animate={{
+                opacity: [0.2, 1, 0.2],
+                y: [0, 5, 0],
+                rotate: 45,
+              }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
