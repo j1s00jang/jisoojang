@@ -15,7 +15,7 @@ import grapeLabelJpg from "../../assets/projects/can_design/fizzypop_03grape_lab
 import conceptImage03 from "../../assets/projects/can_design/tomato_drawing.png";
 import conceptImage04 from "../../assets/projects/can_design/orange_drawing.png";
 import conceptImage05 from "../../assets/projects/can_design/grape_drawing.png";
-import QuickView from "../../assets/projects/can_design/quickView_icon.svg";
+import ViewMockup from "../../assets/projects/can_design/quickView_icon.png";
 
 export const canDesign = {
   id: 3,
@@ -30,7 +30,7 @@ export const canDesign = {
   keySkills: "Packaging Design / Branding / Typography / Information Layout",
   headerLinks: [
     {
-      icon: QuickView,
+      icon: ViewMockup,
       type: "anchor",
       anchorId: "design-carousel",
       label: "Quick View",
