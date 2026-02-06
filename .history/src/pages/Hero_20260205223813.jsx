@@ -297,28 +297,11 @@ function Hero() {
                     aspectRatio: "580 / 339",
                   }}
                 >
-                  <img
-                    src={src} // HelloSticker (I'm Empty)
-                    alt=""
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      zIndex: 1, // 가장 아래
-                    }}
-                  />
-
-                  {/* 2. 그 위에 호버 시 나타나는 사이클 스티커들 */}
-                  {cycleSrcs.map((s, i) => {
-                    // activeIndex가 0(기본)일 때는 모두 숨기고,
-                    // 1, 2, 3일 때 해당 스티커만 보여줌
-                    const isActive = i + 1 === activeIndex;
-
+                  {allSrcs.map((s, i) => {
+                    const isActive = i === activeIndex;
                     return (
                       <img
-                        key={`${id}-cycle-${i}`}
+                        key={`${id}-img-${i}`}
                         src={s}
                         alt=""
                         style={{
@@ -327,8 +310,9 @@ function Hero() {
                           width: "100%",
                           height: "100%",
                           objectFit: "contain",
-                          zIndex: 2, // 기본 스티커보다 위
+                          zIndex: isActive ? 2 : 1,
                           opacity: isActive ? 1 : 0,
+                          visibility: isActive ? "visible" : "hidden",
                           transition: "opacity 0.1s ease-in-out",
                           pointerEvents: "none",
                         }}

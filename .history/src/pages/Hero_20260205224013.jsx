@@ -297,44 +297,22 @@ function Hero() {
                     aspectRatio: "580 / 339",
                   }}
                 >
-                  <img
-                    src={src} // HelloSticker (I'm Empty)
+                  <motion.img
+                    key={`${id}-${activeIndex}`} // 키값이 바뀌면 리액트가 새 이미지로 인식해 깜빡임 없이 교체함
+                    src={allSrcs[activeIndex]}
                     alt=""
+                    initial={{ opacity: 0.8 }} // 교체 시 아주 미세하게 시작
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.1 }}
                     style={{
                       position: "absolute",
                       inset: 0,
                       width: "100%",
                       height: "100%",
                       objectFit: "contain",
-                      zIndex: 1, // 가장 아래
+                      pointerEvents: "none",
                     }}
                   />
-
-                  {/* 2. 그 위에 호버 시 나타나는 사이클 스티커들 */}
-                  {cycleSrcs.map((s, i) => {
-                    // activeIndex가 0(기본)일 때는 모두 숨기고,
-                    // 1, 2, 3일 때 해당 스티커만 보여줌
-                    const isActive = i + 1 === activeIndex;
-
-                    return (
-                      <img
-                        key={`${id}-cycle-${i}`}
-                        src={s}
-                        alt=""
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                          zIndex: 2, // 기본 스티커보다 위
-                          opacity: isActive ? 1 : 0,
-                          transition: "opacity 0.1s ease-in-out",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    );
-                  })}
                 </div>
               ) : (
                 <img
