@@ -200,7 +200,7 @@ function Hero() {
                 top: 0,
                 left: 0,
                 filter:
-                  "brightness(1.1) sepia(1) hue-rotate(1.8deg) saturate(2) blur(15px)",
+                  "brightness(0.95) sepia(1) hue-rotate(220deg) saturate(2) blur(15px)",
                 zIndex: -1,
                 mixBlendMode: "overlay",
               }}

@@ -189,10 +189,10 @@ function Hero() {
                 rotate: [-0.5, 0.5, -0.5],
               }}
               transition={{
-                clipPath: { duration: 2, delay: 0.3, ease: "easeInOut" },
-                opacity: { duration: 1, delay: 0.3 },
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                duration: 3,
+                repeat: Infinity,
+                delay: 2.3,
+                ease: "easeInOut",
               }}
               style={{
                 width: "100%",
@@ -200,7 +200,7 @@ function Hero() {
                 top: 0,
                 left: 0,
                 filter:
-                  "brightness(1.1) sepia(1) hue-rotate(1.8deg) saturate(2) blur(15px)",
+                  "brightness(0.95) sepia(1) hue-rotate(199deg) saturate(10) blur(15px)",
                 zIndex: -1,
                 mixBlendMode: "overlay",
               }}
