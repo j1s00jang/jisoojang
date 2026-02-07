@@ -93,7 +93,7 @@ export const scaffold = {
     {
       heading: "User research",
       paragraphs: [
-        `Early exploratory research was conducted through a construction site visit and outreach through referrals and personal networks. The findings helped clarify the project’s direction and supported a mid-project shift in focus.`,
+        `Early exploratory research was conducted through a construction site visit and outreach through referrals and personal networks. The findings helped clarify the project direction and supported a mid-project shift in focus.`,
         `&nbsp;`,
         `**A clear pain point emerged:**`,
         `Grant information is spread across multiple websites, making it difficult to find reliable details and stay on top of deadlines. The survey results below highlight the most common challenges and needs shared during early research.`,
@@ -148,7 +148,7 @@ export const scaffold = {
         `**3. Mobile-first clarity:** Help users scan key details quickly on a small screen`,
         `**4. Deadline support:** Make important dates hard to miss`,
         `&nbsp;`,
-        `The pain points was the main focus on the key features of the design strategy in helping create an easy to use app that resolves those issue by using user personas. `,
+        `The pain points were the main focus on the key features of the design strategy in helping create an easy to use app that resolves those issues by using user personas.`,
       ],
     },
     {
@@ -232,11 +232,11 @@ export const scaffold = {
     {
       heading: "Brand guidelines",
       paragraphs: [
-        `The visual identity was built by a combination of purple and orange. The purple was used as the main brand colour to make Scaffold easy to recognize. Orange was used to give an energetic feel to highlight important actions and key information.`,
+        `The visual identity utilizes a signature purple to create strong recognition, complemented by energetic orange accents that draw attention to key actions and highlights.`,
         `&nbsp;`,
-        `Two fonts are used to balance style and readability. To structure information hierarchy, bold font is used for titles and labels while legible font is used for longer text with special consideration to mobile usage.`,
+        `Two typefaces support both personality and readability: Akira is used for titles and labels to create a bold, structured tone, while Montserrat is used for longer text to keep content clear and easy to read—especially on mobile screens.`,
         `&nbsp;`,
-        `Scaffold logo created from letter “S” and stacked blocks shapes to suggest building a strong foundation. Ultimately, Scaffold’s goal is helping tradespeople finds financial support to continue their career path. `,
+        `The logo is built around the letter “S,” using stacked block shapes that reinforce the brand idea of building foundations, aligning the look and feel with Scaffold’s purpose: helping users find support and stay on track.`,
       ],
       images: [scaffoldBrandGuidelines1],
       imageLayout: "row",
@@ -309,7 +309,7 @@ export const scaffold = {
         `- **Storytelling and decisions:** presenting on showcase day improved structured thinking and clear communication.`,
         `- **Iteration mindset:** learned to test, adjust, take feedback, and improve after setbacks.`,
         `&nbsp;`,
-        `Overall, **the Scaffold project was a major milestone.** Building it from a blank canvas into a real product based on user insights fosters an understanding of why user experience matters. On top of that, pitching Scaffold to a large audience was a valuable learning experience. Just as Scaffold was designed to be a foundation for tradespeople, this project became a foundation for understanding UX and UI design.`,
+        `Overall, **Scaffold project was a key milestone**, bringing the full story together—from early ideas to a developed product—in front of a large audience. The process created space for experimentation, iteration, and learning through challenges, shaping a more confident and resilient design approach.`,
       ],
     },
   ],

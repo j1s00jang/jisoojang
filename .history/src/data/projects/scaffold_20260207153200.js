@@ -93,7 +93,7 @@ export const scaffold = {
     {
       heading: "User research",
       paragraphs: [
-        `Early exploratory research was conducted through a construction site visit and outreach through referrals and personal networks. The findings helped clarify the project’s direction and supported a mid-project shift in focus.`,
+        `Early exploratory research was conducted through a construction site visit and outreach through referrals and personal networks. The findings helped clarify the project direction and supported a mid-project shift in focus.`,
         `&nbsp;`,
         `**A clear pain point emerged:**`,
         `Grant information is spread across multiple websites, making it difficult to find reliable details and stay on top of deadlines. The survey results below highlight the most common challenges and needs shared during early research.`,
@@ -309,7 +309,7 @@ export const scaffold = {
         `- **Storytelling and decisions:** presenting on showcase day improved structured thinking and clear communication.`,
         `- **Iteration mindset:** learned to test, adjust, take feedback, and improve after setbacks.`,
         `&nbsp;`,
-        `Overall, **the Scaffold project was a major milestone.** Building it from a blank canvas into a real product based on user insights fosters an understanding of why user experience matters. On top of that, pitching Scaffold to a large audience was a valuable learning experience. Just as Scaffold was designed to be a foundation for tradespeople, this project became a foundation for understanding UX and UI design.`,
+        `Overall, **Scaffold project was a key milestone**, bringing the full story together—from early ideas to a developed product—in front of a large audience. The process created space for experimentation, iteration, and learning through challenges, shaping a more confident and resilient design approach.`,
       ],
     },
   ],
