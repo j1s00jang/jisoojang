@@ -49,7 +49,7 @@ const stickers = [
   {
     id: "fruits",
     src: FruitsSticker,
-    rotate: 20,
+    rotate: -20,
     style: {
       top: "48%",
       left: "64%",
@@ -59,7 +59,7 @@ const stickers = [
   {
     id: "contactme",
     src: ContactMeSticker,
-    rotate: -12,
+    rotate: 12,
     style: {
       top: "62%",
       left: "65%",

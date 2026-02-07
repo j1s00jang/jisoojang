@@ -29,7 +29,7 @@ const stickers = [
   {
     id: "vancouver",
     src: VancouverSticker,
-    rotate: 15,
+    rotate: -20,
     style: {
       top: "35%",
       left: "40%",
@@ -39,7 +39,7 @@ const stickers = [
   {
     id: "iamjisoo",
     src: IamJisooSticker,
-    rotate: -15,
+    rotate: 15,
     style: {
       top: "48%",
       left: "39.5%",
@@ -49,7 +49,7 @@ const stickers = [
   {
     id: "fruits",
     src: FruitsSticker,
-    rotate: 20,
+    rotate: -20,
     style: {
       top: "48%",
       left: "64%",
@@ -59,7 +59,7 @@ const stickers = [
   {
     id: "contactme",
     src: ContactMeSticker,
-    rotate: -12,
+    rotate: 12,
     style: {
       top: "62%",
       left: "65%",
