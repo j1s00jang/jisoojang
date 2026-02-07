@@ -221,9 +221,9 @@ export const scaffold = {
         {
           type: "video",
           src: scaffoldKeyFeatures3,
+          autoPlay: true,
           className: "scaffold-key-features-video",
-          caption:
-            "With the web supplement, users can easily copy and paste into the application form",
+          caption: "Web supplement for easy drafting",
         },
       ],
       imageLayout: "stack",

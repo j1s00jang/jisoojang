@@ -208,8 +208,6 @@ export const scaffold = {
           caption: "AI-powered voice profile for easy setup",
         },
       ],
-      imageLayout: "row",
-      imageWrapperClass: "scaffold-key-features-media",
     },
     {
       paragraphs: [

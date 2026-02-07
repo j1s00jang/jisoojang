@@ -113,6 +113,7 @@ function ContentSections({ sections, projectName = "" }) {
                       const videoClass =
                         item?.className ?? "project-detail-mockup-image";
 
+                      // 자동 재생 설정 시 필요한 4가지 필수 속성 (하나라도 빠지면 빈칸으로 보일 수 있음)
                       const isAuto = !!item.autoPlay;
 
                       const videoElement = (
@@ -122,15 +123,15 @@ function ContentSections({ sections, projectName = "" }) {
                           className={videoClass}
                           autoPlay={isAuto}
                           loop={isAuto}
-                          muted={isAuto}
+                          muted={isAuto} // 자동 재생 시 필수
                           playsInline={isAuto}
-                          controls={!isAuto}
+                          controls={!isAuto} // 자동 재생이 아닐 때만 컨트롤바 표시
                           preload="auto"
                           style={{
                             width: "100%",
                             height: "auto",
                             display: "block",
-                            backgroundColor: "#f0f0f0",
+                            backgroundColor: "#f0f0f0", // 영상 로드 전 영역 확인용
                           }}
                         >
                           Your browser does not support the video tag.
@@ -191,6 +192,9 @@ function ContentSections({ sections, projectName = "" }) {
                             src={item.src}
                             width={item.width ?? 800}
                             height={item.height ?? 450}
+                            style={{
+                              border: "1px solid rgba(0, 0, 0, 0.1)",
+                            }}
                             allowFullScreen
                             title={`${projectName} embed ${j + 1}`}
                             className={iframeClass}

@@ -502,9 +502,10 @@
 /* scaffold key features 1 video */
 .scaffold-key-features-video {
   width: 100%;
-  max-width: 320px;
+  max-width: 220px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px transparent;
   display: block;
   margin: 0 auto;
 }

@@ -5,7 +5,7 @@ import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userR
 import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_userResearch02.png";
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.mp4";
-import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.mp4";
+import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.png";
 import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mp4";
 import scaffoldMarketing1 from "../../assets/projects/scaffold/scaffold_marketing01.png";
 import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.png";
@@ -199,17 +199,6 @@ export const scaffold = {
       paragraphs: [
         `- **AI-powered voice profile for easy setup:** : Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
       ],
-      images: [
-        {
-          type: "video",
-          src: scaffoldKeyFeatures2,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption: "AI-powered voice profile for easy setup",
-        },
-      ],
-      imageLayout: "row",
-      imageWrapperClass: "scaffold-key-features-media",
     },
     {
       paragraphs: [

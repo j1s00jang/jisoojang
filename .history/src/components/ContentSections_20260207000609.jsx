@@ -130,7 +130,7 @@ function ContentSections({ sections, projectName = "" }) {
                             width: "100%",
                             height: "auto",
                             display: "block",
-                            backgroundColor: "#f0f0f0",
+                            backgroundColor: "#f0f0f0", // 영상 로드 전 영역 확인용
                           }}
                         >
                           Your browser does not support the video tag.

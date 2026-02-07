@@ -108,30 +108,30 @@ function ContentSections({ sections, projectName = "" }) {
 
                     if (!src && !isIframe) return null;
 
-                    // ✅ Video (GIF-like Autoplay support)
+                    // ✅ Video
                     if (isVideo && src) {
                       const videoClass =
                         item?.className ?? "project-detail-mockup-image";
 
-                      const isAuto = !!item.autoPlay;
+                      const videoProps = item.autoPlay
+                        ? {
+                            autoPlay: true,
+                            loop: true,
+                            muted: true,
+                            playsInline: true,
+                            controls: false,
+                          }
+                        : {
+                            controls: true,
+                            playsInline: true,
+                          };
 
                       const videoElement = (
                         <video
-                          key={`video-${j}`}
                           src={src}
                           className={videoClass}
-                          autoPlay={isAuto}
-                          loop={isAuto}
-                          muted={isAuto}
-                          playsInline={isAuto}
-                          controls={!isAuto}
-                          preload="auto"
-                          style={{
-                            width: "100%",
-                            height: "auto",
-                            display: "block",
-                            backgroundColor: "#f0f0f0",
-                          }}
+                          preload="metadata"
+                          {...videoProps}
                         >
                           Your browser does not support the video tag.
                         </video>
@@ -143,14 +143,26 @@ function ContentSections({ sections, projectName = "" }) {
                           className="project-detail-embed-wrap"
                         >
                           {videoElement}
-                          {item.caption && (
+                          {item.caption} && (
                             <span className="project-detail-embed-caption">
                               {item.caption}
-                            </span>
-                          )}
+                          )
+                          </span>
                         </span>
+                      ) : (
+                        <video
+                          key={j}
+                          src={src}
+                          controls
+                          playsInline
+                          className={videoClass}
+                          preload="none"
+                        >
+                          Your browser does not support the video tag.
+                        </video>
                       );
                     }
+
                     // ✅ Iframe (block on iOS/mobile to prevent crash loops)
                     if (isIframe && item?.src) {
                       // Prefer a non-embed URL if provided
@@ -191,6 +203,9 @@ function ContentSections({ sections, projectName = "" }) {
                             src={item.src}
                             width={item.width ?? 800}
                             height={item.height ?? 450}
+                            style={{
+                              border: "1px solid rgba(0, 0, 0, 0.1)",
+                            }}
                             allowFullScreen
                             title={`${projectName} embed ${j + 1}`}
                             className={iframeClass}

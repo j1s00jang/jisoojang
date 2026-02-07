@@ -4,8 +4,8 @@ import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png
 import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.png";
 import scaffoldUserResearch2 from "../../assets/projects/scaffold/scaffold_userResearch02.png";
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
-import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.mp4";
-import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.mp4";
+import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.png";
+import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.png";
 import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mp4";
 import scaffoldMarketing1 from "../../assets/projects/scaffold/scaffold_marketing01.png";
 import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.png";
@@ -183,37 +183,18 @@ export const scaffold = {
         `&nbsp;`,
         `- **Scan-friendly grant cards** : A card-based layout highlights the grant name, deadline, and eligibility at a glance. Each card also includes the organization’s logo to support quick recognition. This structure helps users quickly identify eligible grants in British Columbia, Canada, while staying flexible enough to scale across different needs and contexts.`,
       ],
-      images: [
-        {
-          type: "video",
-          src: scaffoldKeyFeatures1,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption: "Scan-friendly grant cards and instant navigation",
-        },
+    },
+    {
+      paragraphs: [
+        `- **Direct path to official applications** : Because most grants are completed on external sites, each grant card includes a direct link to the official application page. This reduces unnecessary searching and cuts down on repeated website-hopping.`,
       ],
+      images: [scaffoldKeyFeatures1, scaffoldKeyFeatures2],
       imageLayout: "row",
       imageWrapperClass: "scaffold-key-features-media",
     },
     {
       paragraphs: [
-        `- **AI-powered voice profile for easy setup:** : Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
-      ],
-      images: [
-        {
-          type: "video",
-          src: scaffoldKeyFeatures2,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption: "AI-powered voice profile for easy setup",
-        },
-      ],
-      imageLayout: "row",
-      imageWrapperClass: "scaffold-key-features-media",
-    },
-    {
-      paragraphs: [
-        `- **Web supplement to reduce frustration** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
+        `- **AI-powered voice-over profile + web supplement to reduce repeated work** : Grant applications repeatedly ask for the same personal and educational details, which leads to tedious retyping and small errors. This concept captures key information once through an AI voice-over (even on-the-go), then saves it as a reusable profile that can be copied into future applications. Because essay drafting on a phone is inconvenient, a companion web experience supports writing on a larger screen, including AI-assisted first-draft help that pulls from the saved profile details for faster, more consistent submissions.`,
       ],
     },
     {
@@ -223,7 +204,7 @@ export const scaffold = {
           src: scaffoldKeyFeatures3,
           className: "scaffold-key-features-video",
           caption:
-            "With the web supplement, users can easily copy and paste into the application form",
+            "Web supplement to reduce repetitive typing and speed up applications",
         },
       ],
       imageLayout: "stack",

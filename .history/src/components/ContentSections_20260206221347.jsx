@@ -113,25 +113,26 @@ function ContentSections({ sections, projectName = "" }) {
                       const videoClass =
                         item?.className ?? "project-detail-mockup-image";
 
-                      const isAuto = !!item.autoPlay;
+                      // 자동 재생 설정이 있으면 GIF 모드 속성 적용, 없으면 컨트롤 바 표시
+                      const videoProps = item.autoPlay
+                        ? {
+                            autoPlay: true,
+                            loop: true,
+                            muted: true,
+                            playsInline: true,
+                            controls: false,
+                          }
+                        : {
+                            controls: true,
+                            playsInline: true,
+                          };
 
                       const videoElement = (
                         <video
-                          key={`video-${j}`}
                           src={src}
                           className={videoClass}
-                          autoPlay={isAuto}
-                          loop={isAuto}
-                          muted={isAuto}
-                          playsInline={isAuto}
-                          controls={!isAuto}
-                          preload="auto"
-                          style={{
-                            width: "100%",
-                            height: "auto",
-                            display: "block",
-                            backgroundColor: "#f0f0f0",
-                          }}
+                          preload="metadata"
+                          {...videoProps}
                         >
                           Your browser does not support the video tag.
                         </video>
@@ -191,6 +192,9 @@ function ContentSections({ sections, projectName = "" }) {
                             src={item.src}
                             width={item.width ?? 800}
                             height={item.height ?? 450}
+                            style={{
+                              border: "1px solid rgba(0, 0, 0, 0.1)",
+                            }}
                             allowFullScreen
                             title={`${projectName} embed ${j + 1}`}
                             className={iframeClass}
