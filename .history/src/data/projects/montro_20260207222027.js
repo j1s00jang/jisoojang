@@ -11,6 +11,7 @@ import montroKeyLearnings1 from "../../assets/projects/montro/montro_keyLearning
 import montroLivedemoIcon from "../../assets/projects/montro/montro_livedemo_icon.png";
 import montroWireframesIcon from "../../assets/projects/montro/montro_wireframes_icon.png";
 import montroWebIcon from "../../assets/projects/montro/montro_web_icon.png";
+import { i, image } from "framer-motion/client";
 
 export const montro = {
   id: 2,
@@ -160,37 +161,25 @@ export const montro = {
       heading: "Key Features",
       paragraphs: [
         `**Fast expense logging:** Small purchases often didn’t feel worth the effort to log. A quick log and receipt-scan option lets users capture an expense with one photo, while manual entry is available when there’s no receipt.`,
-      ],
-      images: [
-        {
-          type: "video",
-          src: montroKeyFeatures1,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption: "Main dashboard to quick expense logging",
-        },
-      ],
-      imageLayout: "stack",
-      imageWrapperClass: "scaffold-key-features-media",
-    },
-    {
-      paragraphs: [
+        `&nbsp;`,
         `**Guided budget setup:** Budgeting starts with simple, age-based suggestions informed by financial research, with full customization to match personal goals and saving preferences.`,
         `&nbsp;`,
         `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards (e.g., Apple or Nintendo).`,
       ],
       images: [
-        {
-          type: "video",
-          src: montroKeyFeatures2,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption:
-            "Set up budget with guided suggestions and customization options",
-        },
-      ],
-      imageLayout: "stack",
-      imageWrapperClass: "scaffold-key-features-media",
+              {
+                type: "video",
+                src: scaffoldKeyFeatures1,
+                autoPlay: true,
+                className: "scaffold-key-features-video",
+                caption: "Scan-friendly grant cards and instant navigation",
+              },
+            ],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-key-features-media",
+          },,
+      imageLayout: "row",
+      imageWrapperClass: "montro-key-features-images",
     },
     {
       heading: "Key learnings & reflections",

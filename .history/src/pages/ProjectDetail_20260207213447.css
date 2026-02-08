@@ -515,3 +515,25 @@
     margin-bottom: 20px;
   }
 }
+
+/* Montro promo web */
+
+.montro-marketing-site-link {
+  width: 100%;
+  max-width: 400px; /* [수정] 원하는 이미지 크기로 조절하세요 (예: 300px, 400px 등) */
+  height: auto;
+  margin: 0 auto; /* 중앙 정렬 */
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.montro-marketing-site-link:hover {
+  transform: scale(1.02);
+}
+
+.project-detail-mockup-link {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

@@ -515,3 +515,32 @@
     margin-bottom: 20px;
   }
 }
+
+/* Montro promo web */
+/* 1. 클릭 가능한 링크 컨테이너 (이미 가운데 정렬 되어 있음) */
+.project-detail-mockup-link {
+  display: block;
+  width: fit-content; /* 이미지 너비에 딱 맞게 줄어듦 */
+  max-width: 900px;
+  margin: 0 auto; /* 이 설정 덕분에 '상자'는 가운데 있음 */
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 2. 실제 이미지 (이 부분이 핵심!) */
+.montro-marketing-site-link {
+  display: block; /* [수정] 인라인 성질을 버리고 블록으로 변경 */
+  width: 100%; /* 부모인 900px 안에서 가득 차게 함 */
+  height: auto;
+  cursor: pointer;
+  margin: 0 auto; /* 혹시 모르니 이미지 자체에도 중앙 정렬 추가 */
+}
+
+/* 📱 반응형 (모바일) */
+@media (max-width: 768px) {
+  .project-detail-mockup-link {
+    max-width: 90%; /* 모바일에서는 화면 너비의 90%로 자동 축소 */
+    margin: 0 auto; /* 모바일에서도 중앙 유지 */
+  }
+}

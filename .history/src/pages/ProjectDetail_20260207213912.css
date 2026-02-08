@@ -515,3 +515,38 @@
     margin-bottom: 20px;
   }
 }
+
+/* Montro promo web */
+/* 1. 이미지를 감싸는 컨테이너 정렬 (부모) */
+.project-detail-mockup {
+  text-align: center; /* [추가] 내부의 모든 inline 요소를 중앙으로 보냄 */
+  width: 100%;
+}
+
+/* 2. 클릭 가능한 링크 자체의 설정 */
+.project-detail-mockup-link {
+  display: inline-block; /* [중요] 링크 영역을 이미지 크기에 고정 */
+  width: auto;
+  max-width: 400px; /* 데스크탑 최대 크기 */
+  margin: 0 auto; /* 중앙 정렬 보조 */
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* 3. 이미지 설정 */
+.montro-marketing-site-link {
+  display: block; /* 하단 공백 제거 */
+  width: 100%; /* 부모인 링크 너비에 맞춤 */
+  height: auto;
+  cursor: pointer;
+}
+
+/* 📱 반응형 (모바일) */
+@media (max-width: 768px) {
+  .project-detail-mockup-link {
+    max-width: 280px; /* [수정] 모바일에서 너무 크지 않게 적절히 조절 */
+    display: inline-block; /* 모바일에서도 성질 유지 */
+  }
+}

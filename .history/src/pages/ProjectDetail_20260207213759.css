@@ -515,3 +515,33 @@
     margin-bottom: 20px;
   }
 }
+
+/* Montro promo web */
+
+.project-detail-mockup-link {
+  display: inline-block;
+  width: auto;
+  max-width: 760px;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.montro-marketing-site-link {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.project-detail-mockup-link:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .project-detail-mockup-link {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

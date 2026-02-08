@@ -160,7 +160,7 @@ export const montro = {
       heading: "Key Features",
       paragraphs: [
         `**Fast expense logging:** Small purchases often didn’t feel worth the effort to log. A quick log and receipt-scan option lets users capture an expense with one photo, while manual entry is available when there’s no receipt.`,
-      ],
+    ],
       images: [
         {
           type: "video",
@@ -191,7 +191,7 @@ export const montro = {
       ],
       imageLayout: "stack",
       imageWrapperClass: "scaffold-key-features-media",
-    },
+    }
     {
       heading: "Key learnings & reflections",
       paragraphs: [

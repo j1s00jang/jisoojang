@@ -515,3 +515,37 @@
     margin-bottom: 20px;
   }
 }
+
+/* Montro promo web */
+
+/* 1. 이미지를 감싸는 링크 컨테이너 */
+.project-detail-mockup-link {
+  display: inline-block; /* 내용물(이미지) 크기에 딱 맞춰 너비 설정 */
+  width: auto;
+  max-width: 780px;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden; /* 자식 이미지의 곡률이 깨지지 않게 */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 2. 실제 이미지 스타일 */
+.montro-marketing-site-link {
+  display: block; /* 하단 미세한 공백 제거 */
+  width: 100%; /* 부모(link) 너비에 맞춤 */
+  height: auto;
+  cursor: pointer;
+}
+
+/* 3. 호버 효과 (선택) */
+.project-detail-mockup-link:hover {
+  transform: translateY(-5px); /* 살짝 위로 뜨는 효과 */
+}
+
+/* 📱 반응형 대응 */
+@media (max-width: 768px) {
+  .project-detail-mockup-link {
+    max-width: 90%; /* 모바일에서는 화면 너비의 90%까지 허용 */
+    margin: 0 auto;
+  }
+}

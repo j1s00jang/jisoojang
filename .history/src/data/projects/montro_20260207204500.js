@@ -5,8 +5,9 @@ import montroWebsite from "../../assets/projects/montro/montro_website.png";
 import montroUserResearch1 from "../../assets/projects/montro/montro_userResearch01.png";
 import montroUserResearch2 from "../../assets/projects/montro/montro_userResearch02.png";
 import montroBrandGuidelines1 from "../../assets/projects/montro/montro_guidelines01.png";
-import montroKeyFeatures1 from "../../assets/projects/montro/montro_keyFeatures01.mp4";
-import montroKeyFeatures2 from "../../assets/projects/montro/montro_keyFeatures02.mp4";
+import montroKeyFeatures1 from "../../assets/projects/montro/montro_keyFeatures01.png";
+import montroKeyFeatures2 from "../../assets/projects/montro/montro_keyFeatures02.png";
+import montroKeyFeatures3 from "../../assets/projects/montro/montro_keyFeatures03.png";
 import montroKeyLearnings1 from "../../assets/projects/montro/montro_keyLearnings01.mp4";
 import montroLivedemoIcon from "../../assets/projects/montro/montro_livedemo_icon.png";
 import montroWireframesIcon from "../../assets/projects/montro/montro_wireframes_icon.png";
@@ -55,8 +56,10 @@ export const montro = {
       paragraphs: [],
       images: [montroWebsite],
       caption:
-        "A marketing website was created to communicate Montro's value proposition and key features.",
+        "Montro marketing website designed to communicate the product's value and key features.",
       imageLayout: "row",
+      type: "website",
+      url: "https://montro.framer.website",
     },
     {
       heading: "Opportunity",
@@ -81,10 +84,12 @@ export const montro = {
     },
     {
       heading: "User Research",
-      images: [montroUserResearch1, montroUserResearch2],
       paragraphs: [
         `Survey results from 10 participants pointed out that expense tracking often relies on familiar, long-standing routines rather than dedicated apps. The main barriers were low sustained motivation, friction from having to open an app for every purchase, and the perception that manual entry is tedious. Free expense tracking apps were also often described as discouraging due to distracting ads and cluttered, overly complex layouts, and a lack of motivation. That reinforces avoidance rather than expense tracking habit building.`,
       ],
+      images: [montroUserResearch1, montroUserResearch2],
+      caption:
+        "Survey summary: Participants relied more on their existing habits than on using the app in a structured way.",
       imageLayout: "row",
     },
     {
@@ -159,38 +164,15 @@ export const montro = {
     {
       heading: "Key Features",
       paragraphs: [
-        `**Fast expense logging:** Small purchases often didn’t feel worth the effort to log. A quick log and receipt-scan option lets users capture an expense with one photo, while manual entry is available when there’s no receipt.`,
-      ],
-      images: [
-        {
-          type: "video",
-          src: montroKeyFeatures1,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption: "Main dashboard to quick expense logging",
-        },
-      ],
-      imageLayout: "stack",
-      imageWrapperClass: "scaffold-key-features-media",
-    },
-    {
-      paragraphs: [
+        `*Fast expense logging:** Small purchases often didn’t feel worth the effort to log. A quick log and receipt-scan option lets users capture an expense with one photo, while manual entry is available when there’s no receipt.`,
+        `&nbsp;`,
         `**Guided budget setup:** Budgeting starts with simple, age-based suggestions informed by financial research, with full customization to match personal goals and saving preferences.`,
         `&nbsp;`,
         `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards (e.g., Apple or Nintendo).`,
       ],
-      images: [
-        {
-          type: "video",
-          src: montroKeyFeatures2,
-          autoPlay: true,
-          className: "scaffold-key-features-video",
-          caption:
-            "Set up budget with guided suggestions and customization options",
-        },
-      ],
-      imageLayout: "stack",
-      imageWrapperClass: "scaffold-key-features-media",
+      images: [montroKeyFeatures1, montroKeyFeatures2, montroKeyFeatures3],
+      imageLayout: "row",
+      imageWrapperClass: "montro-key-features-images",
     },
     {
       heading: "Key learnings & reflections",
