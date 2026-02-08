@@ -183,18 +183,13 @@ function Hero() {
               alt=""
               initial={{ opacity: 0, scale: 1 }}
               animate={{
-                opacity: [0.3, 0.7, 0.3],
+                opacity: 1,
                 y: ["-10%", "-9%", "-10%"],
                 rotate: [-0.5, 0.5, -0.5],
               }}
               transition={{
-                opacity: {
-                  duration: 4,
-                  delay: 0.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-                y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                opacity: { duration: 4, delay: 0.5 },
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
                 rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" },
               }}
               style={{
@@ -206,7 +201,6 @@ function Hero() {
                   "brightness(1.2) sepia(1) hue-rotate(190deg) saturate(1.5) blur(15px)",
                 zIndex: -1,
                 mixBlendMode: "overlay",
-                willChange: "opacity, transform",
               }}
             />
             <motion.img

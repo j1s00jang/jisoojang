@@ -206,7 +206,6 @@ function Hero() {
                   "brightness(1.2) sepia(1) hue-rotate(190deg) saturate(1.5) blur(15px)",
                 zIndex: -1,
                 mixBlendMode: "overlay",
-                willChange: "opacity, transform",
               }}
             />
             <motion.img
