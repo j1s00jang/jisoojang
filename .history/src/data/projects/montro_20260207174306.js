@@ -173,13 +173,10 @@ export const montro = {
     {
       heading: "Key learnings & reflections",
       paragraphs: [
-        `From a user-testing comment: “The colour hurts my eyes. I would probably not use it.” **Montro team rebalanced user needs with the original concept and turned feedback into clear design priorities.** Prototype testing and repeated feedback cycles improved clarity, reduced cognitive load, and strengthened consistency across the experience.`,
+        `Key learnings focused on evidence-informed design and iteration. Research inputs were converted into actionable priorities, then refined through prototype testing and feedback cycles to improve clarity, reduce cognitive load, and strengthen consistency in the experience.`,
         `&nbsp;`,
-        `Exploring references, building multiple mood boards, and developing an alternative concept provided strong lessons in translating feedback into UX/UI decisions. The project also strengthened design-system thinking by defining repeatable rules for hierarchy, spacing, and components, especially for data-heavy screens. Collaborating with a large group, including full-stack development students, improved teamwork, communication, and cross-functional collaboration.`,
+        `The project also expanded design-system thinking by defining repeatable rules for hierarchy, spacing, and components—especially for data-heavy interfaces. Working with full-stack students strengthened collaboration skills and improved the ability to align design intent with technical constraints.`,
       ],
-    },
-    {
-      heading: "Promotional video",
       images: [
         {
           type: "video",
@@ -188,6 +185,11 @@ export const montro = {
         },
       ],
       imageLayout: "row",
+    },
+    {
+      paragraphs: [
+        `The promotional video below summarizes Montro’s concept and design direction, showcasing the intended experience and key moments of the prototype in a short narrative format.`,
+      ],
     },
   ],
 };

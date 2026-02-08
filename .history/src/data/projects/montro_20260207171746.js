@@ -152,7 +152,7 @@ export const montro = {
     {
       heading: "Brand Guidelines",
       paragraphs: [
-        `Montro’s visual style uses a playful, futuristic colour palette to create a positive feeling, then applies a clean, structured layout for high readability. High contrast and bright colours make financial data quick to scan and keep the tone motivating. The style guide below shows the rules used to keep the UI consistent.`,
+        `Montro’s visual direction was shaped using a Moneta mood reference, then refined into an original style system optimized for high readability. High-contrast colors and energetic accents were chosen to keep financial data easy to scan and to support a motivating tone across the product. The style guide below captures the rules that maintain consistency across the UI.`,
       ],
       images: [montroBrandGuidelines1],
       imageLayout: "row",
@@ -160,11 +160,11 @@ export const montro = {
     {
       heading: "Key Features",
       paragraphs: [
-        `*Fast expense logging:** Small purchases often didn’t feel worth the effort to log. A quick log and receipt-scan option lets users capture an expense with one photo, while manual entry is available when there’s no receipt.`,
+        `**Fast expense entry:** Small purchases were treated as a key friction point because logging them often feels not worth the effort. A receipt-scan option enables quick capture from a single photo, while manual entry remains available when a receipt isn’t available—supporting consistent tracking without forcing an all-or-nothing workflow.`,
         `&nbsp;`,
-        `**Guided budget setup:** Budgeting starts with simple, age-based suggestions informed by financial research, with full customization to match personal goals and saving preferences.`,
+        `**Budget setup with guided starting points:** A budgeting feature provides age-based starting suggestions informed by common financial benchmarks, while keeping full customization available to match individual goals and savings priorities.`,
         `&nbsp;`,
-        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards (e.g., Apple or Nintendo).`,
+        `**Rewards tied to goal progress:** To support long-term habit formation, goal completion triggers a motivational moment—points are awarded and converted into rewards—reinforcing consistency beyond initial enthusiasm.`,
       ],
       images: [montroKeyFeatures1, montroKeyFeatures2, montroKeyFeatures3],
       imageLayout: "row",
@@ -173,13 +173,10 @@ export const montro = {
     {
       heading: "Key learnings & reflections",
       paragraphs: [
-        `From a user-testing comment: “The colour hurts my eyes. I would probably not use it.” **Montro team rebalanced user needs with the original concept and turned feedback into clear design priorities.** Prototype testing and repeated feedback cycles improved clarity, reduced cognitive load, and strengthened consistency across the experience.`,
+        `Key learnings focused on evidence-informed design and iteration. Research inputs were converted into actionable priorities, then refined through prototype testing and feedback cycles to improve clarity, reduce cognitive load, and strengthen consistency in the experience.`,
         `&nbsp;`,
-        `Exploring references, building multiple mood boards, and developing an alternative concept provided strong lessons in translating feedback into UX/UI decisions. The project also strengthened design-system thinking by defining repeatable rules for hierarchy, spacing, and components, especially for data-heavy screens. Collaborating with a large group, including full-stack development students, improved teamwork, communication, and cross-functional collaboration.`,
+        `The project also expanded design-system thinking by defining repeatable rules for hierarchy, spacing, and components—especially for data-heavy interfaces. Working with full-stack students strengthened collaboration skills and improved the ability to align design intent with technical constraints.`,
       ],
-    },
-    {
-      heading: "Promotional video",
       images: [
         {
           type: "video",
@@ -188,6 +185,11 @@ export const montro = {
         },
       ],
       imageLayout: "row",
+    },
+    {
+      paragraphs: [
+        `The promotional video below summarizes Montro’s concept and design direction, showcasing the intended experience and key moments of the prototype in a short narrative format.`,
+      ],
     },
   ],
 };
