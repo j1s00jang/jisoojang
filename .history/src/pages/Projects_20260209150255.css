@@ -104,6 +104,7 @@
   box-sizing: border-box;
 }
 
+/* ✅ project-card is now a DIV (not a Link) */
 .project-card {
   background-color: transparent;
   overflow: hidden;
@@ -113,6 +114,7 @@
   color: inherit;
 }
 
+/* ✅ only the thumbnail is clickable */
 .project-card-thumbLink {
   display: block;
   text-decoration: none;
@@ -120,12 +122,23 @@
   cursor: pointer;
 }
 
+.project-card-thumbLink:focus-visible {
+  outline: 3px solid var(--color-variable-light-purple);
+  outline-offset: 4px;
+}
+
+/* ✅ hover effect moves/shadows the thumbnail only (not text) */
+.project-card-thumbLink:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--color-shadow-light);
+}
+
 .project-card-image-wrap {
   width: 100%;
   aspect-ratio: 4 / 2;
   overflow: hidden;
   background-color: var(--color-primary-gray);
-  border-radius: 20px;
+  border-radius: 16px; /* optional, looks nice */
 }
 
 .project-card-image {
@@ -143,6 +156,7 @@
   text-align: left;
 }
 
+/* ✅ make sure text is NOT clickable */
 .project-card-text,
 .project-card-title,
 .project-card-description {
@@ -187,9 +201,9 @@
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2.25rem; /* ✅ more space between projects on mobile */
     margin-bottom: 2rem;
-    padding: 1.5rem 1.25rem;
+    padding: 2rem 1.25rem; /* ✅ slightly roomier on mobile */
   }
 
   .project-card-image-wrap {
