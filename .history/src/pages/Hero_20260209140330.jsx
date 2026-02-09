@@ -297,8 +297,9 @@ function Hero() {
                 zIndex: 40,
                 ...style,
 
+                // ✅ 모바일에서만 스티커 크게 (원래 width를 덮어쓰기)
                 width: isMobile
-                  ? `clamp(78px, ${10 * mobileStickerScale}vw, 140px)`
+                  ? `clamp(78px, ${18 * mobileStickerScale}vw, 140px)`
                   : style.width,
 
                 cursor: "grab",

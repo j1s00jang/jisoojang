@@ -298,7 +298,7 @@ function Hero() {
                 ...style,
 
                 width: isMobile
-                  ? `clamp(78px, ${10 * mobileStickerScale}vw, 140px)`
+                  ? `clamp(78px, ${18 * mobileStickerScale}vw, 140px)`
                   : style.width,
 
                 cursor: "grab",
