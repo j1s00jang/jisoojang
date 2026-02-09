@@ -2,7 +2,6 @@ import Hero from "./Hero";
 import AboutMe from "./AboutMe";
 import SplineEmbed from "../components/SplineEmbed";
 import HomeProjects from "../components/HomeProjects";
-import { useEffect } from "react";
 
 function Home() {
   useEffect(() => {

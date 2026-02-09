@@ -2,14 +2,8 @@ import Hero from "./Hero";
 import AboutMe from "./AboutMe";
 import SplineEmbed from "../components/SplineEmbed";
 import HomeProjects from "../components/HomeProjects";
-import { useEffect } from "react";
 
 function Home() {
-  useEffect(() => {
-    window.lenis?.stop();
-    return () => window.lenis?.start();
-  }, []);
-
   return (
     <div className="home-container">
       <section
