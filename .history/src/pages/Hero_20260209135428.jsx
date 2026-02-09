@@ -127,29 +127,30 @@ function Hero() {
         </div>
 
         {/* Sticker Interaction Text */}
-        {!isMobile && (
-          <div
-            style={{
-              position: "absolute",
-              top: "78%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              fontSize: "clamp(9px, 1.1vw, 15px)",
-              color: "#7b61ff",
-              fontWeight: "500",
-              textAlign: "center",
-              zIndex: 50,
-              whiteSpace: "nowrap",
-            }}
+        <div
+          style={{
+            position: "absolute",
+            // ✅ 모바일에서 겹치지 않게 위로 올림
+            top: isMobile ? "76%" : "78%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontSize: isMobile
+              ? "clamp(10px, 3vw, 14px)"
+              : "clamp(9px, 1.1vw, 15px)",
+            color: "#7b61ff",
+            fontWeight: "500",
+            textAlign: "center",
+            zIndex: 50,
+            whiteSpace: "nowrap",
+          }}
+        >
+          <motion.span
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <motion.span
-              animate={{ opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              ✨ Try moving my stickers! ✨
-            </motion.span>
-          </div>
-        )}
+            ✨ Try moving my stickers! ✨
+          </motion.span>
+        </div>
 
         {/* Folio Image */}
         <div
@@ -366,14 +367,15 @@ function Hero() {
         })}
       </div>
 
-      {/* Scroll Arrows */}
+      {/* Scroll Arrow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
         style={{
           position: "absolute",
-          bottom: isMobile ? "max(60px, env(safe-area-inset-bottom))" : "30px",
+          // ✅ 모바일에서 더 아래 + iOS safe area 고려
+          bottom: isMobile ? "max(45px, env(safe-area-inset-bottom))" : "30px",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",

@@ -127,29 +127,27 @@ function Hero() {
         </div>
 
         {/* Sticker Interaction Text */}
-        {!isMobile && (
-          <div
-            style={{
-              position: "absolute",
-              top: "78%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              fontSize: "clamp(9px, 1.1vw, 15px)",
-              color: "#7b61ff",
-              fontWeight: "500",
-              textAlign: "center",
-              zIndex: 50,
-              whiteSpace: "nowrap",
-            }}
+        <div
+          style={{
+            position: "absolute",
+            top: "78%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            fontSize: "clamp(9px, 1.1vw, 15px)",
+            color: "#7b61ff",
+            fontWeight: "500",
+            textAlign: "center",
+            zIndex: 50,
+            whiteSpace: "nowrap",
+          }}
+        >
+          <motion.span
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <motion.span
-              animate={{ opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              ✨ Try moving my stickers! ✨
-            </motion.span>
-          </div>
-        )}
+            ✨ Try moving my stickers! ✨
+          </motion.span>
+        </div>
 
         {/* Folio Image */}
         <div
