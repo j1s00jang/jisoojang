@@ -79,19 +79,21 @@ function Hero() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // ✅ 모바일에서만 스티커를 키우고 싶을 때(전체 공통 스케일)
   const mobileStickerScale = 1.35;
 
+  // ✅ 모바일에서만 스티커 위치 오프셋(px) — 원하는 만큼 여기만 조절하면 됨
   const mobileOffsets = {
-    hello: { left: 60, top: 6 },
-    vancouver: { left: -60, top: -5 },
-    iamjisoo: { left: -70 },
-    fruits: { left: 50, top: -10 },
-    contactme: { left: 65, top: -5 },
+    vancouver: { left: -18 }, // 왼쪽으로 조금
+    iamjisoo: { left: -14 }, // 왼쪽으로 조금
+    fruits: { left: 8 }, // 오른쪽으로 아주 조금
+    contactme: { left: 20, top: 18 }, // 오른쪽 + 아래로
   };
 
   return (
     <section
       style={{
+        // ✅ iOS에서 vh 이슈 줄이기
         minHeight: isMobile ? "100dvh" : "100vh",
         background: "#F9F7F2",
         display: "grid",

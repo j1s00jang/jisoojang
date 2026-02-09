@@ -82,11 +82,10 @@ function Hero() {
   const mobileStickerScale = 1.35;
 
   const mobileOffsets = {
-    hello: { left: 60, top: 6 },
     vancouver: { left: -60, top: -5 },
     iamjisoo: { left: -70 },
     fruits: { left: 50, top: -10 },
-    contactme: { left: 65, top: -5 },
+    contactme: { left: 40, top: 10 },
   };
 
   return (
