@@ -312,9 +312,12 @@
 }
 @media (max-width: 768px) {
   .project-detail-content {
+    /* 좌우/아래 여백은 적당히 */
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     padding-bottom: 1.5rem;
+
+    /* 헤더 높이 + 아주 조금만 */
     padding-top: calc(var(--nav-h) + 0.1rem);
   }
 

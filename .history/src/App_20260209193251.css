@@ -9,7 +9,7 @@
 }
 @media (max-width: 768px) {
   :root {
-    --nav-h: 5.5rem;
+    --nav-h: 5.5rem; /* mobile header: logo + gap + nav 세로 배치 높이 */
   }
 }
 
