@@ -24,7 +24,7 @@ export const montro = {
 
   summary:
     "Gamified expense-tracking app that builds spending & saving goals and reward milestones",
-  timeline: "Jan 2025 - May 2025 (18 weeks)",
+  timeline: "Jan 2025 - May 2025 (20 weeks)",
   role: "UX/UI Designer / UX Researcher",
   keySkills:
     "UX / UI / Layout / Product Design / User Research / Branding / Marketing",
