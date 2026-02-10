@@ -106,7 +106,7 @@
   }
 
   .nav-menu {
-    gap: 2rem;
+    gap: 1.8rem;
     margin-right: 0;
     justify-content: right;
   }
@@ -120,6 +120,5 @@
   .nav-link {
     font-size: clamp(0.82rem, 2.6vw, 0.9rem);
     color: #605f5b;
-    letter-spacing: -0.02em;
   }
 }
