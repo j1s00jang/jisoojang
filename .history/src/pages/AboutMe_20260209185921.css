@@ -596,7 +596,7 @@
     font-size: 2rem;
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: 2.5;
   }
 
   .intro-text-body {
@@ -604,7 +604,6 @@
     margin: 0;
     padding: 0;
     max-width: 100%;
-    line-height: 1.5;
   }
 
   /* About Me I Love Section */
