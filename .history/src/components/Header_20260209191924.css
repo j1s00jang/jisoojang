@@ -111,12 +111,6 @@
     justify-content: right;
   }
 
-  .jisoo-logo {
-    height: 40px;
-    width: 40px;
-    object-fit: contain;
-  }
-
   .nav-link {
     font-size: clamp(0.72rem, 2.6vw, 0.8rem);
   }
