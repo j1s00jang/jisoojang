@@ -85,7 +85,7 @@ function Hero() {
         background: "#F9F7F2",
         display: "grid",
         placeItems: isMobile ? "start center" : "center",
-        paddingTop: isMobile ? "70px" : undefined,
+        paddingTop: isMobile ? "100px" : undefined,
         overflow: "hidden",
         touchAction: "pan-y",
         position: "relative",
@@ -378,9 +378,7 @@ function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         style={{
           position: "absolute",
-          bottom: isMobile
-            ? "calc(env(safe-area-inset-bottom) + 120px)"
-            : "30px",
+          bottom: isMobile ? "max(60px, env(safe-area-inset-bottom))" : "30px",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",

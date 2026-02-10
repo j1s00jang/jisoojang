@@ -84,8 +84,7 @@ function Hero() {
         minHeight: isMobile ? "100dvh" : "100vh",
         background: "#F9F7F2",
         display: "grid",
-        placeItems: isMobile ? "start center" : "center",
-        paddingTop: isMobile ? "70px" : undefined,
+        placeItems: "center",
         overflow: "hidden",
         touchAction: "pan-y",
         position: "relative",
@@ -289,6 +288,10 @@ function Hero() {
               key={id}
               drag
               dragMomentum={false}
+              onPointerUp={() => {
+                if (id === "contactme")
+                  window.location.href = "mailto:jisoo.design@icloud.com";
+              }}
               initial={{ rotate: rotate || 0, scale: 1 }}
               animate={{ rotate: [rotate - 1, rotate + 1, rotate - 1] }}
               transition={{ duration: 4, repeat: Infinity }}
@@ -378,9 +381,7 @@ function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         style={{
           position: "absolute",
-          bottom: isMobile
-            ? "calc(env(safe-area-inset-bottom) + 120px)"
-            : "30px",
+          bottom: isMobile ? "max(60px, env(safe-area-inset-bottom))" : "30px",
           left: "50%",
           transform: "translateX(-50%)",
           display: "flex",
