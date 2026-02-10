@@ -118,6 +118,6 @@
   }
 
   .nav-link {
-    font-size: clamp(0.72rem, 2.6vw, 0.8rem);
+    font-size: 0.8rem;
   }
 }
