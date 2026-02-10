@@ -118,7 +118,7 @@
   }
 
   .nav-link {
-    font-size: clamp(0.82rem, 2.6vw, 0.9rem);
+    font-size: clamp(0.72rem, 2.6vw, 0.9rem);
     color: #605f5b;
   }
 }
