@@ -194,15 +194,11 @@
 }
 
 @media (max-width: 768px) {
-  .projects-content {
-    padding: 0 1.25rem;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
     margin-bottom: 2rem;
-    padding: 0 1.25rem;
+    padding: 1rem 1.25rem;
   }
 
   .project-card-image-wrap {
