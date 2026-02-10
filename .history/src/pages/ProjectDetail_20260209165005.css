@@ -322,8 +322,7 @@
   }
 
   .project-detail-screen-image {
-    max-width: 280px !important;
-    margin: 0 auto !important;
+    max-width: 320px;
   }
 
   .project-detail-concept-images {

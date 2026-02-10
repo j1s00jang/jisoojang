@@ -313,7 +313,6 @@
 
 @media (max-width: 768px) {
   .project-detail-content {
-    padding: 1rem !important;
     padding-top: calc(var(--nav-h) + 4rem);
   }
 
@@ -322,8 +321,7 @@
   }
 
   .project-detail-screen-image {
-    max-width: 280px !important;
-    margin: 0 auto !important;
+    max-width: 320px;
   }
 
   .project-detail-concept-images {

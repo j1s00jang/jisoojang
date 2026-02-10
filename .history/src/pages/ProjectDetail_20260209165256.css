@@ -326,6 +326,11 @@
     margin: 0 auto !important;
   }
 
+  .project-detail-intro-text {
+    max-width: 100% !important;
+    font-size: 1.1rem !important;
+  }
+
   .project-detail-concept-images {
     flex-direction: column;
     align-items: center;

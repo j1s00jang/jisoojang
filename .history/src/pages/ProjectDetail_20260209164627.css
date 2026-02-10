@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Shared – layout, header, section, mockup base
+   공통 (Shared) – layout, header, section, mockup base
    ========================================================================== */
 
 .project-detail-content {
@@ -151,10 +151,6 @@
   color: var(--color-primary-black);
 }
 
-.project-detail-concept-p2 {
-  margin-top: 1.5rem;
-}
-
 .project-detail-section h2 {
   font-size: clamp(1.6rem, 2.5vw, 2.1rem);
   font-weight: 600;
@@ -179,178 +175,75 @@
   margin: 0 auto;
 }
 
-.project-detail-body img,
-.project-detail-body video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.project-detail-body iframe {
-  width: 100%;
-  border: 0;
-  display: block;
-}
-
-.project-detail-mockup {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 3rem auto;
-  max-width: 100%;
-  flex-wrap: wrap;
-}
-
-.project-detail-mockup img {
-  flex: 1;
-  min-width: 0;
-  max-width: 100%;
-  height: auto;
-}
-
-.project-detail-mockup-link {
-  display: flex;
-  justify-content: center;
-  flex: 0 0 auto;
-  min-width: 0;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.project-detail-mockup-link:hover {
-  opacity: 0.9;
-}
-
-.project-detail-mockup-image-wrap {
-  display: flex;
-  justify-content: center;
-  flex: 0 1 auto;
-  min-width: 0;
-}
-
-.project-detail-embed-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-.project-detail-embed-caption {
-  font-size: 0.875rem;
-  color: var(--color-primary-black);
-  opacity: 0.75;
-  text-align: center;
-  max-width: 90%;
-}
-
-.project-detail-media-with-caption {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0rem;
-}
-
-.project-detail-media-with-caption .project-detail-mockup {
-  margin-bottom: 0;
-}
-
-.project-detail-caption-wrap {
-  width: 100%;
-  max-width: min(760px, 90%);
-  margin-inline: auto;
-  text-align: center;
-}
-
-.project-detail-concept-images {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem auto;
-  max-width: 400px;
-}
-
-.project-detail-logo-anatomy,
-.project-detail-logo-concept {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  margin-block: 1.5rem;
-}
-
-.project-detail-logo-concept {
-  border-radius: 50px;
-}
-
 /* ==========================================================================
-   Responsive – Shared
+   Responsive – 최적화 수정 버전
    ========================================================================== */
 
 @media (max-width: 1024px) {
   .project-detail-content {
     padding-top: calc(var(--nav-h) + 3rem);
   }
-
   .project-detail-header {
     grid-template-columns: 1fr;
     margin-top: 4rem;
   }
-
   .project-detail-screen-image {
     max-width: 420px;
   }
-
   .project-detail-intro-text {
     max-width: 60ch;
-  }
-
-  .project-detail-logo-concept {
-    margin-top: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  /* 좁은 모바일 화면 간격 축소 */
   .project-detail-content {
-    padding: 1rem !important;
-    padding-top: calc(var(--nav-h) + 4rem);
+    padding: 1rem !important; /* 좌우 여백을 약 16px로 대폭 축소 */
+    padding-top: calc(var(--nav-h) + 2rem) !important;
   }
 
   .project-detail-header {
-    margin-top: 6rem;
+    margin-top: 3rem;
+    gap: 2.5rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .project-detail-screen-image {
-    max-width: 280px !important;
-    margin: 0 auto !important;
+    max-width: 320px;
   }
 
-  .project-detail-concept-images {
-    flex-direction: column;
-    align-items: center;
+  .project-detail-intro-text {
+    max-width: 100%; /* 텍스트 너비 제한 해제하여 양옆 꽉 채움 */
+    font-size: 1.05rem; /* 가독성 위해 소폭 조정 */
+  }
+
+  .project-detail-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-detail-header-links {
     max-width: 100%;
-  }
-
-  .project-detail-logo-concept {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 }
 
-/* scaffold promo video overlay modal style */
+/* --- 모달 및 기타 스타일 (기존 유지) --- */
 .video-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(116, 116, 116, 0.85);
   backdrop-filter: blur(15px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
-  padding: 60px;
+  padding: 40px;
 }
 
 .video-modal-container {
@@ -359,7 +252,6 @@
   max-width: 1000px;
   background: #000;
   border-radius: 8px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .overlay-video-player {
@@ -376,132 +268,9 @@
   border: none;
   color: white;
   font-size: 40px;
-  line-height: 1;
   cursor: pointer;
-  z-index: 2100;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.2s ease;
-  opacity: 0.8;
 }
 
-.video-close-btn:hover {
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-@media (max-width: 1100px) {
-  .video-close-btn {
-    top: -50px;
-    right: 0px;
-  }
-}
-
-/* can design header link - view mockups modal */
-.carousel-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-}
-
-.overlay-image-player {
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-  display: block;
-}
-
-.carousel-nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-  cursor: pointer;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background 0.2s;
-}
-
-.carousel-nav-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.carousel-nav-btn.prev {
-  left: 20px;
-}
-.carousel-nav-btn.next {
-  right: 20px;
-}
-
-.carousel-indicator {
-  position: absolute;
-  bottom: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-}
-/* modal background */
-.video-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(116, 116, 116, 0.85);
-  backdrop-filter: blur(15px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-  padding: 40px;
-}
-
-/* magazine header link flipbook css */
-.video-modal-container.modal-large {
-  max-width: 95vw;
-  width: 100%;
-  background: transparent;
-  box-shadow: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-}
-
-.flipbook-modal-wrapper {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flipbook-modal-wrapper > div {
-  margin: 0 auto !important;
-  max-height: 100% !important;
-  max-width: 100% !important;
-}
-
-.video-modal-container.modal-large .video-close-btn {
-  top: -40px;
-  right: 0;
-}
-
-/* scaffold key features 1 video */
 .scaffold-key-features-video {
   width: 100%;
   max-width: 320px;
@@ -515,5 +284,9 @@
   .scaffold-key-features-video {
     max-width: 100%;
     margin-bottom: 20px;
+  }
+  .video-close-btn {
+    top: -50px;
+    right: 0px;
   }
 }
