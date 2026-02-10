@@ -1,7 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
-import logoDesktop from "../assets/jisoo_logo.svg";
-import logoMobile from "../assets/jisoo_logo_mobile.svg";
 
 function Header() {
   const location = useLocation();
@@ -12,12 +10,14 @@ function Header() {
       window.location.href = "/projects";
     }
   };
+
   const handleHomeClick = (e) => {
     if (location.pathname === "/") {
       e.preventDefault();
       window.location.href = "/";
     }
   };
+
   const handleAboutMeClick = (e) => {
     if (location.pathname === "/about-me") {
       e.preventDefault();
@@ -25,7 +25,7 @@ function Header() {
     }
   };
 
-  return (
+  rreturn(
     <header className="header">
       <div className="header-container">
         <div className="logo-container">
@@ -37,10 +37,10 @@ function Header() {
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcSet={logoMobile}
+                srcSet="./jisoo_logo_mobile.svg"
               />
               <img
-                src={logoDesktop}
+                src="./jisoo_logo.svg"
                 alt="Jisoo's personal logo"
                 className="jisoo-logo"
               />

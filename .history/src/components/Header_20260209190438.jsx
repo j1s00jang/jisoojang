@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
-import logoDesktop from "../assets/jisoo_logo.svg";
-import logoMobile from "../assets/jisoo_logo_mobile.svg";
+import logoDesktop from "./public/jisoo_logo.svg";
+import logoMobile from "./public/jisoo_logo_mobile.svg";
 
 function Header() {
   const location = useLocation();
@@ -12,12 +12,14 @@ function Header() {
       window.location.href = "/projects";
     }
   };
+
   const handleHomeClick = (e) => {
     if (location.pathname === "/") {
       e.preventDefault();
       window.location.href = "/";
     }
   };
+
   const handleAboutMeClick = (e) => {
     if (location.pathname === "/about-me") {
       e.preventDefault();
@@ -34,6 +36,7 @@ function Header() {
             className="logo-link"
             onClick={handleHomeClick}
           >
+            {/* ✅ mobile(<=768px)에서는 mobile 로고로 자동 교체 */}
             <picture>
               <source
                 media="(max-width: 768px)"
