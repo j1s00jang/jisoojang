@@ -94,27 +94,27 @@
   }
 
   .header-container {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
   }
 
   .logo-container {
     margin-left: 0;
     justify-content: center;
   }
+  /* 
+  .jisoo-logo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+  } */
 
   .nav-menu {
-    gap: 2.5rem;
+    gap: 1rem;
     margin-right: 0;
-    justify-content: right;
-  }
-
-  .jisoo-logo {
-    height: 30px;
-    width: 30px;
-    object-fit: contain;
+    justify-content: center;
   }
 
   .nav-link {

@@ -83,16 +83,18 @@
     justify-content: center;
     align-items: center;
     gap: 0.6rem;
-    padding: 2rem 0 0;
-    flex-wrap: wrap;
+    padding: 2rem 0;
+    flex-wrap: wrap; /* 화면 좁으면 다음 줄로 */
   }
 
+  /* ✅ 버튼 크기 줄이기 */
   .projects-tabs li {
     font-size: 1rem;
     padding: 10px 16px;
-    border-radius: 999px;
+    border-radius: 999px; /* pill 느낌 (원하면 제거 가능) */
   }
 
+  /* ✅ first-child만 더 크던 거 제거 */
   .projects-tabs li:first-child {
     padding: 10px 16px;
   }

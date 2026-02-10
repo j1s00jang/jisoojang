@@ -87,12 +87,14 @@
     flex-wrap: wrap;
   }
 
+  /* ✅ 버튼 크기 줄이기 */
   .projects-tabs li {
     font-size: 1rem;
     padding: 10px 16px;
-    border-radius: 999px;
+    border-radius: 999px; /* pill 느낌 (원하면 제거 가능) */
   }
 
+  /* ✅ first-child만 더 크던 거 제거 */
   .projects-tabs li:first-child {
     padding: 10px 16px;
   }

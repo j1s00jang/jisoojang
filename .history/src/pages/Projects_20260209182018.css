@@ -79,22 +79,17 @@
   }
 
   .projects-tabs ul {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
     align-items: center;
-    gap: 0.6rem;
-    padding: 2rem 0 0;
-    flex-wrap: wrap;
   }
 
   .projects-tabs li {
-    font-size: 1rem;
-    padding: 10px 16px;
-    border-radius: 999px;
+    padding: 12px 30px;
   }
 
   .projects-tabs li:first-child {
-    padding: 10px 16px;
+    padding: 12px 40px;
   }
 }
 
@@ -177,6 +172,11 @@
 @media (max-width: 1024px) {
   .projects-content {
     padding: 3rem 0 2rem 0;
+  }
+
+  .projects-tabs {
+    display: flex;
+    justify-content: center;
   }
 
   .projects-grid {

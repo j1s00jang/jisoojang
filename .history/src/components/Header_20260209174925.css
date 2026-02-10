@@ -94,10 +94,10 @@
   }
 
   .header-container {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
   }
 
   .logo-container {
@@ -106,15 +106,9 @@
   }
 
   .nav-menu {
-    gap: 2.5rem;
+    gap: 5rem;
     margin-right: 0;
-    justify-content: right;
-  }
-
-  .jisoo-logo {
-    height: 30px;
-    width: 30px;
-    object-fit: contain;
+    justify-content: center;
   }
 
   .nav-link {

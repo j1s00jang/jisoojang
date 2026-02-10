@@ -93,6 +93,7 @@
     border-radius: 999px;
   }
 
+  /* ✅ first-child만 더 크던  제거 */
   .projects-tabs li:first-child {
     padding: 10px 16px;
   }
