@@ -102,7 +102,7 @@ function InteractiveTutorial({ project }) {
                 </section>
             )}
 
-            <section className="project-detail-section">
+            <section className="project-detail-section interactive-prototype-section">
                 <h2>Tutorial Prototype</h2>
                 <FigmaEmbed
                     title="Hello, My First Cat Prototype"

@@ -89,7 +89,7 @@ function CanDesign({ project }) {
             )}
 
             {flavours.length > 0 && (
-                <section className="project-detail-section">
+                <section className="project-detail-section candesign-flavour-section">
                     <h2>Flavour variations</h2>
 
                     <div className="flavour-carousel">
@@ -189,7 +189,7 @@ function CanDesign({ project }) {
             )}
 
             {project.productMockupImage && (
-                <section className="project-detail-section">
+                <section className="project-detail-section candesign-packaging-section">
                     <h2>Packaging mockups</h2>
                     <div className="project-detail-mockup">
                         <img

@@ -593,7 +593,7 @@
   }
 
   .intro-text {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -601,6 +601,7 @@
 
   .intro-text-body {
     display: block;
+    font-size: 1.1rem;
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -608,8 +609,17 @@
   }
 
   /* About Me I Love Section */
+  .ilove-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .ilove-title {
-    font-size: 2.5rem;
+    font-size: 1.7rem;
+  }
+
+  .ilove-list {
+    font-size: 1.1rem;
   }
 
   .ilove-left {
@@ -637,25 +647,35 @@
 
   /* About Me Skills Section */
   .skills-content {
-    padding: 0 1rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .skills-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .skills-section-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .skills-list {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.8;
   }
 
   /* About Me Contact Section */
   .contact-content {
-    padding: 0 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-buttons {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.5rem;
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .contact-title {

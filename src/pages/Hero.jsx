@@ -379,7 +379,7 @@ function Hero() {
         style={{
           position: "absolute",
           bottom: isMobile
-            ? "calc(env(safe-area-inset-bottom) + 120px)"
+            ? "calc(env(safe-area-inset-bottom) + 100px)"
             : "30px",
           left: "50%",
           transform: "translateX(-50%)",

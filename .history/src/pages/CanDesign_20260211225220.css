@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Can Design – concept image, Flavour carousel
+   ========================================================================== */
+
+.project-detail-concept-image {
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 3rem;
+  display: block;
+}
+
+.flavour-carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: 2.5rem auto 1.5rem;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.flavour-carousel-viewport {
+  position: relative;
+  height: auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.flavour-carousel-item {
+  position: absolute;
+  inset: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 760px;
+  padding: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(0) scale(0.9);
+  transition: transform 420ms ease, opacity 420ms ease;
+  pointer-events: none;
+  text-align: center;
+}
+
+.flavour-carousel-item.is-active {
+  position: relative;
+  inset: auto;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.flavour-carousel-item.is-prev {
+  opacity: 0.3;
+  transform: translateX(-78%) scale(0.92);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.flavour-carousel-item.is-next {
+  opacity: 0.3;
+  transform: translateX(78%) scale(0.92);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.flavour-carousel-item.is-hidden {
+  opacity: 0;
+  transform: translateX(0) scale(0.9);
+  z-index: 1;
+}
+
+.flavour-carousel-label img {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.flavour-carousel-design {
+  margin: 1.1rem auto 0;
+  max-width: 640px;
+}
+
+.flavour-carousel-design img {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.flavour-carousel-cans {
+  margin: 1.6rem auto 0.8rem;
+  max-width: 520px;
+}
+
+.flavour-carousel-cans img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+}
+
+.flavour-carousel-title {
+  margin: 1rem 0 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-primary-black);
+}
+
+.flavour-carousel-text {
+  margin: 0 auto;
+  max-width: 70ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-primary-black);
+}
+
+.flavour-carousel-item.is-prev .flavour-carousel-title,
+.flavour-carousel-item.is-prev .flavour-carousel-text,
+.flavour-carousel-item.is-next .flavour-carousel-title,
+.flavour-carousel-item.is-next .flavour-carousel-text,
+.flavour-carousel-item.is-hidden .flavour-carousel-title,
+.flavour-carousel-item.is-hidden .flavour-carousel-text {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.flavour-carousel-arrow {
+  width: 30px;
+  height: 100px;
+  border: none;
+  background: #d8d8d8;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.flavour-carousel-arrow:hover {
+  transform: translateY(-1px);
+  background: #c2c2c2;
+}
+
+.flavour-carousel-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto 3rem;
+}
+
+.flavour-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  cursor: pointer;
+}
+
+.flavour-carousel-dot.is-active {
+  background: var(--color-variable-dark-purple2);
+  border-color: var(--color-variable-dark-purple2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .candesign-flavour-section {
+    margin-top: 4rem;
+  }
+
+  .project-detail-concept-image {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 3rem;
+    display: block;
+  }
+
+  .flavour-carousel {
+    grid-template-columns: 36px 1fr 36px;
+  }
+
+  .flavour-carousel-viewport {
+    min-height: 480px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .flavour-carousel-item {
+    position: relative;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    max-width: 520px;
+  }
+
+  .flavour-carousel-arrow {
+    background: var(--color-variable-light-purple);
+  }
+
+  .flavour-carousel-arrow:hover {
+    background: rgb(215, 216, 255);
+  }
+
+  .flavour-carousel-item.is-prev,
+  .flavour-carousel-item.is-next,
+  .flavour-carousel-item.is-hidden {
+    display: none;
+  }
+}

@@ -37,6 +37,8 @@ export default function MagazineFlipbook() {
     }, []);
 
     const totalPages = pages.length;
+    const isFirstPage = page <= 0;
+    const isLastPage = page >= totalPages - 1;
 
     const goPrev = () => bookRef.current?.pageFlip()?.flipPrev();
     const goNext = () => bookRef.current?.pageFlip()?.flipNext();
@@ -51,6 +53,8 @@ export default function MagazineFlipbook() {
                     type="button"
                     className={styles.btn}
                     onClick={goPrev}
+                    disabled={isFirstPage}
+                    aria-disabled={isFirstPage}
                 >
                     Prev
                 </button>
@@ -63,6 +67,8 @@ export default function MagazineFlipbook() {
                     type="button"
                     className={styles.btn}
                     onClick={goNext}
+                    disabled={isLastPage}
+                    aria-disabled={isLastPage}
                 >
                     Next
                 </button>

@@ -39,6 +39,7 @@ const PROJECTS = [
 
 export default function ProjectsSection({ title = "Projects" }) {
   const [cardWidth, setCardWidth] = useState(getCardWidth());
+  const isMobile = cardWidth === 240;
 
   function getCardWidth() {
     if (window.innerWidth > 1400) return 320;
@@ -53,16 +54,18 @@ export default function ProjectsSection({ title = "Projects" }) {
   }, []);
 
   const infiniteProjects = [...PROJECTS, ...PROJECTS];
-  const CARD_GAP = 30;
+  const CARD_GAP = isMobile ? 0 : 30;
   const totalWidth = PROJECTS.length * (cardWidth + CARD_GAP);
 
   return (
     <section
       style={{
         background: "transparent",
-        padding: "80px 0",
+        padding: isMobile ? "24px 0 48px" : "80px 0",
         overflow: "hidden",
-        width: "100%",
+        width: isMobile ? "100vw" : "100%",
+        marginLeft: isMobile ? "calc(50% - 50vw)" : 0,
+        marginRight: isMobile ? "calc(50% - 50vw)" : 0,
       }}
     >
       <div
@@ -108,7 +111,7 @@ export default function ProjectsSection({ title = "Projects" }) {
 
       <style>{`
         .scroll-container {
-          width: 100vw;
+          width: 100%;
           overflow-x: auto;
           position: relative;
           scrollbar-width: none;
@@ -122,6 +125,18 @@ export default function ProjectsSection({ title = "Projects" }) {
           width: max-content;
           padding: 40px 20px; /* 위아래 패딩을 넉넉히 주어 잘림 방지 */
           animation: marquee linear infinite;
+        }
+
+        @media (max-width: 768px) {
+          .scroll-container {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          .scroll-track {
+            padding: 32px 0;
+          }
         }
 
         @keyframes marquee {

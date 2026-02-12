@@ -23,6 +23,11 @@
   cursor: pointer;
 }
 
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .btn:last-child {
   justify-self: end;
 }

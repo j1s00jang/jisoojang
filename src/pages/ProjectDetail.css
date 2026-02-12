@@ -159,7 +159,7 @@
   font-size: clamp(1.6rem, 2.5vw, 2.1rem);
   font-weight: 600;
   max-width: 1000px;
-  margin: 5rem auto 2rem auto;
+  margin: auto auto 2rem auto;
   padding: 0 7px;
   inline-size: fit-content;
   background: linear-gradient(
@@ -319,7 +319,7 @@
   }
 
   .project-detail-header {
-    margin-top: 6rem;
+    margin-top: 2rem;
   }
 
   .project-detail-screen-image {
@@ -335,6 +335,24 @@
 
   .project-detail-logo-concept {
     margin-top: 1rem;
+  }
+
+  /* make body images use the same horizontal span as text on mobile */
+  .project-detail-mockup {
+    gap: 1rem;
+  }
+
+  .project-detail-mockup-link,
+  .project-detail-mockup-image-wrap {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .project-detail-container .project-detail-mockup img,
+  .project-detail-container .project-detail-mockup .project-detail-mockup-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
   }
 }
 

@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Scaffold – project-specific styles
-   ========================================================================== */
-
 .project-detail-screen-image {
   max-width: clamp(240px, 30vw, 300px);
 }
@@ -90,4 +86,85 @@
   max-width: min(400px, 45vw);
   height: auto;
   border-radius: 15px;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Marketing materials"] {
+  margin-bottom: 0;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Marketing materials"]
+  .project-detail-mockup {
+  margin-bottom: 0;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Marketing materials"]
+  + .project-detail-section {
+  margin-bottom: 0;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Marketing materials"]
+  + .project-detail-section
+  .project-detail-mockup {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Marketing materials"]
+  + .project-detail-section
+  .project-detail-mockup
+  .project-detail-mockup-image {
+  margin-top: 0;
+  margin-bottom: 5rem;
+}
+
+/* reduce gap between storyboard and first key learnings photos */
+.project-detail-container
+  .project-detail-section[data-section="Storyboard & Film production"] {
+  margin-bottom: 0.5rem;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Storyboard & Film production"]
+  .project-detail-mockup {
+  margin-bottom: 0.25rem;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Storyboard & Film production"]
+  + .project-detail-section
+  .project-detail-mockup {
+  margin-top: 0;
+}
+
+/* reduce gap between key learnings photos and final reflection paragraph */
+.project-detail-container
+  .project-detail-section[data-section="Key learnings & reflections"] {
+  margin-bottom: 0.75rem;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Key learnings & reflections"]
+  .project-detail-mockup {
+  margin-bottom: 0.25rem;
+}
+
+.project-detail-container
+  .project-detail-section[data-section="Key learnings & reflections"]
+  + .project-detail-section {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .project-detail-screen-image {
+    max-width: 220px !important;
+  }
+
+  .scaffold-detail-container .project-detail-list {
+    padding-left: 1rem;
+  }
 }
