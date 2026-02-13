@@ -156,15 +156,3 @@
   + .project-detail-section {
   margin-bottom: 2rem;
 }
-
-@media (max-width: 768px) {
-  .project-detail-screen-image {
-    max-width: 220px !important;
-  }
-
-  .scaffold-detail-container .project-detail-list {
-    padding-left: 1rem;
-  }
-
-  
-}
