@@ -39,7 +39,7 @@ function Header() {
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcSet={logoMobile}
+                srcSet={logoMobile2}
               />
               <img
                 src={logoDesktop2}

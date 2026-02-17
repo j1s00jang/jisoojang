@@ -3,7 +3,7 @@ import "./Header.css";
 import logoDesktop from "../assets/jisoo_logo.svg";
 import logoMobile from "../assets/jisoo_logo_mobile.svg";
 import logoDesktop2 from "../assets/jisoo_logo2.png";
-import logoMobile2 from "../assets/jisoo_logo2_mobile.png";
+import logoMobile2 from "../assets/jisoo_logo_mobile2.png";
 
 function Header() {
   const location = useLocation();
@@ -39,7 +39,7 @@ function Header() {
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcSet={logoMobile}
+                srcSet={logoMobile2}
               />
               <img
                 src={logoDesktop2}

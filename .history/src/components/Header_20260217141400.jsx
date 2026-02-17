@@ -3,7 +3,6 @@ import "./Header.css";
 import logoDesktop from "../assets/jisoo_logo.svg";
 import logoMobile from "../assets/jisoo_logo_mobile.svg";
 import logoDesktop2 from "../assets/jisoo_logo2.png";
-import logoMobile2 from "../assets/jisoo_logo2_mobile.png";
 
 function Header() {
   const location = useLocation();
