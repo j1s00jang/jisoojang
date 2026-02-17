@@ -1,45 +1,53 @@
 📝 A description of what you plan to do as your portfolio punch-up 📝
 
-1. What is the work you're taking on?
+❓ What is the work you're taking on?
 
-- I'll focus on two UX/UI case studies to better showcase my end-to-end process and strengthen my portfolio.
-- I’ll improve each case study by clearly explaining what I did, why I made specific design decisions, and what I would improve in a future iteration.
-- I’m also planning to add a mini AI project as a new portfolio entry.
-- Interactive element to my landing page to create a fun engaging moment
+- I'm taking on focusing two case studies in optimizing screens and showcase my ux/ui process
+- portfolio navigation, screen loading optimization
+- planning to ad mini AI project
+- Interactive element to landing page to create a fun engaging moment (moving stickers to landing page & a light cursor)
 
-2. How do you think this is going to enhane your body of work?
+❓ How do you think this is going to enhane your body of work?
 
-- By strengthening my case studies, I can show my UX/UI skills more clearly and make my design thinking feel more credible and consistent.
-- The AI mini project will show my interest in AI, how I learn new tools, and how I can apply new technology to improve user experience.
+- To showcase my case studies, I can show my ux/ui skillset clearly
+- Showing mini AI project will enhance my skills
 - Adding interactive elements to the landing page will make my portfolio website more memorable
 
-3. Will it be a new entry, or an interesting interaction?
+❓ Will it be a new entry, or an interesting interaction?
 
-- The mini AI project will be a new entry. I haven't decided to what exact topic yet, but it'll be related to user experience and focus on a practical purpose.
+- The mini AI project will be a new entry. I haven't decided to what exact topic yet (maybe show how AI tool can speed up wireframes or lo-fi, fast design process)
 
-4. Lo-fi mock-ups of the concept
-   https://www.figma.com/design/fjUyMZsWC8wXhgRh6QQR9R/Portfolio-Design?node-id=684-2303&t=v7mDl2fVzoPHpaAc-1
-   hi-fi + punch up pages
+❓ Lo-fi mock-ups of the concept
+https://www.figma.com/design/fjUyMZsWC8wXhgRh6QQR9R/Portfolio-Design?node-id=684-2303&t=v7mDl2fVzoPHpaAc-1
+hi-fi + punch up pages
 
-5. Examples to help explain your concept
-   https://hackernoon.com/look-at-your-product-from-a-new-perspective-f0709760614b
-   I'll apply the format shows iteration of screens
-   https://jonnyczar.com/project/bookify
-   I'll apply this case study structure & sub-menu on the left will be base of my case study structure (Except the 'new' tooltip)
-   https://www.omarhassan.co/gemtrade
-   Showing screens and explanation structure is clear, all screens are static, the website feels very light
-   https://www.behance.net/gallery/183931451/Portfolio-2023?tracking_source=search_projects|portfolio&l=79
-   My landing page design inspired by this design
+❓ Examples to help explain your concept
+https://hackernoon.com/look-at-your-product-from-a-new-perspective-f0709760614b
+I'll apply the format shows iteration of screens
+https://jonnyczar.com/project/bookify
+I'll apply this case study structure & sub-menu on the left will be base of my case study structure (Except the 'new' tooltip)
+https://www.omarhassan.co/gemtrade
+Showing screens and explanation structure is clear, all screens are static, the website feels very light
+https://www.behance.net/gallery/183931451/Portfolio-2023?tracking_source=search_projects|portfolio&l=79
+My landing page design inspired by this design
+https://www.vickymarch.com/work/studystream#designs
+Showing wireframes and lo-fi is clear, I'll apply the structure
+https://www.pascalstrasche.com
+A light on cursor
+https://karoliskosas.com/cujo-3/
+I like the structure of paragraph and mock up screens, will apply to mine
+https://www.ljubomir.design/work/project/provenance-ai
+Also the structure is clear
 
-6. Any resources you plan on using
+❓ Any resources you plan on using
 
-- Figma : lo-fi wireframes, prototypes, components
+- Figma : lo-fi wireframes, prototypes, components (will try 'Figma make')
 - React (vite)
 - Framer Motion : Landing page interaction + animation : Applied
 - Design system references
 - Typekit (Adobe fonts) : Applied
 - Lenis + Gsap ScrollTrigger : Applied
 
-7. Any fears, uncertainties, doubts about the implementation
+❓ Any fears, uncertainties, doubts about the implementation
 
 - I'm worried that the interaction element to the landing page could feel distracting. Also, I'm not sure how to translate to mobile size. I might need a simplified or alternatie version for mobile...
