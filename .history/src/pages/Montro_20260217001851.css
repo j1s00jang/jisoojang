@@ -60,8 +60,15 @@
 
 .project-detail-container
   .project-detail-section[data-section="Promotional video"] {
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
+/* 
+.project-detail-container
+  .project-detail-section[data-section="Brand Guidelines"]
+  .project-detail-mockup {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+} */
 
 .project-detail-container
   .project-detail-section[data-section="Brand Guidelines"]

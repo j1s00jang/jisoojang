@@ -149,7 +149,6 @@ export const montro = {
         `&nbsp;`,
         `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards.`,
         `&nbsp;`,
-        `&nbsp;`,
       ],
       images: [
         {

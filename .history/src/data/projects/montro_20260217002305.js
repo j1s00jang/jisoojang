@@ -147,9 +147,7 @@ export const montro = {
       paragraphs: [
         `**Guided budget setup:** Budgeting starts with simple, age-based suggestions informed by financial research, with full customization to match personal goals and saving preferences.`,
         `&nbsp;`,
-        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards.`,
-        `&nbsp;`,
-        `&nbsp;`,
+        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards (e.g., Apple or Nintendo).`,
       ],
       images: [
         {

@@ -59,31 +59,18 @@
 }
 
 .project-detail-container
-  .project-detail-section[data-section="Promotional video"] {
-  margin-top: 6rem;
+  .project-detail-section#initial-concept
+  .project-detail-mockup {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-detail-container
-  .project-detail-section[data-section="Brand Guidelines"]
+  .project-detail-section#initial-concept
   .project-detail-mockup
   .project-detail-mockup-image {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-}
-
-.project-detail-container
-  .project-detail-section#initial-concept
-  .project-detail-mockup {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.project-detail-container
-  .project-detail-section#initial-concept
-  .project-detail-mockup
-  .project-detail-mockup-image {
-  margin-top: 0.5rem;
-  margin-bottom: 4rem;
 }
 
 @media (max-width: 768px) {

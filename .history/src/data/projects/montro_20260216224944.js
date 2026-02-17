@@ -3,9 +3,8 @@ import montroScreen from "../../assets/projects/montro/montro_screen.png";
 import montroMockup from "../../assets/projects/montro/montro_mockup.png";
 import montroWebsite from "../../assets/projects/montro/montro_website.png";
 import montroUserResearch1 from "../../assets/projects/montro/montro_userResearch01.png";
+import montroUserResearch2 from "../../assets/projects/montro/montro_userResearch02.png";
 import montroUserPersonas from "../../assets/projects/montro/montro_userPersonas.png";
-import montroLofi from "../../assets/projects/montro/montro_lo-fi.png";
-import montroHifi from "../../assets/projects/montro/montro_hi-fi.png";
 import montroBrandGuidelines1 from "../../assets/projects/montro/montro_guidelines01.png";
 import montroKeyFeatures1 from "../../assets/projects/montro/montro_keyFeatures01.mp4";
 import montroKeyFeatures2 from "../../assets/projects/montro/montro_keyFeatures02.mp4";
@@ -57,6 +56,8 @@ export const montro = {
     {
       paragraphs: [],
       images: [montroWebsite],
+      caption:
+        "A marketing website was created to communicate Montro's value proposition and key features.",
       imageLayout: "row",
     },
     {
@@ -69,7 +70,7 @@ export const montro = {
     },
     {
       heading: "User Research",
-      images: [montroUserResearch1],
+      images: [montroUserResearch1, montroUserResearch2],
       paragraphs: [
         `Survey results from 10 participants pointed out that expense tracking often relies on familiar, long-standing routines rather than dedicated apps. The main barriers were low sustained motivation, friction from having to open an app for every purchase, and the perception that manual entry is tedious. Free expense tracking apps were also often described as discouraging due to distracting ads and cluttered, overly complex layouts, and a lack of motivation. That reinforces avoidance rather than expense tracking habit building.`,
       ],
@@ -85,6 +86,22 @@ export const montro = {
       images: [montroUserPersonas],
       imageLayout: "row",
     },
+    // {
+    //   heading: "The discovery",
+    //   paragraphs: [
+    //     `**High habit formation potential:**`,
+    //     `Despite frustrations, 55.6% have made tracking a regular habit, indicating that with the right features, more users could be nudged into consistent behaviour.`,
+    //     `&nbsp;`,
+    //     `**Incentives could be a game-changer:**`,
+    //     `Incentive-based tracking could significantly boost adoption and consistency. Providing the user with some form of passive reward can help guide them to keep up a habit of tracking core expenses.`,
+    //     `&nbsp;`,
+    //     `**Skepticism toward bank syncing:**`,
+    //     `Security concerns missed cash transactions, and incorrect categorization deters users from relying on bank-integrated solutions.`,
+    //     `&nbsp;`,
+    //     `**Desire for smarter tracking:**`,
+    //     `Users don't just want summaries—they seek detailed insights and patterns across categories to make better financial decisions. Anyone can request numbers- meaningful suggestions to help guide their expense tracking journey make for a better user/app interaction system.`,
+    //   ],
+    // },
     {
       heading: "How we started",
       paragraphs: [
@@ -109,14 +126,6 @@ export const montro = {
         },
       ],
       imageLayout: "row",
-    },
-    {
-      sectionId: "initial-concept",
-      paragraphs: [
-        `The initial concept was a playful, gamified experience with a bright neon green and dark blue palette and fun, motivating tone based on user personas and user flow. The low-fidelity wireframes was created to quickly explore layout and flow, then moved to high-fidelity mockups to refine the visual style and interactions. The design system was built around clear hierarchy, strong contrast, and simplified layouts to make financial information easy to read without overwhelming users.`,
-      ],
-      images: [montroLofi, montroHifi],
-      imageLayout: "stack",
     },
     {
       heading: "Brand Guidelines",
@@ -147,9 +156,7 @@ export const montro = {
       paragraphs: [
         `**Guided budget setup:** Budgeting starts with simple, age-based suggestions informed by financial research, with full customization to match personal goals and saving preferences.`,
         `&nbsp;`,
-        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards.`,
-        `&nbsp;`,
-        `&nbsp;`,
+        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards (e.g., Apple or Nintendo).`,
       ],
       images: [
         {

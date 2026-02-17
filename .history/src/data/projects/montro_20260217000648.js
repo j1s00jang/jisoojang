@@ -57,6 +57,8 @@ export const montro = {
     {
       paragraphs: [],
       images: [montroWebsite],
+      caption:
+        "A marketing website was created to communicate Montro's value proposition and key features.",
       imageLayout: "row",
     },
     {
@@ -111,14 +113,6 @@ export const montro = {
       imageLayout: "row",
     },
     {
-      sectionId: "initial-concept",
-      paragraphs: [
-        `The initial concept was a playful, gamified experience with a bright neon green and dark blue palette and fun, motivating tone based on user personas and user flow. The low-fidelity wireframes was created to quickly explore layout and flow, then moved to high-fidelity mockups to refine the visual style and interactions. The design system was built around clear hierarchy, strong contrast, and simplified layouts to make financial information easy to read without overwhelming users.`,
-      ],
-      images: [montroLofi, montroHifi],
-      imageLayout: "stack",
-    },
-    {
       heading: "Brand Guidelines",
       paragraphs: [
         `Montro’s visual style uses a playful, futuristic colour palette to create a positive feeling, then applies a clean, structured layout for high readability. High contrast and bright colours make financial data quick to scan and keep the tone motivating. The style guide below shows the rules used to keep the UI consistent.`,
@@ -147,9 +141,7 @@ export const montro = {
       paragraphs: [
         `**Guided budget setup:** Budgeting starts with simple, age-based suggestions informed by financial research, with full customization to match personal goals and saving preferences.`,
         `&nbsp;`,
-        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards.`,
-        `&nbsp;`,
-        `&nbsp;`,
+        `**Rewards for long-term habits:** To support habit-building, completing a goal triggers a motivational moment. Users earn reward points for reaching goals and can redeem them for gift cards (e.g., Apple or Nintendo).`,
       ],
       images: [
         {
