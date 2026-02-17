@@ -135,6 +135,10 @@
   color: inherit;
 }
 
+.project-detail-header-link:hover {
+  opacity: 0.8;
+}
+
 .project-detail-header-link-icon {
   width: 56px;
   height: 56px;
@@ -223,6 +227,41 @@
   justify-content: center;
   flex: 0 1 auto;
   min-width: 0;
+}
+
+.project-detail-zoom-trigger {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  max-width: 100%;
+}
+
+.project-detail-zoom-trigger img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.project-detail-zoom-hint {
+  position: absolute;
+  inset: 0; /* 이미지 전체를 덮음 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none; /* 힌트가 마우스 이벤트를 방해하지 않게 함 */
+}
+
+.project-detail-zoom-trigger:hover .project-detail-zoom-hint,
+.project-detail-zoom-trigger:focus-visible .project-detail-zoom-hint {
+  opacity: 1;
 }
 
 .project-detail-embed-wrap {

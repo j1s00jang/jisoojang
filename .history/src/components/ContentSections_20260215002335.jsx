@@ -1,4 +1,5 @@
 import "../pages/ProjectDetail.css";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -28,6 +29,7 @@ const isSmallScreen = () => {
  */
 function ContentSections({ sections, projectName = "" }) {
   if (!Array.isArray(sections) || sections.length === 0) return null;
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   // ✅ On iOS or small screens, do NOT render iframes (replace with link)
   const blockIframes = isIOS() || isSmallScreen();
@@ -255,6 +257,31 @@ function ContentSections({ sections, projectName = "" }) {
         );
       })}
 
+      {zoomedImage && (
+        <div
+          className="project-detail-image-zoom-overlay"
+          onClick={() => setZoomedImage(null)}
+        >
+          <div
+            className="project-detail-image-zoom-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="project-detail-image-zoom-close"
+              onClick={() => setZoomedImage(null)}
+              aria-label="Close zoomed image"
+            >
+              ×
+            </button>
+            <img
+              src={zoomedImage.src}
+              alt={zoomedImage.alt}
+              className="project-detail-image-zoomed"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

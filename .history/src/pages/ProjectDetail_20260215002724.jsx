@@ -23,6 +23,9 @@ function ProjectDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // 이미지 단독 확대를 위한 상태 추가
+  const [zoomedImage, setZoomedImage] = useState(null);
+
   const project = projectsBySlug[slug];
 
   useEffect(() => {

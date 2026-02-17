@@ -136,11 +136,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 100%;
+  max-width: 1100px;
   width: 100%;
   box-sizing: border-box;
   padding: 0 2rem;
-  margin: 0 0 0 0;
+  margin: 0 auto;
 }
 
 .ilove-header {
@@ -182,6 +182,7 @@
   display: flex;
   gap: 3rem;
   align-items: last baseline;
+  justify-content: center;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -208,7 +209,7 @@
 }
 
 .ilove-right {
-  flex: 1;
+  flex: 0 1 700px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -629,20 +630,31 @@
   }
 
   .toast-photo {
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     height: auto;
+  }
+
+  .ilove-right {
+    width: 100%;
+    max-width: 20rem;
   }
 
   .ilove-small-images {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    gap: 1rem;
   }
 
   .coffee-photo,
   .baking-photo,
   .packages-photo {
-    width: 20rem;
-    height: 10rem;
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
   }
 
   /* About Me Skills Section */

@@ -134,6 +134,10 @@
   text-decoration: none;
   color: inherit;
 }
+/* 
+.project-detail-header-link:hover {
+  opacity: 0.8;
+} */
 
 .project-detail-header-link-icon {
   width: 56px;

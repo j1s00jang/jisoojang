@@ -5,7 +5,7 @@ import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userR
 import scaffoldUserPersonas from "../../assets/projects/scaffold/scaffold_userPersonas.png";
 import scaffoldUserFlow from "../../assets/projects/scaffold/scaffold_userFlow.png";
 import scaffoldWireframes from "../../assets/projects/scaffold/scaffold_wireframes.png";
-import scaffoldHifis from "../../assets/projects/scaffold/scaffold_hi-fis.png";
+import scaffoldHifis from "../../assets/projects/scaffold/scaffold_hifis.png";
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.mp4";
 import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.mp4";

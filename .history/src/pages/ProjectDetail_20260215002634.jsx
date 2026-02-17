@@ -23,6 +23,9 @@ function ProjectDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // 이미지 단독 확대를 위한 상태 추가
+  const [zoomedImage, setZoomedImage] = useState(null);
+
   const project = projectsBySlug[slug];
 
   useEffect(() => {
@@ -70,6 +73,20 @@ function ProjectDetail() {
         p: ({ children }) => <p className={className}>{children}</p>,
         li: ({ children }) => <li className="project-detail-li">{children}</li>,
         strong: ({ children }) => <strong>{children}</strong>,
+        // 마크다운 내 이미지 처리
+        img: ({ src, alt }) => (
+          <button
+            type="button"
+            className="project-detail-zoom-trigger"
+            onClick={() => setZoomedImage(src)}
+          >
+            <img
+              src={src}
+              alt={alt}
+            />
+            <span className="project-detail-zoom-hint">Click to zoom</span>
+          </button>
+        ),
       }}
     >
       {children}
@@ -318,6 +335,32 @@ function ProjectDetail() {
           </div>
         )}
 
+        {/* --- Image Zoom Overlay (New) --- */}
+        {zoomedImage && (
+          <div
+            className="project-detail-image-zoom-overlay"
+            onClick={() => setZoomedImage(null)}
+          >
+            <div
+              className="project-detail-image-zoom-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="project-detail-image-zoom-close"
+                onClick={() => setZoomedImage(null)}
+              >
+                &times;
+              </button>
+              <img
+                src={zoomedImage}
+                alt="Zoomed"
+                className="project-detail-image-zoomed"
+              />
+            </div>
+          </div>
+        )}
+
+        {/* --- Project Body --- */}
         <div className="project-detail-body">
           {project.overview && (
             <section className="project-detail-section">

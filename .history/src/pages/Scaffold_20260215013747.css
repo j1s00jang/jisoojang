@@ -19,11 +19,6 @@
 }
 
 .project-detail-container
-  .project-detail-section[data-section="User research"] {
-  margin-bottom: 2.5rem;
-}
-
-.project-detail-container
   .project-detail-section[data-section="User research"]
   + .project-detail-section
   .project-detail-mockup-image {
@@ -32,12 +27,6 @@
 
 .project-detail-container
   .project-detail-section[data-section="Findings & Direction"]
-  .project-detail-mockup-image {
-  max-width: min(1200px, 96%);
-}
-
-.project-detail-container
-  .project-detail-section[data-section="Design principles & Starting point"]
   .project-detail-mockup-image {
   max-width: min(1200px, 96%);
 }

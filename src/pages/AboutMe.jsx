@@ -16,24 +16,6 @@ import resumeIconWhite from "../assets/about_me/resume_icon_white.svg";
 import instaIcon from "../assets/about_me/insta_icon.svg";
 import instaIconWhite from "../assets/about_me/insta_icon_white.svg";
 import resumePdf from "../assets/about_me/Jisoo_Jang_Resume.pdf";
-import gsap from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { ScrollTrigger } from "gsap/all";
-import { useLayoutEffect } from "react";
-
-// gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-
-// useLayoutEffect(() => {
-//   const smoother = ScrollSmoother.create({
-//     content: ".about-me-content",
-//     smooth: 1.5,
-//     effects: true,
-//   });
-
-//   return () => {
-//     smoother.kill();
-//   };
-// }, []);
 
 function AboutMe({ hideBreadcrumbs = false }) {
     const breadcrumbItems = [

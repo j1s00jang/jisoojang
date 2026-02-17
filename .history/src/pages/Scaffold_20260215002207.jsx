@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import "./ProjectDetail.css";
 import "./Scaffold.css";
 
-function Scaffold({ project }) {
+function Scaffold({ project, onImageZoom }) {
   const sections = project?.sections ?? [];
   if (!Array.isArray(sections) || sections.length === 0) return null;
   return (
@@ -12,6 +12,7 @@ function Scaffold({ project }) {
       <ContentSections
         sections={sections}
         projectName={project?.name ?? "Scaffold"}
+        onImageZoom={onImageZoom}
       />
       <UpNextBanner
         project={project}

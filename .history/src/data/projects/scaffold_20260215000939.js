@@ -3,9 +3,6 @@ import scaffoldScreen from "../../assets/projects/scaffold/scaffold_screen01.png
 import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png";
 import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.png";
 import scaffoldUserPersonas from "../../assets/projects/scaffold/scaffold_userPersonas.png";
-import scaffoldUserFlow from "../../assets/projects/scaffold/scaffold_userFlow.png";
-import scaffoldWireframes from "../../assets/projects/scaffold/scaffold_wireframes.png";
-import scaffoldHifis from "../../assets/projects/scaffold/scaffold_hi-fis.png";
 import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.mp4";
 import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.mp4";
@@ -93,6 +90,7 @@ export const scaffold = {
         {
           src: scaffoldUserResearch1,
           alt: "Scaffold user research report",
+          zoomable: true,
         },
       ],
       imageLayout: "row",
@@ -117,8 +115,16 @@ export const scaffold = {
         `&nbsp;`,
         `Based on the findings, key features were developed with a clear user flow to address the patterns.`,
       ],
-      images: [scaffoldUserFlow],
-      imageLayout: "stack",
+      images: [
+        {
+          type: "iframe",
+          src: "https://embed.figma.com/board/Hd9SkllzfNwA02Vx50dng7/Scaffold-Ideation-User-Flow--Copy-?node-id=67-69&embed-host=share",
+          width: 1000,
+          height: 550,
+          className: "scaffold-how-we-started-figma-embed",
+          caption: "User flow diagram & Key features ideation on Figma",
+        },
+      ],
     },
     {
       heading: "Design principles & Starting point",
@@ -139,7 +145,15 @@ export const scaffold = {
         `&nbsp;`,
         `Day-to-day routines and real-world constraints were considered early, including work schedules and on-the-go use. Key scenarios were mapped into simple journeys, then translated into a set of context rules to guide feature decisions and layout priorities—keeping the core flow focused on eligibility, clear steps, and deadline visibility.`,
       ],
-      images: [scaffoldWireframes, scaffoldHifis],
+      images: [
+        {
+          type: "iframe",
+          src: "https://embed.figma.com/design/mr0x6JxXhUNhBRMkqNCg9U/UI-design?node-id=1-2&embed-host=share",
+          width: 800,
+          height: 650,
+          className: "scaffold-discovery-figma-embed",
+        },
+      ],
       imageLayout: "stack",
     },
     {
@@ -187,7 +201,6 @@ export const scaffold = {
         {
           type: "video",
           src: scaffoldKeyFeatures3,
-          autoPlay: true,
           className: "scaffold-key-features-video",
           caption:
             "With the web supplement, users can easily copy and paste into the application form",

@@ -62,7 +62,7 @@ function ProjectDetail() {
     return 0;
   }, [slug, carouselImages, posterImages]);
 
-  // Reusable Markdown renderer + Image Zoom Logic
+  // Reusable Markdown renderer
   const MD = ({ children, className = "project-detail-preline" }) => (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -116,7 +116,6 @@ function ProjectDetail() {
       <div className="project-detail-content">
         <Breadcrumbs items={breadcrumbItems} />
 
-        {/* --- Header Section --- */}
         <div className="project-detail-header">
           {project.screenImage && (
             <div className="project-detail-screen">
@@ -184,12 +183,10 @@ function ProjectDetail() {
                         className="project-detail-header-link"
                         onClick={() => {
                           if (
-                            [
-                              "promo-video",
-                              "design-carousel",
-                              "magazine-flipbook",
-                              "posters-carousel",
-                            ].includes(link.anchorId)
+                            link.anchorId === "promo-video" ||
+                            link.anchorId === "design-carousel" ||
+                            link.anchorId === "magazine-flipbook" ||
+                            link.anchorId === "posters-carousel"
                           ) {
                             setIsModalOpen(true);
                             setCurrentSlide(0);
@@ -245,7 +242,6 @@ function ProjectDetail() {
           </div>
         </div>
 
-        {/* --- Header Modal (Video/Carousel/Flipbook) --- */}
         {isModalOpen && (
           <div
             className="video-overlay"
@@ -263,6 +259,8 @@ function ProjectDetail() {
               >
                 &times;
               </button>
+
+              {/* Scaffold header link video */}
               {slug === "scaffold" && promoVideoSrc && (
                 <video
                   src={promoVideoSrc}
@@ -271,6 +269,8 @@ function ProjectDetail() {
                   className="overlay-video-player"
                 />
               )}
+
+              {/* Can Design & Posters header link carousel */}
               {(slug === "can-design" || slug === "posters") && (
                 <div className="carousel-wrapper">
                   {totalSlides > 0 ? (
@@ -284,6 +284,7 @@ function ProjectDetail() {
                         alt="Slide"
                         className="overlay-image-player"
                       />
+
                       {currentSlide > 0 && (
                         <button
                           className="carousel-nav-btn prev"
@@ -292,6 +293,7 @@ function ProjectDetail() {
                           &#10094;
                         </button>
                       )}
+
                       {currentSlide < totalSlides - 1 && (
                         <button
                           className="carousel-nav-btn next"
@@ -300,6 +302,7 @@ function ProjectDetail() {
                           &#10095;
                         </button>
                       )}
+
                       <div className="carousel-indicator">
                         {currentSlide + 1} / {totalSlides}
                       </div>
@@ -309,6 +312,7 @@ function ProjectDetail() {
                   )}
                 </div>
               )}
+              {/* Magazine header link flipbook */}
               {slug === "magazine" && (
                 <div className="flipbook-modal-wrapper">
                   <MagazineFlipbook />
@@ -335,26 +339,20 @@ function ProjectDetail() {
             </section>
           )}
 
-          {(project.id === 1 || project.id === 2) && (
+          {(project.id === 1 || project.id === 2) && project.opportunity && (
             <>
-              {project.opportunity && (
-                <section className="project-detail-section opportunity-section">
-                  <h2>Opportunity</h2>
-                  <MD>{project.opportunity}</MD>
-                </section>
-              )}
-              {project.myRole && (
-                <section className="project-detail-section my-role-section">
-                  <h2>My Role</h2>
-                  <MD>{project.myRole}</MD>
-                </section>
-              )}
-              {project.userResearch && (
-                <section className="project-detail-section">
-                  <h2>User Research</h2>
-                  <MD>{project.userResearch}</MD>
-                </section>
-              )}
+              <section className="project-detail-section opportunity-section">
+                <h2>Opportunity</h2>
+                <MD>{project.opportunity}</MD>
+              </section>
+              <section className="project-detail-section my-role-section">
+                <h2>My Role</h2>
+                <MD>{project.myRole}</MD>
+              </section>
+              <section className="project-detail-section">
+                <h2>User Research</h2>
+                <MD>{project.userResearch}</MD>
+              </section>
             </>
           )}
 
