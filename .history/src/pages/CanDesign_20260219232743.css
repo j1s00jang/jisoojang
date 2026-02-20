@@ -151,7 +151,7 @@
 
 .flavour-carousel-dots {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
   margin: 0 auto 3rem;
 }

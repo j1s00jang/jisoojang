@@ -110,7 +110,7 @@ function Posters({ project }) {
       )}
       {project.productMockupImage && (
         <section className="project-detail-section posters-mockups-section">
-          <h2>Posters mockups</h2>
+          <h2>Product mockups</h2>
           <div className="product-mockup-images">
             <img
               src={project.productMockupImage}

@@ -11,7 +11,7 @@
 }
 
 .posters-mockups-section {
-  margin-top: 8rem;
+  margin-top: 6rem;
 }
 
 .poster-carousel {
@@ -146,7 +146,7 @@
 
 .poster-carousel-dots {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   justify-content: center;
   margin: 1.5rem auto 3rem;
 }

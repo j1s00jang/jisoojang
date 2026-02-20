@@ -151,7 +151,7 @@
 
 .flavour-carousel-dots {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
   margin: 0 auto 3rem;
 }
@@ -175,6 +175,8 @@
 
 .candesign-packaging-section {
   margin-top: 8rem;
+  width: 100%;
+  max-width: 1400px;
 }
 
 /* Responsive */

@@ -34,7 +34,6 @@
   .project-detail-section[data-section="Findings & Direction"]
   .project-detail-mockup-image {
   max-width: min(1200px, 96%);
-  margin-bottom: 0;
 }
 
 .project-detail-container
@@ -134,7 +133,7 @@
 
 .project-detail-container
   .project-detail-section[data-section="Storyboard & Film production"] {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
 }
 
 .project-detail-container

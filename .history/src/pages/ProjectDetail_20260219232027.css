@@ -151,10 +151,6 @@
   margin-top: 1.5rem;
 }
 
-.project-detail-section {
-  margin-top: 2rem;
-}
-
 .project-detail-section h2 {
   font-size: clamp(1.6rem, 2.5vw, 2.1rem);
   font-weight: 600;

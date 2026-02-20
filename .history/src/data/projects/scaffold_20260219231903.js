@@ -221,6 +221,9 @@ export const scaffold = {
       images: [scaffoldMarketing2, scaffoldMarketing3],
       imageLayout: "row",
       imageWrapperClass: "scaffold-marketing-images",
+      paragraphs: [
+        `The brochure and business card were designed together to ensure a cohesive visual identity across print materials. The brochure’s bold, structured layout complements the business card’s clean, approachable design, creating a unified brand presence that effectively communicates Scaffold’s mission and values.`,
+      ],
     },
     {
       paragraphs: [

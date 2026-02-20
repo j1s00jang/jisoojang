@@ -151,14 +151,14 @@
 
 .flavour-carousel-dots {
   display: flex;
-  gap: 40px;
+  gap: 50px;
   justify-content: center;
   margin: 0 auto 3rem;
 }
 
 .flavour-carousel-dot {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   border: 1px solid var(--color-variable-light-purple);
   background: transparent;

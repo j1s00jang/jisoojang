@@ -41,7 +41,6 @@ function Posters({ project }) {
 
       {items.length > 0 && (
         <section className="project-detail-section">
-          <h2>Posters</h2>
           <div className="poster-carousel">
             <button
               type="button"
@@ -110,7 +109,7 @@ function Posters({ project }) {
       )}
       {project.productMockupImage && (
         <section className="project-detail-section posters-mockups-section">
-          <h2>Posters mockups</h2>
+          <h2>Product mockups</h2>
           <div className="product-mockup-images">
             <img
               src={project.productMockupImage}

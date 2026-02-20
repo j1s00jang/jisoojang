@@ -214,7 +214,7 @@ export const scaffold = {
         `&nbsp;`,
         `The business card uses the same colour palette to maintain brand consistency. Soft curved edges create a distinctive, approachable look, helping the card stand out while staying aligned with the overall brand.`,
       ],
-      images: [scaffoldMarketing1],
+      images: [scaffoldMarketing1, scaffoldMarketing2, scaffoldMarketing3],
       imageLayout: "row",
     },
     {
