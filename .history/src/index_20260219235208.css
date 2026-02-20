@@ -45,28 +45,26 @@ body {
 
 .cursor-glow {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -9999px;
+  left: -9999px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 1999;
   opacity: 0;
-  transform: translate3d(var(--cursor-x, -9999px), var(--cursor-y, -9999px), 0)
-    translate(
-      var(--cursor-glow-shift-x, -50%),
-      var(--cursor-glow-shift-y, -50%)
-    );
-  will-change: transform, opacity;
+  transform: translate(
+    var(--cursor-glow-shift-x, -50%),
+    var(--cursor-glow-shift-y, -50%)
+  );
   transition: opacity 300ms ease;
   background: radial-gradient(
     circle,
-    rgba(222, 223, 255, 0.35) 10%,
+    rgba(222, 223, 255, 0.35) 0%,
     rgba(165, 166, 255, 0.35) 35%,
     rgba(161, 162, 239, 0.35) 72%
   );
-  filter: blur(8px);
+  /* filter: blur(8px); */
 }
 
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {

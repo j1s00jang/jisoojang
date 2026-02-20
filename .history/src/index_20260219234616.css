@@ -53,17 +53,12 @@ body {
   pointer-events: none;
   z-index: 1999;
   opacity: 0;
-  transform: translate3d(var(--cursor-x, -9999px), var(--cursor-y, -9999px), 0)
-    translate(
-      var(--cursor-glow-shift-x, -50%),
-      var(--cursor-glow-shift-y, -50%)
-    );
-  will-change: transform, opacity;
-  transition: opacity 300ms ease;
+  transform: translate3d(-9999px, -9999px, 0);
+  transition: opacity 180ms ease;
   background: radial-gradient(
     circle,
-    rgba(222, 223, 255, 0.35) 10%,
-    rgba(165, 166, 255, 0.35) 35%,
+    rgba(199, 200, 255, 0.35) 0%,
+    rgba(199, 200, 255, 0.35) 35%,
     rgba(161, 162, 239, 0.35) 72%
   );
   filter: blur(8px);

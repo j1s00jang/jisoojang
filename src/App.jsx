@@ -12,6 +12,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import AboutMe from "./pages/AboutMe";
 import "./App.css";
 import RouteScrollToTop from "./components/RouteScrollToTop";
+import CursorGlow from "./components/CursorGlow";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +43,7 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <CursorGlow />
         <RouteScrollToTop />
         <Header />
         <Routes>
