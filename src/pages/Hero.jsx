@@ -18,7 +18,7 @@ const stickers = [
     id: "hello",
     src: HelloSticker,
     rotate: 10,
-    cycleSrcs: [HelloStickerUXUI, HelloStickerProduct, HelloStickerPackaging],
+    cycleSrcs: [HelloStickerProduct],
     style: {
       top: "16%",
       left: "65%",
