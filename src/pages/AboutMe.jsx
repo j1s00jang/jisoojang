@@ -41,7 +41,7 @@ function AboutMe({ hideBreadcrumbs = false }) {
             </div>
             <div className="about-me-title">
               <p className="job-title">product designer</p>
-              <p className="job-title">AI-powered | UX, UI | Vancouver, CA</p>
+              <p className="job-title-sub">designing end-to-end experiences</p>
             </div>
           </div>
           <div className="about-me-intro-right">

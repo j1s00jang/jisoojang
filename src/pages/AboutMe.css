@@ -81,7 +81,18 @@
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-primary-black);
-  margin: 1rem 0 0 0;
+  margin: 1.5rem 0 1rem 0;
+  line-height: 0.1;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.job-title-sub {
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-primary-black);
+  margin: 0;
   line-height: 0.1;
   text-transform: lowercase;
   text-align: center;
@@ -91,7 +102,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 .intro-text {
