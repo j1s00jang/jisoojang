@@ -6,7 +6,7 @@
 .about-me-content {
   max-width: 100%;
   margin: 0 auto;
-  padding: 3rem 5rem 3rem 5rem;
+  padding: 0rem 5rem 3rem 5rem;
   width: 100%;
 }
 
@@ -102,7 +102,7 @@
   flex: 1;
   display: flex;
   align-items: center;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 .intro-text {

@@ -55,8 +55,8 @@ function AboutMe({ hideBreadcrumbs = false }) {
                 I love identifying what causes friction and turning it into a
                 clear, structured product. To create intuitive and inclusive
                 experiences, I use AI tools strategically to move faster in the
-                early stages of the design process, crafting human-centred
-                interfaces that only product designers can create.
+                early stages of the design process, crafting human-focused
+                design and interfaces that only product designers can create.
                 <br />
                 <br />
                 Please take a moment to browse my portfolio, and reach out to me
@@ -126,7 +126,7 @@ function AboutMe({ hideBreadcrumbs = false }) {
                   <p className="skills-list">
                     generative AI, google analytics, content marketing, html5,
                     css, javascript, react.js, next.js, node.js, express, expo,
-                    wordpress,
+                    wordpress
                   </p>
                   <p className="skills-list">
                     prototyping, wireframing, design & colour system, responsive
