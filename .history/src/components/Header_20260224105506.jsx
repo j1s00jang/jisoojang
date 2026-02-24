@@ -40,7 +40,7 @@ function Header() {
                                 srcSet={logoMobile}
                             />
                             <img
-                                src={logoDesktop}
+                                src={logoDesktop2}
                                 alt="Jisoo's personal logo"
                                 className="jisoo-logo"
                             />

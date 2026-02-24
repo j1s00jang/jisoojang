@@ -19,7 +19,7 @@ import resumePdf from "../assets/about_me/Jisoo_Jang_Resume.pdf";
 
 function AboutMe({ hideBreadcrumbs = false }) {
     const breadcrumbItems = [
-        { label: "Home", link: "/home" },
+        { label: "Home", link: "/" },
         { label: "About me", link: "/about-me" },
     ];
 

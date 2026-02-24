@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import logoMobile from "../assets/jisoo_logo_mobile.svg";
-import logoDesktop from "../assets/jisoo_logo_desktop.png";
+import logoDesktop2 from "../assets/jisoo_logo_desktop.png";
 
 function Header() {
     const location = useLocation();
@@ -40,7 +40,7 @@ function Header() {
                                 srcSet={logoMobile}
                             />
                             <img
-                                src={logoDesktop}
+                                src={logoDesktop2}
                                 alt="Jisoo's personal logo"
                                 className="jisoo-logo"
                             />

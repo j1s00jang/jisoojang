@@ -6,6 +6,7 @@ import { magazine } from "./projects/magazine";
 import { interactiveTutorial } from "./projects/interactiveTutorial";
 import { posters } from "./projects/posters";
 
+// Combine all projects into a single array
 export const projects = [
     scaffold,
     montro,

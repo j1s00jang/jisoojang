@@ -36,7 +36,7 @@ function App() {
 
         return () => {
             lenis.destroy();
-            gsap.ticker.remove(lenis.raf);
+            gsap.ticker.remove(rafCallback);
         };
     }, []);
 

@@ -6,16 +6,18 @@ import { magazine } from "./projects/magazine";
 import { interactiveTutorial } from "./projects/interactiveTutorial";
 import { posters } from "./projects/posters";
 
+// Combine all projects into a single array
 export const projects = [
-    scaffold,
-    montro,
-    canDesign,
-    magazine,
-    interactiveTutorial,
-    posters,
+  scaffold,
+  montro,
+  canDesign,
+  posters,
+
+  magazine,
+  interactiveTutorial,
 ];
 
 export const projectsBySlug = projects.reduce((acc, project) => {
-    acc[project.slug] = project;
-    return acc;
+  acc[project.slug] = project;
+  return acc;
 }, {});

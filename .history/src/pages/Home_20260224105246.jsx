@@ -20,6 +20,7 @@ function Home() {
             >
                 <Hero />
                 <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
+                    <h1 style={{ margin: "0 0 16px" }}>hihi</h1>
                     <HomeProjects />
                     <AboutMe hideBreadcrumbs />
                 </div>
