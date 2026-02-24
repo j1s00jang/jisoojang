@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+  min-height: 100vh;
+  background: var(--color-primary-white);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  touch-action: pan-y;
+  position: relative;
+}
+
+.hero__inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  transition: aspect-ratio 0.3s ease;
+  isolation: isolate;
+}
+
+/* Welcome text */
+.hero__welcome {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(10px, 1.4vw, 18px);
+  color: var(--color-primary-black);
+  text-align: center;
+  opacity: 0.85;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+/* Port / Folio images */
+.hero__port-wrap,
+.hero__folio-wrap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.hero__port-wrap {
+  z-index: 30;
+}
+
+.hero__folio-wrap {
+  z-index: 10;
+}
+
+.hero__port-img {
+  width: 35%;
+}
+
+.hero__folio-img {
+  width: 35%;
+  transform: translateY(40%);
+}
+
+/* Try moving my stickers hint (hidden on mobile) */
+.hero__sticker-hint {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(9px, 1.1vw, 15px);
+  color: #7b61ff;
+  font-weight: 500;
+  text-align: center;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+/* Ribbon layer */
+.hero__ribbon-wrap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hero__ribbon-inner {
+  position: relative;
+  width: 120%;
+}
+
+.hero__ribbon-glow {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(1.2) sepia(1) hue-rotate(190deg) saturate(1.5) blur(15px);
+  z-index: -1;
+  mix-blend-mode: overlay;
+  will-change: opacity, transform;
+}
+
+.hero__ribbon-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -5px;
+}
+
+/* Stickers */
+.hero-sticker {
+  position: absolute;
+  z-index: 40;
+  cursor: grab;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.15));
+  touch-action: pan-y;
+}
+
+.hero-sticker__inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 580 / 339;
+}
+
+.hero-sticker__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-sticker__cycle-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  transition: opacity 0.1s ease-in-out;
+  pointer-events: none;
+}
+
+.hero-sticker__cycle-img.is-active {
+  opacity: 1;
+}
+
+.hero-sticker__cycle-img:not(.is-active) {
+  opacity: 0;
+}
+
+.hero-sticker__simple-img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 60;
+  pointer-events: none;
+  gap: 10px;
+}
+
+.hero__scroll-text {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--color-primary-black);
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.hero__scroll-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__scroll-arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--color-primary-black);
+  border-bottom: 2px solid var(--color-primary-black);
+}
+
+/* ==========================================================================
+   Mobile (max-width: 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100dvh;
+    place-items: start center;
+    padding-top: 70px;
+  }
+
+  .hero__inner {
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero__welcome {
+    top: 10%;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .hero__port-img,
+  .hero__folio-img {
+    width: 80%;
+  }
+
+  .hero__sticker-hint {
+    display: none;
+  }
+
+  .hero__ribbon-inner {
+    width: 250%;
+  }
+
+  .hero-sticker {
+    width: clamp(78px, 13.5vw, 140px);
+  }
+
+  .hero__scroll {
+    bottom: calc(env(safe-area-inset-bottom) + 100px);
+  }
+}

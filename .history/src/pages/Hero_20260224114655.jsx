@@ -11,14 +11,6 @@ import VancouverSticker from "../assets/main/hero/sticker_vancouver.svg";
 import ToastSticker from "../assets/main/hero/sticker_toast.svg";
 import FruitsSticker from "../assets/main/hero/sticker_fruits.svg";
 
-import "./Hero.css";
-
-/* ========== Layout & Breakpoints ========== */
-const MOBILE_BREAKPOINT_PX = 768;
-
-/* ========== Scroll Indicator ========== */
-const SCROLL_ANIMATION_DELAY = 2.5;
-
 const stickers = [
     {
         id: "hello",
@@ -65,19 +57,18 @@ const stickers = [
 
 function Hero() {
     const [isMobile, setIsMobile] = useState(() =>
-        typeof window !== "undefined"
-            ? window.innerWidth <= MOBILE_BREAKPOINT_PX
-            : false,
+        typeof window !== "undefined" ? window.innerWidth <= 768 : false,
     );
     const [hoveredId, setHoveredId] = useState(null);
     const [helloCycleIndex, setHelloCycleIndex] = useState(0);
 
     useEffect(() => {
-        const handleResize = () =>
-            setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT_PX);
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    const mobileStickerScale = 1.35;
 
     const mobileOffsets = {
         hello: { left: 60, top: 6 },
@@ -87,30 +78,100 @@ function Hero() {
     };
 
     return (
-        <section className="hero">
-            <div className="hero__inner">
+        <section
+            style={{
+                minHeight: isMobile ? "100dvh" : "100vh",
+                background: "var(--color-primary-white)",
+                display: "grid",
+                placeItems: isMobile ? "start center" : "center",
+                paddingTop: isMobile ? "70px" : undefined,
+                overflow: "hidden",
+                touchAction: "pan-y",
+                position: "relative",
+            }}
+        >
+            <div
+                style={{
+                    position: "relative",
+                    width: "100%",
+                    aspectRatio: isMobile ? "1 / 1" : "16 / 7",
+                    transition: "aspect-ratio 0.3s ease",
+                    isolation: "isolate",
+                }}
+            >
                 {/* 'Welcome to Jisoo's' Text */}
-                <div className="hero__welcome">
+                <div
+                    style={{
+                        position: "absolute",
+                        top: isMobile ? "10%" : "18%",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        fontSize: isMobile
+                            ? "clamp(14px, 4vw, 18px)"
+                            : "clamp(10px, 1.4vw, 18px)",
+                        color: "#2E2B28",
+                        textAlign: "center",
+                        opacity: 0.85,
+                        zIndex: 50,
+                        whiteSpace: "nowrap",
+                    }}
+                >
                     Welcome to <b>Jisoo</b>’s
                 </div>
 
                 {/* 'Port' text image */}
-                <div className="hero__port-wrap">
-                    <img src={PortUrl} className="hero__port-img" alt="port" />
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "grid",
+                        placeItems: "center",
+                        zIndex: 30,
+                    }}
+                >
+                    <img
+                        src={PortUrl}
+                        style={{ width: isMobile ? "80%" : "35%" }}
+                        alt="port"
+                    />
                 </div>
 
                 {/* 'Folio' text image */}
-                <div className="hero__folio-wrap">
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "grid",
+                        placeItems: "center",
+                        zIndex: 10,
+                    }}
+                >
                     <img
                         src={FolioUrl}
-                        className="hero__folio-img"
+                        style={{
+                            width: isMobile ? "80%" : "35%",
+                            transform: "translateY(40%)",
+                        }}
                         alt="folio"
                     />
                 </div>
 
                 {/* Try moving my stickers! (hide on mobile) */}
                 {!isMobile && (
-                    <div className="hero__sticker-hint">
+                    <div
+                        style={{
+                            position: "absolute",
+                            top: "78%",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            fontSize: "clamp(9px, 1.1vw, 15px)",
+                            color: "#7b61ff",
+                            fontWeight: "500",
+                            textAlign: "center",
+                            zIndex: 50,
+                            whiteSpace: "nowrap",
+                        }}
+                    >
                         <motion.span
                             animate={{ opacity: [0.4, 1, 0.4] }}
                             transition={{
@@ -125,8 +186,22 @@ function Hero() {
                 )}
 
                 {/* Purple Ribbon Layer (Glow + Ribbon) */}
-                <div className="hero__ribbon-wrap">
-                    <div className="hero__ribbon-inner">
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "grid",
+                        placeItems: "center",
+                        zIndex: 20,
+                        pointerEvents: "none",
+                    }}
+                >
+                    <div
+                        style={{
+                            position: "relative",
+                            width: isMobile ? "250%" : "120%",
+                        }}
+                    >
                         <motion.img
                             src={RibbonUrl}
                             alt=""
@@ -154,7 +229,16 @@ function Hero() {
                                     ease: "easeInOut",
                                 },
                             }}
-                            className="hero__ribbon-glow"
+                            style={{
+                                width: "100%",
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                filter: "brightness(1.2) sepia(1) hue-rotate(190deg) saturate(1.5) blur(15px)",
+                                zIndex: -1,
+                                mixBlendMode: "overlay",
+                                willChange: "opacity, transform",
+                            }}
                         />
                         <motion.img
                             src={RibbonUrl}
@@ -189,14 +273,19 @@ function Hero() {
                                     ease: "easeInOut",
                                 },
                             }}
-                            className="hero__ribbon-img"
+                            style={{
+                                position: "relative",
+                                width: "100%",
+                                height: "auto",
+                                display: "block",
+                                marginTop: "-5px",
+                            }}
                         />
                     </div>
                 </div>
 
-                {/* Stickers (hidden on mobile) */}
-                {!isMobile &&
-                    stickers.map(({ id, src, cycleSrcs, style, rotate }) => {
+                {/* Stickers */}
+                {stickers.map(({ id, src, cycleSrcs, style, rotate }) => {
                     const isHello = id === "hello";
                     const isHovered = hoveredId === id;
                     const hasCycle = isHello && cycleSrcs?.length;
@@ -248,18 +337,40 @@ function Hero() {
                                     : () => setHoveredId(id)
                             }
                             onMouseLeave={() => setHoveredId(null)}
-                            className="hero-sticker"
                             style={{
+                                position: "absolute",
+                                zIndex: 40,
                                 ...posStyle,
-                                ...(isMobile ? {} : { width: style.width }),
+
+                                width: isMobile
+                                    ? `clamp(78px, ${10 * mobileStickerScale}vw, 140px)`
+                                    : style.width,
+
+                                cursor: "grab",
+                                filter: "drop-shadow(2px 4px 6px rgba(0,0,0,0.15))",
+                                touchAction: "pan-y",
                             }}
                         >
                             {hasCycle ? (
-                                <div className="hero-sticker__inner">
+                                <div
+                                    style={{
+                                        position: "relative",
+                                        width: "100%",
+                                        aspectRatio: "580 / 339",
+                                    }}
+                                >
                                     <img
                                         src={src}
                                         alt=""
-                                        className="hero-sticker__img"
+                                        style={{
+                                            position: "absolute",
+                                            inset: 0,
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "contain",
+                                            zIndex: 1,
+                                            pointerEvents: "none",
+                                        }}
                                     />
 
                                     {cycleSrcs.map((s, i) => {
@@ -270,9 +381,18 @@ function Hero() {
                                                 key={`${id}-cycle-${i}`}
                                                 src={s}
                                                 alt=""
-                                                className={`hero-sticker__cycle-img ${
-                                                    isActive ? "is-active" : ""
-                                                }`}
+                                                style={{
+                                                    position: "absolute",
+                                                    inset: 0,
+                                                    width: "100%",
+                                                    height: "100%",
+                                                    objectFit: "contain",
+                                                    zIndex: 2,
+                                                    opacity: isActive ? 1 : 0,
+                                                    transition:
+                                                        "opacity 0.1s ease-in-out",
+                                                    pointerEvents: "none",
+                                                }}
                                             />
                                         );
                                     })}
@@ -281,7 +401,11 @@ function Hero() {
                                 <img
                                     src={src}
                                     alt=""
-                                    className="hero-sticker__simple-img"
+                                    style={{
+                                        width: "100%",
+                                        height: "auto",
+                                        pointerEvents: "none",
+                                    }}
                                 />
                             )}
                         </motion.div>
@@ -291,20 +415,46 @@ function Hero() {
 
             {/* 'Scroll' text + arrows */}
             <motion.div
-                className="hero__scroll"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{
-                    delay: SCROLL_ANIMATION_DELAY,
-                    duration: 1,
+                transition={{ delay: 2.5, duration: 1 }}
+                style={{
+                    position: "absolute",
+                    bottom: isMobile
+                        ? "calc(env(safe-area-inset-bottom) + 100px)"
+                        : "30px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    zIndex: 60,
+                    pointerEvents: "none",
+                    gap: "10px",
                 }}
             >
-                <span className="hero__scroll-text">Scroll</span>
-                <div className="hero__scroll-arrows">
+                <span
+                    style={{
+                        fontSize: "10px",
+                        letterSpacing: "0.25em",
+                        color: "#2E2B28",
+                        fontWeight: "700",
+                        textTransform: "uppercase",
+                        opacity: 0.8,
+                    }}
+                >
+                    Scroll
+                </span>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "2px",
+                    }}
+                >
                     {[0, 1].map((i) => (
                         <motion.div
                             key={i}
-                            className="hero__scroll-arrow"
                             initial={{ rotate: 45, opacity: 0 }}
                             animate={{
                                 opacity: [0.2, 1, 0.2],
@@ -316,6 +466,12 @@ function Hero() {
                                 repeat: Infinity,
                                 delay: i * 0.2,
                                 ease: "easeInOut",
+                            }}
+                            style={{
+                                width: "10px",
+                                height: "10px",
+                                borderRight: "2px solid #2E2B28",
+                                borderBottom: "2px solid #2E2B28",
                             }}
                         />
                     ))}
