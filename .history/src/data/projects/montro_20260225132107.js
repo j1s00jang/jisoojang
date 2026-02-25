@@ -69,11 +69,10 @@ export const montro = {
     },
     {
       heading: "User Research",
+      images: [montroUserResearch1],
       paragraphs: [
         `Survey results from 10 participants pointed out that expense tracking often relies on familiar, long-standing routines rather than dedicated apps. The main barriers were low sustained motivation, friction from having to open an app for every purchase, and the perception that manual entry is tedious. Free expense tracking apps were also often described as discouraging due to distracting ads and cluttered, overly complex layouts, and a lack of motivation. That reinforces avoidance rather than expense tracking habit building.`,
       ],
-      images: [montroUserResearch1],
-
       imageLayout: "row",
     },
     {

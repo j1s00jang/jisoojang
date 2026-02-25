@@ -141,7 +141,7 @@ export const scaffold = {
       ],
     },
     {
-      heading: "Wireframes - Lo-fi to Hi-fi",
+      heading: "Wireframes - lo-fi to hi-fi",
       images: [scaffoldWireframes, scaffoldHifis],
       imageLayout: "stack",
     },

@@ -139,9 +139,6 @@ export const scaffold = {
         `&nbsp;`,
         `Day-to-day routines and real-world constraints were considered early, including work schedules and on-the-go use. Key scenarios were mapped into simple journeys, then translated into a set of context rules to guide feature decisions and layout priorities—keeping the core flow focused on eligibility, clear steps, and deadline visibility.`,
       ],
-    },
-    {
-      heading: "Wireframes - Lo-fi to Hi-fi",
       images: [scaffoldWireframes, scaffoldHifis],
       imageLayout: "stack",
     },
