@@ -5,8 +5,16 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: var(--color-primary-purple);
-  border: none;
+  /* Liquid glass effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(199, 200, 255, 0.45) 50%,
+    rgba(141, 147, 217, 0.5) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -14,13 +22,21 @@
   justify-content: center;
   gap: 0.25rem;
   z-index: 999;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .scroll-to-top-btn:hover {
   transform: scale(1.05);
-  opacity: 0.9;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(199, 200, 255, 0.55) 50%,
+    rgba(141, 147, 217, 0.6) 100%
+  );
 }
 
 .scroll-to-top-btn:active {
@@ -30,16 +46,16 @@
 .scroll-arrow-icon {
   width: 20px;
   height: 20px;
-  color: var(--color-primary-white);
-  stroke: var(--color-primary-white);
+  color: var(--color-variable-dark-purple2);
+  stroke: var(--color-variable-dark-purple2);
   stroke-width: 2;
 }
 
 .scroll-text {
-  color: var(--color-primary-white);
+  color: var(--color-variable-dark-purple2);
   font-family: var(--font-family-primary);
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: lowercase;
   line-height: 1;
 }
