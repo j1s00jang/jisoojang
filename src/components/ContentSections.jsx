@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "../pages/ProjectDetail.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import ImageModal from "./ImageModal";
 
 // ✅ iOS / mobile detection (prevents iPhone Safari crash loops from heavy iframes)
 const isIOS = () => {
@@ -27,6 +29,8 @@ const isSmallScreen = () => {
  * - caption: optional caption shown below the images in this section.
  */
 function ContentSections({ sections, projectName = "" }) {
+  const [modalImage, setModalImage] = useState(null);
+
   if (!Array.isArray(sections) || sections.length === 0) return null;
 
   // ✅ On iOS or small screens, do NOT render iframes (replace with link)
@@ -56,6 +60,13 @@ function ContentSections({ sections, projectName = "" }) {
 
   return (
     <>
+      {modalImage && (
+        <ImageModal
+          src={modalImage.src}
+          alt={modalImage.alt}
+          onClose={() => setModalImage(null)}
+        />
+      )}
       {sections.map((sec, i) => {
         const paras = Array.isArray(sec.paragraphs)
           ? sec.paragraphs
@@ -217,6 +228,21 @@ function ContentSections({ sections, projectName = "" }) {
                       );
 
                       const linkUrl = typeof item === "object" && item?.url;
+                      const openInModal =
+                        typeof item === "object" && item?.openInModal;
+
+                      if (openInModal) {
+                        return (
+                          <button
+                            key={j}
+                            type="button"
+                            className="project-detail-mockup-image-wrap project-detail-mockup-modal-trigger"
+                            onClick={() => setModalImage({ src, alt })}
+                          >
+                            {imgEl}
+                          </button>
+                        );
+                      }
 
                       return linkUrl ? (
                         <a

@@ -4,9 +4,9 @@ import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png
 import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.webp";
 import scaffoldUserPersonas from "../../assets/projects/scaffold/scaffold_userPersonas.webp";
 import scaffoldUserFlow from "../../assets/projects/scaffold/scaffold_userFlow.webp";
-import scaffoldLofis from "../../assets/projects/scaffold/scaffold_lo-fis.webp";
-import scaffoldHifis from "../../assets/projects/scaffold/scaffold_hi-fis.webp";
-import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.webp";
+import scaffoldWireframes from "../../assets/projects/scaffold/scaffold_wireframes.webp";
+import scaffoldHifis from "../../assets/projects/scaffold/scaffold_hi-fis.png";
+import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.png";
 import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.mp4";
 import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.mp4";
 import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mp4";
@@ -15,7 +15,7 @@ import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketin
 import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.png";
 import scaffoldKeyLearnings1 from "../../assets/projects/scaffold/scaffold_keyLearnings01.png";
 import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLearnings02.jpg";
-import scaffoldStoryboard from "../../assets/projects/scaffold/scaffold_storyboard.webp";
+import scaffoldStoryboard from "../../assets/projects/scaffold/scaffold_storyboard.png";
 import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLearnings03.mp4";
 import scaffoldKeyLearnings4 from "../../assets/projects/scaffold/scaffold_keyLearnings04.png";
 import scaffoldKeyLearnings5 from "../../assets/projects/scaffold/scaffold_keyLearnings05.png";
@@ -93,7 +93,6 @@ export const scaffold = {
         {
           src: scaffoldUserResearch1,
           alt: "Scaffold user research report",
-          openInModal: true,
         },
       ],
       imageLayout: "row",
@@ -102,13 +101,7 @@ export const scaffold = {
       paragraphs: [
         `The research insights were synthesized into a user persona to guide the design process. This persona represents a skilled tradesperson who faces challenges in finding and applying for grants due to scattered information and time constraints. The persona helped keep the design focused on real user needs and informed key features that would address their pain points effectively.`,
       ],
-      images: [
-        {
-          src: scaffoldUserPersonas,
-          alt: "Scaffold user personas",
-          openInModal: true,
-        },
-      ],
+      images: [scaffoldUserPersonas],
       imageLayout: "stack",
     },
     {
@@ -124,13 +117,7 @@ export const scaffold = {
         `&nbsp;`,
         `Based on the findings, key features were developed with a clear user flow to address the patterns.`,
       ],
-      images: [
-        {
-          src: scaffoldUserFlow,
-          alt: "Scaffold user flow",
-          openInModal: true,
-        },
-      ],
+      images: [scaffoldUserFlow],
       imageLayout: "stack",
     },
     {
@@ -155,18 +142,7 @@ export const scaffold = {
     },
     {
       heading: "Wireframes - Lo-fi to Hi-fi",
-      images: [
-        {
-          src: scaffoldLofis,
-          alt: "Scaffold lo-fi wireframes",
-          openInModal: true,
-        },
-        {
-          src: scaffoldHifis,
-          alt: "Scaffold hi-fi wireframes",
-          openInModal: true,
-        },
-      ],
+      images: [scaffoldWireframes, scaffoldHifis],
       imageLayout: "stack",
     },
     {
@@ -231,13 +207,7 @@ export const scaffold = {
         `&nbsp;`,
         `Scaffold logo created from letter “S” and stacked blocks shapes to suggest building a strong foundation. Ultimately, Scaffold’s goal is helping tradespeople finds financial support to continue their career path. `,
       ],
-      images: [
-        {
-          src: scaffoldBrandGuidelines1,
-          alt: "Scaffold brand guidelines",
-          openInModal: true,
-        },
-      ],
+      images: [scaffoldBrandGuidelines1],
       imageLayout: "row",
     },
     {
@@ -269,13 +239,7 @@ export const scaffold = {
         `&nbsp;`,
         `The storyboard and script were developed independently, and filming was coordinated and directed on the shoot day with support from the team. The final video was screened on pitch day to introduce the app concept and reinforce Scaffold’s core message—financial support can be a foundation that helps skilled tradespeople sustain their careers.`,
       ],
-      images: [
-        {
-          src: scaffoldStoryboard,
-          alt: "Scaffold storyboard",
-          openInModal: true,
-        },
-      ],
+      images: [scaffoldStoryboard],
       imageLayout: "row",
       imageWrapperClass: "scaffold-storyboard-media",
     },
