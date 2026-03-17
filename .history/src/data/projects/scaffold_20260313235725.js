@@ -1,0 +1,356 @@
+import scaffoldThumbnail from "../../assets/projects/scaffold/scaffold_card.png";
+import scaffoldScreen from "../../assets/projects/scaffold/scaffold_screen01.png";
+import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png";
+import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.webp";
+import scaffoldUserPersonas from "../../assets/projects/scaffold/scaffold_userPersonas.webp";
+import scaffoldUserFlow from "../../assets/projects/scaffold/scaffold_userFlow.webp";
+import scaffoldLofis from "../../assets/projects/scaffold/scaffold_lo-fis.webp";
+import scaffoldHifis from "../../assets/projects/scaffold/scaffold_hi-fis.webp";
+import scaffoldBrandGuidelines1 from "../../assets/projects/scaffold/scaffold_guidelines01.webp";
+import scaffoldKeyFeatures1 from "../../assets/projects/scaffold/scaffold_keyFeatures01.mp4";
+import scaffoldKeyFeatures2 from "../../assets/projects/scaffold/scaffold_keyFeatures02.mp4";
+import scaffoldKeyFeatures3 from "../../assets/projects/scaffold/scaffold_keyFeatures03.mp4";
+import scaffoldMarketing1 from "../../assets/projects/scaffold/scaffold_marketing01.png";
+import scaffoldMarketing2 from "../../assets/projects/scaffold/scaffold_marketing02.png";
+import scaffoldMarketing3 from "../../assets/projects/scaffold/scaffold_marketing03.png";
+import scaffoldKeyLearnings1 from "../../assets/projects/scaffold/scaffold_keyLearnings01.png";
+import scaffoldKeyLearnings2 from "../../assets/projects/scaffold/scaffold_keyLearnings02.jpg";
+import scaffoldStoryboard from "../../assets/projects/scaffold/scaffold_storyboard.webp";
+import scaffoldKeyLearnings3 from "../../assets/projects/scaffold/scaffold_keyLearnings03.mp4";
+import scaffoldKeyLearnings4 from "../../assets/projects/scaffold/scaffold_keyLearnings04.jpeg";
+import scaffoldKeyLearnings5 from "../../assets/projects/scaffold/scaffold_keyLearnings05.jpeg";
+import scaffoldKeyLearnings6 from "../../assets/projects/scaffold/scaffold_keyLearnings06.jpeg";
+import scaffoldKeyLearnings7 from "../../assets/projects/scaffold/scaffold_keyLearnings07.jpg";
+import scaffoldLivedemoIcon from "../../assets/projects/scaffold/scaffold_livedemo_icon.png";
+import scaffoldGithubIcon from "../../assets/projects/scaffold/github_icon.png";
+import scaffoldPromoIcon from "../../assets/projects/scaffold/scaffold_promo_icon.png";
+
+export const scaffold = {
+    /* --- Metadata --- */
+    id: 1,
+    name: "Scaffold",
+    slug: "scaffold",
+    category: "ux/ui",
+
+    /* --- Assets --- */
+    thumbnail: scaffoldThumbnail,
+    screenImages: [scaffoldScreen, scaffoldMockup],
+    mockupImage: scaffoldMockup,
+
+    /* --- Intro (ProjectDetail header / Overview) --- */
+    summary:
+        "AI-assisted, all-in-one financial resource platform that consolidates grant information for tradespeople",
+    timeline: "Sep 2025 - Dec 2025 (13 weeks)",
+    role: "UX/UI Designer / Graphic Designer",
+    keySkills:
+        "UX/UI Design / Product Design / User Research / AI / Visual Storytelling / Usability Testing / Workflow Optimization / Print Design",
+    overview: `**Scaffold is an AI-assisted, all-in-one financial resource platform** that helps skilled tradespeople find eligible grants to keep moving their careers forward without giving up because of financial struggles. Funding information is scattered, outdated, and time-consuming to evaluate. **Scaffold filters all eligible grants to apply easily and quickly** based on the user’s profile created in the early stage. With a web supplement, users complete an essay with AI-assistant.`,
+    headerLinks: [
+        {
+            icon: scaffoldLivedemoIcon,
+            label: "live demo",
+            type: "liveDemo",
+            url: "https://scaffold-livedemo.vercel.app/live-demo",
+        },
+        {
+            icon: scaffoldGithubIcon,
+            label: "github",
+            type: "external",
+            url: "https://github.com/j1s00jang/scaffold",
+        },
+        {
+            icon: scaffoldPromoIcon,
+            label: "promo video",
+            type: "anchor",
+            anchorId: "promo-video",
+        },
+    ],
+
+    /* --- ContentSections (template) --- */
+    sections: [
+        {
+            heading: "Opportunity",
+            paragraphs: [
+                `A key challenge was reducing friction in the application process while keeping content clear and easy to navigate on a small screen. The key focus was to make grant information simpler to find, easier to understand, and faster to act on, so fewer deadlines and funding options will be missed.`,
+
+                `&nbsp;`,
+
+                `**High-level goals were to:**
+1. Show eligible resources in one place to reduce website-hopping.
+2. Make information easy to scan on mobile so as not to miss the deadline.
+3. Reduce repetitive typing to lower frustration and speed up applications.`,
+            ],
+            images: [],
+            imageLayout: "row",
+        },
+        {
+            heading: "User research",
+            paragraphs: [
+                `Early user research was conducted through visiting a construction site and reaching out to skilled tradespeople through referrals and personal networks. The findings helped clarify the project’s direction and supported what to focus on.`,
+                `&nbsp;`,
+                {
+                    type: "stats",
+                    data: [
+                        {
+                            number: "75%",
+                            text: "Don't know where to find information about grants",
+                        },
+                        {
+                            number: "55.6%",
+                            text: "Don't know what's available",
+                        },
+                        {
+                            number: "28%",
+                            text: "Changed my career path because of financial struggles",
+                        },
+                    ],
+                },
+                `**Missing Grants Deadlines, Giving up on Grants? Why? :**`,
+                `&nbsp;`,
+                `- **75% don't know where to find information about grants**`,
+                `- **55.6% don't know what's available**`,
+                `- **28% changed my career path because of financial struggles**`,
+                `&nbsp;`,
+                `Overall, the results showed that missed deadlines are not only about eligibility, but also about the difficulty of finding and applying for grants. Eventually, that could lead to giving up their careers.`,
+                `&nbsp;`,
+            ],
+            images: [
+                {
+                    src: scaffoldUserResearch1,
+                    alt: "Scaffold user research report",
+                    openInModal: true,
+                },
+            ],
+            imageLayout: "row",
+        },
+        {
+            paragraphs: [
+                `The research insights were synthesized into a user persona to guide the design process. This persona represents a skilled tradesperson who faces challenges in finding and applying for grants due to scattered information and time constraints.`,
+            ],
+            images: [
+                {
+                    src: scaffoldUserPersonas,
+                    alt: "Scaffold user personas",
+                    openInModal: true,
+                },
+            ],
+            imageLayout: "stack",
+        },
+        {
+            heading: "Findings & Starting point",
+            paragraphs: [
+                `Four insights shaped a clear expectation: financial resources should be easy to find, simple to understand, and quick to act on.`,
+                `&nbsp;`,
+                `**1. Minimal friction:** Reduce steps and repeated input where possible`,
+                `**2. Clear guidance:** Make requirements and next steps easy to follow`,
+                `**3. Mobile-first clarity:** Help users scan key details quickly on a small screen`,
+                `**4. Deadline support:** Make important dates hard to miss`,
+                `&nbsp;`,
+                `Day-to-day routines and real-world constraints were considered early, including work schedules and on-the-go use. Key scenarios were mapped into simple journeys, then translated into a set of context rules to guide feature decisions and layout priorities—keeping the core flow focused on eligibility, clear steps, and deadline visibility.`,
+                `&nbsp;`,
+            ],
+            images: [
+                {
+                    src: scaffoldUserFlow,
+                    alt: "Scaffold user flow",
+                    openInModal: true,
+                },
+            ],
+            imageLayout: "stack",
+        },
+        {
+            heading: "Brand guidelines",
+            imageFirst: true,
+            images: [
+                {
+                    src: scaffoldBrandGuidelines1,
+                    alt: "Scaffold brand guidelines",
+                    openInModal: true,
+                },
+            ],
+            imageLayout: "row",
+            paragraphs: [
+                `Scaffold logo created from the letter “S” and stacked block shapes to suggest building a strong foundation. Ultimately, Scaffold’s goal is to help tradespeople find financial support to continue their career path.`,
+                `&nbsp;`,
+                `- **Purple:** Creates a calm, confident anchor that supports focus and brand recognition.`,
+                `- **Orange:** Used only for action moments—high-contrast emphasis for primary CTAs and key highlights without visual noise.`,
+                `&nbsp;`,
+                `Typography follows the same principle: one typeface supports a strong hierarchy for titles and labels, while a highly legible typeface is used for longer content to reduce reading fatigue on small screens.`,
+            ],
+        },
+        {
+            heading: "Wireframes - Lo-fi to Hi-fi",
+            images: [
+                {
+                    src: scaffoldLofis,
+                    alt: "Scaffold lo-fi wireframes",
+                    openInModal: true,
+                },
+                {
+                    src: scaffoldHifis,
+                    alt: "Scaffold hi-fi wireframes",
+                    openInModal: true,
+                },
+            ],
+            imageLayout: "stack",
+        },
+        {
+            heading: "Key features",
+            paragraphs: [
+                `Grant information needed to be easy to read at a glance without missing critical details. Scaffold focused on three core features that reduce friction and help users act on opportunities faster.`,
+                `&nbsp;`,
+                `&nbsp;`,
+                `- **Scan-friendly grant cards** : A card-based layout highlights the grant name, deadline, and eligibility at a glance. Each card also includes the organization’s logo to support quick recognition. This structure helps users quickly identify eligible grants in British Columbia, Canada, while staying flexible enough to scale across different needs and contexts.`,
+            ],
+            images: [
+                {
+                    type: "video",
+                    src: scaffoldKeyFeatures1,
+                    autoPlay: true,
+                    className: "scaffold-key-features-video",
+                    caption: "Scan-friendly grant cards and instant navigation",
+                },
+            ],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-key-features-media",
+        },
+        {
+            paragraphs: [
+                `- **AI-powered voice profile for easy setup:** : Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
+            ],
+            images: [
+                {
+                    type: "video",
+                    src: scaffoldKeyFeatures2,
+                    autoPlay: true,
+                    className: "scaffold-key-features-video",
+                    caption: "AI-powered voice profile for easy setup",
+                },
+            ],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-key-features-media",
+        },
+        {
+            paragraphs: [
+                `- **Web supplement to reduce frustration** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
+            ],
+            images: [
+                {
+                    type: "video",
+                    src: scaffoldKeyFeatures3,
+                    autoPlay: true,
+                    className: "scaffold-key-features-video",
+                    caption:
+                        "With the web supplement, users can easily copy and paste into the application form",
+                },
+            ],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-key-features-media",
+        },
+
+        {
+            heading: "Print design",
+            paragraphs: [
+                `The brochure layout was designed to grab attention with Scaffold’s bold logo and a concise slogan. A subtle grid pattern in the background references scaffolding and reinforces the visual identity.`,
+                `&nbsp;`,
+                `The business card uses the same colour palette to maintain brand consistency. Soft curved edges create a distinctive, approachable look, helping the card stand out while staying aligned with the overall brand.`,
+            ],
+            images: [scaffoldMarketing1],
+            imageLayout: "row",
+        },
+        {
+            images: [scaffoldMarketing2, scaffoldMarketing3],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-marketing-images",
+        },
+        {
+            paragraphs: [
+                `This work highlighted the real-world differences between **RGB and CMYK**. Multiple rounds of print testing helped refine the colour palette and improve consistency from screen to print.`,
+                `&nbsp;`,
+                `It also reinforced the value of strong grid systems in print design—supporting clearer hierarchy, alignment, and spacing across both the brochure and business card layouts.`,
+            ],
+        },
+        {
+            heading: "Product storytelling",
+            paragraphs: [
+                `Scaffold’s promotional video was created to showcase strong product storytelling from insight to narrative. The concept was built from a research-backed moment: **a skilled tradeswoman was able to keep training and manage daily life after receiving grant support.**`,
+                `&nbsp;`,
+                `A complete storyboard and script were developed independently to translate that insight into a clear, emotionally grounded story angle. The final video premiered on pitch day in front of 300 attendees to introduce the app concept and reinforce Scaffold’s core message: **Resources exist, Roadblocks don’t have to.**`,
+            ],
+            images: [
+                {
+                    src: scaffoldStoryboard,
+                    alt: "Scaffold storyboard",
+                    openInModal: true,
+                },
+            ],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-storyboard-media",
+        },
+        {
+            images: [scaffoldKeyLearnings1, scaffoldKeyLearnings2],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-key-learnings-media",
+        },
+        {
+            sectionId: "promo-video",
+            heading: "Promotional video",
+            images: [
+                {
+                    type: "video",
+                    src: scaffoldKeyLearnings3,
+                    className: "scaffold-key-features-video",
+                },
+            ],
+            imageLayout: "stack",
+            imageWrapperClass: "scaffold-key-features-media",
+        },
+        {
+            heading: "Learning outcomes & Next steps",
+            paragraphs: [
+                {
+                    type: "stats",
+                    data: [
+                        {
+                            number: "3rd🥉 place",
+                            text: "BCIT D3/FSWD x ConnectHER innovation showcase",
+                        },
+                        {
+                            number: "3 minutes",
+                            text: "Reapplying eligible grants with Scaffold",
+                        },
+                        {
+                            number: "86.6% faster",
+                            text: "From 112 min to 15 min (timed usability test, n=5)",
+                        },
+                    ],
+                },
+                `- **Showcase result:** 🥉**3rd place**🥉 at the BCIT D3/FSWD x ConnectHER innovation showcase!`,
+                `- **Time saved (timed usability test, n=5):** Traditional workflow average **112 min** (Google search → eligibility review → application drafting). With Scaffold average **15 min** including creating a profile and applying eligible grants, **3m** to reapplying eligible grants exluding essay writing`,
+                `- **Reduction:** From **112 min** to **15 min** (**86.6% faster**) using the same grant scenario`,
+            ],
+            images: [
+                scaffoldKeyLearnings4,
+                scaffoldKeyLearnings5,
+                scaffoldKeyLearnings6,
+                scaffoldKeyLearnings7,
+            ],
+            imageLayout: "row",
+            imageWrapperClass: "scaffold-key-learnings-window",
+        },
+        {
+            paragraphs: [
+                `**What this project strengthened:**`,
+                `&nbsp;`,
+                `- **Research-to-product thinking:** turning insight into priorities, then into flows and UI decisions`,
+                `- **End-to-end UX execution:** IA → wireframes → UI system → prototype + live demo`,
+                `- **Storytelling & decision clarity:** pitching sharpened structured thinking and message delivery`,
+                `- **Iteration discipline:** test → adjust → incorporate feedback → improve`,
+                `&nbsp;`,
+                `Scaffold’s next steps are to expand into more grants and regions, and to add more features, such as keeping personal documents secure in the app so users can apply directly from the app and track the process. Scaffold’s core proposition will always be to help tradespeople find financial support, because **no tradesperson should pause or stop a career path due to a lack of accessible financial support.**`,
+                `&nbsp;`,
+                `**Resources exist, Roadblocks don’t have to.**`,
+            ],
+        },
+    ],
+};

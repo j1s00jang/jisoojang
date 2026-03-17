@@ -1,0 +1,227 @@
+.project-detail-screen-image {
+    max-width: clamp(240px, 30vw, 300px);
+}
+
+.project-detail-mockup .project-detail-mockup-image {
+    max-width: clamp(70%, 70vw, 760px);
+    margin-top: clamp(2rem, 4vw, 4rem);
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.project-detail-container .project-detail-section {
+    margin-bottom: clamp(8rem, 10vw, 10rem);
+}
+
+.project-detail-container
+    .project-detail-section[data-section="User research"]
+    .project-detail-mockup-image {
+    max-width: min(1100px, 95%);
+}
+
+.project-detail-container
+    .project-detail-section[data-section="User research"] {
+    margin-bottom: 2.5rem;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="User research"]
+    + .project-detail-section
+    .project-detail-mockup-image {
+    max-width: min(1100px, 95%);
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Findings & Direction"]
+    .project-detail-mockup-image {
+    max-width: min(1200px, 96%);
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Design principles & Starting point"]
+    .project-detail-mockup-image {
+    max-width: min(1200px, 96%);
+}
+
+.project-detail-container .scaffold-key-features-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.project-detail-container .scaffold-key-features-media img {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: min(340px, 38vw);
+    height: auto;
+}
+
+.project-detail-container
+    .scaffold-key-features-media
+    .scaffold-key-features-video {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: clamp(700px, 70vw, 1000px);
+    margin: 0.5rem auto 0;
+    aspect-ratio: 16 / 9;
+}
+
+.project-detail-container .scaffold-marketing-images img {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: min(400px, 45vw);
+    height: auto;
+    border-radius: 15px;
+}
+
+.project-detail-container .scaffold-key-learnings-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.project-detail-container .scaffold-key-learnings-media img {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: min(400px, 45vw);
+    height: auto;
+    border-radius: 15px;
+}
+
+/* 2x2 window grid - Learning outcomes */
+.project-detail-container .project-detail-mockup.scaffold-key-learnings-window {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1rem;
+    row-gap: 0.4rem;
+    justify-content: center;
+    max-width: min(800px, 90%);
+    margin: 0 auto;
+}
+
+.project-detail-container
+    .scaffold-key-learnings-window
+    .project-detail-mockup-image-wrap {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 15px;
+    min-width: 0;
+}
+
+.project-detail-container
+    .scaffold-key-learnings-window
+    .project-detail-mockup-image-wrap
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .project-detail-container
+        .project-detail-mockup.scaffold-key-learnings-window {
+        column-gap: 0.55rem;
+        row-gap: 0.35rem;
+        max-width: 100%;
+    }
+}
+
+.project-detail-container .project-detail-section[data-section="Print design"] {
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Print design"]
+    .project-detail-mockup {
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Print design"]
+    .project-detail-mockup
+    .project-detail-mockup-image {
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Print design"]
+    + .project-detail-section {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Print design"]
+    + .project-detail-section
+    .project-detail-mockup {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Print design"]
+    + .project-detail-section
+    .project-detail-mockup
+    .project-detail-mockup-image {
+    margin-top: 0;
+    margin-bottom: 5rem;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Product storytelling"] {
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Product storytelling"]
+    .project-detail-mockup {
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Product storytelling"]
+    + .project-detail-section {
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Product storytelling"]
+    + .project-detail-section
+    .project-detail-mockup {
+    margin-top: -3rem;
+    margin-bottom: 0;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Key learnings & reflections"] {
+    margin-bottom: 0.75rem;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Key learnings & reflections"]
+    .project-detail-mockup {
+    margin-bottom: 0.25rem;
+}
+
+.project-detail-container
+    .project-detail-section[data-section="Key learnings & reflections"]
+    + .project-detail-section {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .project-detail-screen-image {
+        max-width: 220px !important;
+    }
+
+    .scaffold-detail-container .project-detail-list {
+        padding-left: 1rem;
+    }
+}

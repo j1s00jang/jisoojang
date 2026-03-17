@@ -22,11 +22,18 @@ function ProjectDetail() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [screenCarouselIndex, setScreenCarouselIndex] = useState(0);
 
   const project = projectsBySlug[slug];
 
+  const headerScreenImages = useMemo(() => {
+    if (!project?.screenImages || !Array.isArray(project.screenImages)) return [];
+    return project.screenImages.filter(Boolean);
+  }, [project]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    setScreenCarouselIndex(0);
 
     const scrollTimer = setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "instant" });
@@ -118,13 +125,56 @@ function ProjectDetail() {
 
         {/* --- Header Section --- */}
         <div className="project-detail-header">
-          {project.screenImage && (
+          {(project.screenImages?.length > 0 || project.screenImage) && (
             <div className="project-detail-screen">
-              <img
-                src={project.screenImage}
-                alt={`${project.name} screen`}
-                className="project-detail-screen-image"
-              />
+              {headerScreenImages.length > 0 ? (
+                <div className="project-detail-screen-carousel">
+                  <img
+                    src={headerScreenImages[screenCarouselIndex]}
+                    alt={`${project.name} screen ${screenCarouselIndex + 1}`}
+                    className="project-detail-screen-image"
+                  />
+                  {headerScreenImages.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        className="project-detail-screen-carousel-btn prev"
+                        onClick={() =>
+                          setScreenCarouselIndex((i) =>
+                            i > 0 ? i - 1 : headerScreenImages.length - 1
+                          )
+                        }
+                        aria-label="Previous screen"
+                      >
+                        &#10094;
+                      </button>
+                      <button
+                        type="button"
+                        className="project-detail-screen-carousel-btn next"
+                        onClick={() =>
+                          setScreenCarouselIndex((i) =>
+                            i < headerScreenImages.length - 1
+                              ? i + 1
+                              : 0
+                          )
+                        }
+                        aria-label="Next screen"
+                      >
+                        &#10095;
+                      </button>
+                      <div className="project-detail-screen-carousel-indicator">
+                        {screenCarouselIndex + 1} / {headerScreenImages.length}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ) : (
+                <img
+                  src={project.screenImage}
+                  alt={`${project.name} screen`}
+                  className="project-detail-screen-image"
+                />
+              )}
             </div>
           )}
 

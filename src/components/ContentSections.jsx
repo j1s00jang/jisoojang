@@ -3,6 +3,7 @@ import "../pages/ProjectDetail.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import ImageModal from "./ImageModal";
+import AnimatedNumber from "./AnimatedNumber";
 
 // ✅ iOS / mobile detection (prevents iPhone Safari crash loops from heavy iframes)
 const isIOS = () => {
@@ -92,12 +93,194 @@ function ContentSections({ sections, projectName = "" }) {
           >
             {sec.heading && <h2>{sec.heading}</h2>}
 
-            {/* ✅ Paragraphs rendered as Markdown */}
-            {paras.map((p, j) => (
-              <MD key={j}>{String(p)}</MD>
-            ))}
+            {/* ✅ imageFirst: render images before paragraphs */}
+            {sec.imageFirst && imgs.length > 0 && (
+              <div
+                className={
+                  sec.caption ? "project-detail-media-with-caption" : undefined
+                }
+              >
+                <div className={wrapClass}>
+                  {imgs.map((item, j) => {
+                    const src = typeof item === "string" ? item : item?.src;
+                    const alt =
+                      typeof item === "object" && item?.alt
+                        ? item.alt
+                        : `${projectName} section ${j + 1}`;
+                    const isVideo =
+                      typeof item === "object" && item?.type === "video";
+                    const isIframe =
+                      typeof item === "object" && item?.type === "iframe";
+                    if (!src && !isIframe) return null;
+                    if (isVideo && src) {
+                      const videoClass =
+                        item?.className ?? "project-detail-mockup-image";
+                      const isAuto = !!item.autoPlay;
+                      return (
+                        <span key={j} className="project-detail-embed-wrap">
+                          <video
+                            src={src}
+                            className={videoClass}
+                            autoPlay={isAuto}
+                            loop={isAuto}
+                            muted={isAuto}
+                            playsInline={isAuto}
+                            controls={!isAuto}
+                            preload="auto"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              display: "block",
+                              backgroundColor: "#f0f0f0",
+                            }}
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                          {item.caption && (
+                            <span className="project-detail-embed-caption">
+                              {item.caption}
+                            </span>
+                          )}
+                        </span>
+                      );
+                    }
+                    if (isIframe && item?.src) {
+                      const linkHref = item?.url ?? item.src;
+                      if (blockIframes) {
+                        return (
+                          <span key={j} className="project-detail-embed-wrap">
+                            <a
+                              href={linkHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="project-detail-mockup-link"
+                            >
+                              Open in Figma
+                            </a>
+                            {item.caption && (
+                              <span className="project-detail-embed-caption">
+                                {item.caption}
+                              </span>
+                            )}
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={j} className="project-detail-embed-wrap">
+                          <iframe
+                            src={item.src}
+                            width={item.width ?? 800}
+                            height={item.height ?? 450}
+                            allowFullScreen
+                            title={`${projectName} embed ${j + 1}`}
+                            className={item?.className ?? "project-detail-embed-iframe"}
+                            loading="lazy"
+                          />
+                          {item.caption && (
+                            <span className="project-detail-embed-caption">
+                              {item.caption}
+                            </span>
+                          )}
+                        </span>
+                      );
+                    }
+                    if (src) {
+                      const imgEl = (
+                        <img
+                          src={src}
+                          alt={alt}
+                          className="project-detail-mockup-image"
+                          loading="lazy"
+                        />
+                      );
+                      const linkUrl = typeof item === "object" && item?.url;
+                      const openInModal =
+                        typeof item === "object" && item?.openInModal;
+                      const hasCaption =
+                        typeof item === "object" && item?.caption;
+                      const imageContent = openInModal ? (
+                        <button
+                          type="button"
+                          className="project-detail-mockup-image-wrap project-detail-mockup-modal-trigger"
+                          onClick={() => setModalImage({ src, alt })}
+                        >
+                          {imgEl}
+                        </button>
+                      ) : linkUrl ? (
+                        <a
+                          href={linkUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-detail-mockup-link"
+                        >
+                          {imgEl}
+                        </a>
+                      ) : (
+                        <span className="project-detail-mockup-image-wrap">
+                          {imgEl}
+                        </span>
+                      );
+                      if (hasCaption) {
+                        return (
+                          <span key={j} className="project-detail-embed-wrap">
+                            {imageContent}
+                            <span className="project-detail-embed-caption">
+                              {item.caption}
+                            </span>
+                          </span>
+                        );
+                      }
+                      return <span key={j}>{imageContent}</span>;
+                    }
+                    return null;
+                  })}
+                </div>
+                {sec.caption && (
+                  <div className="project-detail-caption-wrap">
+                    <span className="project-detail-embed-caption">
+                      {sec.caption}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
 
-            {imgs.length > 0 && (
+            {/* ✅ Paragraphs rendered as Markdown or custom blocks */}
+            {paras.map((p, j) => {
+              if (typeof p === "object" && p?.type === "stats" && Array.isArray(p.data)) {
+                return (
+                  <div key={j} className="project-detail-stats">
+                    {p.data.map((stat, k) => (
+                      <div key={k} className="project-detail-stat-item">
+                        <AnimatedNumber
+                          value={stat.number}
+                          duration={2}
+                          className="project-detail-stat-number"
+                        />
+                        <span className="project-detail-stat-text">{stat.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+              if (typeof p === "object" && p?.type === "captionLink" && p?.url) {
+                return (
+                  <div key={j} className="project-detail-caption-wrap project-detail-caption-link-wrap">
+                    <a
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-detail-embed-caption"
+                    >
+                      {p.text || "View document"}
+                    </a>
+                  </div>
+                );
+              }
+              return <MD key={j}>{String(p)}</MD>;
+            })}
+
+            {!sec.imageFirst && imgs.length > 0 && (
               <div
                 className={
                   sec.caption ? "project-detail-media-with-caption" : undefined
@@ -230,23 +413,19 @@ function ContentSections({ sections, projectName = "" }) {
                       const linkUrl = typeof item === "object" && item?.url;
                       const openInModal =
                         typeof item === "object" && item?.openInModal;
+                      const hasCaption =
+                        typeof item === "object" && item?.caption;
 
-                      if (openInModal) {
-                        return (
-                          <button
-                            key={j}
-                            type="button"
-                            className="project-detail-mockup-image-wrap project-detail-mockup-modal-trigger"
-                            onClick={() => setModalImage({ src, alt })}
-                          >
-                            {imgEl}
-                          </button>
-                        );
-                      }
-
-                      return linkUrl ? (
+                      const imageContent = openInModal ? (
+                        <button
+                          type="button"
+                          className="project-detail-mockup-image-wrap project-detail-mockup-modal-trigger"
+                          onClick={() => setModalImage({ src, alt })}
+                        >
+                          {imgEl}
+                        </button>
+                      ) : linkUrl ? (
                         <a
-                          key={j}
                           href={linkUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -255,11 +434,28 @@ function ContentSections({ sections, projectName = "" }) {
                           {imgEl}
                         </a>
                       ) : (
-                        <span
-                          key={j}
-                          className="project-detail-mockup-image-wrap"
-                        >
+                        <span className="project-detail-mockup-image-wrap">
                           {imgEl}
+                        </span>
+                      );
+
+                      if (hasCaption) {
+                        return (
+                          <span
+                            key={j}
+                            className="project-detail-embed-wrap"
+                          >
+                            {imageContent}
+                            <span className="project-detail-embed-caption">
+                              {item.caption}
+                            </span>
+                          </span>
+                        );
+                      }
+
+                      return (
+                        <span key={j}>
+                          {imageContent}
                         </span>
                       );
                     }
