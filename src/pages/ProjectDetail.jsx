@@ -112,7 +112,7 @@ function ProjectDetail() {
 
   return (
     <div
-      className={`project-detail-page ${
+      className={`project-detail-page project-detail-page--${slug} ${
         ["can-design", "magazine", "interactive_tutorial", "posters"].includes(
           slug
         )

@@ -4,6 +4,7 @@ import scaffoldScreen2 from "../../assets/projects/scaffold/scaffold_screen02.pn
 import scaffoldScreen3 from "../../assets/projects/scaffold/scaffold_screen03.png";
 import scaffoldScreen4 from "../../assets/projects/scaffold/scaffold_screen04.png";
 import scaffoldScreen5 from "../../assets/projects/scaffold/scaffold_screen05.png";
+import scaffoldScreen6 from "../../assets/projects/scaffold/scaffold_screen06.png";
 import scaffoldMockup from "../../assets/projects/scaffold/scaffold_mockup01.png";
 import scaffoldUserResearch1 from "../../assets/projects/scaffold/scaffold_userResearch01.webp";
 import scaffoldUserPersonas from "../../assets/projects/scaffold/scaffold_userPersonas.webp";
@@ -44,6 +45,7 @@ export const scaffold = {
     scaffoldScreen3,
     scaffoldScreen4,
     scaffoldScreen5,
+    scaffoldScreen6,
   ],
   mockupImage: scaffoldMockup,
 
