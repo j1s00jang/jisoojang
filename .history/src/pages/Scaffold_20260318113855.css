@@ -38,7 +38,7 @@
 }
 
 .project-detail-page--scaffold .project-detail-screen-carousel-btn.next {
-    right: -88px;
+    right: -88px !important;
 }
 
 .project-detail-mockup .project-detail-mockup-image {
