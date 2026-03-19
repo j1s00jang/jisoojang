@@ -157,7 +157,7 @@ export const scaffold = {
                 `Four insights shaped a clear expectation: financial resources should be easy to find, simple to understand, and quick to act on.`,
                 `&nbsp;`,
                 `**1. Minimal friction:** Reduce steps and repeated input where possible`,
-                `**2. Clear guidance:** Show key information and requirements clearly and easy to follow`,
+                `**2. Clear guidance:** Show key information and requirements clearly`,
                 `**3. Mobile-first clarity:** Help users scan key details quickly on a small screen`,
                 `**4. Writing essays support:** Support writing essays draftwith AI help`,
                 `&nbsp;`,
@@ -186,10 +186,10 @@ export const scaffold = {
             ],
             imageLayout: "row",
             paragraphs: [
-                `Scaffold logo created from **the letter “S” and stacked block shapes to represent a strong foundation.** Ultimately, Scaffold’s goal is **to help tradespeople find financial support to continue their career path.**`,
+                `Scaffold logo created from the letter “S” and stacked block shapes to suggest building a strong foundation. Ultimately, Scaffold’s goal is to help tradespeople find financial support to continue their career path.`,
                 `&nbsp;`,
                 `- **Purple:** Creates a calm, confident anchor that supports focus and brand recognition.`,
-                `- **Orange:** Communicate a strong connection and support for the user.`,
+                `- **Orange:** Used only for action moments—high-contrast emphasis for primary CTAs and key highlights without visual noise.`,
                 `&nbsp;`,
                 `Typography follows the same principle: one typeface supports a strong hierarchy for titles and labels, while a highly legible typeface is used for longer content to reduce reading fatigue on small screens.`,
             ],
@@ -234,7 +234,7 @@ export const scaffold = {
         },
         {
             paragraphs: [
-                `- **Voice input for profile setup:** Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
+                `- **AI-powered voice profile for easy setup:** Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
             ],
             images: [
                 {
@@ -250,7 +250,7 @@ export const scaffold = {
         },
         {
             paragraphs: [
-                `- **AI-assisted writing essays and web supplement** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
+                `- **Web supplement to reduce frustration** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
             ],
             images: [
                 {

@@ -250,7 +250,7 @@ export const scaffold = {
         },
         {
             paragraphs: [
-                `- **AI-assisted writing essays and web supplement** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
+                `- **Web supplement to reduce frustration** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
             ],
             images: [
                 {

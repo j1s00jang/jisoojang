@@ -234,7 +234,7 @@ export const scaffold = {
         },
         {
             paragraphs: [
-                `- **Voice input for profile setup:** Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
+                `- **Voice input feature for profile setup:** Users can build a profile with voice input on the go. The AI captures key details even with unclear speech. The profile can be reused across applications and helps filter eligible grants on the dashboard.`,
             ],
             images: [
                 {
@@ -250,7 +250,7 @@ export const scaffold = {
         },
         {
             paragraphs: [
-                `- **AI-assisted writing essays and web supplement** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
+                `- **Web supplement to reduce frustration** : Since writing essays on a phone is inconvenient, a web supplement supports drafting on a larger screen. It also offers AI help to generate a first draft using the saved profile details for faster, more consistent submissions.`,
             ],
             images: [
                 {
