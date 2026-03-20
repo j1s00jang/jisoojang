@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -23,6 +23,7 @@ function ProjectDetail() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [screenCarouselIndex, setScreenCarouselIndex] = useState(0);
+  const screenSwipeRef = useRef({ x: 0, y: 0 });
 
   const project = projectsBySlug[slug];
 
@@ -110,6 +111,30 @@ function ProjectDetail() {
     setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
   };
 
+  const onScreenCarouselTouchStart = (e) => {
+    if (!e.touches?.[0]) return;
+    const t = e.touches[0];
+    screenSwipeRef.current = { x: t.clientX, y: t.clientY };
+  };
+
+  const onScreenCarouselTouchEnd = (e) => {
+    if (headerScreenImages.length <= 1) return;
+    const t = e.changedTouches?.[0];
+    if (!t) return;
+    const dx = t.clientX - screenSwipeRef.current.x;
+    const dy = t.clientY - screenSwipeRef.current.y;
+    const minSwipe = 48;
+    if (Math.abs(dx) < minSwipe) return;
+    if (Math.abs(dy) > Math.abs(dx) * 0.75) return;
+
+    const len = headerScreenImages.length;
+    if (dx < 0) {
+      setScreenCarouselIndex((i) => (i < len - 1 ? i + 1 : 0));
+    } else {
+      setScreenCarouselIndex((i) => (i > 0 ? i - 1 : len - 1));
+    }
+  };
+
   return (
     <div
       className={`project-detail-page project-detail-page--${slug} ${
@@ -128,7 +153,12 @@ function ProjectDetail() {
           {(project.screenImages?.length > 0 || project.screenImage) && (
             <div className="project-detail-screen">
               {headerScreenImages.length > 0 ? (
-                <div className="project-detail-screen-carousel">
+                <div
+                  className="project-detail-screen-carousel"
+                  onTouchStart={onScreenCarouselTouchStart}
+                  onTouchEnd={onScreenCarouselTouchEnd}
+                  role="presentation"
+                >
                   <img
                     src={headerScreenImages[screenCarouselIndex]}
                     alt={`${project.name} screen ${screenCarouselIndex + 1}`}

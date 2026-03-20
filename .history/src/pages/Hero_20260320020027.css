@@ -232,7 +232,7 @@
 
     .hero__ribbon-glow {
         filter: brightness(1.2) sepia(1) hue-rotate(190deg) saturate(1.5)
-            blur(30px);
+            blur(25px);
     }
 
     .hero-sticker {

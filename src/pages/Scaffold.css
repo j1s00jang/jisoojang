@@ -2,6 +2,12 @@
     max-width: clamp(240px, 30vw, 300px);
 }
 
+/* Header carousel: lock layout to first screen (scaffold_screen01.png = 629×1300).
+   Other exports are narrower (547×1300); they scale inside this slot — no layout shift. */
+.project-detail-page--scaffold {
+    --scaffold-header-screen-aspect: 629 / 1300;
+}
+
 /* Keep right panel fixed and reduce header screen height uniformly */
 .project-detail-page--scaffold .project-detail-header {
     align-items: start;
@@ -13,7 +19,7 @@
 
 .project-detail-page--scaffold .project-detail-screen-carousel {
     width: min(100%, clamp(210px, 25vw, 250px));
-    aspect-ratio: 794 / 1642;
+    aspect-ratio: var(--scaffold-header-screen-aspect);
     margin-inline: auto;
 }
 
@@ -272,22 +278,75 @@
 }
 
 @media (max-width: 768px) {
+    /* Row layout: [prev] [phone] [next] — avoids cramped absolute arrows on a tall mockup */
+    .project-detail-page--scaffold .project-detail-screen {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: clamp(0.25rem, 2vw, 0.75rem);
+        box-sizing: border-box;
+    }
+
     .project-detail-page--scaffold .project-detail-screen-carousel {
-        width: min(100%, 190px);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(0.65rem, 4vw, 1.1rem);
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: unset;
+        margin-inline: auto;
+    }
+
+    .project-detail-page--scaffold
+        .project-detail-screen-carousel
+        .project-detail-screen-image {
+        order: 2;
+        flex: 0 0 auto;
+        width: min(200px, 46vw) !important;
+        max-width: min(200px, 46vw) !important;
+        aspect-ratio: var(--scaffold-header-screen-aspect);
+        height: auto !important;
+        object-fit: contain;
+        object-position: center;
     }
 
     .project-detail-page--scaffold .project-detail-screen-carousel-btn {
-        width: 46px !important;
-        height: 46px !important;
-        font-size: 26px !important;
+        position: static !important;
+        transform: none !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 22px !important;
+        flex-shrink: 0;
     }
 
     .project-detail-page--scaffold .project-detail-screen-carousel-btn.prev {
-        left: -16px !important;
+        order: 1;
+        left: auto !important;
+        right: auto !important;
     }
 
     .project-detail-page--scaffold .project-detail-screen-carousel-btn.next {
-        right: -16px !important;
+        order: 3;
+        left: auto !important;
+        right: auto !important;
+    }
+
+    .project-detail-page--scaffold .project-detail-screen-carousel-btn:hover {
+        transform: scale(1.05) !important;
+    }
+
+    .project-detail-page--scaffold .project-detail-screen-carousel-indicator {
+        order: 4;
+        position: static !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        flex-basis: 100%;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
     }
 
     .project-detail-screen-image {
@@ -296,5 +355,46 @@
 
     .scaffold-detail-container .project-detail-list {
         padding-left: 1rem;
+    }
+
+    /* Long h2 wraps on small screens — per-line highlight under text (like .title-highlight) */
+    .project-detail-container.scaffold-detail-container
+        .project-detail-section[data-section="Learning outcomes & Next steps"] {
+        text-align: center;
+    }
+
+    .project-detail-container.scaffold-detail-container
+        .project-detail-section[data-section="Learning outcomes & Next steps"]
+        > *:not(h2) {
+        text-align: start;
+    }
+
+    .project-detail-container.scaffold-detail-container
+        .project-detail-section[data-section="Learning outcomes & Next steps"]
+        > h2 {
+        display: inline;
+        margin: 0;
+        padding: 0 7px;
+        max-width: none;
+        inline-size: auto;
+        width: auto;
+        text-align: center;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        background: linear-gradient(
+            to bottom,
+            transparent 62%,
+            var(--color-variable-light-purple) 62%,
+            var(--color-variable-light-purple) 88%,
+            transparent 88%
+        );
+    }
+
+    /* Spacing below title: do not use h2::after — empty block still paints the h2 gradient */
+    .project-detail-container.scaffold-detail-container
+        .project-detail-section[data-section="Learning outcomes & Next steps"]
+        > h2
+        + * {
+        margin-top: 2rem;
     }
 }
