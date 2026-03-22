@@ -29,7 +29,7 @@ function Home() {
     }, []);
 
     return (
-        <div className="home-container">
+        <main className="home-container">
             <section
                 style={{
                     minHeight: "100vh",
@@ -45,7 +45,7 @@ function Home() {
                     </Suspense>
                 </div>
             </section>
-        </div>
+        </main>
     );
 }
 
