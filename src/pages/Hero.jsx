@@ -13,13 +13,17 @@ import FruitsSticker from "../assets/main/hero/sticker_fruits.svg";
 
 import "./Hero.css";
 
-/* ========== Layout & Breakpoints ========== */
+/* Hero layout responsiveness and animation timing */
 const MOBILE_BREAKPOINT_PX = 768;
-
-/* ========== Scroll Indicator ========== */
 const SCROLL_ANIMATION_DELAY = 2.5;
 
-const stickers = [
+/* Framer Motion element aliases for cleaner JSX and ESLint compatibility */
+const MotionDiv = motion.div;
+const MotionImg = motion.img;
+const MotionSpan = motion.span;
+
+/* Sticker content and their default desktop positions */
+const STICKERS = [
     {
         id: "hello",
         src: HelloSticker,
@@ -63,15 +67,141 @@ const stickers = [
     },
 ];
 
+/* Extra position nudges used only on small screens */
+const MOBILE_STICKER_OFFSETS = {
+    hello: { left: 60, top: 6 },
+    vancouver: { left: -60, top: -5 },
+    toast: { left: -70 },
+    fruits: { left: 50, top: -10 },
+};
+
+/* Shared floating motion for the ribbon glow and ribbon image */
+const RIBBON_FLOAT_ANIMATION = {
+    y: ["-10%", "-9%", "-10%"],
+    rotate: [-0.5, 0.5, -0.5],
+};
+
+const LOOP_EASE = "easeInOut";
+
+/* Combines the base sticker position with optional mobile-only offsets */
+function getStickerPosition(style, offset) {
+    return {
+        ...style,
+        ...(offset?.left != null
+            ? { left: `calc(${style.left} + ${offset.left}px)` }
+            : {}),
+        ...(offset?.top != null
+            ? { top: `calc(${style.top} + ${offset.top}px)` }
+            : {}),
+    };
+}
+
+/* Renders a single draggable sticker and handles the hover image swap */
+function HeroSticker({
+    id,
+    src,
+    cycleSrcs,
+    style,
+    rotate,
+    hoveredId,
+    helloCycleIndex,
+    setHoveredId,
+    setHelloCycleIndex,
+}) {
+    const isHello = id === "hello";
+    const isHovered = hoveredId === id;
+    const hasCycle = isHello && cycleSrcs?.length;
+    const activeIndex =
+        hasCycle && isHovered ? 1 + (helloCycleIndex % cycleSrcs.length) : 0;
+
+    const handleMouseEnter = () => {
+        setHoveredId(id);
+
+        if (hasCycle) {
+            setHelloCycleIndex((index) => index + 1);
+        }
+    };
+
+    return (
+        <MotionDiv
+            drag
+            dragMomentum={false}
+            initial={{ rotate, scale: 1 }}
+            animate={{ rotate: [rotate - 1, rotate + 1, rotate - 1] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            whileHover={{ scale: 1, zIndex: 100, rotate }}
+            whileDrag={{ scale: 1, rotate, cursor: "grabbing" }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={() => setHoveredId(null)}
+            className="hero-sticker"
+            style={{ ...style, width: style.width }}
+        >
+            {hasCycle ? (
+                <div className="hero-sticker__inner">
+                    <img src={src} alt="" className="hero-sticker__img" />
+
+                    {cycleSrcs.map((cycleSrc, index) => {
+                        const isActive = index + 1 === activeIndex;
+
+                        return (
+                            <img
+                                key={`${id}-cycle-${index}`}
+                                src={cycleSrc}
+                                alt=""
+                                className={`hero-sticker__cycle-img ${
+                                    isActive ? "is-active" : ""
+                                }`}
+                            />
+                        );
+                    })}
+                </div>
+            ) : (
+                <img src={src} alt="" className="hero-sticker__simple-img" />
+            )}
+        </MotionDiv>
+    );
+}
+
+/* Renders the sticker collection and passes the correct position to each one */
+function StickerLayer({
+    isMobile,
+    hoveredId,
+    helloCycleIndex,
+    setHoveredId,
+    setHelloCycleIndex,
+}) {
+    return STICKERS.map((sticker) => (
+        <HeroSticker
+            key={sticker.id}
+            {...sticker}
+            style={getStickerPosition(
+                sticker.style,
+                isMobile ? MOBILE_STICKER_OFFSETS[sticker.id] : null,
+            )}
+            hoveredId={hoveredId}
+            helloCycleIndex={helloCycleIndex}
+            setHoveredId={setHoveredId}
+            setHelloCycleIndex={setHelloCycleIndex}
+        />
+    ));
+}
+
+/* Main hero section that coordinates responsive state and layered visuals */
 function Hero() {
+    /* Detects whether the current viewport should use the mobile layout */
     const [isMobile, setIsMobile] = useState(() =>
         typeof window !== "undefined"
             ? window.innerWidth <= MOBILE_BREAKPOINT_PX
             : false,
     );
+
+    /* Tracks which sticker is currently hovered */
     const [hoveredId, setHoveredId] = useState(null);
+
+    /* Advances the hello sticker image cycle on each hover */
     const [helloCycleIndex, setHelloCycleIndex] = useState(0);
 
+    /* Keeps the mobile/desktop layout in sync when the window resizes */
     useEffect(() => {
         const handleResize = () =>
             setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT_PX);
@@ -79,27 +209,20 @@ function Hero() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const mobileOffsets = {
-        hello: { left: 60, top: 6 },
-        vancouver: { left: -60, top: -5 },
-        toast: { left: -70 },
-        fruits: { left: 50, top: -10 },
-    };
-
     return (
         <section className="hero">
             <div className="hero__inner">
-                {/* 'Welcome to Jisoo's' Text */}
+                {/* Intro line above the main PORT/FOLIO wordmark */}
                 <div className="hero__welcome">
                     Welcome to <b>Jisoo</b>’s
                 </div>
 
-                {/* 'Port' text image */}
+                {/* Front half of the portfolio title */}
                 <div className="hero__port-wrap">
                     <img src={PortUrl} className="hero__port-img" alt="port" />
                 </div>
 
-                {/* 'Folio' text image */}
+                {/* Back half of the portfolio title */}
                 <div className="hero__folio-wrap">
                     <img
                         src={FolioUrl}
@@ -108,10 +231,10 @@ function Hero() {
                     />
                 </div>
 
-                {/* Try moving my stickers! (hide on mobile) */}
+                {/* Desktop-only hint that invites users to drag the stickers */}
                 {!isMobile && (
                     <div className="hero__sticker-hint">
-                        <motion.span
+                        <MotionSpan
                             animate={{ opacity: [0.4, 1, 0.4] }}
                             transition={{
                                 duration: 2,
@@ -120,43 +243,42 @@ function Hero() {
                             }}
                         >
                             ✨ Try moving my stickers! ✨
-                        </motion.span>
+                        </MotionSpan>
                     </div>
                 )}
 
-                {/* Purple Ribbon Layer (Glow + Ribbon) */}
+                {/* Center ribbon layer made of a glow pass and the main ribbon image */}
                 <div className="hero__ribbon-wrap">
                     <div className="hero__ribbon-inner">
-                        <motion.img
+                        <MotionImg
                             src={RibbonUrl}
                             alt=""
                             initial={{ opacity: 0, scale: 1 }}
                             animate={{
                                 opacity: [0.3, 0.7, 0.3],
-                                y: ["-10%", "-9%", "-10%"],
-                                rotate: [-0.5, 0.5, -0.5],
+                                ...RIBBON_FLOAT_ANIMATION,
                             }}
                             transition={{
                                 opacity: {
                                     duration: 4,
                                     delay: 0.5,
                                     repeat: Infinity,
-                                    ease: "easeInOut",
+                                    ease: LOOP_EASE,
                                 },
                                 y: {
                                     duration: 2,
                                     repeat: Infinity,
-                                    ease: "easeInOut",
+                                    ease: LOOP_EASE,
                                 },
                                 rotate: {
                                     duration: 5,
                                     repeat: Infinity,
-                                    ease: "easeInOut",
+                                    ease: LOOP_EASE,
                                 },
                             }}
                             className="hero__ribbon-glow"
                         />
-                        <motion.img
+                        <MotionImg
                             src={RibbonUrl}
                             alt=""
                             draggable={false}
@@ -168,25 +290,24 @@ function Hero() {
                             animate={{
                                 clipPath: "inset(0 0% 0 0)",
                                 opacity: 1,
-                                y: ["-10%", "-9%", "-10%"],
-                                rotate: [-0.5, 0.5, -0.5],
+                                ...RIBBON_FLOAT_ANIMATION,
                             }}
                             transition={{
                                 clipPath: {
                                     duration: 2,
                                     delay: 0.3,
-                                    ease: "easeInOut",
+                                    ease: LOOP_EASE,
                                 },
                                 opacity: { duration: 1, delay: 0.3 },
                                 y: {
                                     duration: 4,
                                     repeat: Infinity,
-                                    ease: "easeInOut",
+                                    ease: LOOP_EASE,
                                 },
                                 rotate: {
                                     duration: 5,
                                     repeat: Infinity,
-                                    ease: "easeInOut",
+                                    ease: LOOP_EASE,
                                 },
                             }}
                             className="hero__ribbon-img"
@@ -194,103 +315,20 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* Stickers (hidden on mobile) */}
-                {!isMobile &&
-                    stickers.map(({ id, src, cycleSrcs, style, rotate }) => {
-                    const isHello = id === "hello";
-                    const isHovered = hoveredId === id;
-                    const hasCycle = isHello && cycleSrcs?.length;
-                    const activeIndex =
-                        hasCycle && isHovered
-                            ? 1 + (helloCycleIndex % cycleSrcs.length)
-                            : 0;
-
-                    const handleHelloEnter = () => {
-                        setHoveredId(id);
-                        if (isHello && cycleSrcs)
-                            setHelloCycleIndex((i) => i + 1);
-                    };
-
-                    const offset = isMobile ? mobileOffsets[id] : null;
-                    const posStyle = {
-                        ...style,
-                        ...(offset?.left != null
-                            ? { left: `calc(${style.left} + ${offset.left}px)` }
-                            : {}),
-                        ...(offset?.top != null
-                            ? { top: `calc(${style.top} + ${offset.top}px)` }
-                            : {}),
-                    };
-
-                    return (
-                        <motion.div
-                            key={id}
-                            drag
-                            dragMomentum={false}
-                            initial={{ rotate: rotate || 0, scale: 1 }}
-                            animate={{
-                                rotate: [rotate - 1, rotate + 1, rotate - 1],
-                            }}
-                            transition={{ duration: 4, repeat: Infinity }}
-                            whileHover={{
-                                scale: 1,
-                                zIndex: 100,
-                                rotate: rotate || 0,
-                            }}
-                            whileDrag={{
-                                scale: 1,
-                                rotate: rotate || 0,
-                                cursor: "grabbing",
-                            }}
-                            onMouseEnter={
-                                isHello
-                                    ? handleHelloEnter
-                                    : () => setHoveredId(id)
-                            }
-                            onMouseLeave={() => setHoveredId(null)}
-                            className="hero-sticker"
-                            style={{
-                                ...posStyle,
-                                ...(isMobile ? {} : { width: style.width }),
-                            }}
-                        >
-                            {hasCycle ? (
-                                <div className="hero-sticker__inner">
-                                    <img
-                                        src={src}
-                                        alt=""
-                                        className="hero-sticker__img"
-                                    />
-
-                                    {cycleSrcs.map((s, i) => {
-                                        const isActive = i + 1 === activeIndex;
-
-                                        return (
-                                            <img
-                                                key={`${id}-cycle-${i}`}
-                                                src={s}
-                                                alt=""
-                                                className={`hero-sticker__cycle-img ${
-                                                    isActive ? "is-active" : ""
-                                                }`}
-                                            />
-                                        );
-                                    })}
-                                </div>
-                            ) : (
-                                <img
-                                    src={src}
-                                    alt=""
-                                    className="hero-sticker__simple-img"
-                                />
-                            )}
-                        </motion.div>
-                    );
-                })}
+                {/* Desktop sticker layer with draggable interactive elements */}
+                {!isMobile && (
+                    <StickerLayer
+                        isMobile={isMobile}
+                        hoveredId={hoveredId}
+                        helloCycleIndex={helloCycleIndex}
+                        setHoveredId={setHoveredId}
+                        setHelloCycleIndex={setHelloCycleIndex}
+                    />
+                )}
             </div>
 
-            {/* 'Scroll' text + arrows */}
-            <motion.div
+            {/* Bottom scroll indicator that fades in after the hero animation */}
+            <MotionDiv
                 className="hero__scroll"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -302,7 +340,7 @@ function Hero() {
                 <span className="hero__scroll-text">Scroll</span>
                 <div className="hero__scroll-arrows">
                     {[0, 1].map((i) => (
-                        <motion.div
+                        <MotionDiv
                             key={i}
                             className="hero__scroll-arrow"
                             initial={{ rotate: 45, opacity: 0 }}
@@ -315,12 +353,12 @@ function Hero() {
                                 duration: 1.5,
                                 repeat: Infinity,
                                 delay: i * 0.2,
-                                ease: "easeInOut",
+                                ease: LOOP_EASE,
                             }}
                         />
                     ))}
                 </div>
-            </motion.div>
+            </MotionDiv>
         </section>
     );
 }

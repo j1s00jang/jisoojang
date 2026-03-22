@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -7,14 +7,15 @@ import Lenis from "lenis";
 import Header from "./components/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import AboutMe from "./pages/AboutMe";
 import "./App.css";
 import RouteScrollToTop from "./components/RouteScrollToTop";
 import CursorGlow from "./components/CursorGlow";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const AboutMe = lazy(() => import("./pages/AboutMe"));
 
 function App() {
     useEffect(() => {
@@ -46,24 +47,26 @@ function App() {
                 <CursorGlow />
                 <RouteScrollToTop />
                 <Header />
-                <Routes>
-                    <Route
-                        path="/"
-                        element={<Home />}
-                    />
-                    <Route
-                        path="/projects"
-                        element={<Projects />}
-                    />
-                    <Route
-                        path="/projects/:slug"
-                        element={<ProjectDetail />}
-                    />
-                    <Route
-                        path="/about-me"
-                        element={<AboutMe />}
-                    />
-                </Routes>
+                <Suspense fallback={null}>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={<Home />}
+                        />
+                        <Route
+                            path="/projects"
+                            element={<Projects />}
+                        />
+                        <Route
+                            path="/projects/:slug"
+                            element={<ProjectDetail />}
+                        />
+                        <Route
+                            path="/about-me"
+                            element={<AboutMe />}
+                        />
+                    </Routes>
+                </Suspense>
                 <ScrollToTop />
             </div>
         </Router>
