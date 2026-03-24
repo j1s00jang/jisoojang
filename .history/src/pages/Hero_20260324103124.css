@@ -161,7 +161,7 @@
 /* Scroll indicator — scales with viewport height; caps near ~100px on tall screens */
 .hero__scroll {
   position: absolute;
-  bottom: calc(clamp(1rem, 9vh, 6.25rem) + env(safe-area-inset-bottom, 0px));
+  bottom: calc(clamp(1rem, 8vh, 6.25rem) + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   display: flex;

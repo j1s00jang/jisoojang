@@ -87,7 +87,7 @@ const STICKERS = [
   },
 ];
 
-/* Purple ribbon animation float */
+/* Shared floating motion for the ribbon glow and ribbon image */
 const RIBBON_FLOAT_ANIMATION = {
   y: ["-10%", "-9%", "-10%"],
   rotate: [-0.5, 0.5, -0.5],
