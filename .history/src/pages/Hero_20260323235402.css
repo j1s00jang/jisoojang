@@ -199,16 +199,10 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /*
-     * Don’t force full viewport height — that left a large empty band above Projects.
-     * Keep bottom padding so the absolute Scroll cue + safe area stay inside .hero.
-     */
     .hero {
-        min-height: unset;
+        min-height: 100dvh;
         place-items: start center;
         padding-top: 70px;
-        padding-bottom: max(4.5rem, calc(env(safe-area-inset-bottom, 0px) + 3rem));
-        container-type: inline-size;
     }
 
     .hero__inner {
@@ -255,16 +249,7 @@
         touch-action: none;
     }
 
-    /*
-     * Place Scroll just under the square hero (padding-top + square side + gap).
-     * Avoids a huge gap vs the sticker hint, which sits inside the square (~80%).
-     */
     .hero__scroll {
-        /* 100cqw ≈ hero__inner square side (same width as .hero) */
-        top: calc(70px + 100cqw + 0.75rem);
-        bottom: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-bottom: env(safe-area-inset-bottom, 0);
+        bottom: calc(env(safe-area-inset-bottom) + 100px);
     }
 }

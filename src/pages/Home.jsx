@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 
 import Hero from "./Hero";
 import HomeProjects from "../components/HomeProjects";
+import "./Home.css";
 
 const AboutMe = lazy(() => import("./AboutMe"));
 
@@ -30,13 +31,7 @@ function Home() {
 
     return (
         <main className="home-container">
-            <section
-                style={{
-                    minHeight: "100vh",
-                    background: "transparent",
-                    padding: "48px 0",
-                }}
-            >
+            <section className="home-page-section" style={{ background: "transparent" }}>
                 <Hero />
                 <div style={{ width: "min(1200px, 94vw)", margin: "0 auto" }}>
                     <HomeProjects />

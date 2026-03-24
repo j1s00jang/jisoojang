@@ -61,7 +61,7 @@ export default function ProjectsSection({ title = "Projects" }) {
         <section
             style={{
                 background: "transparent",
-                padding: isMobile ? "60px 0 32px" : "80px 0",
+                padding: isMobile ? "20px 0 32px" : "80px 0",
                 overflow: "hidden",
                 width: isMobile ? "100vw" : "100%",
                 marginLeft: isMobile ? "calc(50% - 50vw)" : 0,

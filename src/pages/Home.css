@@ -1,0 +1,10 @@
+/* Home page: section wraps Hero + Projects + About Me */
+.home-page-section {
+    padding: 48px 0;
+}
+
+@media (max-width: 768px) {
+    .home-page-section {
+        padding: 20px 0 32px;
+    }
+}

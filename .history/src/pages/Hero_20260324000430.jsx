@@ -80,8 +80,8 @@ const STICKERS = [
             width: "clamp(5%, 7%, 9%)",
         },
         mobileStyle: {
-            top: "46%",
-            left: "78%",
+            top: "52%",
+            left: "72%",
             width: "clamp(75px, 12vw, 72px)",
         },
     },

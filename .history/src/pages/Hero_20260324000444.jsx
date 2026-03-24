@@ -81,7 +81,7 @@ const STICKERS = [
         },
         mobileStyle: {
             top: "46%",
-            left: "78%",
+            left: "80%",
             width: "clamp(75px, 12vw, 72px)",
         },
     },

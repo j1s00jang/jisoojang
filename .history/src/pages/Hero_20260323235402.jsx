@@ -34,11 +34,6 @@ const STICKERS = [
             left: "65%",
             width: "clamp(6%, 12%, 14%)",
         },
-        mobileStyle: {
-            top: "12%",
-            left: "73%",
-            width: "clamp(100px, 16vw, 86px)",
-        },
     },
     {
         id: "vancouver",
@@ -48,11 +43,6 @@ const STICKERS = [
             top: "35%",
             left: "40%",
             width: "clamp(5%, 7%, 10%)",
-        },
-        mobileStyle: {
-            top: "26%",
-            left: "28%",
-            width: "clamp(80px, 13vw, 76px)",
         },
     },
     {
@@ -64,11 +54,6 @@ const STICKERS = [
             left: "39.5%",
             width: "clamp(5%, 8%, 11%)",
         },
-        mobileStyle: {
-            top: "46%",
-            left: "24%",
-            width: "clamp(70px, 14vw, 82px)",
-        },
     },
     {
         id: "fruits",
@@ -79,13 +64,16 @@ const STICKERS = [
             left: "64%",
             width: "clamp(5%, 7%, 9%)",
         },
-        mobileStyle: {
-            top: "46%",
-            left: "78%",
-            width: "clamp(75px, 12vw, 72px)",
-        },
     },
 ];
+
+/* Extra position nudges used only on small screens */
+const MOBILE_STICKER_OFFSETS = {
+    hello: { left: 60, top: 6 },
+    vancouver: { left: -60, top: -5 },
+    toast: { left: -70 },
+    fruits: { left: 50, top: -10 },
+};
 
 /* Shared floating motion for the ribbon glow and ribbon image */
 const RIBBON_FLOAT_ANIMATION = {
@@ -95,11 +83,17 @@ const RIBBON_FLOAT_ANIMATION = {
 
 const LOOP_EASE = "easeInOut";
 
-function resolveStickerStyle(sticker, isMobile) {
-    if (isMobile && sticker.mobileStyle) {
-        return sticker.mobileStyle;
-    }
-    return sticker.style;
+/* Combines the base sticker position with optional mobile-only offsets */
+function getStickerPosition(style, offset) {
+    return {
+        ...style,
+        ...(offset?.left != null
+            ? { left: `calc(${style.left} + ${offset.left}px)` }
+            : {}),
+        ...(offset?.top != null
+            ? { top: `calc(${style.top} + ${offset.top}px)` }
+            : {}),
+    };
 }
 
 /* Renders a single draggable sticker and handles the hover image swap */
@@ -113,7 +107,6 @@ function HeroSticker({
     helloCycleIndex,
     setHoveredId,
     setHelloCycleIndex,
-    isMobile,
 }) {
     const isHello = id === "hello";
     const isHovered = hoveredId === id;
@@ -129,12 +122,6 @@ function HeroSticker({
         }
     };
 
-    const handleHelloTap = () => {
-        if (!hasCycle) return;
-        setHoveredId(id);
-        setHelloCycleIndex((index) => index + 1);
-    };
-
     return (
         <MotionDiv
             drag
@@ -146,7 +133,6 @@ function HeroSticker({
             whileDrag={{ scale: 1, rotate, cursor: "grabbing" }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={() => setHoveredId(null)}
-            onTap={isMobile && hasCycle ? handleHelloTap : undefined}
             className="hero-sticker"
             style={{ ...style, width: style.width }}
         >
@@ -195,16 +181,15 @@ function StickerLayer({
     return STICKERS.map((sticker) => (
         <HeroSticker
             key={sticker.id}
-            id={sticker.id}
-            src={sticker.src}
-            rotate={sticker.rotate}
-            cycleSrcs={sticker.cycleSrcs}
-            style={resolveStickerStyle(sticker, isMobile)}
+            {...sticker}
+            style={getStickerPosition(
+                sticker.style,
+                isMobile ? MOBILE_STICKER_OFFSETS[sticker.id] : null,
+            )}
             hoveredId={hoveredId}
             helloCycleIndex={helloCycleIndex}
             setHoveredId={setHoveredId}
             setHelloCycleIndex={setHelloCycleIndex}
-            isMobile={isMobile}
         />
     ));
 }
@@ -258,19 +243,21 @@ function Hero() {
                     />
                 </div>
 
-                {/* Hint to drag / tap stickers */}
-                <div className="hero__sticker-hint">
-                    <MotionSpan
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                    >
-                        ✨ Try moving my stickers! ✨
-                    </MotionSpan>
-                </div>
+                {/* Desktop-only hint that invites users to drag the stickers */}
+                {!isMobile && (
+                    <div className="hero__sticker-hint">
+                        <MotionSpan
+                            animate={{ opacity: [0.4, 1, 0.4] }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                        >
+                            ✨ Try moving my stickers! ✨
+                        </MotionSpan>
+                    </div>
+                )}
 
                 {/* Center ribbon layer made of a glow pass and the main ribbon image */}
                 <div className="hero__ribbon-wrap">
@@ -340,14 +327,16 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* Draggable stickers (separate mobile positions / sizes in STICKERS.mobileStyle) */}
-                <StickerLayer
-                    isMobile={isMobile}
-                    hoveredId={hoveredId}
-                    helloCycleIndex={helloCycleIndex}
-                    setHoveredId={setHoveredId}
-                    setHelloCycleIndex={setHelloCycleIndex}
-                />
+                {/* Desktop sticker layer with draggable interactive elements */}
+                {!isMobile && (
+                    <StickerLayer
+                        isMobile={isMobile}
+                        hoveredId={hoveredId}
+                        helloCycleIndex={helloCycleIndex}
+                        setHoveredId={setHoveredId}
+                        setHelloCycleIndex={setHelloCycleIndex}
+                    />
+                )}
             </div>
 
             {/* Bottom scroll indicator that fades in after the hero animation */}
