@@ -177,8 +177,6 @@ export default function ProjectsSection({ title = "Projects" }) {
           overflow: hidden;
           border-radius: 24px;
           background-color: transparent;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-          transition: box-shadow 0.4s ease;
           pointer-events: none;
         }
 
