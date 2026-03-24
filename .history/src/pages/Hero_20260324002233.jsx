@@ -22,7 +22,7 @@ const MotionDiv = motion.div;
 const MotionImg = motion.img;
 const MotionSpan = motion.span;
 
-/* Sticker content and their default desktop positions & mobile positions */
+/* Sticker content and their default desktop positions */
 const STICKERS = [
     {
         id: "hello",

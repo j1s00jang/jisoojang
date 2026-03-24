@@ -22,7 +22,7 @@ const MotionDiv = motion.div;
 const MotionImg = motion.img;
 const MotionSpan = motion.span;
 
-/* Sticker content and their default desktop positions & mobile positions */
+/* Sticker content and their default desktop positions */
 const STICKERS = [
     {
         id: "hello",
@@ -34,7 +34,7 @@ const STICKERS = [
             left: "65%",
             width: "clamp(6%, 12%, 14%)",
         },
-        mobileStyle: {
+        !isMobile ? mobileStyle : style: {
             top: "12%",
             left: "73%",
             width: "clamp(100px, 16vw, 86px)",
@@ -81,7 +81,7 @@ const STICKERS = [
         },
         mobileStyle: {
             top: "46%",
-            left: "74%",
+            left: "78%",
             width: "clamp(75px, 12vw, 72px)",
         },
     },

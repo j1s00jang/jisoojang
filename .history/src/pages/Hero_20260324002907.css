@@ -242,8 +242,8 @@
      * Uniform scale keeps SVG aspect ratio (avoid scaleX/scaleY only).
      */
     .hero__ribbon-inner {
-        width: 180%;
-        transform: scale(1.8);
+        width: 200%;
+        transform: scale(2);
         transform-origin: center center;
     }
 
