@@ -158,12 +158,10 @@
     pointer-events: none;
 }
 
-/* Scroll indicator — scales with viewport height; caps near ~100px on tall screens */
+/* Scroll indicator */
 .hero__scroll {
     position: absolute;
-    bottom: calc(
-        clamp(1rem, 7vh, 6.25rem) + env(safe-area-inset-bottom, 0px)
-    );
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
