@@ -235,10 +235,12 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner">
+        {/* Intro line above the main PORT/FOLIO wordmark */}
         <div className="hero__welcome">
           Welcome to <b>Jisoo</b>’s
         </div>
 
+        {/* Front half of the portfolio title */}
         <div className="hero__port-wrap">
           <img
             src={PortUrl}
@@ -247,6 +249,7 @@ function Hero() {
           />
         </div>
 
+        {/* Back half of the portfolio title */}
         <div className="hero__folio-wrap">
           <img
             src={FolioUrl}
@@ -255,7 +258,21 @@ function Hero() {
           />
         </div>
 
-        {/* Two ribbon layers - foreground and background glowing */}
+        {/* Hint to drag / tap stickers */}
+        <div className="hero__sticker-hint">
+          <MotionSpan
+            animate={{ opacity: [0.4, 1, 0.4] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            ✨ Try moving my stickers! ✨
+          </MotionSpan>
+        </div>
+
+        {/* Center ribbon layer made of a glow pass and the main ribbon image */}
         <div className="hero__ribbon-wrap">
           <div className="hero__ribbon-inner">
             <MotionImg
@@ -323,53 +340,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Try moving my stickers hint */}
-        <div className="hero__sticker-hint">
-          <MotionSpan
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            ✨ Try moving my stickers! ✨
-          </MotionSpan>
-        </div>
-
-        {/* Bottom scroll indicator that fades in after the hero animation */}
-        <MotionDiv
-          className="hero__scroll"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: SCROLL_ANIMATION_DELAY,
-            duration: 1,
-          }}
-        >
-          <span className="hero__scroll-text">Scroll</span>
-          <div className="hero__scroll-arrows">
-            {[0, 1].map((i) => (
-              <MotionDiv
-                key={i}
-                className="hero__scroll-arrow"
-                initial={{ rotate: 45, opacity: 0 }}
-                animate={{
-                  opacity: [0.2, 1, 0.2],
-                  y: [0, 5, 0],
-                  rotate: 45,
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  delay: i * 0.2,
-                  ease: LOOP_EASE,
-                }}
-              />
-            ))}
-          </div>
-        </MotionDiv>
-
         {/* Draggable stickers (separate mobile positions / sizes in STICKERS.mobileStyle) */}
         <StickerLayer
           isMobile={isMobile}
@@ -379,6 +349,39 @@ function Hero() {
           setHelloCycleIndex={setHelloCycleIndex}
         />
       </div>
+
+      {/* Bottom scroll indicator that fades in after the hero animation */}
+      <MotionDiv
+        className="hero__scroll"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: SCROLL_ANIMATION_DELAY,
+          duration: 1,
+        }}
+      >
+        <span className="hero__scroll-text">Scroll</span>
+        <div className="hero__scroll-arrows">
+          {[0, 1].map((i) => (
+            <MotionDiv
+              key={i}
+              className="hero__scroll-arrow"
+              initial={{ rotate: 45, opacity: 0 }}
+              animate={{
+                opacity: [0.2, 1, 0.2],
+                y: [0, 5, 0],
+                rotate: 45,
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: LOOP_EASE,
+              }}
+            />
+          ))}
+        </div>
+      </MotionDiv>
     </section>
   );
 }
