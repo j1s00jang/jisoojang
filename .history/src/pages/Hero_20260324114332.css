@@ -133,8 +133,8 @@
   pointer-events: none;
 }
 
-/* Hello sticker: Product Designer (etc.) layered image on hover */
-.hero-sticker__hover-img {
+/* Hello i am a transition on hover */
+.hero-sticker__cycle-img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -145,11 +145,11 @@
   pointer-events: none;
 }
 
-.hero-sticker__hover-img.is-active {
+.hero-sticker__cycle-img.is-active {
   opacity: 1;
 }
 
-.hero-sticker__hover-img:not(.is-active) {
+.hero-sticker__cycle-img:not(.is-active) {
   opacity: 0;
 }
 

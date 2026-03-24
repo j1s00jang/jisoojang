@@ -28,7 +28,7 @@ const STICKERS = [
     id: "hello",
     src: HelloSticker,
     rotate: 10,
-    cycleSrcs: [HelloStickerProduct],
+    hoverSrcs: [HelloStickerProduct],
     style: {
       top: "16%",
       left: "65%",
@@ -106,33 +106,33 @@ function resolveStickerStyle(sticker, isMobile) {
 function HeroSticker({
   id,
   src,
-  cycleSrcs,
+  hoverSrcs,
   style,
   rotate,
   hoveredId,
-  helloCycleIndex,
+  helloHoverIndex,
   setHoveredId,
-  setHelloCycleIndex,
+  setHelloHoverIndex,
   isMobile,
 }) {
   const isHello = id === "hello";
   const isHovered = hoveredId === id;
-  const hasCycle = isHello && cycleSrcs?.length;
+  const hasHover = isHello && hoverSrcs?.length;
   const activeIndex =
-    hasCycle && isHovered ? 1 + (helloCycleIndex % cycleSrcs.length) : 0;
+    hasHover && isHovered ? 1 + (helloHoverIndex % hoverSrcs.length) : 0;
 
   const handleMouseEnter = () => {
     setHoveredId(id);
 
-    if (hasCycle) {
-      setHelloCycleIndex((index) => index + 1);
+    if (hasHover) {
+      setHelloHoverIndex((index) => index + 1);
     }
   };
 
   const handleHelloTap = () => {
-    if (!hasCycle) return;
+    if (!hasHover) return;
     setHoveredId(id);
-    setHelloCycleIndex((index) => index + 1);
+    setHelloHoverIndex((index) => index + 1);
   };
 
   return (
@@ -146,11 +146,11 @@ function HeroSticker({
       whileDrag={{ scale: 1, rotate, cursor: "grabbing" }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHoveredId(null)}
-      onTap={isMobile && hasCycle ? handleHelloTap : undefined}
+      onTap={isMobile && hasHover ? handleHelloTap : undefined}
       className="hero-sticker"
       style={{ ...style, width: style.width }}
     >
-      {hasCycle ? (
+      {hasHover ? (
         <div className="hero-sticker__inner">
           <img
             src={src}
@@ -158,15 +158,15 @@ function HeroSticker({
             className="hero-sticker__img"
           />
 
-          {cycleSrcs.map((cycleSrc, index) => {
+          {hoverSrcs.map((hoverSrc, index) => {
             const isActive = index + 1 === activeIndex;
 
             return (
               <img
-                key={`${id}-cycle-${index}`}
-                src={cycleSrc}
+                key={`${id}-hover-${index}`}
+                src={hoverSrc}
                 alt=""
-                className={`hero-sticker__cycle-img ${
+                className={`hero-sticker__hover-img ${
                   isActive ? "is-active" : ""
                 }`}
               />
@@ -188,9 +188,9 @@ function HeroSticker({
 function StickerLayer({
   isMobile,
   hoveredId,
-  helloCycleIndex,
+  helloHoverIndex,
   setHoveredId,
-  setHelloCycleIndex,
+  setHelloHoverIndex,
 }) {
   return STICKERS.map((sticker) => (
     <HeroSticker
@@ -198,12 +198,12 @@ function StickerLayer({
       id={sticker.id}
       src={sticker.src}
       rotate={sticker.rotate}
-      cycleSrcs={sticker.cycleSrcs}
+      hoverSrcs={sticker.hoverSrcs}
       style={resolveStickerStyle(sticker, isMobile)}
       hoveredId={hoveredId}
-      helloCycleIndex={helloCycleIndex}
+      helloHoverIndex={helloHoverIndex}
       setHoveredId={setHoveredId}
-      setHelloCycleIndex={setHelloCycleIndex}
+      setHelloHoverIndex={setHelloHoverIndex}
       isMobile={isMobile}
     />
   ));
@@ -221,8 +221,8 @@ function Hero() {
   /* Hello, I'm a sticker hover state */
   const [hoveredId, setHoveredId] = useState(null);
 
-  /* Hello, I'm a sticker - Switch to 'Product Designer' sticker on hover */
-  const [helloCycleIndex, setHelloCycleIndex] = useState(0);
+  /* Hello sticker: advance which hover image shows on each hover / tap */
+  const [helloHoverIndex, setHelloHoverIndex] = useState(0);
 
   /* Keeps the mobile/desktop layout in sync when the window resizes */
   useEffect(() => {
@@ -374,9 +374,9 @@ function Hero() {
         <StickerLayer
           isMobile={isMobile}
           hoveredId={hoveredId}
-          helloCycleIndex={helloCycleIndex}
+          helloHoverIndex={helloHoverIndex}
           setHoveredId={setHoveredId}
-          setHelloCycleIndex={setHelloCycleIndex}
+          setHelloHoverIndex={setHelloHoverIndex}
         />
       </div>
     </section>

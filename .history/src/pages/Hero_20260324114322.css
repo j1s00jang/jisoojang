@@ -133,8 +133,8 @@
   pointer-events: none;
 }
 
-/* Hello sticker: Product Designer (etc.) layered image on hover */
-.hero-sticker__hover-img {
+/* Hello i am a transition on hover */
+.hero-sticker__cycle-img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -145,11 +145,11 @@
   pointer-events: none;
 }
 
-.hero-sticker__hover-img.is-active {
+.hero-sticker__cycle-img.is-active {
   opacity: 1;
 }
 
-.hero-sticker__hover-img:not(.is-active) {
+.hero-sticker__cycle-img:not(.is-active) {
   opacity: 0;
 }
 
@@ -242,10 +242,15 @@
     filter: brightness(1.2) sepia(1) hue-rotate(190deg) saturate(1.5) blur(16px);
   }
 
+  /* Per-sticker width comes from inline style (mobileStyle in Hero.jsx) */
   .hero-sticker {
     touch-action: none;
   }
 
+  /*
+     * Place Scroll just under the square hero (padding-top + square side + gap).
+     * Avoids a huge gap vs the sticker hint, which sits inside the square (~80%).
+     */
   .hero__scroll {
     /* 100cqw ≈ hero__inner square side (same width as .hero) */
     top: calc(70px + 100cqw + 0.75rem);
